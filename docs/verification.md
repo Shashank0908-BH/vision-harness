@@ -2,7 +2,51 @@
 
 Verified on 2026-09-22 (Asia/Kolkata).
 
-## Repeated external microscopy evaluation — latest verification
+## Observed-output routing v2 — latest implementation verification
+
+The separate [v2 design and file map](evidence-routing.md) and
+[live development smoke test](../reports/observed-routing-smoke-20260922/README.md)
+are complete. The suite passes **87 tests** and Ruff lint passes. The new path
+freezes an independent vanilla estimate, runs all eligible registered specialists
+(at most four), derives mask/disagreement measurements, obtains Astra's visual
+observations and scores all valid observed candidates with Jev before review.
+
+The smoke run completed all four specialists and five hosted calls, with zero
+candidate failures or format retries and a valid Harbor trace. Candidate and
+decision hashes, all-candidate scoring, execution ordering, actual mask counts
+and selected-value preservation were checked. Actual key values were absent from
+46 run text files. One preceding network-blocked attempt is retained separately.
+This is integration evidence only; no benchmark improvement is claimed.
+
+The historical v1 commands, prompts, catalog and saved evaluations retain their
+behavior. Current source-tree hashes differ because v2 modules were added; use
+the historical revision recorded in the v2 guide for frozen-source audit checks.
+
+## StarDist and reference audit — corrected interpretation
+
+The [audit](../reports/stardist-audit-20260922/index.html) supersedes the original
+Kromp count and segmentation scores below. One reference TIFF reuses 55 IDs
+across 102 source-verified nuclei. All arms are rescored, with exclusion of that
+image and a separate SVG-count sensitivity analysis. Original masks, predictions,
+result JSON and frozen protocol are preserved. A second TIFF decoder had checked
+the same unique-ID assumption and therefore did not catch this reference issue.
+
+The native rerun completes 555 fresh inferences. All 333 original-setting masks
+match the saved worker masks pixel for pixel. Official archive and checkpoint
+hashes match; all 37 TIFF-to-PNG pixel conversions are unchanged. All five native
+profiles produce identical maps across three repetitions on every image. Fixed
+half-size input improves count error overall but undercounts some dense fields;
+it is a post-hoc diagnostic, not new held-out validation or a harness result.
+
+The suite now passes 93 tests, including reference-integrity cases for reused IDs,
+small fragments and touching distinct instances. Runtime, tests and audit helper
+lint pass. The reusable audit flags ambiguous references without globally
+splitting disconnected components. The original evaluator remains frozen; use the
+new audit scorer for revised outcomes.
+
+## Repeated external microscopy evaluation — original, superseded scoring
+
+**The numeric scores in this historical section are superseded by the audit above.**
 
 The [Kromp report](../reports/kromp-repeated-20260922/index.html) covers all 37
 official test images with three fresh repetitions: 111 paired trials, 444

@@ -1,7 +1,16 @@
 # Specialist routing: file map and contract
 
+The [target research-to-execution harness](research-execution-harness.md) expands
+this path into connected discovery, documentation, scored plans and agent execution.
+This page describes the existing fixed-catalog implementation and its limitations.
+
 This is a separate experimental routing path. Historical `vision run` modes,
 configs, and reports retain their original behavior.
+
+The additional [`vision specialist compare` experiment](evidence-routing.md)
+selects after observing actual specialist outputs and includes an independent
+vanilla candidate. This document describes the original `specialist run` path;
+its decision still freezes before execution.
 
 | File | Responsibility |
 |---|---|

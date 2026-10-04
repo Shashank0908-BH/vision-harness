@@ -1,0 +1,640 @@
+{
+  "unique_trials": 108,
+  "images": 12,
+  "repetitions": 3,
+  "infrastructure_interruption": {
+    "recorded_at_utc": "2026-09-23T04:36:20.992868+00:00",
+    "health_probe": {
+      "model": "gpt-6-astra",
+      "success": true,
+      "response": "OK",
+      "elapsed_seconds": 2.36
+    },
+    "host_sleep_observed": true,
+    "last_wake_local": "2026-09-23 10:03:04 +0530",
+    "evidence": "host-sleep-events.txt",
+    "interpretation": "Sleep interrupted active requests. Do not interpret this run as a clean comparison of model accuracy or latency. Retain all planned attempts and failure traces."
+  },
+  "shared_baseline_trials": 36,
+  "summaries": {
+    "Vanilla Astra": {
+      "attempts": 36,
+      "answered": 36,
+      "within_10_percent": 32,
+      "all_attempt_success_percent": 88.88888888888889,
+      "conditional_mape_percent": 5.620515097470204,
+      "complete_cohort_mape_percent": 5.620515097470204,
+      "mean_seconds": 46.91627349738887,
+      "review_statuses": {
+        "not_applicable": 36
+      },
+      "total_tokens": {
+        "input_tokens": 22752,
+        "output_tokens": 60224
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.8888888888888888,
+        "ci95": [
+          0.6944444444444445,
+          1.0
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": null
+    },
+    "Full harness \u00b7 48 KB": {
+      "attempts": 36,
+      "answered": 6,
+      "within_10_percent": 4,
+      "all_attempt_success_percent": 11.11111111111111,
+      "conditional_mape_percent": 7.521513960719916,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 715.9558415115833,
+      "review_statuses": {
+        "provisional_after_error": 6,
+        "not_reached": 30
+      },
+      "total_tokens": {
+        "input_tokens": 9202177,
+        "output_tokens": 962499
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.1111111111111111,
+        "ci95": [
+          0.027777777777777776,
+          0.19444444444444445
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": 0.9399074467158723
+    },
+    "Full harness \u00b7 96 KB": {
+      "attempts": 36,
+      "answered": 12,
+      "within_10_percent": 11,
+      "all_attempt_success_percent": 30.555555555555554,
+      "conditional_mape_percent": 4.952759108574031,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 749.5098132839169,
+      "review_statuses": {
+        "not_reached": 24,
+        "provisional": 9,
+        "provisional_after_error": 2,
+        "approved": 1
+      },
+      "total_tokens": {
+        "input_tokens": 14258991,
+        "output_tokens": 1141620
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.3055555555555555,
+        "ci95": [
+          0.19444444444444442,
+          0.4166666666666667
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": 0.9561139746316173
+    }
+  },
+  "paired_differences": {
+    "48 KB minus vanilla": {
+      "mean": -0.7777777777777778,
+      "ci95": [
+        -0.9166666666666666,
+        -0.6111111111111112
+      ],
+      "clusters": 12,
+      "unit": "image; repetitions averaged within image"
+    },
+    "96 KB minus vanilla": {
+      "mean": -0.5833333333333334,
+      "ci95": [
+        -0.7222222222222222,
+        -0.4444444444444445
+      ],
+      "clusters": 12,
+      "unit": "image; repetitions averaged within image"
+    }
+  },
+  "per_image": [
+    {
+      "id": "image-01",
+      "expected": 169,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            162,
+            163,
+            165
+          ],
+          "answered": 3,
+          "mean_count": 163.33333333333334,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 3.3530571992110456,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            165,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 165,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 2.366863905325444,
+          "within_10_percent": 1
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            165,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 165,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 2.366863905325444,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-02",
+      "expected": 198,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            184,
+            180,
+            187
+          ],
+          "answered": 3,
+          "mean_count": 183.66666666666666,
+          "count_sd": 3.511884584284246,
+          "conditional_mean_percentage_error": 7.239057239057239,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            187,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 187,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 5.555555555555555,
+          "within_10_percent": 1
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-03",
+      "expected": 49,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            41,
+            41,
+            41
+          ],
+          "answered": 3,
+          "mean_count": 41,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 16.3265306122449,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            42,
+            42
+          ],
+          "answered": 2,
+          "mean_count": 42,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 14.285714285714285,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            42,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 42,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 14.285714285714285,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-04",
+      "expected": 139,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            136,
+            134,
+            135
+          ],
+          "answered": 3,
+          "mean_count": 135,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 2.8776978417266186,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            133,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 133,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 4.316546762589928,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-05",
+      "expected": 89,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            86,
+            85,
+            88
+          ],
+          "answered": 3,
+          "mean_count": 86.33333333333333,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 2.9962546816479403,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            86,
+            86,
+            null
+          ],
+          "answered": 2,
+          "mean_count": 86,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 3.3707865168539324,
+          "within_10_percent": 2
+        }
+      }
+    },
+    {
+      "id": "image-06",
+      "expected": 155,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            147,
+            147,
+            147
+          ],
+          "answered": 3,
+          "mean_count": 147,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 5.161290322580645,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            144,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 144,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 7.096774193548387,
+          "within_10_percent": 1
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            null,
+            144
+          ],
+          "answered": 1,
+          "mean_count": 144,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 7.096774193548387,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-07",
+      "expected": 130,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            130,
+            129,
+            132
+          ],
+          "answered": 3,
+          "mean_count": 130.33333333333334,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 0.7692307692307693,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            128,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 128,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 1.5384615384615385,
+          "within_10_percent": 1
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            125,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 125,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 3.8461538461538463,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-08",
+      "expected": 167,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            160,
+            160,
+            160
+          ],
+          "answered": 3,
+          "mean_count": 160,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 4.191616766467066,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            null,
+            156
+          ],
+          "answered": 1,
+          "mean_count": 156,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 6.58682634730539,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-09",
+      "expected": 118,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            116,
+            114,
+            116
+          ],
+          "answered": 3,
+          "mean_count": 115.33333333333333,
+          "count_sd": 1.1547005383792515,
+          "conditional_mean_percentage_error": 2.2598870056497176,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            null,
+            118
+          ],
+          "answered": 1,
+          "mean_count": 118,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 0.0,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-10",
+      "expected": 127,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            115,
+            114,
+            116
+          ],
+          "answered": 3,
+          "mean_count": 115,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 9.448818897637794,
+          "within_10_percent": 2
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-11",
+      "expected": 170,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            155,
+            154,
+            155
+          ],
+          "answered": 3,
+          "mean_count": 154.66666666666666,
+          "count_sd": 0.5773502691896257,
+          "conditional_mean_percentage_error": 9.019607843137255,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            155,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 155,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 8.823529411764707,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-12",
+      "expected": 149,
+      "conditions": {
+        "Vanilla": {
+          "counts": [
+            144,
+            143,
+            143
+          ],
+          "answered": 3,
+          "mean_count": 143.33333333333334,
+          "count_sd": 0.5773502691896257,
+          "conditional_mean_percentage_error": 3.803131991051454,
+          "within_10_percent": 3
+        },
+        "Full \u00b7 48 KB": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        },
+        "Full \u00b7 96 KB": {
+          "counts": [
+            145,
+            145,
+            null
+          ],
+          "answered": 2,
+          "mean_count": 145,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 2.684563758389262,
+          "within_10_percent": 2
+        }
+      }
+    }
+  ],
+  "timing_coverage": [
+    "Vanilla Astra: 36/36 runtimes recorded",
+    "Full harness \u00b7 48 KB: 36/36 runtimes recorded",
+    "Full harness \u00b7 96 KB: 36/36 runtimes recorded"
+  ],
+  "limits": [
+    "The configuration follow-up reuses the same images and controls.",
+    "Intervals are descriptive, unadjusted image-cluster bootstrap intervals.",
+    "Extra research, pixels, code and inference are bundled; Jev's causal contribution is not isolated.",
+    "Conditional error/F1 omit missing outputs; primary success includes every planned attempt."
+  ]
+}

@@ -1,0 +1,15 @@
+name = "vision-lab-gpu-20260923"
+snapshot = "vision-lab-gpu-runtime-20260923"
+base_image = "python:3.12.13-slim"
+volume = "vision-lab-artifacts-20260923"
+cpu = 8
+memory_gib = 32
+disk_gib = 80
+gpu_type = "RTX-4090"
+gpu_count = 1
+auto_stop_minutes = 120
+sdk_version = "0.216.0"
+
+# GPU workers are ephemeral. /persist survives worker deletion.
+# Disable idle shutdown explicitly for a supervised long job, then restore it.
+# No benchmark starts when this sandbox is created.

@@ -1,0 +1,48 @@
+{
+  "scope": "One previously used BBBC001 development image; integration only, no accuracy comparison or reference decoding.",
+  "run": "runs/observed-v2-smoke-network-20260922",
+  "source_sha256": "a31ac2c88d8083e60ffc82f86cb98696a097c768ce83c0b5fab220c970499d66",
+  "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+  "provider_calls": {
+    "astra": 3,
+    "jev": 2
+  },
+  "saved_provider_responses": 5,
+  "format_retries": 0,
+  "specialist_masks": {
+    "stardist-default": 375,
+    "stardist-sensitive": 378,
+    "stardist-conservative": 370,
+    "cellpose-sam": 387
+  },
+  "candidate_counts": {
+    "vanilla-astra": 490.0,
+    "stardist-default": 375.0,
+    "stardist-sensitive": 378.0,
+    "stardist-conservative": 370.0,
+    "cellpose-sam": 387.0
+  },
+  "jev_scores": {
+    "vanilla-astra": 1.24,
+    "stardist-default": 0.52,
+    "stardist-sensitive": 0.8,
+    "stardist-conservative": 0.66,
+    "cellpose-sam": 2.2
+  },
+  "selected_id": "cellpose-sam",
+  "selected_count": 387.0,
+  "review_status": "supported",
+  "review_support_uncalibrated": 0.79,
+  "candidate_failures": [],
+  "valid_harbor_trajectory": true,
+  "all_candidates_inspected_and_scored": true,
+  "vanilla_frozen_before_specialists": true,
+  "selected_value_preserved": true,
+  "elapsed_seconds": 111.09999316651374,
+  "credential_scan_text_files": 46,
+  "preserved_startup_failure": {
+    "run": "runs/observed-v2-smoke-20260922",
+    "stage": "intent",
+    "error": "APIConnectionError in network-restricted sandbox; rerun after network permission, not outcome-based recovery."
+  }
+}

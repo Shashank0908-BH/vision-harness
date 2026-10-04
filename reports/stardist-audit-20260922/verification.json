@@ -1,0 +1,23 @@
+{
+  "native_inferences": 555,
+  "native_pixel_parity": 333,
+  "native_script_matches_protocol": true,
+  "original_result_json_unchanged": true,
+  "independent_metric_summaries_checked": 48,
+  "official_matching_checks": 444,
+  "reference_integrity_tests": 6,
+  "full_suite_passed": 93,
+  "ruff_passed": true,
+  "credential_values_checked_without_logging": 2,
+  "text_files_scanned": 20,
+  "credential_leaks": 0,
+  "detail_count_differs_from_visible_mask_count": 0,
+  "scripts": {
+    "experiments/stardist_audit/svg_audit.py": "80f7ce527ce6f66e33a093ca2ede0f9adc493fc1567c776d36e4449c4ceac3a9",
+    "experiments/stardist_audit/native.py": "e9ca331eb7974b62cd42ee5a9d61588a2108d6ff57c7358e8b2089b04b29164c",
+    "experiments/stardist_audit/qa_report.py": "9f85036661365aa52a46733330650d95b5e5a8057cc8f696e1d48afaf57cd6e5",
+    "experiments/stardist_audit/native_metrics.py": "cf5fa9777b438b363bc8f8627dfbcb4d50cd19e1eae89c121944b83cdf848755",
+    "experiments/stardist_audit/report.py": "bad67cff6d8c20216235dc21391b6e03ca490cb430539bca70c154aabba1f0cb",
+    "experiments/stardist_audit/score.py": "2d19a1c04e9de4fdda90e293f551cadc00f1bd87ad36aace54a63a9d3f981abd"
+  }
+}

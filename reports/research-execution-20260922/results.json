@@ -1,0 +1,2428 @@
+{
+  "cohort_images": 12,
+  "repetitions": 3,
+  "selection": {
+    "frozen_at": "2026-09-22T19:09:44.717299+00:00",
+    "source": "https://bbbc.broadinstitute.org/BBBC039",
+    "split": "official test",
+    "filenames": [
+      "IXMtest_D20_s3_w19D371AF3-0189-48A3-AF3B-D108DE6A017F.png",
+      "IXMtest_L06_s5_w1610AE208-D6E8-4DC4-AC19-D26284AA8556.png",
+      "IXMtest_D08_s7_w1F476A544-A07C-4E9B-A6CB-BAEF4CD6F64E.png",
+      "IXMtest_K03_s5_w1DC4CE558-042C-482E-8CAE-FCCB57AA9A55.png",
+      "IXMtest_P19_s6_w10EBAD15B-2822-48B9-B9C8-4DF5D80AB940.png",
+      "IXMtest_N12_s9_w1C98EC3CC-2F8E-4761-A21A-EBF14469AD40.png",
+      "IXMtest_I03_s4_w1C724E24D-7AD5-4166-A810-DC75A825495D.png",
+      "IXMtest_D06_s8_w1BE84C8EF-4CD0-4B56-8267-4E662F57AC25.png",
+      "IXMtest_F14_s7_w1E67F2A8A-EEC1-4F01-A1E2-0ECFC639637F.png",
+      "IXMtest_N08_s2_w159DEEDD5-2882-4F9E-9048-F5BD2B918651.png",
+      "IXMtest_E07_s1_w1641C6847-142B-463F-8B08-5B3296615572.png",
+      "IXMtest_K17_s5_w1BB3AD9D7-3A85-458C-AB1C-07A816C2C203.png"
+    ],
+    "excluded_previous_test_images": [
+      "IXMtest_A09_s1_w1CE70AD49-290D-4312-82E6-CDC717F32637.png",
+      "IXMtest_B02_s9_w124B5080D-EBE1-47D2-B147-C0F342039EDF.png",
+      "IXMtest_B05_s5_w10296BEF4-0F48-4EC8-BC24-6C604871398B.png",
+      "IXMtest_C07_s5_w12C9F2926-A017-4962-8660-72C9C20C86E4.png",
+      "IXMtest_C14_s8_w1612E3D43-FA7E-4FFB-BE53-F34A3A0CAFCD.png",
+      "IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61.png",
+      "IXMtest_K01_s5_w1A3DE001A-72D6-4321-8B25-4300AB0207AC.png",
+      "IXMtest_M12_s7_w193E9BA0F-274A-4EE8-A0F0-6A58471A333A.png",
+      "IXMtest_N11_s4_w142A84EA3-47C3-4B49-B6CA-BBC6685BBE1E.png",
+      "IXMtest_O01_s6_w11A23978B-BAAD-4287-B1F6-FFBCF45C5E2F.png",
+      "IXMtest_P07_s8_w19D682C29-5685-4A33-8CAA-F0797DD7F021.png",
+      "IXMtest_P21_s4_w19B7DC88B-10BB-4B51-9A10-9E30285688C1.png"
+    ],
+    "rule": "SHA256(vision-research-execution-v3-20260922: + filename), first 12 unused; no label-based selection",
+    "repetitions": 3,
+    "arms": [
+      "vanilla",
+      "full"
+    ],
+    "development_prefix_replay": false,
+    "policy": {
+      "version": "research-execution-0.1",
+      "max_rounds": 2,
+      "max_research_passes": 2,
+      "max_provider_calls": 48,
+      "max_seconds": 1500,
+      "max_candidates": 12,
+      "max_retained_models": 2,
+      "minimum_support_candidate_score": 1.0,
+      "max_document_pages_per_candidate": 3,
+      "max_document_chars": 60000,
+      "codex_timeout_seconds": 420,
+      "review_support_threshold": 0.75,
+      "max_no_progress_rounds": 1
+    },
+    "source_snapshot": {
+      "configs/research-execution.toml": "225f5210077060571f6a59a1c300fbacb6f69b354f25167006e14d4791901701",
+      "evals/atif.py": "6c2c9400956605d8b389798be3409980c3890a48c775190b7a75f12486ae8ac6",
+      "evals/import_bbbc039.py": "b2fafa2e0261fb503bc8f4f319fa3d32d4d620930d14fa73b52a9cc1795baf52",
+      "evals/research_execution/Dockerfile": "85617b203e351f30bfbee73ea414cd33cde137449663458d3db379cc4fc89caa",
+      "evals/research_execution/__init__.py": "37f87c2b1a1ba2f1a50090c5b45f7cc068908bde26fe843363e1f7915efa044e",
+      "evals/research_execution/harbor_agent.py": "81ac64306fc93069a85f1a114e4bf1655be0a1358a7efc5704a9c6ceff87128d",
+      "evals/research_execution/prepare.py": "e89d1102e25c5912c0c57951c61cd5463108f781d6e43eb5e81de7e588d631c0",
+      "evals/research_execution/report.py": "b27aacc5ba13243064cbb0b053a00a2a84d3324ea9a0316d08f786a59c9fbb04",
+      "evals/research_execution/run.py": "b546b11fff65bb69813d19a59c3869929e790ace144838907c651413fa180d2d",
+      "evals/research_execution/status.py": "637a0115f7dfb56165cfbfe7f478f3c1f24b881a309b36090dd16417db7990f5",
+      "evals/research_execution/toolchain.py": "d58be27fad7169e9f1922d9cff366a479c0798bb7298f14719e6c221af1cbac9",
+      "evals/research_execution/verifier.py": "cc1023ef50b08ecd18fe50f49aa25224171d41c5d6464799b14874dee97fdaeb",
+      "prompts/astra-research-execution.md": "504aed5cecf7cd1f07b8e0eee443f76016753c77db9fa14cd37e07381f0d34e4",
+      "prompts/jev_plan_conditions.json": "1b5fcb94329209f2a695898943d16f0e847f2772ce5c0d1a51b47c67cbb04d4d",
+      "prompts/jev_review_estimate.json": "5401bc21f0bda48bc4fd06e18aa253c501655309341cb956596576138cf058c4",
+      "src/vision_harness/__init__.py": "370f4309cc208c94d5e25d67b785a72790bfde7bbf93e806e8535e631fd79111",
+      "src/vision_harness/artifacts.py": "98c19a2960a436eac74a81b3ad433421d822d3167d7d935cf812ba870d0d6109",
+      "src/vision_harness/cli.py": "1e00103e36c04437438460ce2691d0a0c81a6f67f2fc94d556cb9296fc418f51",
+      "src/vision_harness/config.py": "5505a7ce1a06cee18c4ac4ab3093b2bbf32896df158db9c59f099541e0ef24f2",
+      "src/vision_harness/contracts.py": "165c29cc88ea4a09e939c0f5875b2bce9ea8b2da3a479528e57078f430be4a0c",
+      "src/vision_harness/demo.py": "454e7ea5eba343b1c85959ee1311dd07ecc4588fedbcef47057f62e26f571d0d",
+      "src/vision_harness/evidence_routing/__init__.py": "a18ceecd193c487fcb68f7b6b282fc6b10e6ccbaa7f7bfa689e3bd438afdba13",
+      "src/vision_harness/evidence_routing/contracts.py": "231d1045d1ec01e61705f69f5c55f5e6ce25c75befa909ccaa6f85b314a770a8",
+      "src/vision_harness/evidence_routing/measurements.py": "4deaaf05edb6f9040917f1f7292c59f8221cbdd558f148bcf3030cf473f2c2d0",
+      "src/vision_harness/evidence_routing/runtime.py": "5a999f3dd29f03d011ad3690834e0e6bda018d031ed87e0b2b8a871f0c6748ca",
+      "src/vision_harness/providers/__init__.py": "1f7a6a0341f2d8349f7995cc32e91f2781688774c25a4bbeaa45a24760d9ee3f",
+      "src/vision_harness/providers/astra.py": "2a515ec41eeca577054b18970cf893d59b5e30e6c9c57240872bb93767183a50",
+      "src/vision_harness/providers/evidence_budget.py": "9ba8ba43cc7e8d57fe69d371b247bc657a7df0a8e621faca4a96931150249f1d",
+      "src/vision_harness/providers/jev.py": "eece71aaa7fd0e030db4b4235e0bb55702ec76622e150e7667d4b8278002840a",
+      "src/vision_harness/research_execution/__init__.py": "b07988ebb003761b8cf4c2fef77498a8872e3ae4ade75e30cc665ed971386b3a",
+      "src/vision_harness/research_execution/cli.py": "0fcf6c0c0ba14f74d04e64f7588074718e3c3edcc8b8cf7a05f412815ef407ac",
+      "src/vision_harness/research_execution/contracts.py": "12d424266fcf3082e550d6690fb736ff962163b862872af2a006670c23ffda81",
+      "src/vision_harness/research_execution/discovery.py": "e37f3edc8885302fa8dab1269bb7608136d38791c903eb3c7e09bf9b9a467a5c",
+      "src/vision_harness/research_execution/documents.py": "ebc04ce9926ff34ef2e5228a6d0b32985c6a042222234cc5a5a795d2198806b2",
+      "src/vision_harness/research_execution/evidence.py": "d00e1a1e5ebbc177697876418512352cc588b03183f84d841414da5971515f56",
+      "src/vision_harness/research_execution/executor.py": "66e0c2bafb0678149d65bd7c8171fa8d00204aef906d88e4fcd962aca51f7a7a",
+      "src/vision_harness/research_execution/planning.py": "543e8e62f687779260e10427c17c20abc37bdc8491809ba52adb2807b40c3cce",
+      "src/vision_harness/research_execution/replay.py": "491c766f2b3c37580dc55a9ab94654f827ff6f2074f9519d5ab24c22783a5a06",
+      "src/vision_harness/research_execution/runtime.py": "5b3fa52e9eb77f1c9cec7cb99d0aac395ab50e424cd71a72b05ce602c2fd18a5",
+      "src/vision_harness/research_execution/scoring.py": "6e3776d4fc4c140a4977c3f867dc9a7037a1cc37160853b672e97fde4737b05a",
+      "src/vision_harness/review_loop.py": "10b44779da5474ba30edddfae7f3341cdfc7b5ea47bd8d725f07b013fd1bccc5",
+      "src/vision_harness/routing/__init__.py": "5eefe410ab614d355c3bedfad7335bd9d2d294cba939450cfe68c8a9074b3dca",
+      "src/vision_harness/routing/catalog.py": "bb6405cb9855b3a275e9b993cc22c541a416de9e089fc5d9e5971c41a8ea6f33",
+      "src/vision_harness/routing/cli.py": "dffdba768a585bb25ffd86ef42abd53797810348309aec4c5f81b0aaa28d155f",
+      "src/vision_harness/routing/contracts.py": "4f4d4f8fde1fd58c17811e4329e64b326afde5e2ee33cd680d6d1b7f8dce656c",
+      "src/vision_harness/routing/executor.py": "dc736e7ae20a2dd2af8eb964a3c795f6768b16388ae1242b5a2d889553d249db",
+      "src/vision_harness/routing/research.py": "4c0d11c98898933c854afe34f3fd053035d28be21e99aeacac9d37634a7a1979",
+      "src/vision_harness/routing/runtime.py": "09dd0fe346440dafef1a6ae96ead457cd6468f720d3f379468cde623ab5f3d92",
+      "src/vision_harness/routing/worker.py": "9c51ddc9802eba9b14f0643acbe882ebeb928741e5afd07a3173a791458d3e84",
+      "src/vision_harness/runtime.py": "45480ac3c4587ec8afdd911cb70012450969e9f03d99ffe29a8bce6c738917fa",
+      "src/vision_harness/selection.py": "02629c2c6d1395ce3cb13eb568db65ba3f2847414c26f3807f852532c202b604",
+      "src/vision_harness/tools/__init__.py": "f8fcbca43531dc087f6eab8d24a931a277d448e5bfa995b8a4c86ee9faf8fd03",
+      "src/vision_harness/tools/dispatch.py": "a0266a1830b59abc2d9ecf3a1899d8dd7c143125548c0fc8936bcb8b99df26e6",
+      "src/vision_harness/tools/opencv.py": "427b6461eb100efa94580b62b6a456dd2e3bcdc1739de88d2157e51e5cef5d84",
+      "src/vision_harness/tools/registry.py": "c100ecafc28f4d2631bfa3bdd70b2819bdb5a53cdb29ddf779823782d97dcd8d",
+      "src/vision_harness/tools/stardist.py": "cf9107d24963d5fafd47f22ce3cb1f6d32a593ef98a577aa7ac476506f1acbe0",
+      "src/vision_harness/tracing.py": "c1583a61805e900c93de262b53abb57cd8bb53bd78459ad0a62338fa8a8e98b9"
+    },
+    "archives_sha256": {
+      "images.zip": "6f30a5d4fe38c928ded972704f085975f8dc0d65d9aa366df00e5a9d449fddd7",
+      "masks.zip": "f9e6043d8ca56344a4886f96a700d804d6ee982f31e2b2cd3194af2a053c2710",
+      "metadata.zip": "a2c1f900bed9ba92a99553efd4c2ae98598433691c7401d818653ab61110deb2"
+    },
+    "primary_metric": "all-attempt proportion within 10% of annotation-derived count; failures score zero",
+    "secondary_metrics": [
+      "coverage",
+      "conditional MAPE",
+      "complete-cohort MAPE only if all answered",
+      "instance F1 at IoU>=0.5",
+      "time",
+      "tokens",
+      "image-cluster paired intervals"
+    ],
+    "answer_policy": "Return the selected observed mask's count with approved/provisional review status; absent final verified artifact is failure",
+    "input_policy": "same question and 1/99.8 percentile preview for both arms; tool arm also gets original uint16 file",
+    "retry_policy": "one recorded attempt; schema-format repair and up to two internal scored execution rounds; no outcome retries",
+    "limitations": [
+      "public benchmark; pretrained exposure unknown",
+      "counting derived from segmentation labels, not original benchmark metric",
+      "12 images are a pilot, not a broad multimodal claim",
+      "CPU-only deployment and bounded catalog search"
+    ]
+  },
+  "metrics": {
+    "vanilla": {
+      "attempts": 36,
+      "answered": 36,
+      "within_10_percent": 32,
+      "all_attempt_success_percent": 88.88888888888889,
+      "conditional_mape_percent": 5.620515097470204,
+      "complete_cohort_mape_percent": 5.620515097470204,
+      "mean_seconds": 46.91627349738887,
+      "review_statuses": {
+        "not_applicable": 36
+      },
+      "total_tokens": {
+        "input_tokens": 22752,
+        "output_tokens": 60224
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.8888888888888888,
+        "ci95": [
+          0.6944444444444445,
+          1.0
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": null
+    },
+    "full": {
+      "attempts": 36,
+      "answered": 6,
+      "within_10_percent": 4,
+      "all_attempt_success_percent": 11.11111111111111,
+      "conditional_mape_percent": 7.521513960719916,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 715.9558415115833,
+      "review_statuses": {
+        "provisional_after_error": 6,
+        "not_reached": 30
+      },
+      "total_tokens": {
+        "input_tokens": 9202177,
+        "output_tokens": 962499
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.1111111111111111,
+        "ci95": [
+          0.027777777777777776,
+          0.19444444444444445
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": 0.9399074467158723
+    }
+  },
+  "paired_success_difference": {
+    "mean": -0.7777777777777778,
+    "ci95": [
+      -0.9166666666666666,
+      -0.6111111111111112
+    ],
+    "clusters": 12,
+    "unit": "image; repetitions averaged within image"
+  },
+  "per_image": [
+    {
+      "id": "image-01",
+      "expected": 169,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            162,
+            163,
+            165
+          ],
+          "answered": 3,
+          "mean_count": 163.33333333333334,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 3.3530571992110456,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            165,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 165,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 2.366863905325444,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-02",
+      "expected": 198,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            184,
+            180,
+            187
+          ],
+          "answered": 3,
+          "mean_count": 183.66666666666666,
+          "count_sd": 3.511884584284246,
+          "conditional_mean_percentage_error": 7.239057239057239,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            187,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 187,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 5.555555555555555,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-03",
+      "expected": 49,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            41,
+            41,
+            41
+          ],
+          "answered": 3,
+          "mean_count": 41,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 16.3265306122449,
+          "within_10_percent": 0
+        },
+        "full": {
+          "counts": [
+            null,
+            42,
+            42
+          ],
+          "answered": 2,
+          "mean_count": 42,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 14.285714285714285,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-04",
+      "expected": 139,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            136,
+            134,
+            135
+          ],
+          "answered": 3,
+          "mean_count": 135,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 2.8776978417266186,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-05",
+      "expected": 89,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            86,
+            85,
+            88
+          ],
+          "answered": 3,
+          "mean_count": 86.33333333333333,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 2.9962546816479403,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-06",
+      "expected": 155,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            147,
+            147,
+            147
+          ],
+          "answered": 3,
+          "mean_count": 147,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 5.161290322580645,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            144,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 144,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 7.096774193548387,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-07",
+      "expected": 130,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            130,
+            129,
+            132
+          ],
+          "answered": 3,
+          "mean_count": 130.33333333333334,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 0.7692307692307693,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            128,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 128,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 1.5384615384615385,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-08",
+      "expected": 167,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            160,
+            160,
+            160
+          ],
+          "answered": 3,
+          "mean_count": 160,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 4.191616766467066,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-09",
+      "expected": 118,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            116,
+            114,
+            116
+          ],
+          "answered": 3,
+          "mean_count": 115.33333333333333,
+          "count_sd": 1.1547005383792515,
+          "conditional_mean_percentage_error": 2.2598870056497176,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-10",
+      "expected": 127,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            115,
+            114,
+            116
+          ],
+          "answered": 3,
+          "mean_count": 115,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 9.448818897637794,
+          "within_10_percent": 2
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-11",
+      "expected": 170,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            155,
+            154,
+            155
+          ],
+          "answered": 3,
+          "mean_count": 154.66666666666666,
+          "count_sd": 0.5773502691896257,
+          "conditional_mean_percentage_error": 9.019607843137255,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-12",
+      "expected": 149,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            144,
+            143,
+            143
+          ],
+          "answered": 3,
+          "mean_count": 143.33333333333334,
+          "count_sd": 0.5773502691896257,
+          "conditional_mean_percentage_error": 3.803131991051454,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "mode": "vanilla",
+      "id": "image-01",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-01__5MrJWMm",
+      "expected": 169,
+      "count": 162,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.142011834319527,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 45.68874952200008,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1657
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-01",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-01__7GvRGx2",
+      "expected": 169,
+      "count": 163,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.5502958579881656,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 37.675398890999986,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1324
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-01",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-01__wGgywY9",
+      "expected": 169,
+      "count": 165,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.366863905325444,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 55.244919482999876,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1762
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-02",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-02__Fh4rmVc",
+      "expected": 198,
+      "count": 184,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.07070707070707,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 75.8957697840001,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2395
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-02",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-02__kqVi6rV",
+      "expected": 198,
+      "count": 180,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 9.090909090909092,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 59.15550598599998,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1976
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-02",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-02__rfbrQco",
+      "expected": 198,
+      "count": 187,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.555555555555555,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 63.8976732379997,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2228
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-03",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-03__5YAqaoa",
+      "expected": 49,
+      "count": 41,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 16.3265306122449,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 22.36723363499982,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 750
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-03",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-03__YpNKdPQ",
+      "expected": 49,
+      "count": 41,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 16.3265306122449,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 25.152020095000353,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 752
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-03",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-03__qZifXCR",
+      "expected": 49,
+      "count": 41,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 16.3265306122449,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 25.08577742800003,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 834
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-04",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-04__AkrNDP4",
+      "expected": 139,
+      "count": 136,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.158273381294964,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 47.47051998100005,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1816
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-04",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-04__bpybZQT",
+      "expected": 139,
+      "count": 134,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.597122302158273,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 41.34611618600002,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1509
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-04",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-04__vWS8u8z",
+      "expected": 139,
+      "count": 135,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.877697841726619,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 52.13135994100003,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1844
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-05",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-05__44pV4RK",
+      "expected": 89,
+      "count": 86,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.3707865168539324,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 25.85804951299997,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 986
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-05",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-05__4mZbf4s",
+      "expected": 89,
+      "count": 85,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.49438202247191,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 32.462771473999965,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1088
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-05",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-05__9VCPRdn",
+      "expected": 89,
+      "count": 88,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.1235955056179776,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 40.96468122800002,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1353
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-06",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-06__66nJ2gr",
+      "expected": 155,
+      "count": 147,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.161290322580645,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 50.23161223200009,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2010
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-06",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-06__8jUQuDK",
+      "expected": 155,
+      "count": 147,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.161290322580645,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 48.770458771999984,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1779
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-06",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-06__9hEeZDx",
+      "expected": 155,
+      "count": 147,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.161290322580645,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 54.62720294199994,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1890
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-07",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-07__BCbNE57",
+      "expected": 130,
+      "count": 130,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 0.0,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 69.52239178199989,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2350
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-07",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-07__T84CmUk",
+      "expected": 130,
+      "count": 129,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 0.7692307692307693,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 50.75788727400004,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1928
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-07",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-07__d22KUoz",
+      "expected": 130,
+      "count": 132,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.5384615384615385,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 43.04362622899998,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1603
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-08",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-08__7nvP8Qx",
+      "expected": 167,
+      "count": 160,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.191616766467066,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 42.31136197799992,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1673
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-08",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-08__DLepDAv",
+      "expected": 167,
+      "count": 160,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.191616766467066,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 73.43699761799985,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2902
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-08",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-08__bTA7tg4",
+      "expected": 167,
+      "count": 160,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.191616766467066,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 54.902083149999726,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1901
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-09",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-09__6jm7BFM",
+      "expected": 118,
+      "count": 116,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.694915254237288,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 59.61672194400012,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2079
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-09",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-09__N274Jkv",
+      "expected": 118,
+      "count": 114,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.389830508474576,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 50.85266310599991,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1691
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-09",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-09__oEHcvAE",
+      "expected": 118,
+      "count": 116,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.694915254237288,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 55.39817489999996,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2120
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-10",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-10__AofXBqL",
+      "expected": 127,
+      "count": 115,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 9.448818897637794,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 31.680080223000004,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1071
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-10",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-10__mzdnbaE",
+      "expected": 127,
+      "count": 114,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 10.236220472440944,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 34.25878676499997,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1153
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-10",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-10__ocrQPQ5",
+      "expected": 127,
+      "count": 116,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.661417322834646,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 32.162796265,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1072
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-11",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-11__NVay2VJ",
+      "expected": 170,
+      "count": 155,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.823529411764707,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 51.45729931599999,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1873
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-11",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-11__VxJNBP8",
+      "expected": 170,
+      "count": 154,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 9.411764705882353,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 42.14484768600005,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1606
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-11",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-11__dQzQyrV",
+      "expected": 170,
+      "count": 155,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.823529411764707,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 56.06175848399994,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2299
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-12",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-12__HbJ3b7f",
+      "expected": 149,
+      "count": 144,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.3557046979865772,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 43.725789894999934,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1508
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-12",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-12__gi3pzuP",
+      "expected": 149,
+      "count": 143,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.026845637583892,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 51.12493781500007,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1937
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-12",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-vanilla/image-12__wAr2vha",
+      "expected": 149,
+      "count": 143,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.026845637583892,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 42.50182114500012,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1505
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "full",
+      "id": "image-01",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-01__46ff28e",
+      "expected": 169,
+      "count": 165,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.366863905325444,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Jev request remains 58665 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1233.1119660639997,
+      "tokens": {
+        "input_tokens": 395819,
+        "output_tokens": 56486
+      },
+      "segmentation": {
+        "tp": 161,
+        "fn": 8,
+        "fp": 4,
+        "f1": 0.9640718562874252,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-01",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-01__D6M4qyn",
+      "expected": 169,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.5883495960006,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-01",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-01__GcNuguE",
+      "expected": 169,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 49253 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 820.1088232460002,
+      "tokens": {
+        "input_tokens": 220079,
+        "output_tokens": 36847
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-02",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-02__3Vk5VAd",
+      "expected": 198,
+      "count": 187,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.555555555555555,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Jev request remains 63457 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1309.3724683059995,
+      "tokens": {
+        "input_tokens": 572468,
+        "output_tokens": 59218
+      },
+      "segmentation": {
+        "tp": 185,
+        "fn": 13,
+        "fp": 2,
+        "f1": 0.961038961038961,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-02",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-02__YG5TzRb",
+      "expected": 198,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.4388674720003,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-02",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-02__rxLnbkq",
+      "expected": 198,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Usage contract cites an unavailable source",
+      "elapsed_seconds": 473.014564092,
+      "tokens": {
+        "input_tokens": 218075,
+        "output_tokens": 18896
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-03",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-03__P9xXHQX",
+      "expected": 49,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 528.5178133250001,
+      "tokens": {
+        "input_tokens": 62521,
+        "output_tokens": 7058
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-03",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-03__gdCEPzq",
+      "expected": 49,
+      "count": 42,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 14.285714285714285,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Jev request remains 65210 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1139.6346045599994,
+      "tokens": {
+        "input_tokens": 605880,
+        "output_tokens": 63671
+      },
+      "segmentation": {
+        "tp": 41,
+        "fn": 8,
+        "fp": 1,
+        "f1": 0.9010989010989011,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-03",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-03__yEzw7e8",
+      "expected": 49,
+      "count": 42,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 14.285714285714285,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Jev request remains 60203 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1455.2152347459996,
+      "tokens": {
+        "input_tokens": 792437,
+        "output_tokens": 58474
+      },
+      "segmentation": {
+        "tp": 41,
+        "fn": 8,
+        "fp": 1,
+        "f1": 0.9010989010989011,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-04",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-04__CuLgdKu",
+      "expected": 139,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 605.0473505250002,
+      "tokens": {
+        "input_tokens": 78937,
+        "output_tokens": 10090
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-04",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-04__gHFow6E",
+      "expected": 139,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Duplicate candidate IDs",
+      "elapsed_seconds": 342.8468012809999,
+      "tokens": {
+        "input_tokens": 70206,
+        "output_tokens": 11725
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-04",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-04__wWCfuMn",
+      "expected": 139,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.34299576300054,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-05",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-05__MfT957q",
+      "expected": 89,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 48277 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 766.5971116000001,
+      "tokens": {
+        "input_tokens": 225571,
+        "output_tokens": 35326
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-05",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-05__W463EQB",
+      "expected": 89,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.2330359289999,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-05",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-05__Wf7kaYG",
+      "expected": 89,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 871.4105125229999,
+      "tokens": {
+        "input_tokens": 185892,
+        "output_tokens": 25975
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-06",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-06__NtW3vXs",
+      "expected": 155,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.33025172,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-06",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-06__SrLBNnw",
+      "expected": 155,
+      "count": 144,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.096774193548387,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Jev request remains 63803 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1061.7521949800002,
+      "tokens": {
+        "input_tokens": 533432,
+        "output_tokens": 47520
+      },
+      "segmentation": {
+        "tp": 141,
+        "fn": 14,
+        "fp": 3,
+        "f1": 0.9431438127090301,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-06",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-06__UwiKQD6",
+      "expected": 155,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 49493 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 600.502935689,
+      "tokens": {
+        "input_tokens": 195612,
+        "output_tokens": 26938
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-07",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-07__7s4THAs",
+      "expected": 130,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.5453498050001,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-07",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-07__CJh8URG",
+      "expected": 130,
+      "count": 128,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.5384615384615385,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Jev request remains 64746 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1465.685172505,
+      "tokens": {
+        "input_tokens": 809522,
+        "output_tokens": 64551
+      },
+      "segmentation": {
+        "tp": 125,
+        "fn": 5,
+        "fp": 3,
+        "f1": 0.9689922480620154,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-07",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-07__kEbKpwj",
+      "expected": 130,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 48210 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1323.510275392,
+      "tokens": {
+        "input_tokens": 687638,
+        "output_tokens": 59632
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-08",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-08__5sd4iFP",
+      "expected": 167,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.4128965540003,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-08",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-08__AB6b5df",
+      "expected": 167,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 49282 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 1299.877524422,
+      "tokens": {
+        "input_tokens": 471466,
+        "output_tokens": 58644
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-08",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-08__QmXCzFw",
+      "expected": 167,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 1246.0889452800002,
+      "tokens": {
+        "input_tokens": 519974,
+        "output_tokens": 57644
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-09",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-09__AqXa4Zo",
+      "expected": 118,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 50074 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 847.2538000129998,
+      "tokens": {
+        "input_tokens": 209130,
+        "output_tokens": 37731
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-09",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-09__adAf5iP",
+      "expected": 118,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.33083030499984,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-09",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-09__jhj5gF8",
+      "expected": 118,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Plan does not cover required task parts",
+      "elapsed_seconds": 473.72466825599986,
+      "tokens": {
+        "input_tokens": 169764,
+        "output_tokens": 19278
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-10",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-10__EL6dKUS",
+      "expected": 127,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 466.92703687999983,
+      "tokens": {
+        "input_tokens": 51558,
+        "output_tokens": 5834
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-10",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-10__RXyRz8w",
+      "expected": 127,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 48538 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 907.372342871,
+      "tokens": {
+        "input_tokens": 232556,
+        "output_tokens": 38933
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-10",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-10__maAoHpV",
+      "expected": 127,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 51589 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 810.0763860770003,
+      "tokens": {
+        "input_tokens": 662814,
+        "output_tokens": 41054
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-11",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-11__7apazsE",
+      "expected": 170,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 885.4836860679998,
+      "tokens": {
+        "input_tokens": 186213,
+        "output_tokens": 25568
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-11",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-11__GWpDyhi",
+      "expected": 170,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 48424 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 531.5314729510001,
+      "tokens": {
+        "input_tokens": 182183,
+        "output_tokens": 27404
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-11",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-11__j8NefER",
+      "expected": 170,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.5491260129993,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-12",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-12__7rqX7Dx",
+      "expected": 149,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 48093 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 833.3864803819997,
+      "tokens": {
+        "input_tokens": 246542,
+        "output_tokens": 36568
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-12",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-12__brkAMFT",
+      "expected": 149,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Connection error.",
+      "elapsed_seconds": 15.744751132000602,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-12",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-full/image-12__shUjLMn",
+      "expected": 149,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Jev request remains 48613 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.",
+      "elapsed_seconds": 756.8436680939999,
+      "tokens": {
+        "input_tokens": 615888,
+        "output_tokens": 31434
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring"
+      ]
+    }
+  ]
+}

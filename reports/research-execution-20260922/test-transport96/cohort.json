@@ -1,0 +1,146 @@
+[
+  {
+    "id": "image-01",
+    "source_filename": "IXMtest_D20_s3_w19D371AF3-0189-48A3-AF3B-D108DE6A017F.png",
+    "source_tiff_sha256": "9a5a09ec913e10abeecf8cdfa3f467c6f414505553375d0db887bb5fea80fc72",
+    "preview_sha256": "80dc3fbfb48a2312048284814c97cdd12576af268756d24d18dfa80f706fe833",
+    "percentiles": [
+      148.0,
+      1453.0
+    ],
+    "expected": 169,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-02",
+    "source_filename": "IXMtest_L06_s5_w1610AE208-D6E8-4DC4-AC19-D26284AA8556.png",
+    "source_tiff_sha256": "6b17fb5e036d1f622578bdd87fad26a64f14634399e7919fbddd868b152eaf49",
+    "preview_sha256": "d34d2967ce3b34b980b59abe8da2f8fc737805fc2a3a2a143dedb7067635e940",
+    "percentiles": [
+      134.0,
+      1335.1620000000112
+    ],
+    "expected": 198,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-03",
+    "source_filename": "IXMtest_D08_s7_w1F476A544-A07C-4E9B-A6CB-BAEF4CD6F64E.png",
+    "source_tiff_sha256": "6d403228631aa2ffdc3307dc35c6bd268903be699af19656790010b717d28794",
+    "preview_sha256": "8c0a29ddcc5471aa9a5a0f88838ea7c75e4e22309fc417d4b789dbf3653e6774",
+    "percentiles": [
+      133.0,
+      1257.0
+    ],
+    "expected": 49,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-04",
+    "source_filename": "IXMtest_K03_s5_w1DC4CE558-042C-482E-8CAE-FCCB57AA9A55.png",
+    "source_tiff_sha256": "43fa2c513feb0812c341c120b8860be14c6b28b7d68a5dd98c95c35ad627fd43",
+    "preview_sha256": "4adb3b5f46290ed41e9b3fd9676f4c07198e2438a46daa13dfc4438d43d949a9",
+    "percentiles": [
+      139.0,
+      1597.0
+    ],
+    "expected": 139,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-05",
+    "source_filename": "IXMtest_P19_s6_w10EBAD15B-2822-48B9-B9C8-4DF5D80AB940.png",
+    "source_tiff_sha256": "c71d72360df1ca6cd67c6fef964787c3e4918c877e2ee98928255bb20c0039e2",
+    "preview_sha256": "39fcad7a371419191b98c0929c75473dfda4fc5521ff41dc34d0b29c4dcb1370",
+    "percentiles": [
+      131.0,
+      962.1620000000112
+    ],
+    "expected": 89,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-06",
+    "source_filename": "IXMtest_N12_s9_w1C98EC3CC-2F8E-4761-A21A-EBF14469AD40.png",
+    "source_tiff_sha256": "014c672520887cff1b1ba62612daee4c9301d56bdbc64698d562b5e6c87113f4",
+    "preview_sha256": "bdd398e7f5c8181fc2c12431c5063e39062274c51a2a328e88c8f7a0565577ca",
+    "percentiles": [
+      131.0,
+      1183.0
+    ],
+    "expected": 155,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-07",
+    "source_filename": "IXMtest_I03_s4_w1C724E24D-7AD5-4166-A810-DC75A825495D.png",
+    "source_tiff_sha256": "90f02786a40ac470f05e5876165544ce2d710f324b7eb0f6cca616dd75dcc46e",
+    "preview_sha256": "eb629e5e31ccb0341676df44a3694767ec0f63cf080bb583bd620dcf0b0c7f81",
+    "percentiles": [
+      128.0,
+      965.0
+    ],
+    "expected": 130,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-08",
+    "source_filename": "IXMtest_D06_s8_w1BE84C8EF-4CD0-4B56-8267-4E662F57AC25.png",
+    "source_tiff_sha256": "02a0f641f54f4dec9d0cac45a16f531721a2916ed74cdba7f2678e968e88f3d8",
+    "preview_sha256": "9bcedbaca01f2d5c0891b54454896ca4d663cf5843aae88d0a3d1974ad268340",
+    "percentiles": [
+      133.0,
+      1180.1620000000112
+    ],
+    "expected": 167,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-09",
+    "source_filename": "IXMtest_F14_s7_w1E67F2A8A-EEC1-4F01-A1E2-0ECFC639637F.png",
+    "source_tiff_sha256": "7f03b873fe9039afec4f4ce2cbff9cbcd2bc7855d9bf8ea0149ef59153c023c0",
+    "preview_sha256": "6fd56ea28c1fc5a555f84f03f649061151c15fde02ca1353d0e50abee081aa79",
+    "percentiles": [
+      141.0,
+      1267.0
+    ],
+    "expected": 118,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-10",
+    "source_filename": "IXMtest_N08_s2_w159DEEDD5-2882-4F9E-9048-F5BD2B918651.png",
+    "source_tiff_sha256": "0d943128297bc37671c31a2624e2a8ec60ccdc235541c7f9cd0ccd8775538af8",
+    "preview_sha256": "477991c19d4b0fb1ad6f51ed11748a2ed35b26dd1a4ab08af35b2e8bfae65d3f",
+    "percentiles": [
+      131.0,
+      943.0
+    ],
+    "expected": 127,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-11",
+    "source_filename": "IXMtest_E07_s1_w1641C6847-142B-463F-8B08-5B3296615572.png",
+    "source_tiff_sha256": "2de13faf836648622bee872a0106047221dd6b2eceb529fcfc1a60a9e16f3451",
+    "preview_sha256": "011ac1e19549daad4e6a45d50f5bd16f646b1bb9986a078dd27c32d5462c1475",
+    "percentiles": [
+      146.0,
+      1340.0
+    ],
+    "expected": 170,
+    "decoder_agreement": true
+  },
+  {
+    "id": "image-12",
+    "source_filename": "IXMtest_K17_s5_w1BB3AD9D7-3A85-458C-AB1C-07A816C2C203.png",
+    "source_tiff_sha256": "42ed7955651a252795b5d0bc78a69ef6c2949383966a8d30fbfbf43f1de10fb8",
+    "preview_sha256": "0e857454cff9c851c2218e3b259ef3559070802e408eeb2e777299d975a7b22f",
+    "percentiles": [
+      133.0,
+      1259.0
+    ],
+    "expected": 149,
+    "decoder_agreement": true
+  }
+]

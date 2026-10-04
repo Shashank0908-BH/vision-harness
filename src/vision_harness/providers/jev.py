@@ -74,9 +74,8 @@ class Jev:
             raise ValueError("Jev response question IDs do not match the request")
         return data["answers"]
 
-    def assess(self, state: dict, candidates: Sequence[Scorable]) -> list[Assessment]:
-        if not candidates:
-            return []
+    def assessment_questions(self, candidates: Sequence[Scorable]) -> dict:
+        """Build exact wire questions so callers can batch without truncating plans."""
         questions = {}
         loop_instruction = (
             " Use round_history and feedback: assess whether this plan addresses previously failed review checks with additional measurable evidence. Penalize repeating failed assumptions or changing parameters without an effective measurement change. A prior low review score identifies unresolved support, not proof that its count was wrong. A plan need not resolve every gap alone, but must make concrete progress on an unresolved requirement."
@@ -91,7 +90,12 @@ class Jev:
                 + f" Evaluate exactly this candidate: {candidate.model_dump_json()}",
                 "criteria": self.plan_rubric["criteria"],
             }
-        answers = self._request("plan_assessment", state, questions)
+        return questions
+
+    def assess(self, state: dict, candidates: Sequence[Scorable]) -> list[Assessment]:
+        if not candidates:
+            return []
+        answers = self._request("plan_assessment", state, self.assessment_questions(candidates))
         results = []
         for candidate in candidates:
             raw = answers[candidate.plan_id]

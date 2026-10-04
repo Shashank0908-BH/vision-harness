@@ -1,0 +1,971 @@
+{
+  "source": "https://ftp.ebi.ac.uk/biostudies/fire/S-BIAD/634/S-BIAD634/Files/dataset/groundtruth_svgs/otherspecimen_3.svg",
+  "sha256": "adb45d171870e1de8bbd806271f97ddb2d20a236460155d35d3d409625852364",
+  "svg_shapes": 110,
+  "types": {
+    "polygon": 104,
+    "polyline": 1,
+    "path": 5
+  },
+  "distinct_tiff_ids": 55,
+  "shapes_per_dominant_tiff_id": {
+    "100": 2,
+    "78": 2,
+    "96": 2,
+    "86": 2,
+    "46": 2,
+    "28": 2,
+    "36": 2,
+    "82": 2,
+    "20": 2,
+    "106": 2,
+    "22": 3,
+    "90": 2,
+    "104": 4,
+    "52": 2,
+    "76": 2,
+    "102": 2,
+    "80": 2,
+    "58": 2,
+    "74": 2,
+    "18": 2,
+    "54": 2,
+    "40": 2,
+    "94": 2,
+    "24": 2,
+    "98": 2,
+    "2": 2,
+    "16": 2,
+    "30": 4,
+    "92": 4,
+    "56": 1,
+    "88": 2,
+    "12": 2,
+    "50": 1,
+    "6": 2,
+    "72": 2,
+    "34": 2,
+    "32": 1,
+    "26": 2,
+    "14": 2,
+    "44": 2,
+    "42": 2,
+    "4": 2,
+    "8": 2,
+    "66": 1,
+    "70": 2,
+    "48": 2,
+    "62": 2,
+    "110": 2,
+    "60": 2,
+    "108": 1,
+    "68": 2,
+    "84": 1,
+    "64": 2,
+    "10": 1,
+    "0": 1,
+    "38": 1
+  },
+  "minimum_fraction_inside_dominant_label": 0.0,
+  "largest_pairwise_shape_iou": 1.0,
+  "caveat": "Approximate rasterization checks correspondence only; it is not used as a segmentation reference. Six redundant elements and two contours absent from TIFF explain why raw SVG element count is not the released TIFF object count.",
+  "records": [
+    {
+      "shape": 1,
+      "tag": "polygon",
+      "rasterized_area": 1339,
+      "dominant_tiff_label": 100,
+      "fraction_inside_dominant_label": 0.9843166542195668
+    },
+    {
+      "shape": 2,
+      "tag": "polygon",
+      "rasterized_area": 3216,
+      "dominant_tiff_label": 78,
+      "fraction_inside_dominant_label": 0.986318407960199
+    },
+    {
+      "shape": 3,
+      "tag": "polygon",
+      "rasterized_area": 2210,
+      "dominant_tiff_label": 96,
+      "fraction_inside_dominant_label": 0.9737556561085973
+    },
+    {
+      "shape": 4,
+      "tag": "polyline",
+      "rasterized_area": 2311,
+      "dominant_tiff_label": 86,
+      "fraction_inside_dominant_label": 0.9701427953266984
+    },
+    {
+      "shape": 5,
+      "tag": "polygon",
+      "rasterized_area": 3191,
+      "dominant_tiff_label": 46,
+      "fraction_inside_dominant_label": 0.9880915073644625
+    },
+    {
+      "shape": 6,
+      "tag": "polygon",
+      "rasterized_area": 1694,
+      "dominant_tiff_label": 28,
+      "fraction_inside_dominant_label": 0.987603305785124
+    },
+    {
+      "shape": 7,
+      "tag": "polygon",
+      "rasterized_area": 4110,
+      "dominant_tiff_label": 36,
+      "fraction_inside_dominant_label": 0.9854014598540146
+    },
+    {
+      "shape": 8,
+      "tag": "polygon",
+      "rasterized_area": 6120,
+      "dominant_tiff_label": 82,
+      "fraction_inside_dominant_label": 0.9928104575163399
+    },
+    {
+      "shape": 9,
+      "tag": "polygon",
+      "rasterized_area": 3212,
+      "dominant_tiff_label": 20,
+      "fraction_inside_dominant_label": 0.9853673723536738
+    },
+    {
+      "shape": 10,
+      "tag": "polygon",
+      "rasterized_area": 1015,
+      "dominant_tiff_label": 106,
+      "fraction_inside_dominant_label": 0.9822660098522168
+    },
+    {
+      "shape": 11,
+      "tag": "polygon",
+      "rasterized_area": 5356,
+      "dominant_tiff_label": 22,
+      "fraction_inside_dominant_label": 0.9919716206123973
+    },
+    {
+      "shape": 12,
+      "tag": "polygon",
+      "rasterized_area": 2599,
+      "dominant_tiff_label": 90,
+      "fraction_inside_dominant_label": 0.9849942285494421
+    },
+    {
+      "shape": 13,
+      "tag": "polygon",
+      "rasterized_area": 2066,
+      "dominant_tiff_label": 104,
+      "fraction_inside_dominant_label": 0.989351403678606
+    },
+    {
+      "shape": 14,
+      "tag": "polygon",
+      "rasterized_area": 3582,
+      "dominant_tiff_label": 52,
+      "fraction_inside_dominant_label": 0.9930206588498046
+    },
+    {
+      "shape": 15,
+      "tag": "polygon",
+      "rasterized_area": 1029,
+      "dominant_tiff_label": 76,
+      "fraction_inside_dominant_label": 0.9776482021379981
+    },
+    {
+      "shape": 16,
+      "tag": "polygon",
+      "rasterized_area": 5756,
+      "dominant_tiff_label": 102,
+      "fraction_inside_dominant_label": 0.9753300903405142
+    },
+    {
+      "shape": 17,
+      "tag": "polygon",
+      "rasterized_area": 1031,
+      "dominant_tiff_label": 86,
+      "fraction_inside_dominant_label": 0.98545101842871
+    },
+    {
+      "shape": 18,
+      "tag": "polygon",
+      "rasterized_area": 1658,
+      "dominant_tiff_label": 80,
+      "fraction_inside_dominant_label": 0.9794933655006032
+    },
+    {
+      "shape": 19,
+      "tag": "polygon",
+      "rasterized_area": 3627,
+      "dominant_tiff_label": 58,
+      "fraction_inside_dominant_label": 0.9873173421560518
+    },
+    {
+      "shape": 20,
+      "tag": "polygon",
+      "rasterized_area": 2681,
+      "dominant_tiff_label": 74,
+      "fraction_inside_dominant_label": 0.9806042521447221
+    },
+    {
+      "shape": 21,
+      "tag": "polygon",
+      "rasterized_area": 2497,
+      "dominant_tiff_label": 18,
+      "fraction_inside_dominant_label": 0.961153384060873
+    },
+    {
+      "shape": 22,
+      "tag": "polygon",
+      "rasterized_area": 2045,
+      "dominant_tiff_label": 54,
+      "fraction_inside_dominant_label": 0.9677261613691932
+    },
+    {
+      "shape": 23,
+      "tag": "polygon",
+      "rasterized_area": 1754,
+      "dominant_tiff_label": 40,
+      "fraction_inside_dominant_label": 0.9743443557582668
+    },
+    {
+      "shape": 24,
+      "tag": "polygon",
+      "rasterized_area": 3972,
+      "dominant_tiff_label": 94,
+      "fraction_inside_dominant_label": 0.9886706948640483
+    },
+    {
+      "shape": 25,
+      "tag": "polygon",
+      "rasterized_area": 499,
+      "dominant_tiff_label": 24,
+      "fraction_inside_dominant_label": 0.9819639278557114
+    },
+    {
+      "shape": 26,
+      "tag": "polygon",
+      "rasterized_area": 1454,
+      "dominant_tiff_label": 98,
+      "fraction_inside_dominant_label": 0.984869325997249
+    },
+    {
+      "shape": 27,
+      "tag": "polygon",
+      "rasterized_area": 1028,
+      "dominant_tiff_label": 28,
+      "fraction_inside_dominant_label": 0.9854085603112841
+    },
+    {
+      "shape": 28,
+      "tag": "polygon",
+      "rasterized_area": 2243,
+      "dominant_tiff_label": 2,
+      "fraction_inside_dominant_label": 0.9875167186803389
+    },
+    {
+      "shape": 29,
+      "tag": "polygon",
+      "rasterized_area": 186,
+      "dominant_tiff_label": 94,
+      "fraction_inside_dominant_label": 0.9838709677419355
+    },
+    {
+      "shape": 30,
+      "tag": "polygon",
+      "rasterized_area": 2053,
+      "dominant_tiff_label": 76,
+      "fraction_inside_dominant_label": 0.9829517778860205
+    },
+    {
+      "shape": 31,
+      "tag": "polygon",
+      "rasterized_area": 286,
+      "dominant_tiff_label": 16,
+      "fraction_inside_dominant_label": 0.9825174825174825
+    },
+    {
+      "shape": 32,
+      "tag": "path",
+      "rasterized_area": 1879,
+      "dominant_tiff_label": 30,
+      "fraction_inside_dominant_label": 0.9850984566258648
+    },
+    {
+      "shape": 33,
+      "tag": "path",
+      "rasterized_area": 1252,
+      "dominant_tiff_label": 92,
+      "fraction_inside_dominant_label": 0.981629392971246
+    },
+    {
+      "shape": 34,
+      "tag": "polygon",
+      "rasterized_area": 3751,
+      "dominant_tiff_label": 56,
+      "fraction_inside_dominant_label": 0.9882697947214076
+    },
+    {
+      "shape": 35,
+      "tag": "polygon",
+      "rasterized_area": 1450,
+      "dominant_tiff_label": 88,
+      "fraction_inside_dominant_label": 0.9772413793103448
+    },
+    {
+      "shape": 36,
+      "tag": "polygon",
+      "rasterized_area": 3312,
+      "dominant_tiff_label": 12,
+      "fraction_inside_dominant_label": 0.982487922705314
+    },
+    {
+      "shape": 37,
+      "tag": "polygon",
+      "rasterized_area": 3469,
+      "dominant_tiff_label": 50,
+      "fraction_inside_dominant_label": 0.9927933121937158
+    },
+    {
+      "shape": 38,
+      "tag": "polygon",
+      "rasterized_area": 3210,
+      "dominant_tiff_label": 82,
+      "fraction_inside_dominant_label": 0.9819314641744549
+    },
+    {
+      "shape": 39,
+      "tag": "polygon",
+      "rasterized_area": 4109,
+      "dominant_tiff_label": 80,
+      "fraction_inside_dominant_label": 0.9922122170844487
+    },
+    {
+      "shape": 40,
+      "tag": "polygon",
+      "rasterized_area": 3500,
+      "dominant_tiff_label": 6,
+      "fraction_inside_dominant_label": 0.9791428571428571
+    },
+    {
+      "shape": 41,
+      "tag": "polygon",
+      "rasterized_area": 2672,
+      "dominant_tiff_label": 18,
+      "fraction_inside_dominant_label": 0.9850299401197605
+    },
+    {
+      "shape": 42,
+      "tag": "polygon",
+      "rasterized_area": 3858,
+      "dominant_tiff_label": 72,
+      "fraction_inside_dominant_label": 0.9834110938310006
+    },
+    {
+      "shape": 43,
+      "tag": "polygon",
+      "rasterized_area": 2157,
+      "dominant_tiff_label": 88,
+      "fraction_inside_dominant_label": 0.9823829392675012
+    },
+    {
+      "shape": 44,
+      "tag": "polygon",
+      "rasterized_area": 1006,
+      "dominant_tiff_label": 34,
+      "fraction_inside_dominant_label": 0.9840954274353877
+    },
+    {
+      "shape": 45,
+      "tag": "polygon",
+      "rasterized_area": 2323,
+      "dominant_tiff_label": 32,
+      "fraction_inside_dominant_label": 0.9926818768833405
+    },
+    {
+      "shape": 46,
+      "tag": "polygon",
+      "rasterized_area": 1456,
+      "dominant_tiff_label": 98,
+      "fraction_inside_dominant_label": 0.9848901098901099
+    },
+    {
+      "shape": 47,
+      "tag": "polygon",
+      "rasterized_area": 3485,
+      "dominant_tiff_label": 26,
+      "fraction_inside_dominant_label": 0.9890961262553802
+    },
+    {
+      "shape": 48,
+      "tag": "polygon",
+      "rasterized_area": 687,
+      "dominant_tiff_label": 72,
+      "fraction_inside_dominant_label": 0.9839883551673945
+    },
+    {
+      "shape": 49,
+      "tag": "polygon",
+      "rasterized_area": 3750,
+      "dominant_tiff_label": 90,
+      "fraction_inside_dominant_label": 0.9861333333333333
+    },
+    {
+      "shape": 50,
+      "tag": "polygon",
+      "rasterized_area": 2545,
+      "dominant_tiff_label": 102,
+      "fraction_inside_dominant_label": 0.9886051080550098
+    },
+    {
+      "shape": 51,
+      "tag": "polygon",
+      "rasterized_area": 1671,
+      "dominant_tiff_label": 14,
+      "fraction_inside_dominant_label": 0.9886295631358468
+    },
+    {
+      "shape": 52,
+      "tag": "polygon",
+      "rasterized_area": 6196,
+      "dominant_tiff_label": 44,
+      "fraction_inside_dominant_label": 0.9854744996772111
+    },
+    {
+      "shape": 53,
+      "tag": "polygon",
+      "rasterized_area": 1136,
+      "dominant_tiff_label": 42,
+      "fraction_inside_dominant_label": 0.9806338028169014
+    },
+    {
+      "shape": 54,
+      "tag": "polygon",
+      "rasterized_area": 3203,
+      "dominant_tiff_label": 4,
+      "fraction_inside_dominant_label": 0.9825163908835467
+    },
+    {
+      "shape": 55,
+      "tag": "polygon",
+      "rasterized_area": 2634,
+      "dominant_tiff_label": 8,
+      "fraction_inside_dominant_label": 0.9757023538344722
+    },
+    {
+      "shape": 56,
+      "tag": "polygon",
+      "rasterized_area": 744,
+      "dominant_tiff_label": 66,
+      "fraction_inside_dominant_label": 0.9744623655913979
+    },
+    {
+      "shape": 57,
+      "tag": "polygon",
+      "rasterized_area": 3073,
+      "dominant_tiff_label": 22,
+      "fraction_inside_dominant_label": 0.9905629677839245
+    },
+    {
+      "shape": 58,
+      "tag": "polygon",
+      "rasterized_area": 346,
+      "dominant_tiff_label": 24,
+      "fraction_inside_dominant_label": 0.9710982658959537
+    },
+    {
+      "shape": 59,
+      "tag": "polygon",
+      "rasterized_area": 1826,
+      "dominant_tiff_label": 96,
+      "fraction_inside_dominant_label": 0.9863088718510405
+    },
+    {
+      "shape": 60,
+      "tag": "polygon",
+      "rasterized_area": 2085,
+      "dominant_tiff_label": 70,
+      "fraction_inside_dominant_label": 0.981294964028777
+    },
+    {
+      "shape": 61,
+      "tag": "polygon",
+      "rasterized_area": 3591,
+      "dominant_tiff_label": 26,
+      "fraction_inside_dominant_label": 0.9888610414926204
+    },
+    {
+      "shape": 62,
+      "tag": "polygon",
+      "rasterized_area": 896,
+      "dominant_tiff_label": 2,
+      "fraction_inside_dominant_label": 0.9821428571428571
+    },
+    {
+      "shape": 63,
+      "tag": "polygon",
+      "rasterized_area": 3717,
+      "dominant_tiff_label": 70,
+      "fraction_inside_dominant_label": 0.9911218724778047
+    },
+    {
+      "shape": 64,
+      "tag": "polygon",
+      "rasterized_area": 2104,
+      "dominant_tiff_label": 48,
+      "fraction_inside_dominant_label": 0.9881178707224335
+    },
+    {
+      "shape": 65,
+      "tag": "polygon",
+      "rasterized_area": 1716,
+      "dominant_tiff_label": 8,
+      "fraction_inside_dominant_label": 0.9865967365967366
+    },
+    {
+      "shape": 66,
+      "tag": "polygon",
+      "rasterized_area": 7216,
+      "dominant_tiff_label": 36,
+      "fraction_inside_dominant_label": 0.996119733924612
+    },
+    {
+      "shape": 67,
+      "tag": "polygon",
+      "rasterized_area": 3891,
+      "dominant_tiff_label": 46,
+      "fraction_inside_dominant_label": 0.995887946543305
+    },
+    {
+      "shape": 68,
+      "tag": "polygon",
+      "rasterized_area": 4254,
+      "dominant_tiff_label": 48,
+      "fraction_inside_dominant_label": 0.9898918664786084
+    },
+    {
+      "shape": 69,
+      "tag": "polygon",
+      "rasterized_area": 986,
+      "dominant_tiff_label": 44,
+      "fraction_inside_dominant_label": 0.949290060851927
+    },
+    {
+      "shape": 70,
+      "tag": "polygon",
+      "rasterized_area": 2919,
+      "dominant_tiff_label": 42,
+      "fraction_inside_dominant_label": 0.9938335046248715
+    },
+    {
+      "shape": 71,
+      "tag": "polygon",
+      "rasterized_area": 1711,
+      "dominant_tiff_label": 62,
+      "fraction_inside_dominant_label": 0.978375219170076
+    },
+    {
+      "shape": 72,
+      "tag": "polygon",
+      "rasterized_area": 2154,
+      "dominant_tiff_label": 14,
+      "fraction_inside_dominant_label": 0.9828226555246053
+    },
+    {
+      "shape": 73,
+      "tag": "polygon",
+      "rasterized_area": 207,
+      "dominant_tiff_label": 110,
+      "fraction_inside_dominant_label": 0.8357487922705314
+    },
+    {
+      "shape": 74,
+      "tag": "polygon",
+      "rasterized_area": 3957,
+      "dominant_tiff_label": 60,
+      "fraction_inside_dominant_label": 0.9921657821582006
+    },
+    {
+      "shape": 75,
+      "tag": "polygon",
+      "rasterized_area": 484,
+      "dominant_tiff_label": 62,
+      "fraction_inside_dominant_label": 0.9752066115702479
+    },
+    {
+      "shape": 76,
+      "tag": "polygon",
+      "rasterized_area": 290,
+      "dominant_tiff_label": 30,
+      "fraction_inside_dominant_label": 0.9517241379310345
+    },
+    {
+      "shape": 77,
+      "tag": "polygon",
+      "rasterized_area": 3599,
+      "dominant_tiff_label": 108,
+      "fraction_inside_dominant_label": 0.981661572659072
+    },
+    {
+      "shape": 78,
+      "tag": "polygon",
+      "rasterized_area": 1684,
+      "dominant_tiff_label": 34,
+      "fraction_inside_dominant_label": 0.9851543942992874
+    },
+    {
+      "shape": 79,
+      "tag": "polygon",
+      "rasterized_area": 1544,
+      "dominant_tiff_label": 16,
+      "fraction_inside_dominant_label": 0.9792746113989638
+    },
+    {
+      "shape": 80,
+      "tag": "path",
+      "rasterized_area": 3840,
+      "dominant_tiff_label": 104,
+      "fraction_inside_dominant_label": 0.9932291666666667
+    },
+    {
+      "shape": 81,
+      "tag": "polygon",
+      "rasterized_area": 2852,
+      "dominant_tiff_label": 40,
+      "fraction_inside_dominant_label": 0.9898316970546984
+    },
+    {
+      "shape": 82,
+      "tag": "polygon",
+      "rasterized_area": 5802,
+      "dominant_tiff_label": 6,
+      "fraction_inside_dominant_label": 0.9905205101689073
+    },
+    {
+      "shape": 83,
+      "tag": "polygon",
+      "rasterized_area": 3718,
+      "dominant_tiff_label": 106,
+      "fraction_inside_dominant_label": 0.9838622915545993
+    },
+    {
+      "shape": 84,
+      "tag": "polygon",
+      "rasterized_area": 4222,
+      "dominant_tiff_label": 78,
+      "fraction_inside_dominant_label": 0.9867361440075794
+    },
+    {
+      "shape": 85,
+      "tag": "polygon",
+      "rasterized_area": 2357,
+      "dominant_tiff_label": 68,
+      "fraction_inside_dominant_label": 0.9923631735256683
+    },
+    {
+      "shape": 86,
+      "tag": "polygon",
+      "rasterized_area": 2743,
+      "dominant_tiff_label": 58,
+      "fraction_inside_dominant_label": 0.989427633977397
+    },
+    {
+      "shape": 87,
+      "tag": "polygon",
+      "rasterized_area": 1690,
+      "dominant_tiff_label": 12,
+      "fraction_inside_dominant_label": 0.9857988165680474
+    },
+    {
+      "shape": 88,
+      "tag": "polygon",
+      "rasterized_area": 2077,
+      "dominant_tiff_label": 84,
+      "fraction_inside_dominant_label": 0.9918151179585941
+    },
+    {
+      "shape": 89,
+      "tag": "polygon",
+      "rasterized_area": 1370,
+      "dominant_tiff_label": 54,
+      "fraction_inside_dominant_label": 0.9883211678832117
+    },
+    {
+      "shape": 90,
+      "tag": "polygon",
+      "rasterized_area": 1934,
+      "dominant_tiff_label": 100,
+      "fraction_inside_dominant_label": 0.9829369183040331
+    },
+    {
+      "shape": 91,
+      "tag": "polygon",
+      "rasterized_area": 1974,
+      "dominant_tiff_label": 20,
+      "fraction_inside_dominant_label": 0.977710233029382
+    },
+    {
+      "shape": 92,
+      "tag": "polygon",
+      "rasterized_area": 696,
+      "dominant_tiff_label": 74,
+      "fraction_inside_dominant_label": 0.9181034482758621
+    },
+    {
+      "shape": 93,
+      "tag": "polygon",
+      "rasterized_area": 627,
+      "dominant_tiff_label": 110,
+      "fraction_inside_dominant_label": 0.9330143540669856
+    },
+    {
+      "shape": 94,
+      "tag": "polygon",
+      "rasterized_area": 642,
+      "dominant_tiff_label": 64,
+      "fraction_inside_dominant_label": 0.985981308411215
+    },
+    {
+      "shape": 95,
+      "tag": "polygon",
+      "rasterized_area": 1826,
+      "dominant_tiff_label": 52,
+      "fraction_inside_dominant_label": 0.9852135815991238
+    },
+    {
+      "shape": 96,
+      "tag": "polygon",
+      "rasterized_area": 1074,
+      "dominant_tiff_label": 92,
+      "fraction_inside_dominant_label": 0.9813780260707635
+    },
+    {
+      "shape": 97,
+      "tag": "polygon",
+      "rasterized_area": 995,
+      "dominant_tiff_label": 10,
+      "fraction_inside_dominant_label": 0.9658291457286432
+    },
+    {
+      "shape": 98,
+      "tag": "polygon",
+      "rasterized_area": 977,
+      "dominant_tiff_label": 68,
+      "fraction_inside_dominant_label": 0.9785056294779939
+    },
+    {
+      "shape": 99,
+      "tag": "polygon",
+      "rasterized_area": 377,
+      "dominant_tiff_label": 60,
+      "fraction_inside_dominant_label": 0.9840848806366048
+    },
+    {
+      "shape": 100,
+      "tag": "polygon",
+      "rasterized_area": 1877,
+      "dominant_tiff_label": 30,
+      "fraction_inside_dominant_label": 0.9861481086840703
+    },
+    {
+      "shape": 101,
+      "tag": "polygon",
+      "rasterized_area": 1248,
+      "dominant_tiff_label": 92,
+      "fraction_inside_dominant_label": 0.9847756410256411
+    },
+    {
+      "shape": 102,
+      "tag": "polygon",
+      "rasterized_area": 3839,
+      "dominant_tiff_label": 104,
+      "fraction_inside_dominant_label": 0.9934878874706955
+    },
+    {
+      "shape": 103,
+      "tag": "polygon",
+      "rasterized_area": 1877,
+      "dominant_tiff_label": 30,
+      "fraction_inside_dominant_label": 0.9861481086840703
+    },
+    {
+      "shape": 104,
+      "tag": "polygon",
+      "rasterized_area": 1248,
+      "dominant_tiff_label": 92,
+      "fraction_inside_dominant_label": 0.9847756410256411
+    },
+    {
+      "shape": 105,
+      "tag": "polygon",
+      "rasterized_area": 3839,
+      "dominant_tiff_label": 104,
+      "fraction_inside_dominant_label": 0.9934878874706955
+    },
+    {
+      "shape": 106,
+      "tag": "path",
+      "rasterized_area": 1818,
+      "dominant_tiff_label": 0,
+      "fraction_inside_dominant_label": 0.0
+    },
+    {
+      "shape": 107,
+      "tag": "polygon",
+      "rasterized_area": 2011,
+      "dominant_tiff_label": 64,
+      "fraction_inside_dominant_label": 0.9756340129288911
+    },
+    {
+      "shape": 108,
+      "tag": "polygon",
+      "rasterized_area": 431,
+      "dominant_tiff_label": 38,
+      "fraction_inside_dominant_label": 0.9791183294663574
+    },
+    {
+      "shape": 109,
+      "tag": "path",
+      "rasterized_area": 383,
+      "dominant_tiff_label": 22,
+      "fraction_inside_dominant_label": 0.007832898172323759
+    },
+    {
+      "shape": 110,
+      "tag": "polygon",
+      "rasterized_area": 1491,
+      "dominant_tiff_label": 4,
+      "fraction_inside_dominant_label": 0.96579476861167
+    }
+  ],
+  "overlapping_shape_pairs": [
+    {
+      "first": 2,
+      "second": 3,
+      "iou": 0.0012917512456172725
+    },
+    {
+      "first": 7,
+      "second": 110,
+      "iou": 0.0026852846401718583
+    },
+    {
+      "first": 8,
+      "second": 98,
+      "iou": 0.0007050197405527354
+    },
+    {
+      "first": 14,
+      "second": 15,
+      "iou": 0.0010855405992184109
+    },
+    {
+      "first": 16,
+      "second": 107,
+      "iou": 0.013836313797154418
+    },
+    {
+      "first": 31,
+      "second": 32,
+      "iou": 0.0009246417013407304
+    },
+    {
+      "first": 31,
+      "second": 100,
+      "iou": 0.0009254974548819991
+    },
+    {
+      "first": 31,
+      "second": 103,
+      "iou": 0.0009254974548819991
+    },
+    {
+      "first": 32,
+      "second": 100,
+      "iou": 0.997872340425532
+    },
+    {
+      "first": 32,
+      "second": 103,
+      "iou": 0.997872340425532
+    },
+    {
+      "first": 33,
+      "second": 101,
+      "iou": 0.9968051118210862
+    },
+    {
+      "first": 33,
+      "second": 104,
+      "iou": 0.9968051118210862
+    },
+    {
+      "first": 42,
+      "second": 43,
+      "iou": 0.0003326126725428239
+    },
+    {
+      "first": 54,
+      "second": 55,
+      "iou": 0.0012006861063464838
+    },
+    {
+      "first": 57,
+      "second": 109,
+      "iou": 0.0011587485515643105
+    },
+    {
+      "first": 61,
+      "second": 67,
+      "iou": 0.0001336719689881032
+    },
+    {
+      "first": 63,
+      "second": 64,
+      "iou": 0.0001718213058419244
+    },
+    {
+      "first": 80,
+      "second": 102,
+      "iou": 0.9997395833333333
+    },
+    {
+      "first": 80,
+      "second": 105,
+      "iou": 0.9997395833333333
+    },
+    {
+      "first": 85,
+      "second": 86,
+      "iou": 0.00019611688566385565
+    },
+    {
+      "first": 92,
+      "second": 96,
+      "iou": 0.0011312217194570137
+    },
+    {
+      "first": 93,
+      "second": 94,
+      "iou": 0.0007886435331230284
+    },
+    {
+      "first": 100,
+      "second": 103,
+      "iou": 1.0
+    },
+    {
+      "first": 101,
+      "second": 104,
+      "iou": 1.0
+    },
+    {
+      "first": 102,
+      "second": 105,
+      "iou": 1.0
+    }
+  ]
+}

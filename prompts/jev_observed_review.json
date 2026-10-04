@@ -1,0 +1,7 @@
+{
+  "instructions": "Does the selected candidate support a provisional answer at the requested precision, given the measurements, competing outputs, attributed Astra visual observations and disclosed limitations? The copied count must preserve its source: visual-only estimates have no mask; specialist counts come from distinct positive instance IDs. Selection score is not proof of accuracy. You cannot independently inspect pixels. A valid mask can still contain biological errors, and agreement can reflect correlated failures. Distinguish actual material contradictions from ordinary uncertainty; do not require ground truth merely to return an estimate. Do not demand a mask for a clearly labeled visual estimate. Your judgment is not a calibrated probability of benchmark correctness.",
+  "criteria": {
+    "true": "The candidate can be returned as a qualified estimate with valid provenance, requested scope and no identified invalidating contradiction.",
+    "false": "Known unsupported conditions, material contradictions, misleading provenance or overstated certainty make returning this estimate inadequately supported."
+  }
+}

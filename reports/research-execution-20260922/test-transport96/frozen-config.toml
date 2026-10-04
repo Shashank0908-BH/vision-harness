@@ -1,0 +1,18 @@
+[models]
+astra = "gpt-6-astra"
+jev = "jev-1.13.0"
+reasoning_effort = "medium"
+max_output_tokens = 10000
+format_retries = 1
+timeout_seconds = 300
+
+[limits]
+jev_max_request_bytes = 96000
+
+[paths]
+astra_prompt = "prompts/astra-research-execution.md"
+plan_rubric = "prompts/jev_plan_conditions.json"
+review_rubric = "prompts/jev_review_estimate.json"
+
+[loop]
+enabled = false

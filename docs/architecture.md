@@ -1,5 +1,12 @@
 # Architecture and policy
 
+This page documents the historical typed-tool POC. The clarified target is the
+[research-to-execution architecture](research-execution-harness.md), which connects
+discovery, documentation, candidate and plan scoring, Codex execution, and review.
+The [v3 implementation guide](research-execution-v3.md) maps the connected runtime,
+structured stage packets and isolated benchmark adapter. Its live validation is
+separate from the historical v1/v2 implementations described below.
+
 ```mermaid
 flowchart TD
   CLI[CLI or Harbor adapter] --> Runtime[Bounded Python runtime]

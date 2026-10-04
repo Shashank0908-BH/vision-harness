@@ -1,0 +1,9 @@
+{
+  "instructions": "Score this completed candidate for answering the question using the actual available evidence. All candidates have already produced valid numeric outputs; execution integrity is necessary but does not prove biological correctness. Compare observable measurements, disagreement and clearly attributed Astra visual observations. Those observations are fallible; you cannot independently see pixels or open artifact paths. A visual-only estimate is a legitimate candidate, with no instance map. A specialist mask can have misses, splits, debris or annotation-rule mismatch. Do not prefer masks automatically, count magnitude, named profiles, rhetorical confidence or agreement among correlated weights. Do not interpret descriptive geometry as a calibrated quality threshold. Score each supplied candidate; unknown correctness must remain uncertain.",
+  "criteria": [
+    "Available evidence identifies a material contradiction with the requested target, scope or annotation rules.",
+    "There are concrete unresolved concerns that substantially weaken this candidate, even though its numeric output is valid.",
+    "The candidate is a plausible estimate within scope, with uncertainty or ambiguous competing evidence that remains unresolved.",
+    "The available observations and measurements provide specific comparative support for this estimate, with no identified material contradiction; correctness remains unverified."
+  ]
+}

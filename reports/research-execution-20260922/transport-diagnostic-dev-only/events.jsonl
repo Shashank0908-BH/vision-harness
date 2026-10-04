@@ -1,0 +1,2 @@
+{"sequence": 1, "time": "2026-09-22T19:39:09.612376+00:00", "kind": "call_started", "data": {"call_id": "call-0001", "provider": "jev", "operation": "plan_assessment"}}
+{"sequence": 2, "time": "2026-09-22T19:39:11.253736+00:00", "kind": "call_finished", "data": {"call_id": "call-0001", "elapsed_seconds": 1.64007883425802, "usage": {"input_tokens": 16336, "output_tokens": 41}}}
