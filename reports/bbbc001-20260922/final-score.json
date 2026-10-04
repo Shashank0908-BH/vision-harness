@@ -1,0 +1,82 @@
+{
+  "configuration": "Astra + OpenCV + Jev plan selection; Jev answer review disabled",
+  "runtime_mode": "select",
+  "dataset": "Complete published BBBC001v1 (six images)",
+  "source_results": "results.json",
+  "new_inference_performed": false,
+  "metric": "Published mean absolute percentage counting error; lower is better. This is not classification accuracy.",
+  "harness_error_percent": 11.36277091195328,
+  "vanilla_error_percent": 14.082912471108815,
+  "opencv_without_jev_error_percent": 12.779766851143487,
+  "absolute_improvement_percentage_points": 2.7201415591555342,
+  "relative_error_reduction_percent": 19.31519183078019,
+  "images_answered": 6,
+  "images_total": 6,
+  "closer_than_vanilla": 4,
+  "worse_than_vanilla": 2,
+  "mean_seconds": 85.27484410183332,
+  "vanilla_mean_seconds": 67.040211635,
+  "paired_results": [
+    {
+      "task_id": "72e37a64aca1",
+      "title": "BBBC001 field 1",
+      "reference_mean": 356.0,
+      "vanilla_prediction": 410.0,
+      "harness_prediction": 385.0,
+      "vanilla_error_percent": 15.168539325842696,
+      "harness_error_percent": 8.146067415730338
+    },
+    {
+      "task_id": "f78a1dcba6ae",
+      "title": "BBBC001 field 2",
+      "reference_mean": 339.0,
+      "vanilla_prediction": 390.0,
+      "harness_prediction": 375.0,
+      "vanilla_error_percent": 15.044247787610619,
+      "harness_error_percent": 10.619469026548673
+    },
+    {
+      "task_id": "51680b6440c6",
+      "title": "BBBC001 field 3",
+      "reference_mean": 421.5,
+      "vanilla_prediction": 480.0,
+      "harness_prediction": 505.0,
+      "vanilla_error_percent": 13.87900355871886,
+      "harness_error_percent": 19.81020166073547
+    },
+    {
+      "task_id": "0bb54dcc4ca2",
+      "title": "BBBC001 field 4",
+      "reference_mean": 330.5,
+      "vanilla_prediction": 370.0,
+      "harness_prediction": 340.0,
+      "vanilla_error_percent": 11.951588502269288,
+      "harness_error_percent": 2.8744326777609683
+    },
+    {
+      "task_id": "126aeb4762e7",
+      "title": "BBBC001 field 5",
+      "reference_mean": 465.5,
+      "vanilla_prediction": 540.0,
+      "harness_prediction": 560.0,
+      "vanilla_error_percent": 16.004296455424274,
+      "harness_error_percent": 20.30075187969925
+    },
+    {
+      "task_id": "2b3b6cf9e3af",
+      "title": "BBBC001 field 6",
+      "reference_mean": 249.0,
+      "vanilla_prediction": 280.0,
+      "harness_prediction": 265.0,
+      "vanilla_error_percent": 12.449799196787149,
+      "harness_error_percent": 6.42570281124498
+    }
+  ],
+  "limitations": [
+    "This is the completed original select-mode run, not a new run of the subsequently repaired runtime.",
+    "One attempt on six images from one experiment; independent plans and extra compute do not isolate a causal Jev benefit.",
+    "The numerical answers were visual estimates after unusable segmentations; the lower error does not demonstrate an OpenCV perception gain."
+  ],
+  "report_role": "Selection-only ablation, not the user-requested final full-harness comparison.",
+  "full_harness_comparison": "../bbbc001-full-repaired-20260922/"
+}

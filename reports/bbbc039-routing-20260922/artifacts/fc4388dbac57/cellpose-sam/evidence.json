@@ -1,0 +1,44 @@
+{
+  "evidence_id": "cellpose-sam",
+  "procedure_id": "cellpose-sam",
+  "count": 110,
+  "count_rule": "number of unique positive instance IDs, including border instances",
+  "coverage": "entire original image",
+  "coordinates": {
+    "units": "pixels",
+    "origin": "top-left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "width": 696,
+    "height": 520,
+    "original_offset": [
+      0,
+      0
+    ]
+  },
+  "foreground_fraction": 0.2052304376657825,
+  "border_instances": 20,
+  "largest_instance_fraction": 0.004067197170645446,
+  "median_area_pixels": 699.0,
+  "overlay_id": "cellpose-sam-overlay",
+  "artifacts_directory": "runs/bbbc039-routing-20260922/fc4388dbac57/routing/specialists/cellpose-sam",
+  "elapsed_seconds": 6.75797937437892,
+  "worker": {
+    "packages": {
+      "cellpose": "4.2.1.1",
+      "torch": "2.14.0"
+    },
+    "device": "mps",
+    "initialization_seconds": 2.625336207449436,
+    "inference_seconds": 3.0468621673062444,
+    "image_sha256": "a8a4ed33879cd61ca9981e7bce83cd2d9fd4592224ddfda1a937b8237f99f5e7",
+    "labels_sha256": "2badec3793eec9002662590e22df6d596232ff5337b38d2ee928ecd7f468144c",
+    "native_scores_sha256": "bed3776902bb9a5527117bcfa050015069d5cba5c9454ef23f50bc45f11add9e"
+  },
+  "calibrated_count_confidence": null,
+  "limitations": [
+    "Generalist segmentation can merge touching nuclei or segment other structures",
+    "Model output does not by itself prove biological identity",
+    "This local adapter is not validated for DICOM, volumes, or other modalities"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "answered",
+  "value": 128.0,
+  "explanation": "The selected StarDist procedure estimates 128 nuclei across the entire image, including 20 border instances. This is a model-derived estimate, not verified biological truth.",
+  "evidence_ids": [
+    "stardist-default"
+  ],
+  "limitations": [
+    "Touching or overlapping nuclei may be merged or split incorrectly.",
+    "No ground-truth verification or calibrated count confidence is available.",
+    "Jev review did not meet the support threshold; this remains a provisional measurement."
+  ],
+  "selected_id": "stardist-default",
+  "review_status": "caution",
+  "review_support": 0.66,
+  "review_is_calibrated_accuracy": false,
+  "decision_sha256": "6dba78c46284a0c4a42036b10582efb47c63c2fc394b1814f7381860640b3d01"
+}

@@ -1,0 +1,7 @@
+# Same failure-selected image after Jev payload repair and bounded Astra format recovery.
+tasks = "evals/tasks/generated/bbbc001-recovery-v2-20260922"
+jobs = "jobs/bbbc001-recovery-v2-20260922"
+modes = ["review"]
+repetitions = 1
+concurrency = 1
+model = "gpt-6-astra"

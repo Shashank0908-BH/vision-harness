@@ -1,0 +1,53 @@
+{
+  "run_id": "routing",
+  "mode": "specialist-routing-v1",
+  "offline": false,
+  "config": {
+    "models": {
+      "astra": "gpt-6-astra",
+      "jev": "jev-1.13.0",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 4096,
+      "format_retries": 1,
+      "timeout_seconds": 300.0
+    },
+    "limits": {
+      "max_rounds": 2,
+      "max_steps_per_plan": 3,
+      "max_candidates": 3,
+      "max_pixels": 16000000,
+      "max_input_bytes": 20000000,
+      "jev_max_request_bytes": 48000
+    },
+    "selection": {
+      "minimum_score": 1.5,
+      "minimum_confidence": 0.5,
+      "tie_margin": 0.25,
+      "max_competing_plans": 2
+    },
+    "review": {
+      "minimum_support_probability": 0.75
+    },
+    "loop": {
+      "enabled": false,
+      "max_provider_calls": 24,
+      "max_seconds": 600,
+      "max_no_progress_rounds": 1,
+      "checks_path": "prompts/jev_review_checks.json"
+    },
+    "paths": {
+      "runs": "runs",
+      "capabilities": "configs/capabilities.toml",
+      "astra_prompt": "prompts/astra-routing.md",
+      "plan_rubric": "prompts/jev_plan_conditions.json",
+      "review_rubric": "prompts/jev_review_estimate.json"
+    }
+  },
+  "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+  "source_sha256": "1da9139b9e4dcc233aeb2c075f325e2e9e2f2bd0421b69b05a0a852634c503db",
+  "compare_all": true,
+  "execution": "native isolated environments; Harbor ATIF export, not a Harbor container job",
+  "review_policy": "soft concern => provisional estimate; validation failure => error",
+  "elapsed_seconds": 70.20433491654694,
+  "status": "answered"
+}

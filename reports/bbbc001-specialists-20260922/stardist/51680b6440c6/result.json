@@ -1,0 +1,13 @@
+{
+  "id": "51680b6440c6",
+  "input_sha256": "49c23bd67603fde5154c756d923547ce5d906d24baa0a95e4c5bec11f885f6ea",
+  "inference_seconds": 0.12595637515187263,
+  "count": 456,
+  "foreground_fraction": 0.18310546875,
+  "median_area_pixels": 99.0,
+  "border_instances": 26,
+  "largest_instance_fraction": 0.001163482666015625,
+  "labels_sha256": "ed3a38a1766a04bfb74c51ff8e6cfeeedf2edfd193aa6ca4d87c84404ccc1568",
+  "status": "answered",
+  "peak_process_rss_bytes": 632061952
+}

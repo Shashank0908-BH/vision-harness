@@ -1,0 +1,120 @@
+{
+  "experiment": "Fresh vanilla / Astra + OpenCV / Astra + OpenCV + Jev selection comparison",
+  "answer_review_enabled": false,
+  "structured_loop_enabled": false,
+  "source_results": "results.json",
+  "summary": [
+    {
+      "mode": "vanilla",
+      "coverage": 6,
+      "total": 6,
+      "benchmark_percentage_error": 17.342561127448445,
+      "answered_subset_percentage_error": 17.342561127448445,
+      "abstentions": 0,
+      "errors": 0,
+      "mean_seconds": 100.273663816,
+      "tokens": {
+        "astra": {
+          "input": 5397,
+          "output": 20316,
+          "started_calls": 7,
+          "calls": 7
+        },
+        "jev": {
+          "input": 0,
+          "output": 0,
+          "started_calls": 0,
+          "calls": 0
+        }
+      }
+    },
+    {
+      "mode": "tools",
+      "coverage": 6,
+      "total": 6,
+      "benchmark_percentage_error": 16.155623440694207,
+      "answered_subset_percentage_error": 16.155623440694207,
+      "abstentions": 0,
+      "errors": 0,
+      "mean_seconds": 95.13782842483333,
+      "tokens": {
+        "astra": {
+          "input": 24406,
+          "output": 19644,
+          "started_calls": 12,
+          "calls": 12
+        },
+        "jev": {
+          "input": 0,
+          "output": 0,
+          "started_calls": 0,
+          "calls": 0
+        }
+      }
+    },
+    {
+      "mode": "select",
+      "coverage": 6,
+      "total": 6,
+      "benchmark_percentage_error": 14.267626490903858,
+      "answered_subset_percentage_error": 14.267626490903858,
+      "abstentions": 0,
+      "errors": 0,
+      "mean_seconds": 107.57096196533335,
+      "tokens": {
+        "astra": {
+          "input": 32018,
+          "output": 21834,
+          "started_calls": 12,
+          "calls": 12
+        },
+        "jev": {
+          "input": 13276,
+          "output": 297,
+          "started_calls": 6,
+          "calls": 6
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "mode": "tools",
+      "against": "vanilla",
+      "error_reduction_percentage_points": 1.1869376867542378,
+      "relative_error_reduction_percent": 6.844073825264747,
+      "closer_images": 2,
+      "worse_images": 4,
+      "tied_images": 0
+    },
+    {
+      "mode": "select",
+      "against": "vanilla",
+      "error_reduction_percentage_points": 3.0749346365445867,
+      "relative_error_reduction_percent": 17.730568247372766,
+      "closer_images": 2,
+      "worse_images": 4,
+      "tied_images": 0
+    },
+    {
+      "mode": "select",
+      "against": "tools",
+      "error_reduction_percentage_points": 1.8879969497903488,
+      "relative_error_reduction_percent": 11.686314407617944,
+      "closer_images": 3,
+      "worse_images": 1,
+      "tied_images": 2
+    }
+  ],
+  "interpretation": "Selection has the lowest aggregate error in this run. Both tool modes beat vanilla on two images and lose on four; the average advantage is concentrated in field 4. All 12 tool-mode final answers are visual estimates following unusable near-whole-image segmentations. This is not evidence that the current OpenCV segmentation improved perception.",
+  "limitations": [
+    "Only six images from one experiment, not broad multimodal evidence.",
+    "Published human counts disagree; their mean is the reference, not an exact biological truth.",
+    "Current OpenCV tools are color/white-background tools, not microscopy segmentation models.",
+    "One attempt per image/mode. Execution-to-execution variability prevents a stable overall ranking from one small cohort.",
+    "Different plans, image inputs and inference budgets mean this compares whole systems rather than isolating a causal contribution from Jev.",
+    "No inference changes during this run. All outcomes are retained; failed attempts are not replaced.",
+    "This is a retest of previously inspected images. Earlier experiments are not pooled or substituted for current results.",
+    "Incomplete modes receive coverage and a labeled subset error, not a fabricated full-benchmark error."
+  ]
+}

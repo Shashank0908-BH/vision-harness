@@ -1,0 +1,42 @@
+{
+  "source_commit": "37611ed2d7d38e9ff3985a6312565f9ede2ad683",
+  "selection": "First five held-out manifest rows; one per family; no outcome-based selection",
+  "repetitions": 1,
+  "modes": [
+    "vanilla",
+    "tools",
+    "select",
+    "review",
+    "full"
+  ],
+  "grading": "Exact counts/categories; distance tolerance 2 pixels; independent verifier",
+  "task_ids": [
+    "3fd54ce136b4",
+    "d9e194893428",
+    "03fa1e2d3cc3",
+    "bfdc6dd16d43",
+    "d572a7141bfc"
+  ],
+  "task_families": [
+    "count",
+    "color_count",
+    "position",
+    "distance",
+    "touching_count"
+  ],
+  "config_sha256": "9815f0ebfdb3caac7653964f49a001b774d52393eed209ac0969d53b092471b5",
+  "notes": [
+    "Same image/question and model settings across modes.",
+    "Independently generated plans per mode; whole-system comparison, not isolated selector causality.",
+    "Preserve failures and abstentions. No tuning during this cohort.",
+    "One attempt per task is exploratory, not statistically conclusive."
+  ],
+  "initial_source_commit": "569e186b389a516a3b22526d5ca1a4d74b244ee8",
+  "jobs_directory": "jobs/cohort-five-20260922-v2",
+  "preflight_failure": {
+    "directory": "jobs/cohort-five-20260922",
+    "trials": 5,
+    "reason": "Validator incorrectly rejected citations to the supplied original image. All modes now accept only image IDs actually provided, alongside valid tool evidence IDs. The entire comparison was restarted; original failed outputs are preserved.",
+    "policy_changes": "None: models, task cohort, thresholds, prompts and scoring unchanged."
+  }
+}

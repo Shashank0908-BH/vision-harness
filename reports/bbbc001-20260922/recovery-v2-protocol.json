@@ -1,0 +1,27 @@
+{
+  "reason": "Jev-only Harbor recovery passed Jev but failed on malformed Astra PlanSet; add bounded format recovery and rerun same image once.",
+  "selected_task": "0bb54dcc4ca2",
+  "mode": "review",
+  "attempts": 1,
+  "jobs_directory": "jobs/bbbc001-recovery-v2-20260922",
+  "not_pooled_with_original_benchmark": true,
+  "runtime_hashes": {
+    "src/vision_harness/__init__.py": "370f4309cc208c94d5e25d67b785a72790bfde7bbf93e806e8535e631fd79111",
+    "src/vision_harness/artifacts.py": "98c19a2960a436eac74a81b3ad433421d822d3167d7d935cf812ba870d0d6109",
+    "src/vision_harness/cli.py": "1d882fbfe6a3103476b0bb7387156221c8fb9ded6ff5cd06337d5db6bcaa34f4",
+    "src/vision_harness/config.py": "e331dff7fea5cf4ee5bbd799c478ace97173541bda50de34987955051dca1a84",
+    "src/vision_harness/contracts.py": "a90e9a2e6020e0138487ada6c547f5db03731eba1c9800318e7ec53faecc52ce",
+    "src/vision_harness/demo.py": "74fc566975d717ff5ffac383ce4dbd3f66ad9ebcff34f515aa81fc6c9ae1cf6e",
+    "src/vision_harness/providers/__init__.py": "1f7a6a0341f2d8349f7995cc32e91f2781688774c25a4bbeaa45a24760d9ee3f",
+    "src/vision_harness/providers/astra.py": "122ce01787651a854a550f0e637bdcd9d18560a5ccdae55e1d5872298fb76936",
+    "src/vision_harness/providers/evidence_budget.py": "9ba8ba43cc7e8d57fe69d371b247bc657a7df0a8e621faca4a96931150249f1d",
+    "src/vision_harness/providers/jev.py": "300d9b9631510f8a098bd96de4c712113ec461b756000fc2bfb587d134de2dfa",
+    "src/vision_harness/runtime.py": "9c4accaf0662bcc84efc9059f44a9d2c5eca42e2ca2ca1c929943362b7deac9b",
+    "src/vision_harness/selection.py": "bc8ec860a42bbc54a0189ce719cb6bb8a845f68b17395d6df7aa3b0dd29ad6db",
+    "src/vision_harness/tools/__init__.py": "f8fcbca43531dc087f6eab8d24a931a277d448e5bfa995b8a4c86ee9faf8fd03",
+    "src/vision_harness/tools/opencv.py": "427b6461eb100efa94580b62b6a456dd2e3bcdc1739de88d2157e51e5cef5d84",
+    "src/vision_harness/tools/registry.py": "78a69e37389faae24d2abb87de77d0ffa7cba4b480622ee68c2edea4bb83ab02",
+    "src/vision_harness/tracing.py": "6a3f6004da79875cd189a4dbf93dca51d8c9232720b98985f9a5725f1182eda8"
+  },
+  "settings_sha256": "352265514ad02e7e43db26e3feacf60be30f214b119ce4c93b1dfaca05bf4d71"
+}

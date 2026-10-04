@@ -1,0 +1,33 @@
+{
+  "frozen_at": "2026-09-22T06:44:09.732609+00:00",
+  "cohort": "All six BBBC001v1 images; previously inspected development set",
+  "models": {
+    "cellpose": "cpsam_v2",
+    "stardist": "2D_versatile_fluo"
+  },
+  "attempts": 1,
+  "no_label_based_tuning": true,
+  "execution": "Sequential native workers in isolated environments; not Harbor",
+  "metric": "Mean of 100*abs(predicted count-human mean)/human mean across all six images",
+  "missing_policy": "No complete mean score when any image fails",
+  "worker_inputs": "Only image paths, IDs and checksums; no annotation file is read by workers",
+  "historical_comparison": "reports/bbbc001-no-review-20260922/results.json",
+  "historical_comparison_sha256": "d90a44e75c5d1e475faca77a66662b9351c55c22439bd006b8b71606f18384cf",
+  "source_hashes": {
+    "worker.py": "fbcb5146e5d22784fb148baaa7be2bf08bd53f3a4bd3fb9cf0ad19373a8a855b",
+    "evaluate.py": "017ca8b41d4826dec5f3d07df23af9f900970469915315ad745cfd70745a7c90"
+  },
+  "limits": "1800-second timeout per six-image worker; one model resident at a time",
+  "preprocessing": {
+    "cellpose": "RGB replicated grayscale; built-in normalization; no diameter rescaling; float32; batch_size=1; default segmentation thresholds",
+    "stardist": "One grayscale channel; percentile normalization 1/99.8; pretrained thresholds; no geometric resize; CPU"
+  },
+  "limitations": [
+    "Not held out from project development",
+    "Prior pretraining exposure unknown",
+    "Two human counts disagree",
+    "Count labels cannot establish mask accuracy",
+    "Historical Astra run is not contemporaneous",
+    "RSS does not fully account for accelerator allocations"
+  ]
+}

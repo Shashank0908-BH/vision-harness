@@ -1,0 +1,768 @@
+{
+  "metrics": {
+    "stardist-default": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 7.215084793836035,
+      "exact": 0
+    },
+    "stardist-sensitive": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 5.425560591611307,
+      "exact": 0
+    },
+    "stardist-conservative": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 8.672193660497426,
+      "exact": 0
+    },
+    "cellpose-sam": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 4.2313524168593215,
+      "exact": 0
+    },
+    "vanilla_astra": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 5.442187100523932,
+      "exact": 0
+    },
+    "harness_with_review": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 5.71003428878553,
+      "exact": 0
+    },
+    "astra_preferred_measurement": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 7.215084793836035,
+      "exact": 0
+    },
+    "jev_selected_measurement": {
+      "completed": 6,
+      "total": 6,
+      "mape_percent": 5.71003428878553,
+      "exact": 0
+    }
+  },
+  "rows": [
+    {
+      "id": "b3af822f7e1a",
+      "image": "evals/datasets/generated/bbbc039-routing-20260922/images/b3af822f7e1a.png",
+      "source_filename": "IXMtest_C14_s8_w1612E3D43-FA7E-4FFB-BE53-F34A3A0CAFCD.png",
+      "image_sha256": "19b182ace29d260eaec19cc7961c8b7f3b1c20215602885f5a294877c14a4e52",
+      "source_tiff_sha256": "09363558d0fd0aa848e28f79dfc2b130f2bcc67208acab9741193afe76811b83",
+      "display_percentiles": [
+        142.0,
+        1326.0
+      ],
+      "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+      "expected": 137,
+      "annotation_sha256": "db86dea80951f5d9c2c014408dfcb8fd98e3bebdf5420d258aa013ebe3568e6e",
+      "procedure_counts": {
+        "stardist-default": 128,
+        "stardist-sensitive": 130,
+        "stardist-conservative": 124,
+        "cellpose-sam": 131
+      },
+      "decision": {
+        "astra_preferred_id": "stardist-default",
+        "jev_ranking": [
+          "stardist-default",
+          "stardist-sensitive",
+          "stardist-conservative",
+          "cellpose-sam"
+        ],
+        "selected_id": "stardist-default",
+        "assessments": [
+          {
+            "plan_id": "stardist-default",
+            "score": 1.66,
+            "confidence": 0.51,
+            "probabilities": {
+              "0": 0.08,
+              "1": 0.25,
+              "2": 0.6,
+              "3": 0.07
+            }
+          },
+          {
+            "plan_id": "stardist-sensitive",
+            "score": 1.42,
+            "confidence": 0.47,
+            "probabilities": {
+              "0": 0.06,
+              "1": 0.51,
+              "2": 0.39,
+              "3": 0.04
+            }
+          },
+          {
+            "plan_id": "stardist-conservative",
+            "score": 1.4,
+            "confidence": 0.5,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.51,
+              "2": 0.43,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "cellpose-sam",
+            "score": 1.36,
+            "confidence": 0.52,
+            "probabilities": {
+              "0": 0.06,
+              "1": 0.53,
+              "2": 0.41,
+              "3": 0.0
+            }
+          }
+        ],
+        "tie_rule": "descending Score, then ascending stable procedure ID",
+        "frozen_before_execution": true,
+        "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+        "image_sha256": "19b182ace29d260eaec19cc7961c8b7f3b1c20215602885f5a294877c14a4e52"
+      },
+      "harness": {
+        "status": "answered",
+        "value": 128.0,
+        "explanation": "The selected StarDist procedure estimates 128 nuclei across the entire image, including 20 border instances. This is a model-derived estimate, not verified biological truth.",
+        "evidence_ids": [
+          "stardist-default"
+        ],
+        "limitations": [
+          "Touching or overlapping nuclei may be merged or split incorrectly.",
+          "No ground-truth verification or calibrated count confidence is available.",
+          "Jev review did not meet the support threshold; this remains a provisional measurement."
+        ],
+        "selected_id": "stardist-default",
+        "review_status": "caution",
+        "review_support": 0.66,
+        "review_is_calibrated_accuracy": false,
+        "decision_sha256": "6dba78c46284a0c4a42036b10582efb47c63c2fc394b1814f7381860640b3d01"
+      },
+      "vanilla": {
+        "status": "answered",
+        "value": 130.0,
+        "explanation": "Estimated by visual counting across the full image, including visible border nuclei.",
+        "evidence_ids": [
+          "original"
+        ],
+        "limitations": [
+          "This is a visual estimate, not a segmentation-derived count. Touching or lobulated nuclei and partially visible border nuclei introduce uncertainty."
+        ]
+      },
+      "harness_total_seconds_including_comparison": 81.34991287440062,
+      "candidate_ape_percent": {
+        "stardist-default": 6.569343065693431,
+        "stardist-sensitive": 5.109489051094891,
+        "stardist-conservative": 9.48905109489051,
+        "cellpose-sam": 4.37956204379562
+      },
+      "routing_regret_percentage_points": 2.1897810218978107
+    },
+    {
+      "id": "fc4388dbac57",
+      "image": "evals/datasets/generated/bbbc039-routing-20260922/images/fc4388dbac57.png",
+      "source_filename": "IXMtest_B05_s5_w10296BEF4-0F48-4EC8-BC24-6C604871398B.png",
+      "image_sha256": "a8a4ed33879cd61ca9981e7bce83cd2d9fd4592224ddfda1a937b8237f99f5e7",
+      "source_tiff_sha256": "9789dd00d103bbfc9356d1f6503a9c1210b12abaefa6d6050fb3fd74f6338cd6",
+      "display_percentiles": [
+        137.0,
+        1386.0
+      ],
+      "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+      "expected": 115,
+      "annotation_sha256": "eb777726e6b482b72e5b55d3d39d7ab3495bd1e3e23b4ca577ebccc2ef90eb5e",
+      "procedure_counts": {
+        "stardist-default": 107,
+        "stardist-sensitive": 109,
+        "stardist-conservative": 106,
+        "cellpose-sam": 110
+      },
+      "decision": {
+        "astra_preferred_id": "stardist-default",
+        "jev_ranking": [
+          "stardist-default",
+          "cellpose-sam",
+          "stardist-conservative",
+          "stardist-sensitive"
+        ],
+        "selected_id": "stardist-default",
+        "assessments": [
+          {
+            "plan_id": "stardist-default",
+            "score": 1.56,
+            "confidence": 0.46,
+            "probabilities": {
+              "0": 0.13,
+              "1": 0.23,
+              "2": 0.59,
+              "3": 0.05
+            }
+          },
+          {
+            "plan_id": "stardist-sensitive",
+            "score": 1.38,
+            "confidence": 0.55,
+            "probabilities": {
+              "0": 0.04,
+              "1": 0.56,
+              "2": 0.39,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "stardist-conservative",
+            "score": 1.38,
+            "confidence": 0.53,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.54,
+              "2": 0.4,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "cellpose-sam",
+            "score": 1.4,
+            "confidence": 0.52,
+            "probabilities": {
+              "0": 0.04,
+              "1": 0.52,
+              "2": 0.44,
+              "3": 0.0
+            }
+          }
+        ],
+        "tie_rule": "descending Score, then ascending stable procedure ID",
+        "frozen_before_execution": true,
+        "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+        "image_sha256": "a8a4ed33879cd61ca9981e7bce83cd2d9fd4592224ddfda1a937b8237f99f5e7"
+      },
+      "harness": {
+        "status": "answered",
+        "value": 107.0,
+        "explanation": "The selected StarDist 2D procedure estimates 107 nuclei across the entire image, including 16 border instances. This is a model-derived estimate, not verified biological truth.",
+        "evidence_ids": [
+          "stardist-default"
+        ],
+        "limitations": [
+          "Segmentation may miss nuclei or split or merge instances, including partially visible border nuclei.",
+          "No calibrated count confidence or ground-truth verification is available.",
+          "Jev review did not meet the support threshold; this remains a provisional measurement."
+        ],
+        "selected_id": "stardist-default",
+        "review_status": "caution",
+        "review_support": 0.71,
+        "review_is_calibrated_accuracy": false,
+        "decision_sha256": "7ac18204401fdbac6a0f41c3c1bfcea24889aa19df8c747727d52edd401939a6"
+      },
+      "vanilla": {
+        "status": "answered",
+        "value": 107.0,
+        "explanation": "Visual estimate of the total nuclei in the full image, including visible border nuclei.",
+        "evidence_ids": [
+          "original"
+        ],
+        "limitations": [
+          "Manual visual count; touching nuclei and small border fragments introduce uncertainty."
+        ]
+      },
+      "harness_total_seconds_including_comparison": 70.20433491654694,
+      "candidate_ape_percent": {
+        "stardist-default": 6.956521739130435,
+        "stardist-sensitive": 5.217391304347826,
+        "stardist-conservative": 7.82608695652174,
+        "cellpose-sam": 4.3478260869565215
+      },
+      "routing_regret_percentage_points": 2.608695652173913
+    },
+    {
+      "id": "f4b8ef595d67",
+      "image": "evals/datasets/generated/bbbc039-routing-20260922/images/f4b8ef595d67.png",
+      "source_filename": "IXMtest_P07_s8_w19D682C29-5685-4A33-8CAA-F0797DD7F021.png",
+      "image_sha256": "3d6b3170095ca3b97298eed28339d5e87a950218bb3451a4c0f0f0e29e4ea858",
+      "source_tiff_sha256": "6d977fceac2c7aedd9502a281d3f59939d051b78d720440d189f61da03f5ab0c",
+      "display_percentiles": [
+        135.0,
+        1190.1620000000112
+      ],
+      "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+      "expected": 50,
+      "annotation_sha256": "9e918e6d16052d507f985bca26152e2b4308e90a8861096658236fefe826f93e",
+      "procedure_counts": {
+        "stardist-default": 45,
+        "stardist-sensitive": 45,
+        "stardist-conservative": 45,
+        "cellpose-sam": 48
+      },
+      "decision": {
+        "astra_preferred_id": "stardist-default",
+        "jev_ranking": [
+          "cellpose-sam",
+          "stardist-default",
+          "stardist-sensitive",
+          "stardist-conservative"
+        ],
+        "selected_id": "cellpose-sam",
+        "assessments": [
+          {
+            "plan_id": "stardist-default",
+            "score": 1.28,
+            "confidence": 0.63,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.64,
+              "2": 0.3,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "stardist-sensitive",
+            "score": 1.24,
+            "confidence": 0.66,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.67,
+              "2": 0.28,
+              "3": 0.0
+            }
+          },
+          {
+            "plan_id": "stardist-conservative",
+            "score": 1.17,
+            "confidence": 0.72,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.73,
+              "2": 0.21,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "cellpose-sam",
+            "score": 1.3,
+            "confidence": 0.59,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.59,
+              "2": 0.35,
+              "3": 0.01
+            }
+          }
+        ],
+        "tie_rule": "descending Score, then ascending stable procedure ID",
+        "frozen_before_execution": true,
+        "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+        "image_sha256": "3d6b3170095ca3b97298eed28339d5e87a950218bb3451a4c0f0f0e29e4ea858"
+      },
+      "harness": {
+        "status": "answered",
+        "value": 48.0,
+        "explanation": "The selected Cellpose-SAM measurement estimates 48 nuclei across the entire image, including 7 border instances. This is a model-derived estimate, not verified biological truth.",
+        "evidence_ids": [
+          "cellpose-sam"
+        ],
+        "limitations": [
+          "Touching nuclei may be merged, and fragmented bright structures may be counted as separate instances.",
+          "No calibrated count confidence or ground-truth verification is supplied.",
+          "Jev review did not meet the support threshold; this remains a provisional measurement."
+        ],
+        "selected_id": "cellpose-sam",
+        "review_status": "caution",
+        "review_support": 0.64,
+        "review_is_calibrated_accuracy": false,
+        "decision_sha256": "40d647ccd015ecfba16b1a56197c16daaa9d7d7f922515e21dc3e0ffd6ef1ae4"
+      },
+      "vanilla": {
+        "status": "answered",
+        "value": 44.0,
+        "explanation": "Visual estimate of the entire image, including visible border nuclei.",
+        "evidence_ids": [
+          "original"
+        ],
+        "limitations": [
+          "Manual image-based estimate; touching or fragmented nuclei may introduce minor counting uncertainty."
+        ]
+      },
+      "harness_total_seconds_including_comparison": 74.88233020808548,
+      "candidate_ape_percent": {
+        "stardist-default": 10.0,
+        "stardist-sensitive": 10.0,
+        "stardist-conservative": 10.0,
+        "cellpose-sam": 4.0
+      },
+      "routing_regret_percentage_points": 0.0
+    },
+    {
+      "id": "17a175b5e17d",
+      "image": "evals/datasets/generated/bbbc039-routing-20260922/images/17a175b5e17d.png",
+      "source_filename": "IXMtest_C07_s5_w12C9F2926-A017-4962-8660-72C9C20C86E4.png",
+      "image_sha256": "bbf52a4e8f7959a96e6e51baf5d18bd8c7cb55461cd84c3f6692cd851cd618a7",
+      "source_tiff_sha256": "3ebabf72d4a0d737cdf345f291cb67c5ce8fcdb7ccaaa52c874d8abdc1413143",
+      "display_percentiles": [
+        128.0,
+        840.0
+      ],
+      "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+      "expected": 156,
+      "annotation_sha256": "572ce9c3a7a1b2102cc808e3f03aae2598448be94adef34bb34d85315900f2e3",
+      "procedure_counts": {
+        "stardist-default": 144,
+        "stardist-sensitive": 146,
+        "stardist-conservative": 141,
+        "cellpose-sam": 147
+      },
+      "decision": {
+        "astra_preferred_id": "stardist-default",
+        "jev_ranking": [
+          "stardist-default",
+          "stardist-sensitive",
+          "cellpose-sam",
+          "stardist-conservative"
+        ],
+        "selected_id": "stardist-default",
+        "assessments": [
+          {
+            "plan_id": "stardist-default",
+            "score": 1.4,
+            "confidence": 0.28,
+            "probabilities": {
+              "0": 0.16,
+              "1": 0.33,
+              "2": 0.45,
+              "3": 0.06
+            }
+          },
+          {
+            "plan_id": "stardist-sensitive",
+            "score": 1.35,
+            "confidence": 0.33,
+            "probabilities": {
+              "0": 0.12,
+              "1": 0.42,
+              "2": 0.45,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "stardist-conservative",
+            "score": 1.24,
+            "confidence": 0.46,
+            "probabilities": {
+              "0": 0.15,
+              "1": 0.47000000000000003,
+              "2": 0.38,
+              "3": 0.0
+            }
+          },
+          {
+            "plan_id": "cellpose-sam",
+            "score": 1.29,
+            "confidence": 0.62,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.62,
+              "2": 0.33,
+              "3": 0.0
+            }
+          }
+        ],
+        "tie_rule": "descending Score, then ascending stable procedure ID",
+        "frozen_before_execution": true,
+        "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+        "image_sha256": "bbf52a4e8f7959a96e6e51baf5d18bd8c7cb55461cd84c3f6692cd851cd618a7"
+      },
+      "harness": {
+        "status": "answered",
+        "value": 144.0,
+        "explanation": "The selected StarDist 2D procedure estimates 144 nuclei across the entire image, including 21 border instances. This is a model-derived estimate, not verified biological truth.",
+        "evidence_ids": [
+          "stardist-default"
+        ],
+        "limitations": [
+          "Touching, overlapping, faint, or partially visible nuclei may be missed or incorrectly segmented.",
+          "No calibrated count confidence or ground-truth validation is supplied.",
+          "Jev review did not meet the support threshold; this remains a provisional measurement."
+        ],
+        "selected_id": "stardist-default",
+        "review_status": "caution",
+        "review_support": 0.7,
+        "review_is_calibrated_accuracy": false,
+        "decision_sha256": "6cbc901e8141cacaba6e60d2924e92cabfbe586160bed84cad623fbce2a977d0"
+      },
+      "vanilla": {
+        "status": "answered",
+        "value": 150.0,
+        "explanation": "Estimated by visual inspection of the full image, including visible nuclei cut off by the borders.",
+        "evidence_ids": [
+          "original"
+        ],
+        "limitations": [
+          "Manual estimate without segmentation measurements; touching nuclei and small, bright objects introduce counting uncertainty."
+        ]
+      },
+      "harness_total_seconds_including_comparison": 61.45319162495434,
+      "candidate_ape_percent": {
+        "stardist-default": 7.6923076923076925,
+        "stardist-sensitive": 6.41025641025641,
+        "stardist-conservative": 9.615384615384617,
+        "cellpose-sam": 5.769230769230769
+      },
+      "routing_regret_percentage_points": 1.9230769230769234
+    },
+    {
+      "id": "54ee1bf8ac02",
+      "image": "evals/datasets/generated/bbbc039-routing-20260922/images/54ee1bf8ac02.png",
+      "source_filename": "IXMtest_N11_s4_w142A84EA3-47C3-4B49-B6CA-BBC6685BBE1E.png",
+      "image_sha256": "24d7ef240934039f961963e7f06b5cd0d0a0bc450aaac7ce68410c1fceb60909",
+      "source_tiff_sha256": "2b2262a733fbe76f73e31bea2a36656a01daddaf47abc0ed49e167219d9de963",
+      "display_percentiles": [
+        129.0,
+        989.0
+      ],
+      "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+      "expected": 93,
+      "annotation_sha256": "a43691b4cf6f30943cc91c2195a37efc364ca600bfd5466a7a1dec6e9627b3f0",
+      "procedure_counts": {
+        "stardist-default": 86,
+        "stardist-sensitive": 89,
+        "stardist-conservative": 86,
+        "cellpose-sam": 88
+      },
+      "decision": {
+        "astra_preferred_id": "stardist-default",
+        "jev_ranking": [
+          "stardist-default",
+          "cellpose-sam",
+          "stardist-sensitive",
+          "stardist-conservative"
+        ],
+        "selected_id": "stardist-default",
+        "assessments": [
+          {
+            "plan_id": "stardist-default",
+            "score": 1.34,
+            "confidence": 0.26,
+            "probabilities": {
+              "0": 0.2,
+              "1": 0.3,
+              "2": 0.46,
+              "3": 0.04
+            }
+          },
+          {
+            "plan_id": "stardist-sensitive",
+            "score": 1.19,
+            "confidence": 0.67,
+            "probabilities": {
+              "0": 0.07,
+              "1": 0.67,
+              "2": 0.25,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "stardist-conservative",
+            "score": 1.14,
+            "confidence": 0.65,
+            "probabilities": {
+              "0": 0.1,
+              "1": 0.67,
+              "2": 0.22,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "cellpose-sam",
+            "score": 1.28,
+            "confidence": 0.59,
+            "probabilities": {
+              "0": 0.06,
+              "1": 0.6,
+              "2": 0.34,
+              "3": 0.0
+            }
+          }
+        ],
+        "tie_rule": "descending Score, then ascending stable procedure ID",
+        "frozen_before_execution": true,
+        "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+        "image_sha256": "24d7ef240934039f961963e7f06b5cd0d0a0bc450aaac7ce68410c1fceb60909"
+      },
+      "harness": {
+        "status": "answered",
+        "value": 86.0,
+        "explanation": "The selected StarDist 2D procedure estimates 86 nuclei across the entire image, including 21 border instances. This is a model-derived estimate, not verified biological truth.",
+        "evidence_ids": [
+          "stardist-default"
+        ],
+        "limitations": [
+          "Touching or partially visible nuclei may be merged, split, or missed.",
+          "No calibrated count confidence or ground-truth verification is available.",
+          "Jev review did not meet the support threshold; this remains a provisional measurement."
+        ],
+        "selected_id": "stardist-default",
+        "review_status": "caution",
+        "review_support": 0.69,
+        "review_is_calibrated_accuracy": false,
+        "decision_sha256": "a456f1dadd0a159e5e08a71505ac2d0aac4c9fa76c95a7d898f42119b2529b0f"
+      },
+      "vanilla": {
+        "status": "answered",
+        "value": 90.0,
+        "explanation": "Estimated by visually counting nuclei across the full image, including visible border nuclei.",
+        "evidence_ids": [
+          "original"
+        ],
+        "limitations": [
+          "Manual visual estimate; touching nuclei and small border fragments may cause minor counting errors."
+        ]
+      },
+      "harness_total_seconds_including_comparison": 52.93895441759378,
+      "candidate_ape_percent": {
+        "stardist-default": 7.526881720430108,
+        "stardist-sensitive": 4.301075268817205,
+        "stardist-conservative": 7.526881720430108,
+        "cellpose-sam": 5.376344086021505
+      },
+      "routing_regret_percentage_points": 3.225806451612903
+    },
+    {
+      "id": "c938cd18d93d",
+      "image": "evals/datasets/generated/bbbc039-routing-20260922/images/c938cd18d93d.png",
+      "source_filename": "IXMtest_B02_s9_w124B5080D-EBE1-47D2-B147-C0F342039EDF.png",
+      "image_sha256": "6d627bd8f528a70949f54d1172c666452842c6f1a143fd0e2561046aeea2d746",
+      "source_tiff_sha256": "f6c668b78aa2f19af2ed936b758e024d00ffc1a2db091ee04d8f6c6ced342003",
+      "display_percentiles": [
+        136.0,
+        1381.1620000000112
+      ],
+      "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+      "expected": 66,
+      "annotation_sha256": "371e8efd02fa55ebee8d0fe34433bd36a402d52c496f5f230aebc39445b86db5",
+      "procedure_counts": {
+        "stardist-default": 63,
+        "stardist-sensitive": 65,
+        "stardist-conservative": 61,
+        "cellpose-sam": 67
+      },
+      "decision": {
+        "astra_preferred_id": "stardist-default",
+        "jev_ranking": [
+          "cellpose-sam",
+          "stardist-sensitive",
+          "stardist-default",
+          "stardist-conservative"
+        ],
+        "selected_id": "cellpose-sam",
+        "assessments": [
+          {
+            "plan_id": "stardist-default",
+            "score": 1.19,
+            "confidence": 0.57,
+            "probabilities": {
+              "0": 0.12,
+              "1": 0.58,
+              "2": 0.28,
+              "3": 0.02
+            }
+          },
+          {
+            "plan_id": "stardist-sensitive",
+            "score": 1.24,
+            "confidence": 0.54,
+            "probabilities": {
+              "0": 0.11,
+              "1": 0.55,
+              "2": 0.32,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "stardist-conservative",
+            "score": 1.13,
+            "confidence": 0.53,
+            "probabilities": {
+              "0": 0.17,
+              "1": 0.54,
+              "2": 0.28,
+              "3": 0.01
+            }
+          },
+          {
+            "plan_id": "cellpose-sam",
+            "score": 1.3,
+            "confidence": 0.59,
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.6,
+              "2": 0.35,
+              "3": 0.0
+            }
+          }
+        ],
+        "tie_rule": "descending Score, then ascending stable procedure ID",
+        "frozen_before_execution": true,
+        "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+        "image_sha256": "6d627bd8f528a70949f54d1172c666452842c6f1a143fd0e2561046aeea2d746"
+      },
+      "harness": {
+        "status": "answered",
+        "value": 67.0,
+        "explanation": "The selected Cellpose-SAM procedure estimates 67 nuclei across the entire image, including 13 border instances. This is a model-derived estimate, not verified biological truth.",
+        "evidence_ids": [
+          "cellpose-sam"
+        ],
+        "limitations": [
+          "Touching nuclei, faint regions, and partially visible border nuclei may be merged, missed, or segmented incorrectly.",
+          "No calibrated count confidence or ground-truth verification is available.",
+          "Jev review did not meet the support threshold; this remains a provisional measurement."
+        ],
+        "selected_id": "cellpose-sam",
+        "review_status": "caution",
+        "review_support": 0.64,
+        "review_is_calibrated_accuracy": false,
+        "decision_sha256": "e2144ff338727809b429a504b3bf54ec2cbab1d8521aaa59e500e8e9ddd210bc"
+      },
+      "vanilla": {
+        "status": "answered",
+        "value": 65.0,
+        "explanation": "Estimated by visually counting the nuclei across the image, including visible partial nuclei at the borders.",
+        "evidence_ids": [
+          "original"
+        ],
+        "limitations": [
+          "Manual visual estimate; touching or irregular nuclei and small border fragments introduce uncertainty."
+        ]
+      },
+      "harness_total_seconds_including_comparison": 56.28508479241282,
+      "candidate_ape_percent": {
+        "stardist-default": 4.545454545454546,
+        "stardist-sensitive": 1.5151515151515151,
+        "stardist-conservative": 7.575757575757576,
+        "cellpose-sam": 1.5151515151515151
+      },
+      "routing_regret_percentage_points": 0.0
+    }
+  ],
+  "routing_diagnostics": {
+    "complete_tasks": 6,
+    "top_choice_matches_oracle_including_ties": 2,
+    "mean_regret_percentage_points": 1.6578933414602584
+  },
+  "review_counts": {
+    "supported": 0,
+    "caution": 6,
+    "not_completed": 0,
+    "not_run": 0
+  },
+  "scope": "Six new official-test images; local derived count MAPE, not published segmentation performance. Jev receives structured evidence, not pixels."
+}

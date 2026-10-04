@@ -1,0 +1,8 @@
+# Final requested comparison: vanilla versus complete harness (selection AND review).
+# Fresh snapshots include Jev payload budgeting and bounded Astra format recovery.
+tasks = "evals/tasks/generated/bbbc001-full-repaired-20260922"
+jobs = "jobs/bbbc001-full-repaired-20260922"
+modes = ["vanilla", "full"]
+repetitions = 1
+concurrency = 2
+model = "gpt-6-astra"

@@ -1,0 +1,9 @@
+{
+  "instructions": "Assess task fit of the candidate plan using the supplied evidence and capability descriptions. Astra observations and assumptions are unverified unless independent evidence supports them. Unknown critical assumptions must not be treated as satisfied. Judge methodology, not the persuasiveness of its description.",
+  "criteria": [
+    "The method cannot produce the requested output.",
+    "The method requires assumptions contradicted by available evidence.",
+    "The method could work, but a critical assumption remains unverified.",
+    "Available evidence supports the method's requirements."
+  ]
+}

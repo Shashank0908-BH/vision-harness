@@ -1,0 +1,43 @@
+{
+  "preferred_id": "stardist-default",
+  "candidates": [
+    {
+      "plan_id": "stardist-default",
+      "rationale": "Uses StarDist 2D with checkpoint 2D_versatile_fluo, percentile normalization [1, 99.8], probability threshold 0.479071463157368, and nonmaximum-suppression threshold 0.3. Preferred as an initial operating point between the supplied lower and higher probability thresholds, not because of its profile name or demonstrated accuracy. The user declares Hoechst-stained U2OS fluorescence; I observe bright, mostly compact nucleus-like regions on a dark background, with variable brightness and partial border objects. This supports trying the fluorescence-nuclei checkpoint, but does not independently establish modality. Its star-convex shape assumption can limit irregular or touching-instance segmentation. No count evidence has been supplied, so this proposal does not provide a numeric count.",
+      "assumptions": [
+        "The user-declared fluorescence modality and 2D nucleus-count target are correct; the supplied probe reports identical RGB channels.",
+        "Processing covers the entire image, including visible border instances, although detection of every partial nucleus is not guaranteed.",
+        "Stain, magnification, and pixel-size compatibility remain unverified. No ground-truth labels or comparative benchmark scores establish superiority.",
+        "Object probabilities are not count-accuracy probabilities; any subsequent count would be a model-derived estimate, not verified biological truth."
+      ]
+    },
+    {
+      "plan_id": "stardist-sensitive",
+      "rationale": "Uses the same StarDist 2D model, 2D_versatile_fluo checkpoint, percentile normalization [1, 99.8], and nonmaximum-suppression threshold 0.3, but lowers the probability threshold to 0.35. This may retain dim or partial nucleus candidates rejected at higher thresholds, while also admitting more background or spurious candidates. The image's variable brightness makes this a useful alternative, but a larger resulting count would not establish greater accuracy. It retains the star-convex shape limitation and unverified transfer to this stain, magnification, and pixel size.",
+      "assumptions": [
+        "The user-declared fluorescence metadata and supplied replicated-grayscale probe accurately describe the input.",
+        "The whole image is processed with visible border instances included rather than intentionally excluded.",
+        "Lower-confidence detections require review against the original image and overlay; model probabilities do not establish biological identity or count accuracy."
+      ]
+    },
+    {
+      "plan_id": "stardist-conservative",
+      "rationale": "Uses StarDist 2D with the same 2D_versatile_fluo checkpoint, percentile normalization [1, 99.8], and nonmaximum-suppression threshold 0.3, but raises the probability threshold to 0.6. This can reject weak spurious candidates at the cost of missing genuine dim or partially visible nuclei. That omission risk matters for the requested border-inclusive total, so this is not my initial preference without evidence of excessive false detections. The model's star-convex assumption and uncertain stain, magnification, and pixel-size transfer still apply.",
+      "assumptions": [
+        "The fluorescence modality is user-declared, not established by grayscale appearance alone.",
+        "Processing includes the entire image and does not deliberately discard border instances.",
+        "A higher probability threshold does not imply a more accurate count; no ground truth or benchmark comparison is available."
+      ]
+    },
+    {
+      "plan_id": "cellpose-sam",
+      "rationale": "Uses a different model and checkpoint: Cellpose-SAM with cpsam_v2. Its supplied settings are flow_threshold 0.4, cellprob_threshold 0, min_size 15, batch_size 1, and device mps. No explicit preprocessing settings are supplied, so none are assumed. Its flow and cell-probability thresholds are not directly comparable to StarDist's probability and suppression thresholds. The minimum-size filter may remove small spurious regions but could also remove small border fragments. This provides an alternative segmentation approach, though generalist segmentation can merge touching nuclei or segment other structures. The catalog restricts this adapter's validation scope to 2D grayscale fluorescence nuclei; that is not evidence of superior performance on this image.",
+      "assumptions": [
+        "An Apple MPS device is available, as required by this registered procedure; availability has not been confirmed.",
+        "The user-declared fluorescence metadata and supplied grayscale probe satisfy the registered input scope.",
+        "The entire image, including border instances, is processed, subject to segmentation and minimum-size filtering.",
+        "Segmentation does not prove biological identity, and the supplied validation scope does not extend to DICOM, volumes, or other modalities."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+[models]
+astra = "gpt-6-astra"
+jev = "jev-1.13.0"
+reasoning_effort = "medium"
+max_output_tokens = 4096
+# One extra request for invalid JSON or output-token exhaustion; never for refusals.
+format_retries = 1
+timeout_seconds = 120
+
+[limits]
+max_rounds = 2
+max_steps_per_plan = 3
+max_candidates = 3
+max_pixels = 16000000
+max_input_bytes = 20000000
+# Conservative serialized request budget, not an estimate of the provider's tokenizer.
+jev_max_request_bytes = 24000
+
+[selection]
+# Experimental thresholds, NOT calibrated probabilities of correctness.
+# Read-only trials may test a method whose assumptions still need evidence.
+minimum_score = 1.5
+minimum_confidence = 0.5
+tie_margin = 0.25
+max_competing_plans = 2
+
+[review]
+minimum_support_probability = 0.75
+
+[paths]
+runs = "runs"
+capabilities = "configs/capabilities.toml"
+astra_prompt = "prompts/astra.md"
+plan_rubric = "prompts/jev_plan_score.json"
+review_rubric = "prompts/jev_review.json"

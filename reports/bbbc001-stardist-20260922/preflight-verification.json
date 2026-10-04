@@ -1,0 +1,42 @@
+{
+  "tests_passed": 42,
+  "container_baseline": [
+    {
+      "id": "0bb54dcc4ca2",
+      "count": 349,
+      "labels_identical_to_native": true,
+      "foreground_iou_with_native": 1.0
+    },
+    {
+      "id": "126aeb4762e7",
+      "count": 529,
+      "labels_identical_to_native": true,
+      "foreground_iou_with_native": 1.0
+    },
+    {
+      "id": "2b3b6cf9e3af",
+      "count": 256,
+      "labels_identical_to_native": true,
+      "foreground_iou_with_native": 1.0
+    },
+    {
+      "id": "51680b6440c6",
+      "count": 456,
+      "labels_identical_to_native": true,
+      "foreground_iou_with_native": 1.0
+    },
+    {
+      "id": "72e37a64aca1",
+      "count": 375,
+      "labels_identical_to_native": true,
+      "foreground_iou_with_native": 1.0
+    },
+    {
+      "id": "f78a1dcba6ae",
+      "count": 354,
+      "labels_identical_to_native": true,
+      "foreground_iou_with_native": 1.0
+    }
+  ],
+  "live_calls_for_preflight": 0
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-09-22T06:45:43.661106+00:00",
+  "reason": "StarDist pretrained model clears basedir; metadata path lookup failed before image inference. Use csbdeep get_model_folder instead.",
+  "predictions_before_failure": 0,
+  "inference_settings_changed": false,
+  "cellpose_rerun": false,
+  "recovery_worker_sha256": "d2fbb1f87535c4da950740c0a6269f20d319699b5cd81c033ea9ec9f1b725f70",
+  "exit_code": 0,
+  "coverage": 6
+}

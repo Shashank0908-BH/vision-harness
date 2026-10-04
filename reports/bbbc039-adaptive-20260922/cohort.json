@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cc90a9b0622b",
+    "family": "fluorescence_nucleus_count",
+    "split": "test",
+    "title": "BBBC039 test image 1",
+    "image": "images/cc90a9b0622b.png",
+    "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+    "expected": 62,
+    "tolerance": 0,
+    "metric": "nuclei_count_percentage_error",
+    "source_filename": "IXMtest_P21_s4_w19B7DC88B-10BB-4B51-9A10-9E30285688C1.png",
+    "source_tiff_sha256": "ab4513ed247e94c79cadd2425db46ad6c2fc9434f79ac8837828e94775ca7698",
+    "source_mask_sha256": "d414d0bce132c66b084519c0f9e24129a71920214994777502dca0f7cecd5439",
+    "sha256": "3022f3cbb717bbb25ca4d1570c6d25ab1c4cad88fdcab45ebec6a54621abf163",
+    "display_percentiles": [
+      125.0,
+      899.0
+    ],
+    "annotation_labels_sha256": "1635317f2b50496dcf893f1a9985820947915db090c28aab159f8812d1b3515e"
+  },
+  {
+    "id": "1fb7e5d45040",
+    "family": "fluorescence_nucleus_count",
+    "split": "test",
+    "title": "BBBC039 test image 2",
+    "image": "images/1fb7e5d45040.png",
+    "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+    "expected": 82,
+    "tolerance": 0,
+    "metric": "nuclei_count_percentage_error",
+    "source_filename": "IXMtest_O01_s6_w11A23978B-BAAD-4287-B1F6-FFBCF45C5E2F.png",
+    "source_tiff_sha256": "1b4d4ef302cb7af542f9319ae95fcfbf8cd6b43e8835bcc93de600d72c2a00d0",
+    "source_mask_sha256": "94c0685267f2a384fc55931f5b4524440b4af754b64fa9c2ad7202a5f0af013c",
+    "sha256": "7276a7d3202634b6112f5e5078def2875f113386b36fb09a7378c81fb8d758fc",
+    "display_percentiles": [
+      130.0,
+      855.0
+    ],
+    "annotation_labels_sha256": "1cdb80eb1519892c7aae79e008fe5f445cc4125f81d38cecde68fdae5bfc5598"
+  },
+  {
+    "id": "d98fd3e7d694",
+    "family": "fluorescence_nucleus_count",
+    "split": "test",
+    "title": "BBBC039 test image 3",
+    "image": "images/d98fd3e7d694.png",
+    "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+    "expected": 119,
+    "tolerance": 0,
+    "metric": "nuclei_count_percentage_error",
+    "source_filename": "IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61.png",
+    "source_tiff_sha256": "033b59cb26728242bfec49319c15a3784a825b4d5c5d5b5ecf60b760ecad9924",
+    "source_mask_sha256": "a7b0aa3d0aa53f2e7b2e7b8613a50024392479b9f838b1e3ddf3bbd6ca966839",
+    "sha256": "f541ad9b63b59c346940c6668afc1dd81fe6886c1068147161628c2d4d48f34b",
+    "display_percentiles": [
+      133.0,
+      961.0
+    ],
+    "annotation_labels_sha256": "40170fc1240dcbb507e7d8d05e7febb563fdaa0def96bc898f65b47b08fdeab5"
+  },
+  {
+    "id": "e3e16e92c36d",
+    "family": "fluorescence_nucleus_count",
+    "split": "test",
+    "title": "BBBC039 test image 4",
+    "image": "images/e3e16e92c36d.png",
+    "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+    "expected": 197,
+    "tolerance": 0,
+    "metric": "nuclei_count_percentage_error",
+    "source_filename": "IXMtest_M12_s7_w193E9BA0F-274A-4EE8-A0F0-6A58471A333A.png",
+    "source_tiff_sha256": "301b13eaf968e56bce7065c21f9319d91719847b5873ae27ae398e2ba4d968a3",
+    "source_mask_sha256": "4a8e3431626e209eb1d8301968648c690e86e9c2163bda36c0aad6a31cdd81ae",
+    "sha256": "4e796adaf57566904f538ab37700478acd5392f53f32b6fb7f89c6e3e1e48756",
+    "display_percentiles": [
+      134.0,
+      976.0
+    ],
+    "annotation_labels_sha256": "262a4b5bd06ced6e3595ca2ae32fe6b1c5809e22bc2c7f9adad6066f6b995bad"
+  },
+  {
+    "id": "34430d5b81b9",
+    "family": "fluorescence_nucleus_count",
+    "split": "test",
+    "title": "BBBC039 test image 5",
+    "image": "images/34430d5b81b9.png",
+    "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+    "expected": 119,
+    "tolerance": 0,
+    "metric": "nuclei_count_percentage_error",
+    "source_filename": "IXMtest_K01_s5_w1A3DE001A-72D6-4321-8B25-4300AB0207AC.png",
+    "source_tiff_sha256": "0361885ce4eccfd71b7834433f7982e40fb313af95dc5ae05e8144757469c040",
+    "source_mask_sha256": "6a3e0c8d7d4ab77b553299eee43655e6393eef76001a1f00aa05d6c694423b64",
+    "sha256": "2fc5cee3cefbe1381bba3a10fef52cab2ecb937adddd4b8102e56fe6fdbe4073",
+    "display_percentiles": [
+      126.0,
+      856.0
+    ],
+    "annotation_labels_sha256": "07b9586952116df6139ecec85c421dd99f69b4d46ddfc606afc0d7f2653479c1"
+  },
+  {
+    "id": "27521e608662",
+    "family": "fluorescence_nucleus_count",
+    "split": "test",
+    "title": "BBBC039 test image 6",
+    "image": "images/27521e608662.png",
+    "question": "Count the nuclei in this fluorescence microscopy image of Hoechst-stained U2OS nuclei. Return your estimated total nucleus count as a number, including visible border nuclei.",
+    "expected": 156,
+    "tolerance": 0,
+    "metric": "nuclei_count_percentage_error",
+    "source_filename": "IXMtest_A09_s1_w1CE70AD49-290D-4312-82E6-CDC717F32637.png",
+    "source_tiff_sha256": "51787b533f38efc0d934a9cc0f760e704ef5fca97d561aa868f2099f2e6bb1ce",
+    "source_mask_sha256": "bf9897059aa3c4de8ce94b583eee7285dc9f9f90fc7848cf9a4b5f74ba4e2471",
+    "sha256": "728d978aa4c350f609096c1970e6d4c9b948168921fd89c94c48a527a55e1caf",
+    "display_percentiles": [
+      134.0,
+      1035.0
+    ],
+    "annotation_labels_sha256": "8fae62571449db67aab00399783e16b691b61267923aabce9ff02a48d7d50e55"
+  }
+]

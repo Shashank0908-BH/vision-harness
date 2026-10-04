@@ -1,0 +1,67 @@
+{
+  "configuration": "Astra + OpenCV + Jev method selection + Jev answer review",
+  "runtime_mode": "full",
+  "source_results": "results.json",
+  "dataset": "Complete published BBBC001v1, six real microscopy images",
+  "new_inference_performed": true,
+  "comparison": [
+    {
+      "mode": "vanilla",
+      "coverage": 6,
+      "total": 6,
+      "benchmark_percentage_error": 10.298285418860965,
+      "answered_subset_percentage_error": 10.298285418860965,
+      "abstentions": 0,
+      "errors": 0,
+      "mean_seconds": 76.48492085433332,
+      "tokens": {
+        "astra": {
+          "input": 4614,
+          "output": 15466,
+          "started_calls": 6,
+          "calls": 6
+        },
+        "jev": {
+          "input": 0,
+          "output": 0,
+          "started_calls": 0,
+          "calls": 0
+        }
+      }
+    },
+    {
+      "mode": "full",
+      "coverage": 0,
+      "total": 6,
+      "benchmark_percentage_error": null,
+      "answered_subset_percentage_error": null,
+      "abstentions": 6,
+      "errors": 0,
+      "mean_seconds": 234.3822983703333,
+      "tokens": {
+        "astra": {
+          "input": 135799,
+          "output": 49604,
+          "started_calls": 26,
+          "calls": 26
+        },
+        "jev": {
+          "input": 72178,
+          "output": 721,
+          "started_calls": 24,
+          "calls": 24
+        }
+      }
+    }
+  ],
+  "conclusion": "The full harness returned no final counts: six abstentions, zero execution errors. It has no defined full-dataset counting-error score. Vanilla returned six counts with 10.30% mean percentage error. This run does not show a benefit from the full harness.",
+  "limitations": [
+    "Only six images from one experiment, not broad multimodal evidence.",
+    "Published human counts disagree; their mean is the reference, not an exact biological truth.",
+    "Current OpenCV tools are color/white-background tools, not microscopy segmentation models.",
+    "Independent plans and different compute per mode prevent a clean causal estimate of Jev selection alone.",
+    "No changes during this run; one attempt per image/mode, with the configured bounded per-call format retry.",
+    "This is a retest of previously inspected benchmark images after integration fixes.",
+    "Incomplete modes receive a completion rate and answered-subset error, not a fabricated full-benchmark error."
+  ]
+}

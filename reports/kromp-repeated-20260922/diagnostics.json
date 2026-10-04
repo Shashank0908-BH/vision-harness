@@ -1,0 +1,108 @@
+{
+  "scope": "Descriptive analysis added after scoring; no model runs or cohort changes.",
+  "jev_choices": {
+    "stardist-default": 95,
+    "stardist-sensitive": 8,
+    "stardist-conservative": 2,
+    "cellpose-sam": 6
+  },
+  "astra_preferences": {
+    "stardist-sensitive": 84,
+    "stardist-default": 27
+  },
+  "common_complete_cases": {
+    "image_ids": [
+      "033e228a36eb",
+      "0dd3dce58330",
+      "0f8cd1692971",
+      "1452b1f236fb",
+      "1b4de71c0b8b",
+      "1c6b0002e918",
+      "1ea18c8d4537",
+      "21a45e9f8b5a",
+      "21c3236f351d",
+      "3a50c1b3af56",
+      "3cbe1c1887f2",
+      "453a2ffca0fe",
+      "4c7ab5e5db93",
+      "4d9f365970a2",
+      "5b649c3d042a",
+      "5ce7aa249ca6",
+      "5dbe5cc7c039",
+      "699afb45f17b",
+      "790bee4f6905",
+      "802e8f830f1b",
+      "8e540d818a75",
+      "9a364d5359bd",
+      "a3964de3ea29",
+      "c24f81d1e47d",
+      "d548ac33a878",
+      "dd7c4e7a504b",
+      "ec236e59cb5c",
+      "ec9c29b8b6de",
+      "ef70c4932509",
+      "f8c05d6880ab"
+    ],
+    "images": 30,
+    "attempts": 90,
+    "mape_percent": {
+      "vanilla": 11.151750603415545,
+      "astra_tools_paired": 19.500477438067197,
+      "full_harness": 16.755626977481583,
+      "stardist-default": 17.245003870444616,
+      "stardist-sensitive": 20.580444001665978,
+      "stardist-conservative": 13.98172632887122,
+      "cellpose-sam": 14.506386682583463
+    },
+    "scope": "Post-scoring complete-case diagnostic: excludes any image with a missing answer in any compared arm/repetition; not the primary full-cohort result."
+  },
+  "review": [
+    {
+      "review_status": "caution",
+      "attempts": 107,
+      "numeric_answers": 97,
+      "abstentions": 10,
+      "within_10_percent": 60,
+      "conditional_mape_percent": 17.086210295289973
+    },
+    {
+      "review_status": "supported",
+      "attempts": 4,
+      "numeric_answers": 4,
+      "abstentions": 0,
+      "within_10_percent": 2,
+      "conditional_mape_percent": 12.318181818181818
+    }
+  ],
+  "selection_and_final_counts_identical": true,
+  "per_image_count_variation": {
+    "vanilla": {
+      "all_three_numeric": 35,
+      "all_three_numeric_and_identical": 5
+    },
+    "astra_tools_paired": {
+      "all_three_numeric": 32,
+      "all_three_numeric_and_identical": 20
+    },
+    "full_harness": {
+      "all_three_numeric": 33,
+      "all_three_numeric_and_identical": 23
+    },
+    "stardist-default": {
+      "all_three_numeric": 37,
+      "all_three_numeric_and_identical": 37
+    },
+    "stardist-sensitive": {
+      "all_three_numeric": 37,
+      "all_three_numeric_and_identical": 37
+    },
+    "stardist-conservative": {
+      "all_three_numeric": 37,
+      "all_three_numeric_and_identical": 37
+    },
+    "cellpose-sam": {
+      "all_three_numeric": 37,
+      "all_three_numeric_and_identical": 37
+    }
+  }
+}

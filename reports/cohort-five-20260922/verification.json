@@ -1,0 +1,9 @@
+{
+  "paired_trials": 25,
+  "validated_trajectories": 25,
+  "same_source_images": true,
+  "all_live": true,
+  "keys_found_in_reports_or_logs": false,
+  "source_commit": "37611ed2d7d38e9ff3985a6312565f9ede2ad683",
+  "unrecorded_usage_calls": 1
+}

@@ -1,0 +1,53 @@
+{
+  "model": "cellpose",
+  "worker_sha256": "fbcb5146e5d22784fb148baaa7be2bf08bd53f3a4bd3fb9cf0ad19373a8a855b",
+  "packages": {
+    "numpy": "2.5.3",
+    "torchvision": "0.29.0",
+    "packaging": "26.3",
+    "tifffile": "2026.9.20",
+    "networkx": "3.7",
+    "filelock": "4.0.1",
+    "segment-anything": "1.0",
+    "natsort": "8.4.0",
+    "fill_voids": "2.1.2",
+    "torch": "2.14.0",
+    "imagecodecs": "2026.8.16",
+    "sympy": "1.14.0",
+    "tqdm": "4.70.1",
+    "setuptools": "84.0.0",
+    "mpmath": "1.3.0",
+    "fsspec": "2026.9.0",
+    "roifile": "2026.9.22",
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.3",
+    "typing_extensions": "4.16.0",
+    "cellpose": "4.2.1.1",
+    "pillow": "12.3.0",
+    "scipy": "1.18.1",
+    "fastremap": "1.20.0",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "target": "nuclei",
+  "calibrated_count_confidence": null,
+  "checkpoint": "cpsam_v2",
+  "device": "mps",
+  "dtype": "float32",
+  "parameters": {
+    "batch_size": 1,
+    "channel_axis": -1,
+    "normalize": true,
+    "diameter": null,
+    "flow_threshold": 0.4,
+    "cellprob_threshold": 0.0,
+    "min_size": 15,
+    "do_3D": false,
+    "augment": false
+  },
+  "weight_hashes": {
+    "/Users/shashanksingh/Documents/Vision/.model-cache/cellpose/cpsam_v2": "0f1cc3f7ecdd8a037a57c6c48d9d8921391be4cbce3fa9f13c3e3a2e1253c667"
+  },
+  "initialization_seconds": 35.41601979266852,
+  "worker_total_seconds": 54.40535095799714,
+  "peak_process_rss_bytes": 1605353472
+}

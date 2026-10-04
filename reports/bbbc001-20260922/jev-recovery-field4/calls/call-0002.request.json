@@ -1,0 +1,352 @@
+{
+  "model": "jev-1.13.0",
+  "state": {
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.\n",
+    "answer": {
+      "status": "answered",
+      "value": 300.0,
+      "explanation": "Estimated approximately 300 cells, using the visible nuclei and watershed counts of 295 and 297 as guides.",
+      "evidence_ids": [
+        "r2-achromatic_watershed-split_low_markers",
+        "r2-achromatic_watershed-split_high_markers"
+      ],
+      "limitations": [
+        "Touching nuclei and partial nuclei at image borders introduce counting uncertainty; segmented regions are not individually verified cells."
+      ]
+    },
+    "evidence": [
+      {
+        "evidence_id": "probe",
+        "tool": "fixed_probes",
+        "version": "4.14.0",
+        "input_artifact_id": "original",
+        "parameters": {
+          "saturation_thresholds": [
+            60,
+            80,
+            100
+          ],
+          "value_min": 40
+        },
+        "measurements": {
+          "gray_stddev": 21.58182806026708,
+          "color_coverage": {
+            "red": {
+              "fraction_at_saturation_80": 0.0,
+              "fraction_range_across_thresholds": 0.0
+            },
+            "green": {
+              "fraction_at_saturation_80": 0.0,
+              "fraction_range_across_thresholds": 0.0
+            },
+            "blue": {
+              "fraction_at_saturation_80": 0.0,
+              "fraction_range_across_thresholds": 0.0
+            }
+          },
+          "laplacian_variance": 69.636732801795
+        },
+        "coordinate_system": {
+          "units": "pixels",
+          "origin": "top-left",
+          "x_direction": "right",
+          "y_direction": "down",
+          "width": 512,
+          "height": 512,
+          "original_offset": [
+            0,
+            0
+          ]
+        },
+        "artifact_ids": [],
+        "primary_artifact_id": null,
+        "quality_flags": [
+          "Color coverage does not establish object identity or separation.",
+          "Laplacian variance is an uncalibrated sharpness diagnostic, not a blur verdict."
+        ],
+        "status": "success"
+      },
+      {
+        "evidence_id": "r1-watershed_with_baseline-baseline",
+        "tool": "components",
+        "version": "4.14.0",
+        "input_artifact_id": "original",
+        "parameters": {
+          "color": "any",
+          "min_area": 12,
+          "saturation_min": 0,
+          "value_min": 25
+        },
+        "measurements": {
+          "component_count": 1,
+          "foreground_fraction": 1.0,
+          "components_summary": {
+            "record_count": 1,
+            "area_pixels": {
+              "total": 262144,
+              "minimum": 262144,
+              "median": 262144,
+              "maximum": 262144
+            },
+            "border_touching_records": 1,
+            "geometry_omitted": true,
+            "limitation": "Aggregate pixel-region statistics, not verified cell identities. Individual boxes and centroids are retained in the local trace but are not visible in this request."
+          }
+        },
+        "coordinate_system": {
+          "units": "pixels",
+          "origin": "top-left",
+          "x_direction": "right",
+          "y_direction": "down",
+          "width": 512,
+          "height": 512,
+          "original_offset": [
+            0,
+            0
+          ]
+        },
+        "artifact_ids": [
+          "r1-watershed_with_baseline-baseline-mask",
+          "r1-watershed_with_baseline-baseline-overlay"
+        ],
+        "primary_artifact_id": "r1-watershed_with_baseline-baseline-mask",
+        "quality_flags": [
+          "Pixel components are not verified semantic objects.",
+          "Foreground segmentation assumes a light, low-saturation background.",
+          "Some components touch the image or crop border."
+        ],
+        "status": "success"
+      },
+      {
+        "evidence_id": "r1-watershed_with_baseline-split_regions",
+        "tool": "watershed",
+        "version": "4.14.0",
+        "input_artifact_id": "original",
+        "parameters": {
+          "color": "any",
+          "min_area": 12,
+          "saturation_min": 0,
+          "value_min": 25,
+          "marker_fraction": 0.35
+        },
+        "measurements": {
+          "component_count": 1,
+          "foreground_fraction": 0.9922027587890625,
+          "components_summary": {
+            "record_count": 1,
+            "area_pixels": {
+              "total": 260100,
+              "minimum": 260100,
+              "median": 260100,
+              "maximum": 260100
+            },
+            "border_touching_records": 0,
+            "geometry_omitted": true,
+            "limitation": "Aggregate pixel-region statistics, not verified cell identities. Individual boxes and centroids are retained in the local trace but are not visible in this request."
+          }
+        },
+        "coordinate_system": {
+          "units": "pixels",
+          "origin": "top-left",
+          "x_direction": "right",
+          "y_direction": "down",
+          "width": 512,
+          "height": 512,
+          "original_offset": [
+            0,
+            0
+          ]
+        },
+        "artifact_ids": [
+          "r1-watershed_with_baseline-split_regions-mask",
+          "r1-watershed_with_baseline-split_regions-overlay"
+        ],
+        "primary_artifact_id": "r1-watershed_with_baseline-split_regions-mask",
+        "quality_flags": [
+          "Watershed boundaries and marker fraction can change area and instance counts.",
+          "Pixel components are not verified semantic objects.",
+          "Foreground segmentation assumes a light, low-saturation background."
+        ],
+        "status": "success"
+      },
+      {
+        "evidence_id": "r2-achromatic_watershed-brightness_baseline",
+        "tool": "components",
+        "version": "4.14.0",
+        "input_artifact_id": "original",
+        "parameters": {
+          "color": "red",
+          "min_area": 12,
+          "saturation_min": 0,
+          "value_min": 20
+        },
+        "measurements": {
+          "component_count": 266,
+          "foreground_fraction": 0.18280410766601562,
+          "components_summary": {
+            "record_count": 266,
+            "area_pixels": {
+              "total": 47921,
+              "minimum": 12,
+              "median": 143.5,
+              "maximum": 1119
+            },
+            "border_touching_records": 32,
+            "geometry_omitted": true,
+            "limitation": "Aggregate pixel-region statistics, not verified cell identities. Individual boxes and centroids are retained in the local trace but are not visible in this request."
+          }
+        },
+        "coordinate_system": {
+          "units": "pixels",
+          "origin": "top-left",
+          "x_direction": "right",
+          "y_direction": "down",
+          "width": 512,
+          "height": 512,
+          "original_offset": [
+            0,
+            0
+          ]
+        },
+        "artifact_ids": [
+          "r2-achromatic_watershed-brightness_baseline-mask",
+          "r2-achromatic_watershed-brightness_baseline-overlay"
+        ],
+        "primary_artifact_id": "r2-achromatic_watershed-brightness_baseline-mask",
+        "quality_flags": [
+          "Pixel components are not verified semantic objects.",
+          "Some components touch the image or crop border."
+        ],
+        "status": "success"
+      },
+      {
+        "evidence_id": "r2-achromatic_watershed-split_low_markers",
+        "tool": "watershed",
+        "version": "4.14.0",
+        "input_artifact_id": "original",
+        "parameters": {
+          "color": "red",
+          "min_area": 12,
+          "saturation_min": 0,
+          "value_min": 20,
+          "marker_fraction": 0.35
+        },
+        "measurements": {
+          "component_count": 297,
+          "foreground_fraction": 0.10969161987304688,
+          "components_summary": {
+            "record_count": 297,
+            "area_pixels": {
+              "total": 28755,
+              "minimum": 12,
+              "median": 82,
+              "maximum": 809
+            },
+            "border_touching_records": 0,
+            "geometry_omitted": true,
+            "limitation": "Aggregate pixel-region statistics, not verified cell identities. Individual boxes and centroids are retained in the local trace but are not visible in this request."
+          }
+        },
+        "coordinate_system": {
+          "units": "pixels",
+          "origin": "top-left",
+          "x_direction": "right",
+          "y_direction": "down",
+          "width": 512,
+          "height": 512,
+          "original_offset": [
+            0,
+            0
+          ]
+        },
+        "artifact_ids": [
+          "r2-achromatic_watershed-split_low_markers-mask",
+          "r2-achromatic_watershed-split_low_markers-overlay"
+        ],
+        "primary_artifact_id": "r2-achromatic_watershed-split_low_markers-mask",
+        "quality_flags": [
+          "Watershed boundaries and marker fraction can change area and instance counts.",
+          "Pixel components are not verified semantic objects."
+        ],
+        "status": "success"
+      },
+      {
+        "evidence_id": "r2-achromatic_watershed-split_high_markers",
+        "tool": "watershed",
+        "version": "4.14.0",
+        "input_artifact_id": "original",
+        "parameters": {
+          "color": "red",
+          "min_area": 12,
+          "saturation_min": 0,
+          "value_min": 20,
+          "marker_fraction": 0.5
+        },
+        "measurements": {
+          "component_count": 295,
+          "foreground_fraction": 0.10400390625,
+          "components_summary": {
+            "record_count": 295,
+            "area_pixels": {
+              "total": 27264,
+              "minimum": 14,
+              "median": 81,
+              "maximum": 700
+            },
+            "border_touching_records": 0,
+            "geometry_omitted": true,
+            "limitation": "Aggregate pixel-region statistics, not verified cell identities. Individual boxes and centroids are retained in the local trace but are not visible in this request."
+          }
+        },
+        "coordinate_system": {
+          "units": "pixels",
+          "origin": "top-left",
+          "x_direction": "right",
+          "y_direction": "down",
+          "width": 512,
+          "height": 512,
+          "original_offset": [
+            0,
+            0
+          ]
+        },
+        "artifact_ids": [
+          "r2-achromatic_watershed-split_high_markers-mask",
+          "r2-achromatic_watershed-split_high_markers-overlay"
+        ],
+        "primary_artifact_id": "r2-achromatic_watershed-split_high_markers-mask",
+        "quality_flags": [
+          "Watershed boundaries and marker fraction can change area and instance counts.",
+          "Pixel components are not verified semantic objects."
+        ],
+        "status": "success"
+      }
+    ],
+    "feedback": [
+      {
+        "review": {
+          "support_probability": 0.08
+        },
+        "instruction": "Gather additional evidence or abstain; do not merely rewrite the claim."
+      }
+    ],
+    "image_artifact_ids": [
+      "original",
+      "r1-watershed_with_baseline-baseline-overlay",
+      "r1-watershed_with_baseline-split_regions-overlay",
+      "r2-achromatic_watershed-brightness_baseline-overlay",
+      "r2-achromatic_watershed-split_low_markers-overlay",
+      "r2-achromatic_watershed-split_high_markers-overlay"
+    ]
+  },
+  "questions": {
+    "support": {
+      "type": "noul",
+      "instructions": "Does the supplied evidence support the candidate answer to the user's task? Treat image interpretations as unverified unless supported by independent tool evidence. Do not infer missing observations. This is support from available evidence, not independent verification of the original image.",
+      "criteria": {
+        "true": "Evidence supports the answer and its stated scope without a material unresolved contradiction.",
+        "false": "The answer exceeds available evidence, contradicts it, or relies on an unresolved critical assumption."
+      }
+    }
+  }
+}

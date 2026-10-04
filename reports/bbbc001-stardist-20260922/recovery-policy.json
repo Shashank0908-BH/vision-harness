@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-09-22T07:21:11.610592+00:00",
+  "reason": "First vanilla API call timeout observed; keep complete primary run and separately recover execution timeouts after it finishes.",
+  "eligible": "APITimeoutError execution failures only, not abstentions or low-scoring answers",
+  "attempts_per_failed_task": 1,
+  "timeout_seconds": 300,
+  "other_inference_settings": "unchanged",
+  "primary_results": "Never overwrite; recovery receives separate Harbor jobs and reporting",
+  "comparison": "If recovered counts are summarized with successful primary counts, label that table as recovered/composite and retain original coverage and failure counts."
+}

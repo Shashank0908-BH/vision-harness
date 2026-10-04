@@ -1,0 +1,422 @@
+[
+  {
+    "id": "0bb54dcc4ca2",
+    "evidence": {
+      "evidence_id": "default",
+      "tool": "stardist",
+      "version": "0.9.2",
+      "input_artifact_id": "original",
+      "parameters": {
+        "checkpoint": "2D_versatile_fluo",
+        "weights_sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+        "segmentation_profile": "default",
+        "probability_threshold": 0.479071463157368,
+        "overlap_threshold": 0.3,
+        "normalization_percentiles": [
+          1,
+          99.8
+        ],
+        "resize": null,
+        "device": "cpu",
+        "include_border_instances": true,
+        "execution_seconds_including_first_load": 2.3608134180000206
+      },
+      "measurements": {
+        "instance_count": 349,
+        "target": "predicted fluorescent nuclei",
+        "count_derivation": "Number of distinct positive instance IDs; no arithmetic correction or extrapolation",
+        "full_original_coverage": true,
+        "foreground_fraction": 0.1443023681640625,
+        "border_instance_count": 16,
+        "area_pixels": {
+          "minimum": 35,
+          "median": 103.0,
+          "maximum": 289
+        },
+        "native_object_score": {
+          "minimum": 0.5181261301040649,
+          "mean": 0.8285311460494995,
+          "calibrated_count_confidence": false
+        },
+        "raw_labels_path": "evidence/default-labels.npz",
+        "raw_labels_sha256": "3ff207ace0968156847c2caaea802296e5b9689951fc2ea9b73b6831270a2bda",
+        "instances_path": "evidence/default-instances.json"
+      },
+      "coordinate_system": {
+        "units": "pixels",
+        "origin": "top-left",
+        "x_direction": "right",
+        "y_direction": "down",
+        "width": 512,
+        "height": 512,
+        "original_offset": [
+          0,
+          0
+        ]
+      },
+      "artifact_ids": [
+        "default-mask",
+        "default-overlay"
+      ],
+      "primary_artifact_id": "default-mask",
+      "quality_flags": [
+        "Pretrained on fluorescent nuclei; predicted instances are estimates, not validated identities.",
+        "Touching nuclei may merge, fragments may split, dim nuclei may be missed.",
+        "A nucleus count estimates cell count under a one-nucleus-per-cell assumption.",
+        "Native object scores and threshold agreement are not calibrated count confidence.",
+        "Cropped counts must not be extrapolated or summed over overlaps without explicit reconciliation."
+      ],
+      "status": "success"
+    }
+  },
+  {
+    "id": "126aeb4762e7",
+    "evidence": {
+      "evidence_id": "default",
+      "tool": "stardist",
+      "version": "0.9.2",
+      "input_artifact_id": "original",
+      "parameters": {
+        "checkpoint": "2D_versatile_fluo",
+        "weights_sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+        "segmentation_profile": "default",
+        "probability_threshold": 0.479071463157368,
+        "overlap_threshold": 0.3,
+        "normalization_percentiles": [
+          1,
+          99.8
+        ],
+        "resize": null,
+        "device": "cpu",
+        "include_border_instances": true,
+        "execution_seconds_including_first_load": 0.9745392079999817
+      },
+      "measurements": {
+        "instance_count": 529,
+        "target": "predicted fluorescent nuclei",
+        "count_derivation": "Number of distinct positive instance IDs; no arithmetic correction or extrapolation",
+        "full_original_coverage": true,
+        "foreground_fraction": 0.20181655883789062,
+        "border_instance_count": 21,
+        "area_pixels": {
+          "minimum": 39,
+          "median": 95.0,
+          "maximum": 375
+        },
+        "native_object_score": {
+          "minimum": 0.48589566349983215,
+          "mean": 0.8134320378303528,
+          "calibrated_count_confidence": false
+        },
+        "raw_labels_path": "evidence/default-labels.npz",
+        "raw_labels_sha256": "e36292de6b0945d293f871336bb8428c9077edb94334517052ffe93f2fe2bd54",
+        "instances_path": "evidence/default-instances.json"
+      },
+      "coordinate_system": {
+        "units": "pixels",
+        "origin": "top-left",
+        "x_direction": "right",
+        "y_direction": "down",
+        "width": 512,
+        "height": 512,
+        "original_offset": [
+          0,
+          0
+        ]
+      },
+      "artifact_ids": [
+        "default-mask",
+        "default-overlay"
+      ],
+      "primary_artifact_id": "default-mask",
+      "quality_flags": [
+        "Pretrained on fluorescent nuclei; predicted instances are estimates, not validated identities.",
+        "Touching nuclei may merge, fragments may split, dim nuclei may be missed.",
+        "A nucleus count estimates cell count under a one-nucleus-per-cell assumption.",
+        "Native object scores and threshold agreement are not calibrated count confidence.",
+        "Cropped counts must not be extrapolated or summed over overlaps without explicit reconciliation."
+      ],
+      "status": "success"
+    }
+  },
+  {
+    "id": "2b3b6cf9e3af",
+    "evidence": {
+      "evidence_id": "default",
+      "tool": "stardist",
+      "version": "0.9.2",
+      "input_artifact_id": "original",
+      "parameters": {
+        "checkpoint": "2D_versatile_fluo",
+        "weights_sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+        "segmentation_profile": "default",
+        "probability_threshold": 0.479071463157368,
+        "overlap_threshold": 0.3,
+        "normalization_percentiles": [
+          1,
+          99.8
+        ],
+        "resize": null,
+        "device": "cpu",
+        "include_border_instances": true,
+        "execution_seconds_including_first_load": 0.5552222919999963
+      },
+      "measurements": {
+        "instance_count": 256,
+        "target": "predicted fluorescent nuclei",
+        "count_derivation": "Number of distinct positive instance IDs; no arithmetic correction or extrapolation",
+        "full_original_coverage": true,
+        "foreground_fraction": 0.11323165893554688,
+        "border_instance_count": 11,
+        "area_pixels": {
+          "minimum": 32,
+          "median": 111.0,
+          "maximum": 348
+        },
+        "native_object_score": {
+          "minimum": 0.4851134717464447,
+          "mean": 0.8291856050491333,
+          "calibrated_count_confidence": false
+        },
+        "raw_labels_path": "evidence/default-labels.npz",
+        "raw_labels_sha256": "4ddb94c628942f2ae2ac3d9667f190bd480bd2895ccfce64c5cb568e8a5d440f",
+        "instances_path": "evidence/default-instances.json"
+      },
+      "coordinate_system": {
+        "units": "pixels",
+        "origin": "top-left",
+        "x_direction": "right",
+        "y_direction": "down",
+        "width": 512,
+        "height": 512,
+        "original_offset": [
+          0,
+          0
+        ]
+      },
+      "artifact_ids": [
+        "default-mask",
+        "default-overlay"
+      ],
+      "primary_artifact_id": "default-mask",
+      "quality_flags": [
+        "Pretrained on fluorescent nuclei; predicted instances are estimates, not validated identities.",
+        "Touching nuclei may merge, fragments may split, dim nuclei may be missed.",
+        "A nucleus count estimates cell count under a one-nucleus-per-cell assumption.",
+        "Native object scores and threshold agreement are not calibrated count confidence.",
+        "Cropped counts must not be extrapolated or summed over overlaps without explicit reconciliation."
+      ],
+      "status": "success"
+    }
+  },
+  {
+    "id": "51680b6440c6",
+    "evidence": {
+      "evidence_id": "default",
+      "tool": "stardist",
+      "version": "0.9.2",
+      "input_artifact_id": "original",
+      "parameters": {
+        "checkpoint": "2D_versatile_fluo",
+        "weights_sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+        "segmentation_profile": "default",
+        "probability_threshold": 0.479071463157368,
+        "overlap_threshold": 0.3,
+        "normalization_percentiles": [
+          1,
+          99.8
+        ],
+        "resize": null,
+        "device": "cpu",
+        "include_border_instances": true,
+        "execution_seconds_including_first_load": 0.8216933340000026
+      },
+      "measurements": {
+        "instance_count": 456,
+        "target": "predicted fluorescent nuclei",
+        "count_derivation": "Number of distinct positive instance IDs; no arithmetic correction or extrapolation",
+        "full_original_coverage": true,
+        "foreground_fraction": 0.18310546875,
+        "border_instance_count": 26,
+        "area_pixels": {
+          "minimum": 34,
+          "median": 99.0,
+          "maximum": 305
+        },
+        "native_object_score": {
+          "minimum": 0.5000036358833313,
+          "mean": 0.8237475752830505,
+          "calibrated_count_confidence": false
+        },
+        "raw_labels_path": "evidence/default-labels.npz",
+        "raw_labels_sha256": "7b8f8c9c0ccc234fd6cb5e0a71a09fc6ed2d70ef8412be749530b1f4c9659d9e",
+        "instances_path": "evidence/default-instances.json"
+      },
+      "coordinate_system": {
+        "units": "pixels",
+        "origin": "top-left",
+        "x_direction": "right",
+        "y_direction": "down",
+        "width": 512,
+        "height": 512,
+        "original_offset": [
+          0,
+          0
+        ]
+      },
+      "artifact_ids": [
+        "default-mask",
+        "default-overlay"
+      ],
+      "primary_artifact_id": "default-mask",
+      "quality_flags": [
+        "Pretrained on fluorescent nuclei; predicted instances are estimates, not validated identities.",
+        "Touching nuclei may merge, fragments may split, dim nuclei may be missed.",
+        "A nucleus count estimates cell count under a one-nucleus-per-cell assumption.",
+        "Native object scores and threshold agreement are not calibrated count confidence.",
+        "Cropped counts must not be extrapolated or summed over overlaps without explicit reconciliation."
+      ],
+      "status": "success"
+    }
+  },
+  {
+    "id": "72e37a64aca1",
+    "evidence": {
+      "evidence_id": "default",
+      "tool": "stardist",
+      "version": "0.9.2",
+      "input_artifact_id": "original",
+      "parameters": {
+        "checkpoint": "2D_versatile_fluo",
+        "weights_sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+        "segmentation_profile": "default",
+        "probability_threshold": 0.479071463157368,
+        "overlap_threshold": 0.3,
+        "normalization_percentiles": [
+          1,
+          99.8
+        ],
+        "resize": null,
+        "device": "cpu",
+        "include_border_instances": true,
+        "execution_seconds_including_first_load": 0.7657511260000263
+      },
+      "measurements": {
+        "instance_count": 375,
+        "target": "predicted fluorescent nuclei",
+        "count_derivation": "Number of distinct positive instance IDs; no arithmetic correction or extrapolation",
+        "full_original_coverage": true,
+        "foreground_fraction": 0.17071914672851562,
+        "border_instance_count": 16,
+        "area_pixels": {
+          "minimum": 30,
+          "median": 115.0,
+          "maximum": 285
+        },
+        "native_object_score": {
+          "minimum": 0.49600908160209656,
+          "mean": 0.8482300043106079,
+          "calibrated_count_confidence": false
+        },
+        "raw_labels_path": "evidence/default-labels.npz",
+        "raw_labels_sha256": "feba225eebebcc30497af0adc6b51fbe3c1b56604f99dcb4003bb1c3455586a7",
+        "instances_path": "evidence/default-instances.json"
+      },
+      "coordinate_system": {
+        "units": "pixels",
+        "origin": "top-left",
+        "x_direction": "right",
+        "y_direction": "down",
+        "width": 512,
+        "height": 512,
+        "original_offset": [
+          0,
+          0
+        ]
+      },
+      "artifact_ids": [
+        "default-mask",
+        "default-overlay"
+      ],
+      "primary_artifact_id": "default-mask",
+      "quality_flags": [
+        "Pretrained on fluorescent nuclei; predicted instances are estimates, not validated identities.",
+        "Touching nuclei may merge, fragments may split, dim nuclei may be missed.",
+        "A nucleus count estimates cell count under a one-nucleus-per-cell assumption.",
+        "Native object scores and threshold agreement are not calibrated count confidence.",
+        "Cropped counts must not be extrapolated or summed over overlaps without explicit reconciliation."
+      ],
+      "status": "success"
+    }
+  },
+  {
+    "id": "f78a1dcba6ae",
+    "evidence": {
+      "evidence_id": "default",
+      "tool": "stardist",
+      "version": "0.9.2",
+      "input_artifact_id": "original",
+      "parameters": {
+        "checkpoint": "2D_versatile_fluo",
+        "weights_sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+        "segmentation_profile": "default",
+        "probability_threshold": 0.479071463157368,
+        "overlap_threshold": 0.3,
+        "normalization_percentiles": [
+          1,
+          99.8
+        ],
+        "resize": null,
+        "device": "cpu",
+        "include_border_instances": true,
+        "execution_seconds_including_first_load": 0.7140309170000023
+      },
+      "measurements": {
+        "instance_count": 354,
+        "target": "predicted fluorescent nuclei",
+        "count_derivation": "Number of distinct positive instance IDs; no arithmetic correction or extrapolation",
+        "full_original_coverage": true,
+        "foreground_fraction": 0.15299224853515625,
+        "border_instance_count": 12,
+        "area_pixels": {
+          "minimum": 38,
+          "median": 107.5,
+          "maximum": 273
+        },
+        "native_object_score": {
+          "minimum": 0.4902738332748413,
+          "mean": 0.8331257700920105,
+          "calibrated_count_confidence": false
+        },
+        "raw_labels_path": "evidence/default-labels.npz",
+        "raw_labels_sha256": "a441fcea2a7cab20dfe597fd2b2240184aa95d23ccf6b1f93b19ab1e8c2beb49",
+        "instances_path": "evidence/default-instances.json"
+      },
+      "coordinate_system": {
+        "units": "pixels",
+        "origin": "top-left",
+        "x_direction": "right",
+        "y_direction": "down",
+        "width": 512,
+        "height": 512,
+        "original_offset": [
+          0,
+          0
+        ]
+      },
+      "artifact_ids": [
+        "default-mask",
+        "default-overlay"
+      ],
+      "primary_artifact_id": "default-mask",
+      "quality_flags": [
+        "Pretrained on fluorescent nuclei; predicted instances are estimates, not validated identities.",
+        "Touching nuclei may merge, fragments may split, dim nuclei may be missed.",
+        "A nucleus count estimates cell count under a one-nucleus-per-cell assumption.",
+        "Native object scores and threshold agreement are not calibrated count confidence.",
+        "Cropped counts must not be extrapolated or summed over overlaps without explicit reconciliation."
+      ],
+      "status": "success"
+    }
+  }
+]

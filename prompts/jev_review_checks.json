@@ -1,0 +1,22 @@
+{
+  "method_validity": {
+    "instructions": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+    "criteria": {"true": "Evidence supports the method's applicability and resolves material tool failures.", "false": "Method assumptions are contradicted or critical applicability remains unverified."},
+    "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+  },
+  "coverage": {
+    "instructions": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+    "criteria": {"true": "The evidence covers the requested scope and accounts for relevant omissions or overlaps.", "false": "Relevant coverage or duplicate handling is missing, assumed, or contradicted."},
+    "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+  },
+  "target_validity": {
+    "instructions": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+    "criteria": {"true": "Evidence supports the target interpretation at the requested level of precision.", "false": "The target interpretation or relevant merging, fragmentation or location remains an unsupported critical assumption."},
+    "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+  },
+  "answer_grounding": {
+    "instructions": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+    "criteria": {"true": "The answer follows from available evidence and justified operations within its stated scope.", "false": "The answer depends on an unsupported visual estimate, unexplained adjustment, missing derivation, or unresolved contradictory measurements."},
+    "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+  }
+}

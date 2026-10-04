@@ -1,0 +1,7 @@
+{
+  "recorded_at": "2026-09-22T08:59:16.983431+00:00",
+  "status": "Post-hoc diagnostic, not a preregistered arm or independent inference run",
+  "question": "Can one fixed sensitive profile explain the apparent gain of adaptive selection?",
+  "rule": "Use the sensitive profile on the original image for every selected task, from already saved select-arm evidence. No per-image best-of-N selection and no new model calls.",
+  "motivation": "All six selection trials already executed the sensitive profile; the adaptive arm selected it on three images."
+}

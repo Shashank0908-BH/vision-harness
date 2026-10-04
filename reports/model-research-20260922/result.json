@@ -1,0 +1,168 @@
+{
+  "status": "completed",
+  "query": "Find open-weight specialist models for counting and instance-segmenting crowded 2D fluorescence microscopy nuclei. Compare StarDist, Cellpose-SAM and credible alternatives. Identify their exact checkpoints, input assumptions, commercial-license constraints, documented inference hardware, and published segmentation evidence. Prioritize what is worth adding to this local modular harness next; do not claim results on our dataset.",
+  "advisory_only": true,
+  "ranking": [
+    "priority_1_stardist",
+    "priority_2_cellpose_sam",
+    "priority_3_instanseg",
+    "priority_4_microsam"
+  ],
+  "assessments": [
+    {
+      "plan_id": "priority_1_stardist",
+      "score": 2.39,
+      "confidence": 0.61,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.61,
+        "3": 0.39
+      }
+    },
+    {
+      "plan_id": "priority_2_cellpose_sam",
+      "score": 2.0,
+      "confidence": 0.89,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.06,
+        "2": 0.89,
+        "3": 0.05
+      }
+    },
+    {
+      "plan_id": "priority_3_instanseg",
+      "score": 1.83,
+      "confidence": 0.82,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.17,
+        "2": 0.82,
+        "3": 0.01
+      }
+    },
+    {
+      "plan_id": "priority_4_microsam",
+      "score": 1.83,
+      "confidence": 0.77,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.2,
+        "2": 0.77,
+        "3": 0.03
+      }
+    }
+  ],
+  "proposals": {
+    "proposals": [
+      {
+        "plan_id": "priority_1_stardist",
+        "model_name": "StarDist",
+        "capability": "Proposed first addition: automatic 2D nuclear instance segmentation using star-convex polygons, with counting derived from reconciled instance labels. A nuclei-focused baseline complementary to Cellpose-SAM; no executable harness adapter has been established.",
+        "applicable_inputs": "Single-channel 2D fluorescence microscopy containing a nuclear marker. The official example normalizes inputs before predict_instances. Best aligned with approximately star-convex nuclei; channel selection, normalization and image scale must be recorded.",
+        "checkpoint": "StarDist2D.from_pretrained(\"2D_versatile_fluo\"); official stardist/stardist-models release v0.1, artifact python_2D_versatile_fluo.zip. The loader registers a checksum, but its value was not supplied in the notes.",
+        "license": "The software and dedicated pretrained-weight repository identify BSD-3-Clause, permitting commercial use subject to its conditions.",
+        "hardware": "Documented TensorFlow execution with compatible NVIDIA CUDA/cuDNN GPU support and Apple Silicon/TensorFlow acceleration. No checkpoint-specific minimum VRAM or inference throughput was verified.",
+        "evidence": "The author repository identifies the MICCAI 2018 paper, Cell Detection with Star-convex Polygons. This supports the method, not a numerical benchmark for the exact 2D_versatile_fluo artifact. The separately registered 2D_paper_dsb2018 is the paper-associated checkpoint; both checkpoints were trained on subsets of DSB2018 according to the supplied notes. A 2026 FUCCI comparison reported approximately similar accuracy for custom-trained StarDist and InstanSeg, with fine-tuned Cellpose-SAM slightly worse; these are study-specific results, not stock-checkpoint or local-dataset results.",
+        "limitations": [
+          "Deeply concave, branched or otherwise non-star-convex nuclei may not be represented faithfully.",
+          "Probability thresholds and nonmaximum suppression can trade missed detections against false positives and affect separation in crowded groups; higher counts are not inherently better.",
+          "The versatile and paper-associated checkpoints are not interchangeable for reproducibility.",
+          "No verified numerical segmentation benchmark for the exact proposed artifact was extracted.",
+          "Integration priority reflects task fit and relatively clear weight licensing, not demonstrated superiority on the user's images."
+        ],
+        "sources": [
+          "https://github.com/stardist/stardist",
+          "https://github.com/stardist/stardist-models",
+          "https://github.com/stardist/stardist/blob/main/stardist/models/__init__.py",
+          "https://www.nature.com/articles/s44303-026-00159-6"
+        ]
+      },
+      {
+        "plan_id": "priority_2_cellpose_sam",
+        "model_name": "Cellpose-SAM",
+        "capability": "Proposed second addition: automatic cell and nuclear instance segmentation, used here only for nuclear segmentation and label-derived counting. An architectural complement to StarDist; no executable harness adapter has been established.",
+        "applicable_inputs": "For this proposal, 2D fluorescence nuclear-channel images. Upstream describes support for channel-order variation and degraded images. The supplied documentation summary specifies a SAM ViT-L backbone, fixed 256 \u00d7 256 inference tiles and training object diameters of 7.5\u2013120 pixels, with mean 30 pixels. These training scales are not guaranteed operating bounds. Larger objects may require rescaling and adjusted dynamics iterations.",
+        "checkpoint": "Official Hugging Face repository mouseland/cellpose-sam, file cpsam_v2; retain file cpsam only for an explicitly separate paper-era comparison. The supplied September 22, 2026 notes date cpsam_v2 to June 2026 and cpsam to April 2025. Immutable repository revisions and weight hashes were not supplied.",
+        "license": "Software and official weight-repository metadata identify BSD-3-Clause. However, the supplied notes report that the upstream README flags CC-BY-NC training data for all Cellpose models, while the weight model-card body is empty. Commercial clearance remains unresolved: this does not establish automatic transfer of the data license to weights, but warrants rights-holder clarification before commercial release.",
+        "hardware": "The implementation documents CPU, NVIDIA CUDA and Apple MPS device support. No minimum inference VRAM was verified; weight-file size is not an inference-memory requirement.",
+        "evidence": "Upstream cites the 2025 Cellpose-SAM preprint, but its numerical tables were not verified in the supplied notes. Upstream describes cpsam_v2 as addressing low-contrast training behavior and reducing spurious masks; that release statement is not a quantified v2 benchmark. In the 2026 FUCCI study, fine-tuned Cellpose-SAM was slightly worse than the compared custom-trained StarDist and InstanSeg and approximately 5\u00d7 slower than StarDist and 10\u00d7 slower than InstanSeg. Those ratios apply only to that study's trained models and execution conditions.",
+        "limitations": [
+          "Do not silently substitute cpsam_v2 for cpsam or attribute original-checkpoint paper results to v2.",
+          "Nuclear versus whole-cell targeting must be controlled; the proposed initial evaluation would use the nuclear channel alone.",
+          "Preprocessing, scale, dynamics and mask-selection settings can change segmentation and counts; they require validation rather than selection by count magnitude.",
+          "Commercial deployment should remain gated on clarification of the weight-license and training-data statements.",
+          "Neither release claims nor study-specific timings establish accuracy or speed for this checkpoint on the user's dataset."
+        ],
+        "sources": [
+          "https://github.com/MouseLand/cellpose",
+          "https://github.com/MouseLand/cellpose/blob/main/LICENSE",
+          "https://github.com/MouseLand/cellpose/blob/main/cellpose/models.py",
+          "https://github.com/MouseLand/cellpose/blob/main/docs/models.rst",
+          "https://huggingface.co/mouseland/cellpose-sam",
+          "https://huggingface.co/mouseland/cellpose-sam/tree/main",
+          "https://www.nature.com/articles/s44303-026-00159-6"
+        ]
+      },
+      {
+        "plan_id": "priority_3_instanseg",
+        "model_name": "InstanSeg",
+        "capability": "Proposed third addition, conditional on checkpoint-license verification: embedding-based, channel-invariant fluorescence nuclear and cell instance segmentation. For this task, retain only nuclear instances for counting. The project supports compiling the model and postprocessing into TorchScript for LibTorch deployment; no executable harness adapter has been established.",
+        "applicable_inputs": "Multiplexed 2D fluorescence images for fluorescence_nuclei_and_cells. The workflow requires pixel size, obtained from metadata or supplied explicitly. An official single_channel_nuclei model is also described, but its exact release/artifact was not established.",
+        "checkpoint": "fluorescence_nuclei_and_cells, official model release v0.1.0. This is a versioned starting point, not a claim that it is the newest release. Archive filename and immutable hash were not supplied.",
+        "license": null,
+        "hardware": null,
+        "evidence": "The authors distinguish the embedding-based InstanSeg paper from the channel-invariant fluorescence paper; the latter is the relevant method evidence for this checkpoint. The supplied notes do not provide an exact-checkpoint numerical benchmark. A 2026 FUCCI study found custom-trained InstanSeg approximately similar in accuracy to custom-trained StarDist and faster than fine-tuned Cellpose-SAM in that experiment; these findings do not establish performance of the proposed stock release.",
+        "limitations": [
+          "Software is Apache-2.0, but official release notes direct users to each model archive's README for weight licensing and training datasets. The selected archive's license was not verified.",
+          "PyTorch, TorchScript and LibTorch are documented deployment technologies, not verified inference-device or memory specifications.",
+          "No specific inference GPU, minimum VRAM or comparable stock-checkpoint throughput was verified. CUDA/MPS training epoch timings must not be presented as inference measurements.",
+          "Pixel-size calibration is an integration requirement.",
+          "The single-channel nuclear candidate cannot yet be placed in a locked manifest because its exact artifact/version is unresolved.",
+          "Brightfield results and study-specific custom-trained results do not establish fluorescence-nucleus performance of this release."
+        ],
+        "sources": [
+          "https://github.com/instanseg/instanseg",
+          "https://github.com/instanseg/instanseg/releases",
+          "https://www.nature.com/articles/s44303-026-00159-6"
+        ]
+      },
+      {
+        "plan_id": "priority_4_microsam",
+        "model_name": "\u03bcSAM / micro-sam",
+        "capability": "Proposed annotation/correction branch: interactive microscopy segmentation and automatic instance segmentation. Automatic mask generation from a prompt grid (AMG) must be distinguished from automatic instance segmentation using an additional learned decoder (AIS). Move this proposal higher if human correction or training-set creation is a harness priority; no executable harness adapter has been established.",
+        "applicable_inputs": "Light-microscopy images, proposed for evaluation on 2D fluorescence nuclear images. Interactive prompting and fully automatic counting require separate evaluation protocols. AIS additionally requires the matching decoder and instance postprocessing, not merely an interactive SAM checkpoint.",
+        "checkpoint": "vit_b_lm, identified in the authors' segmentation/correction study. An immutable weight revision/hash and the exact matching AIS decoder artifact were not verified.",
+        "license": null,
+        "hardware": null,
+        "evidence": "The 2025 Nature Methods paper reports improved microscopy segmentation after fine-tuning. On LIVECell, specialist-model AIS was on par with the compared Cellpose model, and interactive correction improved results further. This is not a benchmark establishing vit_b_lm as the best automatic model for crowded fluorescence nuclei. The light-microscopy generalist's training includes Nucleus DSB, so that dataset cannot simply be treated as unseen generalist evaluation.",
+        "limitations": [
+          "A checkpoint-specific commercial-use grant was not verified; permission must not be inferred from the surrounding software license.",
+          "No specific inference device or minimum VRAM for vit_b_lm plus its AIS decoder was verified.",
+          "The proposed automatic pipeline is not reproducibly specified until both backbone and decoder artifacts are pinned.",
+          "Interactive correction results are not directly comparable with unattended segmentation or counting.",
+          "LIVECell findings and specialist-model results do not establish performance on the user's fluorescence-nucleus dataset."
+        ],
+        "sources": [
+          "https://github.com/computational-cell-analytics/micro-sam",
+          "https://github.com/computational-cell-analytics/user-study-v3",
+          "https://www.nature.com/articles/s41592-024-02580-4.pdf"
+        ]
+      }
+    ],
+    "gaps": [
+      "This extraction uses the supplied research notes and only URLs from consulted_sources. Source pages were not independently reconsulted here; the notes' version and release statements are attributed rather than newly verified.",
+      "All four entries are research proposals, not installed models or executable adapters. Nothing establishes results on the user's dataset.",
+      "The user declares a crowded 2D fluorescence-nucleus task. No images or image metadata were supplied for independent confirmation of modality, dimensionality or nuclear-channel suitability.",
+      "Commercial-use verification remains unresolved for Cellpose-SAM and checkpoint-specific grants remain missing for InstanSeg and \u03bcSAM. Unknown checkpoint licenses and inference hardware are represented as null rather than inferred from software licenses or framework support.",
+      "Before integration, pin software versions, exact weight artifacts and hashes, license snapshots, channel selection, normalization, rescaling, pixel size, thresholds and tile settings. Resolve \u03bcSAM's matching AIS decoder and InstanSeg's single-channel artifact if those variants are selected.",
+      "Require original-resolution integer instance labels with background 0. Derive counts from unique nonzero IDs after tile reconciliation and an explicit edge-object policy, not from labels.max() or foreground area. Counts are model-derived estimates, not verified biological truth.",
+      "Evaluate on held-out annotated fields stratified by crowding and signal quality, measuring instance precision/recall, matched-mask quality, split/merge errors, count MAE and bias, tile-boundary errors, latency and peak memory. Tune on validation data and lock settings before testing.",
+      "The extracted evidence mixes checkpoints, training regimes, domains and interactive versus automatic workflows. It supports an integration priority of StarDist, Cellpose-SAM, InstanSeg, then \u03bcSAM for correction\u2014not a numerical performance leaderboard."
+    ]
+  },
+  "elapsed_seconds": 216.97588266711682,
+  "registration": "requires reviewed adapter, pinned weights, input checks and benchmark validation",
+  "source_validation": "citation presence checked; factual support still requires human review"
+}

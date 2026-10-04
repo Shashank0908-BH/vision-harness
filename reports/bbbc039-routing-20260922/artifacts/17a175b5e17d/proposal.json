@@ -1,0 +1,45 @@
+{
+  "preferred_id": "stardist-default",
+  "candidates": [
+    {
+      "plan_id": "stardist-default",
+      "rationale": "Uses StarDist 2D with the 2D_versatile_fluo checkpoint, percentile normalization [1, 99.8], probability threshold 0.479071463157368, and NMS threshold 0.3. Preferred as an initial balance between admitting weak detections and rejecting plausible nuclei, rather than because of its profile name or any demonstrated accuracy advantage. The user declares Hoechst-stained U2OS fluorescence microscopy; I observe bright, mostly compact nucleus-like regions on a dark background, with some touching and border-truncated regions. The supplied probe reports replicated grayscale, which supports channel compatibility but does not establish modality. The fluorescence checkpoint and star-convex representation are a reasonable fit for this declared task and observed morphology. No measurement evidence is supplied, so no numeric count is available yet.",
+      "assumptions": [
+        "The user-declared fluorescence modality and 2D nucleus-count target are correct.",
+        "The entire image is processed, retaining detected visible border instances.",
+        "Star-convex shapes approximate most nuclei; touching, faint, irregular, or truncated nuclei can still be missed or split.",
+        "There are no ground-truth labels or benchmark scores establishing superiority; object probabilities are not count-accuracy probabilities, and any resulting count is a model-derived estimate rather than verified biological truth."
+      ]
+    },
+    {
+      "plan_id": "stardist-sensitive",
+      "rationale": "Uses the same StarDist 2D model, 2D_versatile_fluo checkpoint, percentile normalization [1, 99.8], and NMS threshold 0.3, but lowers the probability threshold to 0.35. This admits weaker candidates and may recover faint or partial border nuclei, while also admitting background artifacts or spurious detections. It changes detection selection, not the model or preprocessing. The image contains intensity variation, but that alone does not establish that this lower threshold yields a more accurate total; a larger count would not itself be evidence of improvement.",
+      "assumptions": [
+        "The declared 2D fluorescence task and supplied replicated-grayscale probe are accurate.",
+        "The entire image is processed, including visible border instances.",
+        "The shared star-convex assumption and uncertainty on unfamiliar stains, magnifications, or pixel sizes remain applicable.",
+        "Any gain in weak detections must be weighed against false positives; no supplied labels establish that tradeoff here."
+      ]
+    },
+    {
+      "plan_id": "stardist-conservative",
+      "rationale": "Uses the same StarDist 2D model, 2D_versatile_fluo checkpoint, percentile normalization [1, 99.8], and NMS threshold 0.3, but raises the probability threshold to 0.6. This rejects more weak candidates and may reduce spurious detections, at the cost of missing genuine faint or partially visible border nuclei. It offers a threshold tradeoff rather than a different checkpoint or preprocessing strategy. There is no supplied evidence that stronger rejection is preferable for this image, particularly given the request to include visible border nuclei.",
+      "assumptions": [
+        "The declared 2D fluorescence task and supplied replicated-grayscale probe are accurate.",
+        "Border instances are retained when detected, but the higher threshold does not guarantee their detection.",
+        "The shared star-convex assumption and uncertainty on unfamiliar stains, magnifications, or pixel sizes remain applicable.",
+        "Higher object scores do not establish biological identity or calibrated count accuracy."
+      ]
+    },
+    {
+      "plan_id": "cellpose-sam",
+      "rationale": "Uses a different model and checkpoint, Cellpose-SAM with cpsam_v2, rather than a StarDist threshold variant. Its supplied settings are flow_threshold 0.4, cellprob_threshold 0, min_size 15, batch_size 1, and device mps. Flow and cell-probability filtering govern accepted segmentations, while the minimum-size cutoff can reject small artifacts but also small partial border nuclei. No explicit preprocessing configuration is supplied, so equivalence to StarDist's percentile normalization cannot be assumed. This is an alternative segmentation approach, but generalist segmentation may merge touching nuclei or segment other structures. No supplied labels or scores demonstrate an advantage over the preferred procedure.",
+      "assumptions": [
+        "The input satisfies this adapter's stated 2D grayscale fluorescence-nuclei scope; it is not being used for DICOM, volumes, or another modality.",
+        "An Apple MPS device is available, as required by this registered procedure; availability is not established by the supplied context.",
+        "The entire image is processed, including border instances subject to the supplied detection and size filters.",
+        "Model output alone does not prove biological identity, and a resulting count would remain an unverified model-derived estimate."
+      ]
+    }
+  ]
+}

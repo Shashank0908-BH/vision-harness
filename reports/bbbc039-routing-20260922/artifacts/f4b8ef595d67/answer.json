@@ -1,0 +1,18 @@
+{
+  "status": "answered",
+  "value": 48.0,
+  "explanation": "The selected Cellpose-SAM measurement estimates 48 nuclei across the entire image, including 7 border instances. This is a model-derived estimate, not verified biological truth.",
+  "evidence_ids": [
+    "cellpose-sam"
+  ],
+  "limitations": [
+    "Touching nuclei may be merged, and fragmented bright structures may be counted as separate instances.",
+    "No calibrated count confidence or ground-truth verification is supplied.",
+    "Jev review did not meet the support threshold; this remains a provisional measurement."
+  ],
+  "selected_id": "cellpose-sam",
+  "review_status": "caution",
+  "review_support": 0.64,
+  "review_is_calibrated_accuracy": false,
+  "decision_sha256": "40d647ccd015ecfba16b1a56197c16daaa9d7d7f922515e21dc3e0ffd6ef1ae4"
+}

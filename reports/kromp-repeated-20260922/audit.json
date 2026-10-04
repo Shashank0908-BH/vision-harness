@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "identical_input_images_verified": 333,
+    "valid_trajectories": 333,
+    "provider_calls_started": 781,
+    "provider_responses_saved": 781,
+    "decisions_frozen_before_execution": 111,
+    "instance_maps_audited": 444,
+    "instance_areas_audited": 66432,
+    "schema_or_output_budget_retries": 4
+  },
+  "provider_counts": {
+    "astra_calls": 559,
+    "jev_calls": 222
+  },
+  "errors": [],
+  "missing_artifacts": [],
+  "timing": {
+    "vanilla": {
+      "n": 111,
+      "mean_seconds": 41.64495029469935,
+      "median_seconds": 27.23732375074178
+    },
+    "full_input_to_final": {
+      "n": 111,
+      "mean_seconds": 51.16974701801803,
+      "median_seconds": 49.332646
+    },
+    "astra_tools_answer_only": {
+      "n": 111,
+      "mean_seconds": 8.746598730123862,
+      "median_seconds": 7.88165929261595
+    }
+  },
+  "timing_scope": "concurrent benchmark including resource queues; branch timing covers answer stage only",
+  "source_hashes_match_frozen_protocol": true,
+  "inputs_sha256": "ab336c0b8fc925b144e8ea352c1af0145aad08c54720ea71c159ef709914402d"
+}

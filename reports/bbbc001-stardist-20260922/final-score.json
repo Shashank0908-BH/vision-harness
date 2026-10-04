@@ -1,0 +1,487 @@
+{
+  "experiment": "BBBC001v1: StarDist full-chain test with fresh vanilla and Astra+StarDist ablation",
+  "primary_summary": [
+    {
+      "mode": "vanilla",
+      "coverage": 5,
+      "total": 6,
+      "benchmark_percentage_error": null,
+      "answered_subset_percentage_error": 17.64192499960504,
+      "abstentions": 0,
+      "errors": 1,
+      "mean_seconds": 90.68619270116668,
+      "tokens": {
+        "astra": {
+          "input": 4545,
+          "output": 13676,
+          "started_calls": 6,
+          "calls": 5
+        },
+        "jev": {
+          "input": 0,
+          "output": 0,
+          "started_calls": 0,
+          "calls": 0
+        }
+      }
+    },
+    {
+      "mode": "tools",
+      "coverage": 6,
+      "total": 6,
+      "benchmark_percentage_error": 6.666163528439407,
+      "answered_subset_percentage_error": 6.666163528439407,
+      "abstentions": 0,
+      "errors": 0,
+      "mean_seconds": 33.189519355333324,
+      "tokens": {
+        "astra": {
+          "input": 33935,
+          "output": 5959,
+          "started_calls": 12,
+          "calls": 12
+        },
+        "jev": {
+          "input": 0,
+          "output": 0,
+          "started_calls": 0,
+          "calls": 0
+        }
+      }
+    },
+    {
+      "mode": "full",
+      "coverage": 0,
+      "total": 6,
+      "benchmark_percentage_error": null,
+      "answered_subset_percentage_error": null,
+      "abstentions": 6,
+      "errors": 0,
+      "mean_seconds": 114.00600155133334,
+      "tokens": {
+        "astra": {
+          "input": 120986,
+          "output": 23496,
+          "started_calls": 25,
+          "calls": 25
+        },
+        "jev": {
+          "input": 83705,
+          "output": 985,
+          "started_calls": 18,
+          "calls": 18
+        }
+      }
+    }
+  ],
+  "recovered_comparison": {
+    "label": "Recovered/composite vanilla: five primary answers plus one separately retried timeout",
+    "coverage": 6,
+    "total": 6,
+    "percentage_error": 18.201011046527327,
+    "stardist_error": 6.666163528439407,
+    "closer_images": 6,
+    "worse_images": 0,
+    "relative_error_reduction_percent": 63.37476247116898
+  },
+  "recovery_trials": [
+    {
+      "task_id": "51680b6440c6",
+      "answer": {
+        "status": "answered",
+        "value": 510.0,
+        "explanation": "A visual tally across the full image gives approximately 510 nuclei, assuming one Hoechst-stained nucleus per cell.",
+        "evidence_ids": [],
+        "limitations": [
+          "Manual estimate; dim, overlapping, and edge-truncated nuclei introduce counting uncertainty."
+        ]
+      },
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 88.5,
+        "percentage_error": 20.99644128113879
+      },
+      "manifest": {
+        "run_id": "run",
+        "mode": "vanilla",
+        "offline": false,
+        "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.\n",
+        "config": {
+          "models": {
+            "astra": "gpt-6-astra",
+            "jev": "jev-1.13.0",
+            "reasoning_effort": "medium",
+            "max_output_tokens": 4096,
+            "format_retries": 1,
+            "timeout_seconds": 300.0
+          },
+          "limits": {
+            "max_rounds": 4,
+            "max_steps_per_plan": 3,
+            "max_candidates": 3,
+            "max_pixels": 16000000,
+            "max_input_bytes": 20000000,
+            "jev_max_request_bytes": 48000
+          },
+          "selection": {
+            "minimum_score": 1.5,
+            "minimum_confidence": 0.5,
+            "tie_margin": 0.25,
+            "max_competing_plans": 2
+          },
+          "review": {
+            "minimum_support_probability": 0.75
+          },
+          "loop": {
+            "enabled": true,
+            "max_provider_calls": 24,
+            "max_seconds": 600.0,
+            "max_no_progress_rounds": 1,
+            "checks_path": "prompts/jev_review_checks.json"
+          },
+          "paths": {
+            "runs": "runs",
+            "capabilities": "configs/capabilities-stardist.toml",
+            "astra_prompt": "prompts/astra-stardist.md",
+            "plan_rubric": "prompts/jev_plan_score.json",
+            "review_rubric": "prompts/jev_review.json"
+          }
+        },
+        "frozen_plans": null,
+        "versions": {
+          "vision-harness": "0.1.0",
+          "openai": "2.54.0",
+          "opencv-python-headless": "4.14.0.94",
+          "pydantic": "2.13.5"
+        },
+        "resource_sha256": {
+          "configs/capabilities-stardist.toml": "bdf401d443dccd999d6b9108334cedfd32818877d07c122e66b669b7c1afc9d7",
+          "prompts/astra-stardist.md": "c2c46207a2b76d7f621eb21ac7f2c0d909157f8006401569e4e17c0e43087a21",
+          "prompts/jev_plan_score.json": "c3559f5b7c7e56c5a7e24db7b1d3888e0933886b9680f03f5cb0ce4df9f27c46",
+          "prompts/jev_review.json": "01ff63df9322481d863f9964ec1a43aaa3a8af06055ed9fbe53d74c57fb19e12",
+          "prompts/jev_review_checks.json": "f8882aa2487cad93fdb316509eb56472983961d543ebec4c3184a6f15943f4d6"
+        },
+        "elapsed_seconds": 108.85812075799981,
+        "status": "answered",
+        "input_sha256": "49c23bd67603fde5154c756d923547ce5d906d24baa0a95e4c5bec11f885f6ea"
+      },
+      "infrastructure_error": null,
+      "events": "../../jobs/bbbc001-stardist-recovery-20260922/live-vanilla-20260922-072956-820785/51680b6440c6__pgJ8SZj/agent/run/events.jsonl",
+      "trajectory": "../../jobs/bbbc001-stardist-recovery-20260922/live-vanilla-20260922-072956-820785/51680b6440c6__pgJ8SZj/agent/trajectory.json"
+    }
+  ],
+  "rows": [
+    {
+      "task_id": "72e37a64aca1",
+      "image": "BBBC001 field 1",
+      "reference": 356.0,
+      "human_counts": [
+        350,
+        362
+      ],
+      "primary_vanilla_count": 490.0,
+      "composite_vanilla_count": 490.0,
+      "composite_vanilla_error": 37.640449438202246,
+      "uses_recovery": false,
+      "stardist_count": 375.0,
+      "stardist_error": 5.337078651685394,
+      "full_first_candidate": 375.0,
+      "full_last_candidate": 375.0,
+      "full_final_status": "abstained",
+      "review": {
+        "support_probability": 0.8,
+        "checks": [
+          {
+            "check_id": "method_validity",
+            "support_probability": 0.27,
+            "requirement": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+            "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+          },
+          {
+            "check_id": "coverage",
+            "support_probability": 0.85,
+            "requirement": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+            "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+          },
+          {
+            "check_id": "target_validity",
+            "support_probability": 0.38,
+            "requirement": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+            "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+          },
+          {
+            "check_id": "answer_grounding",
+            "support_probability": 0.85,
+            "requirement": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+            "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "f78a1dcba6ae",
+      "image": "BBBC001 field 2",
+      "reference": 339.0,
+      "human_counts": [
+        336,
+        342
+      ],
+      "primary_vanilla_count": 391.0,
+      "composite_vanilla_count": 391.0,
+      "composite_vanilla_error": 15.339233038348082,
+      "uses_recovery": false,
+      "stardist_count": 354.0,
+      "stardist_error": 4.424778761061947,
+      "full_first_candidate": 354.0,
+      "full_last_candidate": 354.0,
+      "full_final_status": "abstained",
+      "review": {
+        "support_probability": 0.87,
+        "checks": [
+          {
+            "check_id": "method_validity",
+            "support_probability": 0.27,
+            "requirement": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+            "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+          },
+          {
+            "check_id": "coverage",
+            "support_probability": 0.86,
+            "requirement": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+            "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+          },
+          {
+            "check_id": "target_validity",
+            "support_probability": 0.43,
+            "requirement": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+            "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+          },
+          {
+            "check_id": "answer_grounding",
+            "support_probability": 0.89,
+            "requirement": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+            "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "51680b6440c6",
+      "image": "BBBC001 field 3",
+      "reference": 421.5,
+      "human_counts": [
+        396,
+        447
+      ],
+      "primary_vanilla_count": null,
+      "composite_vanilla_count": 510.0,
+      "composite_vanilla_error": 20.99644128113879,
+      "uses_recovery": true,
+      "stardist_count": 456.0,
+      "stardist_error": 8.185053380782918,
+      "full_first_candidate": 456.0,
+      "full_last_candidate": 456.0,
+      "full_final_status": "abstained",
+      "review": {
+        "support_probability": 0.85,
+        "checks": [
+          {
+            "check_id": "method_validity",
+            "support_probability": 0.19,
+            "requirement": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+            "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+          },
+          {
+            "check_id": "coverage",
+            "support_probability": 0.85,
+            "requirement": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+            "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+          },
+          {
+            "check_id": "target_validity",
+            "support_probability": 0.36,
+            "requirement": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+            "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+          },
+          {
+            "check_id": "answer_grounding",
+            "support_probability": 0.88,
+            "requirement": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+            "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "0bb54dcc4ca2",
+      "image": "BBBC001 field 4",
+      "reference": 330.5,
+      "human_counts": [
+        320,
+        341
+      ],
+      "primary_vanilla_count": 362.0,
+      "composite_vanilla_count": 362.0,
+      "composite_vanilla_error": 9.531013615733738,
+      "uses_recovery": false,
+      "stardist_count": 349.0,
+      "stardist_error": 5.597579425113464,
+      "full_first_candidate": 349.0,
+      "full_last_candidate": 349.0,
+      "full_final_status": "abstained",
+      "review": {
+        "support_probability": 0.84,
+        "checks": [
+          {
+            "check_id": "method_validity",
+            "support_probability": 0.22,
+            "requirement": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+            "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+          },
+          {
+            "check_id": "coverage",
+            "support_probability": 0.86,
+            "requirement": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+            "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+          },
+          {
+            "check_id": "target_validity",
+            "support_probability": 0.33,
+            "requirement": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+            "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+          },
+          {
+            "check_id": "answer_grounding",
+            "support_probability": 0.89,
+            "requirement": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+            "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "126aeb4762e7",
+      "image": "BBBC001 field 5",
+      "reference": 465.5,
+      "human_counts": [
+        398,
+        533
+      ],
+      "primary_vanilla_count": 544.0,
+      "composite_vanilla_count": 544.0,
+      "composite_vanilla_error": 16.86358754027927,
+      "uses_recovery": false,
+      "stardist_count": 529.0,
+      "stardist_error": 13.64124597207304,
+      "full_first_candidate": 529.0,
+      "full_last_candidate": 529.0,
+      "full_final_status": "abstained",
+      "review": {
+        "support_probability": 0.86,
+        "checks": [
+          {
+            "check_id": "method_validity",
+            "support_probability": 0.25,
+            "requirement": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+            "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+          },
+          {
+            "check_id": "coverage",
+            "support_probability": 0.83,
+            "requirement": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+            "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+          },
+          {
+            "check_id": "target_validity",
+            "support_probability": 0.42,
+            "requirement": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+            "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+          },
+          {
+            "check_id": "answer_grounding",
+            "support_probability": 0.89,
+            "requirement": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+            "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+          }
+        ]
+      }
+    },
+    {
+      "task_id": "2b3b6cf9e3af",
+      "image": "BBBC001 field 6",
+      "reference": 249.0,
+      "human_counts": [
+        241,
+        257
+      ],
+      "primary_vanilla_count": 271.0,
+      "composite_vanilla_count": 271.0,
+      "composite_vanilla_error": 8.835341365461847,
+      "uses_recovery": false,
+      "stardist_count": 256.0,
+      "stardist_error": 2.8112449799196786,
+      "full_first_candidate": 256.0,
+      "full_last_candidate": 256.0,
+      "full_final_status": "abstained",
+      "review": {
+        "support_probability": 0.85,
+        "checks": [
+          {
+            "check_id": "method_validity",
+            "support_probability": 0.32,
+            "requirement": "Does available measured evidence establish that the methods used for this answer are suitable for the input, without an unresolved failure of their assumptions? Evaluate actual tool parameters, measurements and quality flags; do not equate a previous plan score or successful execution with valid perception.",
+            "remediation": "Address contradicted method assumptions with a different effective method or a measured applicability check. Repeating the same operation or changing an unused parameter adds no evidence."
+          },
+          {
+            "check_id": "coverage",
+            "support_probability": 0.82,
+            "requirement": "Does available evidence cover the spatial extent requested by the question without unresolved omissions or duplicate contributions? For whole-image counts, cropped estimates need an explicit complete partition or overlap reconciliation. Image artifact IDs alone do not establish that their contents were counted.",
+            "remediation": "Gather evidence for omitted regions and explicitly account for crop overlap, borders and any extrapolation. Do not assume crops alone establish complete enumeration."
+          },
+          {
+            "check_id": "target_validity",
+            "support_probability": 0.46,
+            "requirement": "Does available evidence justify relating the measured entities or locations to the targets requested by the question? Pixel components need support as object proxies, with touching or fragmented objects addressed where material. For distances, endpoint identities need support. A generic tool caveat is not automatically fatal if independent evidence resolves it; unverified image interpretations are not independent evidence.",
+            "remediation": "Obtain evidence connecting measurements to the requested targets and assess merging, fragmentation or location errors. If available tools cannot establish this, state that limitation and stop."
+          },
+          {
+            "check_id": "answer_grounding",
+            "support_probability": 0.84,
+            "requirement": "Is the proposed answer numerically or categorically supported by cited measurements and an explicit derivation, with any adjustment justified by available evidence? Check provenance and contradictions. Agreement with a previous answer or higher prior Jev score is not corroboration. You cannot inspect pixels from artifact IDs.",
+            "remediation": "Provide a derivation tied to actual evidence IDs, and justify adjustments with additional measurements. Do not just rewrite the explanation to improve the review score."
+          }
+        ]
+      }
+    }
+  ],
+  "candidate_summary": [
+    {
+      "policy": "first numerical candidate",
+      "coverage": 6,
+      "total": 6,
+      "mean_percentage_error": 6.666163528439407,
+      "answered_subset_percentage_error": 6.666163528439407,
+      "matched_vanilla_subset_error": null,
+      "closer_than_vanilla": 5,
+      "worse_than_vanilla": 0,
+      "tied_with_vanilla": 0
+    },
+    {
+      "policy": "last numerical candidate",
+      "coverage": 6,
+      "total": 6,
+      "mean_percentage_error": 6.666163528439407,
+      "answered_subset_percentage_error": 6.666163528439407,
+      "matched_vanilla_subset_error": null,
+      "closer_than_vanilla": 5,
+      "worse_than_vanilla": 0,
+      "tied_with_vanilla": 0
+    }
+  ],
+  "standalone_error": 6.666163528439407,
+  "conclusion": "StarDist improves measured counts on this cohort. Astra + StarDist matches the standalone counts; full-chain Jev review rejects all six. No accepted-output improvement from the full chain is established."
+}

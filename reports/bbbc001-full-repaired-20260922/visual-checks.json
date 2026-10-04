@@ -1,0 +1,13 @@
+{
+  "images": 6,
+  "expandable_trials": 12,
+  "summary_rows": 2,
+  "all_local_links_resolve": true,
+  "no_horizontal_page_overflow": {
+    "1440": true,
+    "768": true,
+    "390": true,
+    "320": true
+  },
+  "javascript_errors": []
+}

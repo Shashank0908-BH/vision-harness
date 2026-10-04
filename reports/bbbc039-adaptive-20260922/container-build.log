@@ -1,0 +1,74 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 441B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.13-slim
+#2 DONE 2.2s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/9] FROM docker.io/library/python:3.12.13-slim@sha256:229a2c5bfa27522db7815ea81f9bed70af17ccb9de9fc7ad142b1877b5830d36
+#4 resolve docker.io/library/python:3.12.13-slim@sha256:229a2c5bfa27522db7815ea81f9bed70af17ccb9de9fc7ad142b1877b5830d36 done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 558.27kB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/9] RUN apt-get update && apt-get install -y --no-install-recommends gcc g++ libgomp1 && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/9] WORKDIR /app
+#7 CACHED
+
+#8 [4/9] COPY app/requirements-runtime.txt /tmp/requirements.txt
+#8 CACHED
+
+#9 [5/9] RUN pip install --no-cache-dir -r /tmp/requirements.txt
+#9 CACHED
+
+#10 [6/9] COPY app /app
+#10 DONE 0.0s
+
+#11 [7/9] RUN pip install --no-cache-dir --no-deps /app
+#11 0.336 Processing /app
+#11 0.337   Installing build dependencies: started
+#11 2.246   Installing build dependencies: finished with status 'done'
+#11 2.246   Getting requirements to build wheel: started
+#11 2.274   Getting requirements to build wheel: finished with status 'done'
+#11 2.275   Preparing metadata (pyproject.toml): started
+#11 2.319   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 2.321 Building wheels for collected packages: vision-harness
+#11 2.321   Building wheel for vision-harness (pyproject.toml): started
+#11 2.332   Building wheel for vision-harness (pyproject.toml): finished with status 'done'
+#11 2.332   Created wheel for vision-harness: filename=vision_harness-0.1.0-py3-none-any.whl size=31133 sha256=ea1598882a8eb6883aa205dff6e4994b40ae931a984e2222e3ab4309370241f9
+#11 2.332   Stored in directory: /tmp/pip-ephem-wheel-cache-1mrijtr4/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+#11 2.333 Successfully built vision-harness
+#11 2.334 Installing collected packages: vision-harness
+#11 2.348 Successfully installed vision-harness-0.1.0
+#11 2.349 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#11 2.609
+#11 2.609 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#11 2.609 [notice] To update, run: pip install --upgrade pip
+#11 DONE 2.7s
+
+#12 [8/9] COPY input.png /data/input.png
+#12 DONE 0.0s
+
+#13 [9/9] RUN mkdir -p /output /logs/agent /logs/verifier
+#13 DONE 0.1s
+
+#14 exporting to image
+#14 exporting layers 0.1s done
+#14 exporting manifest sha256:ec03c86fa11ac571b29599e87c7ab18e751b743bc46716988523bf890c6babc6
+#14 exporting manifest sha256:ec03c86fa11ac571b29599e87c7ab18e751b743bc46716988523bf890c6babc6 done
+#14 exporting config sha256:47adada2a38c685ca290fd4dcd911c4bc41ca27b4975aae6652e1fc11e2f8d0d done
+#14 exporting attestation manifest sha256:6302308da9c8699e3a614187eba68f32cd9bd430b1eb59dc0296c13391552b93 done
+#14 exporting manifest list sha256:faac9103e4e212e3a5efa0d0ae9ecff5f0ca9dc278443ca7f310e0ae221b2e26 done
+#14 naming to docker.io/library/vision-adaptive-stardist:latest done
+#14 unpacking to docker.io/library/vision-adaptive-stardist:latest 0.0s done
+#14 DONE 0.2s

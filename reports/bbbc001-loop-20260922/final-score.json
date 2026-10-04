@@ -1,0 +1,83 @@
+{
+  "configuration": "Astra + unchanged OpenCV + Jev selection + structured review and bounded replanning",
+  "runtime_config": "configs/poc-loop.toml",
+  "source_results": "results.json",
+  "accepted_output_summary": [
+    {
+      "mode": "vanilla",
+      "coverage": 6,
+      "total": 6,
+      "benchmark_percentage_error": 11.63841272215594,
+      "answered_subset_percentage_error": 11.63841272215594,
+      "abstentions": 0,
+      "errors": 0,
+      "mean_seconds": 93.907444223,
+      "tokens": {
+        "astra": {
+          "input": 5397,
+          "output": 19025,
+          "started_calls": 7,
+          "calls": 7
+        },
+        "jev": {
+          "input": 0,
+          "output": 0,
+          "started_calls": 0,
+          "calls": 0
+        }
+      }
+    },
+    {
+      "mode": "full",
+      "coverage": 0,
+      "total": 6,
+      "benchmark_percentage_error": null,
+      "answered_subset_percentage_error": null,
+      "abstentions": 3,
+      "errors": 3,
+      "mean_seconds": 326.08522880733335,
+      "tokens": {
+        "astra": {
+          "input": 167806,
+          "output": 63126,
+          "started_calls": 31,
+          "calls": 28
+        },
+        "jev": {
+          "input": 95769,
+          "output": 1257,
+          "started_calls": 20,
+          "calls": 20
+        }
+      }
+    }
+  ],
+  "candidate_summary": [
+    {
+      "policy": "first numerical candidate",
+      "coverage": 6,
+      "total": 6,
+      "mean_percentage_error": 14.09003589257932,
+      "answered_subset_percentage_error": 14.09003589257932,
+      "matched_vanilla_subset_error": 11.63841272215594,
+      "closer_than_vanilla": 0,
+      "worse_than_vanilla": 5,
+      "tied_with_vanilla": 1
+    },
+    {
+      "policy": "last numerical candidate",
+      "coverage": 6,
+      "total": 6,
+      "mean_percentage_error": 14.55820068658681,
+      "answered_subset_percentage_error": 14.55820068658681,
+      "matched_vanilla_subset_error": 11.63841272215594,
+      "closer_than_vanilla": 0,
+      "worse_than_vanilla": 6,
+      "tied_with_vanilla": 0
+    }
+  ],
+  "conclusion": "No observed gain in this retest. Zero accepted full-harness counts, three abstentions, three Astra timeouts. Last numerical proposals have 14.56% mean error versus 11.64% for vanilla. Three interrupted trials limit conclusions about completed-loop performance.",
+  "new_inference_performed": true,
+  "paired_trials": 12,
+  "candidate_scores_are_diagnostic": true
+}

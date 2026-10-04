@@ -1,0 +1,9 @@
+{
+  "task_ids": [
+    "51680b6440c6"
+  ],
+  "runtime_config_in_copied_task": "configs/poc-stardist.toml",
+  "only_changed_setting": {
+    "models.timeout_seconds": 300
+  }
+}

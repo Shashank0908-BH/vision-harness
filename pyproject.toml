@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vision-harness"
+version = "0.1.0"
+description = "Inspectable Astra + OpenCV + Jev vision harness"
+requires-python = ">=3.12"
+dependencies = [
+  "openai>=2.0,<3",
+  "httpx>=0.28,<1",
+  "opencv-python-headless>=4.11,<5",
+  "numpy>=2,<3",
+  "pydantic>=2.11,<3",
+  "python-dotenv>=1.1,<2",
+  "typer>=0.16,<1",
+  "rich>=14,<15",
+]
+
+[project.optional-dependencies]
+eval = ["harbor==0.23.0"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.12"]
+
+[project.scripts]
+vision = "vision_harness.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vision_harness", "evals"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501", "B008"]

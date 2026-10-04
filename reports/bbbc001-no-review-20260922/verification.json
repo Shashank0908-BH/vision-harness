@@ -1,0 +1,27 @@
+{
+  "paired_trials": 18,
+  "all_live": true,
+  "same_original_images": true,
+  "frozen_runtime_unchanged": true,
+  "structured_loop_disabled": true,
+  "no_answer_review": true,
+  "keys_found_in_reports_or_logs": false,
+  "all_numeric_final_counts": true,
+  "validated_trajectories": 18,
+  "matched_verifier_rewards": 18,
+  "provider_calls_started": 37,
+  "provider_responses_recorded": 37,
+  "jev_plan_assessments": 6,
+  "answer_reviews": 0,
+  "format_retries": [
+    {
+      "mode": "vanilla",
+      "task_id": "2b3b6cf9e3af",
+      "provider": "astra",
+      "failed_call_id": "call-0002",
+      "reason": "max_output_tokens",
+      "next_max_output_tokens": 8192,
+      "next_attempt": 2
+    }
+  ]
+}

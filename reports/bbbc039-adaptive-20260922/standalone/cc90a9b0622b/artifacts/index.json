@@ -1,0 +1,35 @@
+{
+  "original": {
+    "path": "/control-output/cc90a9b0622b/artifacts/original.png",
+    "width": 696,
+    "height": 520,
+    "origin": [
+      0,
+      0
+    ],
+    "sha256": "3022f3cbb717bbb25ca4d1570c6d25ab1c4cad88fdcab45ebec6a54621abf163",
+    "source_sha256": "3022f3cbb717bbb25ca4d1570c6d25ab1c4cad88fdcab45ebec6a54621abf163"
+  },
+  "default-mask": {
+    "path": "/control-output/cc90a9b0622b/artifacts/default-mask.png",
+    "width": 696,
+    "height": 520,
+    "origin": [
+      0,
+      0
+    ],
+    "sha256": "c21305b12ba4eb2406a01818f8248ff89af52faceb00c100b1cc0eeba3cd5b66",
+    "kind": "binary_mask"
+  },
+  "default-overlay": {
+    "path": "/control-output/cc90a9b0622b/artifacts/default-overlay.png",
+    "width": 696,
+    "height": 520,
+    "origin": [
+      0,
+      0
+    ],
+    "sha256": "f0f2553d1e49dd7fbf6dc0ad5ff2a66e1186b24893dbde2e8abd61c9124d7dd4",
+    "kind": "instance_overlay"
+  }
+}

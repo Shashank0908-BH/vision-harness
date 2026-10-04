@@ -1,0 +1,14 @@
+{
+  "paired_trials": 12,
+  "validated_trajectories": 12,
+  "same_original_images": true,
+  "all_live": true,
+  "both_jev_stages_in_every_full_trial": true,
+  "frozen_runtime_verified_in_all_task_bundles": true,
+  "keys_found_in_reports_or_logs": false,
+  "all_rewards_independently_recomputed": true,
+  "format_retries": 2,
+  "evidence_compactions": 1,
+  "started_calls": 56,
+  "recorded_calls": 56
+}

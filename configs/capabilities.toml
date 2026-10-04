@@ -1,0 +1,23 @@
+[[tools]]
+name = "components"
+description = "Segment by a named HSV color range, then count 8-connected pixel components. Produces boxes, centroids, pixel areas, a mask and an overlay."
+requirements = ["Named target color is red, green, blue, or any foreground", "Counted objects should be separated in the mask"]
+limitations = ["Touching objects may merge", "One object may fragment", "Components are not semantic object identities", "No real-world units without calibration"]
+
+[[tools]]
+name = "watershed"
+description = "Segment by color and split the mask using distance-transform markers and watershed. Returns the same component measurements."
+requirements = ["Foreground contrasts with background", "Objects have separable distance-transform peaks"]
+limitations = ["Can over-segment irregular objects or under-segment overlaps", "Marker fraction affects results", "Not a learned instance segmentation model"]
+
+[[tools]]
+name = "crop"
+description = "Crop an image to a pixel rectangle, retaining its origin in the original image. Subsequent steps can consume the crop artifact."
+requirements = ["Rectangle is within image bounds"]
+limitations = ["Cropping can exclude relevant objects", "No new image detail is created"]
+
+[[tools]]
+name = "measure"
+description = "Compute Euclidean pixel distance between two supplied points."
+requirements = ["Point coordinates are in the chosen image coordinate system"]
+limitations = ["Does not locate points automatically", "Point selection can be wrong even when arithmetic is exact"]
