@@ -1,5 +1,7 @@
 # Vision harness
 
+[Publication testing and experiment index](docs/publication-testing.md) · [MIT license](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+
 A CLI-first research POC: GPT-6 Astra proposes and interprets vision operations, specialist adapters produce measurements, and Jev can score proposed methods and review the evidence behind an answer. StarDist handles fluorescence-nucleus segmentation; the original OpenCV tools remain available in separate configurations. Harbor runs isolated tasks and displays execution traces.
 
 **Current scope:** the connected research/execution harness supports **2D fluorescence microscopy nucleus counting**. The intended architecture is general-purpose, but general images, DICOM/fMRI, video and audio do not yet have domain adapters. The older OpenCV tools remain separate examples, not proof of general-purpose support.
