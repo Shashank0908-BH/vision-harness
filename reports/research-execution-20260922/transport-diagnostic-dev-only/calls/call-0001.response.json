@@ -1,0 +1,44 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "round1-versatile-native": {
+      "type": "score",
+      "score": 2.71,
+      "confidence": 0.71,
+      "legend": {
+        "0": "Contradicted by task/input requirements or unusable for the specified role.",
+        "1": "Potentially relevant, but important applicability, documentation or verification gaps remain.",
+        "2": "Plausibly suitable for a bounded trial, with explicit limitations and meaningful checks.",
+        "3": "Strong documented fit to the stated role and input, with concrete executable verification."
+      },
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.02,
+        "2": 0.23,
+        "3": 0.74
+      }
+    },
+    "round1-otsu-distance-native": {
+      "type": "score",
+      "score": 2.5,
+      "confidence": 0.5,
+      "legend": {
+        "0": "Contradicted by task/input requirements or unusable for the specified role.",
+        "1": "Potentially relevant, but important applicability, documentation or verification gaps remain.",
+        "2": "Plausibly suitable for a bounded trial, with explicit limitations and meaningful checks.",
+        "3": "Strong documented fit to the stated role and input, with concrete executable verification."
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.46,
+        "3": 0.52
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 16336,
+    "output_tokens": 41
+  },
+  "http_status": 200
+}

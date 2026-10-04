@@ -1,5 +1,7 @@
 # Review the repeated external benchmark
 
+**Correction:** Start with the [StarDist/reference audit](../reports/stardist-audit-20260922/index.html). The original reference count for one image was wrong; all arms have been rescored. The report linked below preserves superseded scores for provenance.
+
 Open [the paginated report](../reports/kromp-repeated-20260922/index.html), then
 [the findings](../reports/kromp-repeated-20260922/findings.md). The report contains
 aggregate results, all three repetitions, uncertainty intervals, the ten published

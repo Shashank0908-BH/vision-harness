@@ -1,0 +1,25 @@
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:00:54 0:00:00
+
+dev-03 • research-execution
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      0 │          1 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Exception         ┃ Count ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ FileNotFoundError │     1 │
+└───────────────────┴───────┘
+
+Job Info
+Total runtime: 54s
+Results written to 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-dev-03-vanilla/res
+ult.json
+Inspect results by running `harbor view 
+/Users/shashanksingh/Documents/Vision/jobs`
+Share results by running `harbor upload 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-dev-03-vanilla`
+

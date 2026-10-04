@@ -1,0 +1,12 @@
+{
+  "checked_files": 660,
+  "all_files_byte_identical_to": "test-transport96",
+  "images": 12,
+  "repetitions": 3,
+  "arms": [
+    "vanilla",
+    "full"
+  ],
+  "planned_new_trials": 72,
+  "no_prior_answers_or_replay": true
+}

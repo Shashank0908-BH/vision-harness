@@ -1,0 +1,536 @@
+{
+  "components": 102,
+  "unique_svg_contours_at_iou_0p95": 104,
+  "omitted_duplicate_elements": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "matched_components": 102,
+  "policy": "Repair only this source-verified TIFF. Do not split disconnected components globally.",
+  "mapping": [
+    {
+      "svg_shape": 1,
+      "component": 93,
+      "fraction": 0.9843166542195668
+    },
+    {
+      "svg_shape": 2,
+      "component": 72,
+      "fraction": 0.986318407960199
+    },
+    {
+      "svg_shape": 3,
+      "component": 89,
+      "fraction": 0.9737556561085973
+    },
+    {
+      "svg_shape": 4,
+      "component": 78,
+      "fraction": 0.9701427953266984
+    },
+    {
+      "svg_shape": 5,
+      "component": 42,
+      "fraction": 0.9880915073644625
+    },
+    {
+      "svg_shape": 6,
+      "component": 26,
+      "fraction": 0.987603305785124
+    },
+    {
+      "svg_shape": 7,
+      "component": 33,
+      "fraction": 0.9854014598540146
+    },
+    {
+      "svg_shape": 8,
+      "component": 75,
+      "fraction": 0.9928104575163399
+    },
+    {
+      "svg_shape": 9,
+      "component": 18,
+      "fraction": 0.9853673723536738
+    },
+    {
+      "svg_shape": 10,
+      "component": 99,
+      "fraction": 0.9822660098522168
+    },
+    {
+      "svg_shape": 11,
+      "component": 21,
+      "fraction": 0.9919716206123973
+    },
+    {
+      "svg_shape": 12,
+      "component": 83,
+      "fraction": 0.9849942285494421
+    },
+    {
+      "svg_shape": 13,
+      "component": 96,
+      "fraction": 0.989351403678606
+    },
+    {
+      "svg_shape": 14,
+      "component": 48,
+      "fraction": 0.9930206588498046
+    },
+    {
+      "svg_shape": 15,
+      "component": 69,
+      "fraction": 0.9776482021379981
+    },
+    {
+      "svg_shape": 16,
+      "component": 94,
+      "fraction": 0.9753300903405142
+    },
+    {
+      "svg_shape": 17,
+      "component": 79,
+      "fraction": 0.98545101842871
+    },
+    {
+      "svg_shape": 18,
+      "component": 73,
+      "fraction": 0.9794933655006032
+    },
+    {
+      "svg_shape": 19,
+      "component": 52,
+      "fraction": 0.9873173421560518
+    },
+    {
+      "svg_shape": 20,
+      "component": 67,
+      "fraction": 0.9806042521447221
+    },
+    {
+      "svg_shape": 21,
+      "component": 16,
+      "fraction": 0.961153384060873
+    },
+    {
+      "svg_shape": 22,
+      "component": 49,
+      "fraction": 0.9677261613691932
+    },
+    {
+      "svg_shape": 23,
+      "component": 36,
+      "fraction": 0.9743443557582668
+    },
+    {
+      "svg_shape": 24,
+      "component": 86,
+      "fraction": 0.9886706948640483
+    },
+    {
+      "svg_shape": 25,
+      "component": 22,
+      "fraction": 0.9819639278557114
+    },
+    {
+      "svg_shape": 26,
+      "component": 90,
+      "fraction": 0.984869325997249
+    },
+    {
+      "svg_shape": 27,
+      "component": 27,
+      "fraction": 0.9854085603112841
+    },
+    {
+      "svg_shape": 28,
+      "component": 2,
+      "fraction": 0.9875167186803389
+    },
+    {
+      "svg_shape": 29,
+      "component": 87,
+      "fraction": 0.9838709677419355
+    },
+    {
+      "svg_shape": 30,
+      "component": 70,
+      "fraction": 0.9829517778860205
+    },
+    {
+      "svg_shape": 31,
+      "component": 15,
+      "fraction": 0.9825174825174825
+    },
+    {
+      "svg_shape": 32,
+      "component": 29,
+      "fraction": 0.9850984566258648
+    },
+    {
+      "svg_shape": 33,
+      "component": 85,
+      "fraction": 0.981629392971246
+    },
+    {
+      "svg_shape": 34,
+      "component": 51,
+      "fraction": 0.9882697947214076
+    },
+    {
+      "svg_shape": 35,
+      "component": 81,
+      "fraction": 0.9772413793103448
+    },
+    {
+      "svg_shape": 36,
+      "component": 11,
+      "fraction": 0.982487922705314
+    },
+    {
+      "svg_shape": 37,
+      "component": 46,
+      "fraction": 0.9927933121937158
+    },
+    {
+      "svg_shape": 38,
+      "component": 76,
+      "fraction": 0.9819314641744549
+    },
+    {
+      "svg_shape": 39,
+      "component": 74,
+      "fraction": 0.9922122170844487
+    },
+    {
+      "svg_shape": 40,
+      "component": 6,
+      "fraction": 0.9791428571428571
+    },
+    {
+      "svg_shape": 41,
+      "component": 17,
+      "fraction": 0.9850299401197605
+    },
+    {
+      "svg_shape": 42,
+      "component": 66,
+      "fraction": 0.9834110938310006
+    },
+    {
+      "svg_shape": 43,
+      "component": 80,
+      "fraction": 0.9823829392675012
+    },
+    {
+      "svg_shape": 44,
+      "component": 32,
+      "fraction": 0.9840954274353877
+    },
+    {
+      "svg_shape": 45,
+      "component": 30,
+      "fraction": 0.9926818768833405
+    },
+    {
+      "svg_shape": 46,
+      "component": 91,
+      "fraction": 0.9848901098901099
+    },
+    {
+      "svg_shape": 47,
+      "component": 24,
+      "fraction": 0.9890961262553802
+    },
+    {
+      "svg_shape": 48,
+      "component": 65,
+      "fraction": 0.9839883551673945
+    },
+    {
+      "svg_shape": 49,
+      "component": 82,
+      "fraction": 0.9861333333333333
+    },
+    {
+      "svg_shape": 50,
+      "component": 95,
+      "fraction": 0.9886051080550098
+    },
+    {
+      "svg_shape": 51,
+      "component": 12,
+      "fraction": 0.9886295631358468
+    },
+    {
+      "svg_shape": 52,
+      "component": 40,
+      "fraction": 0.9854744996772111
+    },
+    {
+      "svg_shape": 53,
+      "component": 38,
+      "fraction": 0.9806338028169014
+    },
+    {
+      "svg_shape": 54,
+      "component": 3,
+      "fraction": 0.9825163908835467
+    },
+    {
+      "svg_shape": 55,
+      "component": 7,
+      "fraction": 0.9757023538344722
+    },
+    {
+      "svg_shape": 56,
+      "component": 60,
+      "fraction": 0.9744623655913979
+    },
+    {
+      "svg_shape": 57,
+      "component": 20,
+      "fraction": 0.9905629677839245
+    },
+    {
+      "svg_shape": 58,
+      "component": 23,
+      "fraction": 0.9710982658959537
+    },
+    {
+      "svg_shape": 59,
+      "component": 88,
+      "fraction": 0.9863088718510405
+    },
+    {
+      "svg_shape": 60,
+      "component": 63,
+      "fraction": 0.981294964028777
+    },
+    {
+      "svg_shape": 61,
+      "component": 25,
+      "fraction": 0.9888610414926204
+    },
+    {
+      "svg_shape": 62,
+      "component": 1,
+      "fraction": 0.9821428571428571
+    },
+    {
+      "svg_shape": 63,
+      "component": 64,
+      "fraction": 0.9911218724778047
+    },
+    {
+      "svg_shape": 64,
+      "component": 44,
+      "fraction": 0.9881178707224335
+    },
+    {
+      "svg_shape": 65,
+      "component": 8,
+      "fraction": 0.9865967365967366
+    },
+    {
+      "svg_shape": 66,
+      "component": 34,
+      "fraction": 0.996119733924612
+    },
+    {
+      "svg_shape": 67,
+      "component": 43,
+      "fraction": 0.995887946543305
+    },
+    {
+      "svg_shape": 68,
+      "component": 45,
+      "fraction": 0.9898918664786084
+    },
+    {
+      "svg_shape": 69,
+      "component": 41,
+      "fraction": 0.949290060851927
+    },
+    {
+      "svg_shape": 70,
+      "component": 39,
+      "fraction": 0.9938335046248715
+    },
+    {
+      "svg_shape": 71,
+      "component": 57,
+      "fraction": 0.978375219170076
+    },
+    {
+      "svg_shape": 72,
+      "component": 13,
+      "fraction": 0.9828226555246053
+    },
+    {
+      "svg_shape": 73,
+      "component": 102,
+      "fraction": 0.8357487922705314
+    },
+    {
+      "svg_shape": 74,
+      "component": 55,
+      "fraction": 0.9921657821582006
+    },
+    {
+      "svg_shape": 75,
+      "component": 56,
+      "fraction": 0.9752066115702479
+    },
+    {
+      "svg_shape": 76,
+      "component": 28,
+      "fraction": 0.9517241379310345
+    },
+    {
+      "svg_shape": 77,
+      "component": 100,
+      "fraction": 0.981661572659072
+    },
+    {
+      "svg_shape": 78,
+      "component": 31,
+      "fraction": 0.9851543942992874
+    },
+    {
+      "svg_shape": 79,
+      "component": 14,
+      "fraction": 0.9792746113989638
+    },
+    {
+      "svg_shape": 80,
+      "component": 97,
+      "fraction": 0.9932291666666667
+    },
+    {
+      "svg_shape": 81,
+      "component": 37,
+      "fraction": 0.9898316970546984
+    },
+    {
+      "svg_shape": 82,
+      "component": 5,
+      "fraction": 0.9905205101689073
+    },
+    {
+      "svg_shape": 83,
+      "component": 98,
+      "fraction": 0.9838622915545993
+    },
+    {
+      "svg_shape": 84,
+      "component": 71,
+      "fraction": 0.9867361440075794
+    },
+    {
+      "svg_shape": 85,
+      "component": 62,
+      "fraction": 0.9923631735256683
+    },
+    {
+      "svg_shape": 86,
+      "component": 53,
+      "fraction": 0.989427633977397
+    },
+    {
+      "svg_shape": 87,
+      "component": 10,
+      "fraction": 0.9857988165680474
+    },
+    {
+      "svg_shape": 88,
+      "component": 77,
+      "fraction": 0.9918151179585941
+    },
+    {
+      "svg_shape": 89,
+      "component": 50,
+      "fraction": 0.9883211678832117
+    },
+    {
+      "svg_shape": 90,
+      "component": 92,
+      "fraction": 0.9829369183040331
+    },
+    {
+      "svg_shape": 91,
+      "component": 19,
+      "fraction": 0.977710233029382
+    },
+    {
+      "svg_shape": 92,
+      "component": 68,
+      "fraction": 0.9181034482758621
+    },
+    {
+      "svg_shape": 93,
+      "component": 101,
+      "fraction": 0.9330143540669856
+    },
+    {
+      "svg_shape": 94,
+      "component": 59,
+      "fraction": 0.985981308411215
+    },
+    {
+      "svg_shape": 95,
+      "component": 47,
+      "fraction": 0.9852135815991238
+    },
+    {
+      "svg_shape": 96,
+      "component": 84,
+      "fraction": 0.9813780260707635
+    },
+    {
+      "svg_shape": 97,
+      "component": 9,
+      "fraction": 0.9658291457286432
+    },
+    {
+      "svg_shape": 98,
+      "component": 61,
+      "fraction": 0.9785056294779939
+    },
+    {
+      "svg_shape": 99,
+      "component": 54,
+      "fraction": 0.9840848806366048
+    },
+    {
+      "svg_shape": 106,
+      "component": 0,
+      "fraction": 0.0
+    },
+    {
+      "svg_shape": 107,
+      "component": 58,
+      "fraction": 0.9756340129288911
+    },
+    {
+      "svg_shape": 108,
+      "component": 35,
+      "fraction": 0.9791183294663574
+    },
+    {
+      "svg_shape": 109,
+      "component": 20,
+      "fraction": 0.007832898172323759
+    },
+    {
+      "svg_shape": 110,
+      "component": 4,
+      "fraction": 0.96579476861167
+    }
+  ]
+}

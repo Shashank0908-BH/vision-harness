@@ -1,0 +1,15 @@
+{
+  "source_development_run": "jobs/research-execution-dev-06-full/image-01__8vXC8fb/agent/run",
+  "not_a_benchmark_trial": true,
+  "purpose": "Check whether the earlier 48 KB rejection came from the local adapter or the service",
+  "local_budget_bytes": 128000,
+  "status": "accepted",
+  "subjects_scored": 2,
+  "request_bytes": [
+    63392
+  ],
+  "request_size_semantics": "request_bytes uses the local ASCII-escaped budget serializer; wire_json_bytes uses the HTTP client JSON encoder",
+  "wire_json_bytes": [
+    63374
+  ]
+}

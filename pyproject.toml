@@ -20,6 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 eval = ["harbor==0.23.0"]
+research = ["beautifulsoup4==4.14.3", "tifffile==2026.3.3"]
 
 [dependency-groups]
 dev = ["pytest>=8,<10", "ruff>=0.12"]

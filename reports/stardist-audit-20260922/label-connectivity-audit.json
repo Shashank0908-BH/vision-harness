@@ -1,0 +1,298 @@
+[
+  {
+    "id": "3cbe1c1887f2",
+    "source_filename": "Ganglioneuroblastoma_10.tif",
+    "unique_positive_labels": 38,
+    "per_label_connected_components": 38,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "ef70c4932509",
+    "source_filename": "Ganglioneuroblastoma_4.tif",
+    "unique_positive_labels": 363,
+    "per_label_connected_components": 363,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "699afb45f17b",
+    "source_filename": "Ganglioneuroblastoma_6.tif",
+    "unique_positive_labels": 75,
+    "per_label_connected_components": 75,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "8e540d818a75",
+    "source_filename": "Ganglioneuroblastoma_7.tif",
+    "unique_positive_labels": 585,
+    "per_label_connected_components": 585,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "c24f81d1e47d",
+    "source_filename": "Ganglioneuroblastoma_8.tif",
+    "unique_positive_labels": 183,
+    "per_label_connected_components": 185,
+    "multipart_labels": 1,
+    "components_under5px": 2
+  },
+  {
+    "id": "1b4de71c0b8b",
+    "source_filename": "Ganglioneuroblastoma_9.tif",
+    "unique_positive_labels": 83,
+    "per_label_connected_components": 83,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "802e8f830f1b",
+    "source_filename": "Neuroblastoma_12.tif",
+    "unique_positive_labels": 22,
+    "per_label_connected_components": 22,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "b3514b0dd6e4",
+    "source_filename": "Neuroblastoma_13.tif",
+    "unique_positive_labels": 13,
+    "per_label_connected_components": 13,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "f8c05d6880ab",
+    "source_filename": "Neuroblastoma_14.tif",
+    "unique_positive_labels": 59,
+    "per_label_connected_components": 59,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "5dbe5cc7c039",
+    "source_filename": "Neuroblastoma_15.tif",
+    "unique_positive_labels": 124,
+    "per_label_connected_components": 124,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "033e228a36eb",
+    "source_filename": "Neuroblastoma_16.tif",
+    "unique_positive_labels": 16,
+    "per_label_connected_components": 16,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "a3964de3ea29",
+    "source_filename": "Neuroblastoma_17.tif",
+    "unique_positive_labels": 12,
+    "per_label_connected_components": 12,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "9a364d5359bd",
+    "source_filename": "normal_26.tif",
+    "unique_positive_labels": 32,
+    "per_label_connected_components": 32,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "790bee4f6905",
+    "source_filename": "normal_27.tif",
+    "unique_positive_labels": 31,
+    "per_label_connected_components": 31,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "7e47e9561cb7",
+    "source_filename": "normal_28.tif",
+    "unique_positive_labels": 18,
+    "per_label_connected_components": 18,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "d548ac33a878",
+    "source_filename": "normal_29.tif",
+    "unique_positive_labels": 23,
+    "per_label_connected_components": 23,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "4c7ab5e5db93",
+    "source_filename": "normal_30.tif",
+    "unique_positive_labels": 41,
+    "per_label_connected_components": 41,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "ec9c29b8b6de",
+    "source_filename": "normal_31.tif",
+    "unique_positive_labels": 22,
+    "per_label_connected_components": 22,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "86fbe553681c",
+    "source_filename": "normal_32.tif",
+    "unique_positive_labels": 34,
+    "per_label_connected_components": 34,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "9e0f4d3f2565",
+    "source_filename": "normal_33.tif",
+    "unique_positive_labels": 23,
+    "per_label_connected_components": 23,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "1ea18c8d4537",
+    "source_filename": "normal_34.tif",
+    "unique_positive_labels": 833,
+    "per_label_connected_components": 833,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "4d9f365970a2",
+    "source_filename": "normal_35.tif",
+    "unique_positive_labels": 68,
+    "per_label_connected_components": 68,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "ce9875d92d3e",
+    "source_filename": "normal_36.tif",
+    "unique_positive_labels": 67,
+    "per_label_connected_components": 67,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "0dd3dce58330",
+    "source_filename": "normal_37.tif",
+    "unique_positive_labels": 66,
+    "per_label_connected_components": 66,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "a4016f1ff979",
+    "source_filename": "normal_38.tif",
+    "unique_positive_labels": 75,
+    "per_label_connected_components": 75,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "21c3236f351d",
+    "source_filename": "normal_39.tif",
+    "unique_positive_labels": 66,
+    "per_label_connected_components": 66,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "3a50c1b3af56",
+    "source_filename": "normal_40.tif",
+    "unique_positive_labels": 71,
+    "per_label_connected_components": 71,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "1c6b0002e918",
+    "source_filename": "otherspecimen_0.tif",
+    "unique_positive_labels": 24,
+    "per_label_connected_components": 24,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "453a2ffca0fe",
+    "source_filename": "otherspecimen_1.tif",
+    "unique_positive_labels": 265,
+    "per_label_connected_components": 265,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "1452b1f236fb",
+    "source_filename": "otherspecimen_2.tif",
+    "unique_positive_labels": 203,
+    "per_label_connected_components": 203,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "5ce7aa249ca6",
+    "source_filename": "otherspecimen_3.tif",
+    "unique_positive_labels": 55,
+    "per_label_connected_components": 102,
+    "multipart_labels": 47,
+    "components_under5px": 0
+  },
+  {
+    "id": "dd7c4e7a504b",
+    "source_filename": "otherspecimen_4.tif",
+    "unique_positive_labels": 100,
+    "per_label_connected_components": 100,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "53263dd6b7b7",
+    "source_filename": "otherspecimen_5.tif",
+    "unique_positive_labels": 20,
+    "per_label_connected_components": 20,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "5b649c3d042a",
+    "source_filename": "otherspecimen_6.tif",
+    "unique_positive_labels": 969,
+    "per_label_connected_components": 969,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "ec236e59cb5c",
+    "source_filename": "otherspecimen_7.tif",
+    "unique_positive_labels": 135,
+    "per_label_connected_components": 135,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "21a45e9f8b5a",
+    "source_filename": "otherspecimen_8.tif",
+    "unique_positive_labels": 147,
+    "per_label_connected_components": 147,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  },
+  {
+    "id": "0f8cd1692971",
+    "source_filename": "otherspecimen_9.tif",
+    "unique_positive_labels": 125,
+    "per_label_connected_components": 125,
+    "multipart_labels": 0,
+    "components_under5px": 0
+  }
+]

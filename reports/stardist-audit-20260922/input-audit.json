@@ -1,0 +1,668 @@
+[
+  {
+    "id": "3cbe1c1887f2",
+    "source_filename": "Ganglioneuroblastoma_10.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      19.0,
+      165.0
+    ],
+    "normalized_range": [
+      -0.013698630034923553,
+      1.431506872177124
+    ]
+  },
+  {
+    "id": "ef70c4932509",
+    "source_filename": "Ganglioneuroblastoma_4.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      914,
+      1225
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      170.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.5
+    ]
+  },
+  {
+    "id": "699afb45f17b",
+    "source_filename": "Ganglioneuroblastoma_6.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      20.0,
+      156.0
+    ],
+    "normalized_range": [
+      -0.022058824077248573,
+      1.404411792755127
+    ]
+  },
+  {
+    "id": "8e540d818a75",
+    "source_filename": "Ganglioneuroblastoma_7.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      914,
+      1225
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      1.0,
+      126.0
+    ],
+    "normalized_range": [
+      -0.00800000037997961,
+      1.3359999656677246
+    ]
+  },
+  {
+    "id": "c24f81d1e47d",
+    "source_filename": "Ganglioneuroblastoma_8.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      914,
+      1225
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      139.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.539568305015564
+    ]
+  },
+  {
+    "id": "1b4de71c0b8b",
+    "source_filename": "Ganglioneuroblastoma_9.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      430,
+      550
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      114.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.1228070259094238
+    ]
+  },
+  {
+    "id": "802e8f830f1b",
+    "source_filename": "Neuroblastoma_12.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      4.0,
+      182.0
+    ],
+    "normalized_range": [
+      -0.01123595517128706,
+      1.202247142791748
+    ]
+  },
+  {
+    "id": "b3514b0dd6e4",
+    "source_filename": "Neuroblastoma_13.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      11.0,
+      118.0
+    ],
+    "normalized_range": [
+      -0.018691588193178177,
+      1.2149533033370972
+    ]
+  },
+  {
+    "id": "f8c05d6880ab",
+    "source_filename": "Neuroblastoma_14.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      8.0,
+      175.0
+    ],
+    "normalized_range": [
+      -0.011976048350334167,
+      1.2754491567611694
+    ]
+  },
+  {
+    "id": "5dbe5cc7c039",
+    "source_filename": "Neuroblastoma_15.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      15.0,
+      190.0
+    ],
+    "normalized_range": [
+      -0.02857142873108387,
+      1.177142858505249
+    ]
+  },
+  {
+    "id": "033e228a36eb",
+    "source_filename": "Neuroblastoma_16.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      3.0,
+      178.0
+    ],
+    "normalized_range": [
+      -0.0057142856530845165,
+      1.2000000476837158
+    ]
+  },
+  {
+    "id": "a3964de3ea29",
+    "source_filename": "Neuroblastoma_17.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      3.0,
+      160.0
+    ],
+    "normalized_range": [
+      -0.006369426846504211,
+      1.3566879034042358
+    ]
+  },
+  {
+    "id": "9a364d5359bd",
+    "source_filename": "normal_26.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      32.0,
+      210.0
+    ],
+    "normalized_range": [
+      -0.033707864582538605,
+      1.1460673809051514
+    ]
+  },
+  {
+    "id": "790bee4f6905",
+    "source_filename": "normal_27.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      27.0,
+      189.0
+    ],
+    "normalized_range": [
+      -0.03086419776082039,
+      1.1790122985839844
+    ]
+  },
+  {
+    "id": "7e47e9561cb7",
+    "source_filename": "normal_28.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      19.0,
+      192.0
+    ],
+    "normalized_range": [
+      -0.023121386766433716,
+      1.2890173196792603
+    ]
+  },
+  {
+    "id": "d548ac33a878",
+    "source_filename": "normal_29.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      11.0,
+      185.56199999991804
+    ],
+    "normalized_range": [
+      -0.011457247659564018,
+      1.3977842330932617
+    ]
+  },
+  {
+    "id": "4c7ab5e5db93",
+    "source_filename": "normal_30.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      45.0,
+      219.0
+    ],
+    "normalized_range": [
+      -0.04022988677024841,
+      1.2068965435028076
+    ]
+  },
+  {
+    "id": "ec9c29b8b6de",
+    "source_filename": "normal_31.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      16.0,
+      189.0
+    ],
+    "normalized_range": [
+      -0.017341040074825287,
+      1.2254334688186646
+    ]
+  },
+  {
+    "id": "86fbe553681c",
+    "source_filename": "normal_32.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      29.0,
+      184.0
+    ],
+    "normalized_range": [
+      -0.03870967775583267,
+      1.225806474685669
+    ]
+  },
+  {
+    "id": "9e0f4d3f2565",
+    "source_filename": "normal_33.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      31.0,
+      185.0
+    ],
+    "normalized_range": [
+      -0.03246753290295601,
+      1.350649356842041
+    ]
+  },
+  {
+    "id": "1ea18c8d4537",
+    "source_filename": "normal_34.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      23.0,
+      199.0
+    ],
+    "normalized_range": [
+      -0.022727273404598236,
+      1.3068181276321411
+    ]
+  },
+  {
+    "id": "4d9f365970a2",
+    "source_filename": "normal_35.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      30.0,
+      207.0
+    ],
+    "normalized_range": [
+      -0.02259887009859085,
+      1.1525423526763916
+    ]
+  },
+  {
+    "id": "ce9875d92d3e",
+    "source_filename": "normal_36.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      25.0,
+      206.0
+    ],
+    "normalized_range": [
+      -0.0220994483679533,
+      1.1657458543777466
+    ]
+  },
+  {
+    "id": "0dd3dce58330",
+    "source_filename": "normal_37.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      25.0,
+      194.0
+    ],
+    "normalized_range": [
+      -0.023668639361858368,
+      1.1834319829940796
+    ]
+  },
+  {
+    "id": "a4016f1ff979",
+    "source_filename": "normal_38.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      18.0,
+      117.0
+    ],
+    "normalized_range": [
+      -0.03030303120613098,
+      1.2020201683044434
+    ]
+  },
+  {
+    "id": "21c3236f351d",
+    "source_filename": "normal_39.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      17.0,
+      117.0
+    ],
+    "normalized_range": [
+      -0.029999999329447746,
+      1.2400000095367432
+    ]
+  },
+  {
+    "id": "3a50c1b3af56",
+    "source_filename": "normal_40.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1360
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      17.0,
+      115.0
+    ],
+    "normalized_range": [
+      -0.020408162847161293,
+      1.2142857313156128
+    ]
+  },
+  {
+    "id": "1c6b0002e918",
+    "source_filename": "otherspecimen_0.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      3.0,
+      148.0
+    ],
+    "normalized_range": [
+      -0.006896551698446274,
+      1.496551752090454
+    ]
+  },
+  {
+    "id": "453a2ffca0fe",
+    "source_filename": "otherspecimen_1.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      6.0,
+      151.0
+    ],
+    "normalized_range": [
+      -0.013793103396892548,
+      1.7172414064407349
+    ]
+  },
+  {
+    "id": "1452b1f236fb",
+    "source_filename": "otherspecimen_2.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1280
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      7.0,
+      171.0
+    ],
+    "normalized_range": [
+      -0.018292682245373726,
+      1.2560975551605225
+    ]
+  },
+  {
+    "id": "5ce7aa249ca6",
+    "source_filename": "otherspecimen_3.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      763,
+      1014
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      14.0,
+      94.0
+    ],
+    "normalized_range": [
+      -0.012500000186264515,
+      1.3624999523162842
+    ]
+  },
+  {
+    "id": "dd7c4e7a504b",
+    "source_filename": "otherspecimen_4.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1024
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      151.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.60927152633667
+    ]
+  },
+  {
+    "id": "53263dd6b7b7",
+    "source_filename": "otherspecimen_5.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1024
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      147.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.482993245124817
+    ]
+  },
+  {
+    "id": "5b649c3d042a",
+    "source_filename": "otherspecimen_6.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1024
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      188.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.356382966041565
+    ]
+  },
+  {
+    "id": "ec236e59cb5c",
+    "source_filename": "otherspecimen_7.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1024
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      209.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.2200956344604492
+    ]
+  },
+  {
+    "id": "21a45e9f8b5a",
+    "source_filename": "otherspecimen_8.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1024
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      212.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.202830195426941
+    ]
+  },
+  {
+    "id": "0f8cd1692971",
+    "source_filename": "otherspecimen_9.tif",
+    "raw_dtype": "uint8",
+    "shape": [
+      1024,
+      1024
+    ],
+    "pixels_identical_to_harness": true,
+    "raw_percentiles_1_99p8": [
+      0.0,
+      200.0
+    ],
+    "normalized_range": [
+      0.0,
+      1.274999976158142
+    ]
+  }
+]

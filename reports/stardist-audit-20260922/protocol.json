@@ -1,0 +1,68 @@
+{
+  "scope": "Post-benchmark integration/scale diagnostic, not independent capability evaluation",
+  "cohort": "all 37 previously evaluated official Kromp test images",
+  "repetitions": 3,
+  "variants": {
+    "native-default": {
+      "prob_thresh": null,
+      "scale": null,
+      "prior_id": "stardist-default"
+    },
+    "native-sensitive": {
+      "prob_thresh": 0.35,
+      "scale": null,
+      "prior_id": "stardist-sensitive"
+    },
+    "native-conservative": {
+      "prob_thresh": 0.6,
+      "scale": null,
+      "prior_id": "stardist-conservative"
+    },
+    "native-half": {
+      "prob_thresh": null,
+      "scale": 0.5,
+      "prior_id": null
+    },
+    "native-quarter": {
+      "prob_thresh": null,
+      "scale": 0.25,
+      "prior_id": null
+    }
+  },
+  "total_fresh_inferences": 555,
+  "normalization": {
+    "pmin": 1,
+    "pmax": 99.8,
+    "axes": "YX",
+    "clip": false
+  },
+  "scale_method": "StarDist predict_instances(scale=...) with original-coordinate output",
+  "nms_threshold": "official checkpoint default; expect 0.3",
+  "weights": {
+    "weights_best.h5": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349",
+    "config.json": "836da16282c3e0db1ba2e58f377e977419887ace8c737ebde16a094d58d50f74",
+    "thresholds.json": "5cd6aac6e923f8659b63a9e297485920d45a59dad35371ddb8b6ae4be398d805"
+  },
+  "official_archive_sha256": "4ad678d0758eed6e55625f1b5ae30771e59adb79f1239e09b9772eac8846c3dd",
+  "registry": {
+    "url": "https://github.com/stardist/stardist-models/releases/download/v0.1/python_2D_versatile_fluo.zip",
+    "hash": "4ad678d0758eed6e55625f1b5ae30771e59adb79f1239e09b9772eac8846c3dd"
+  },
+  "input_manifest_sha256": "ab336c0b8fc925b144e8ea352c1af0145aad08c54720ea71c159ef709914402d",
+  "audit_script_sha256": "e9ca331eb7974b62cd42ee5a9d61588a2108d6ff57c7358e8b2089b04b29164c",
+  "old_worker_sha256": "9c51ddc9802eba9b14f0643acbe882ebeb928741e5afd07a3173a791458d3e84",
+  "packages": {
+    "stardist": "0.9.2",
+    "tensorflow": "2.21.0",
+    "csbdeep": "0.8.2",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0"
+  },
+  "sources": [
+    "https://github.com/stardist/stardist",
+    "https://stardist.net/faq/",
+    "https://www.ebi.ac.uk/biostudies/BioImages/studies/S-BIAD634"
+  ],
+  "annotations_available_to_inference": false,
+  "fresh_inference_for_every_repetition": true
+}

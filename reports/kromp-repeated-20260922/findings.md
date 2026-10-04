@@ -1,3 +1,5 @@
+> **Superseded scoring (2026-09-22):** The audit found reused reference IDs in `otherspecimen_3.tif`; 55 IDs represent 102 nuclei. The original scores below are preserved for provenance. Use the [corrected all-arm results and StarDist audit](../stardist-audit-20260922/index.html), including 36-image exclusion sensitivity. Original predictions and protocol are unchanged.
+
 # The larger repeated test does not establish a harness advantage
 
 We completed **all 37 official test images × three fresh repetitions**: 111 paired

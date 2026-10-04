@@ -1,0 +1,14 @@
+[
+  {
+    "id": "image-01",
+    "source_filename": "IXMtest_A02_s1_w1051DAA7C-7042-435F-99F0-1E847D9B42CB.png",
+    "source_tiff_sha256": "9eacee0e5a4c29af70307af4d310320632e31ed84b4d8b5fd4fce42930f780ec",
+    "preview_sha256": "15565f9c0c24ff1c53ea3e7046fce9df14af3a5d0acab0af5dbeb5fa19964d65",
+    "percentiles": [
+      133.0,
+      1220.0
+    ],
+    "expected": 110,
+    "decoder_agreement": true
+  }
+]

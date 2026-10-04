@@ -1,5 +1,10 @@
 # File-by-file review guide
 
+For the connected full workflow, start with the
+[implemented research-execution file map](research-execution-v3.md#what-each-module-does).
+The [architecture specification](research-execution-harness.md) preserves the original
+design and broader targets. The tables below describe the earlier runtimes.
+
 Read the files in this order: `contracts.py`, `runtime.py`, `selection.py`, `tools/opencv.py`, then the two providers. The interfaces and flow should be understandable before reading packaging or Harbor integration.
 
 ## Application

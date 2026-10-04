@@ -1,0 +1,26 @@
+  1/1 Answered: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:10:56 0:00:00
+
+dev-08 • research-execution
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Trials ┃ Exceptions ┃ Answered ┃ Within_10_Percent ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│      1 │          0 │    1.000 │             1.000 │
+└────────┴────────────┴──────────┴───────────────────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 10m 56s
+Results written to 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-dev-08-full/result
+.json
+Inspect results by running `harbor view 
+/Users/shashanksingh/Documents/Vision/jobs`
+Share results by running `harbor upload 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-dev-08-full`
+

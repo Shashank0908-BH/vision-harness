@@ -1,0 +1,9 @@
+{
+  "images": 12,
+  "full_arm_new_trials": 36,
+  "reused_baseline_trials": 36,
+  "code_unchanged": true,
+  "inputs_and_references_identical": true,
+  "only_worker_config_change": "jev_max_request_bytes 48000 -> 96000",
+  "configuration_sha256": "7e3a609e5cdced40daec28cc7d5145edf4239059061f7b910135373be91c62bc"
+}

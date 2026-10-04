@@ -1,0 +1,614 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research-execution harness benchmark</title><style>
+:root{font-family:system-ui;color:#e8edf5;background:#101721}body{max-width:1180px;margin:auto;padding:32px}h1{font-size:2.2rem}p{line-height:1.6;color:#c5d0df}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:14px;border-bottom:1px solid #344356}a{color:#85c8ff}article,.box{background:#182433;border:1px solid #344356;border-radius:12px;padding:20px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}button,select{padding:10px;margin:5px;background:#25374d;color:white;border:1px solid #526881;border-radius:6px}.flow{display:flex;flex-wrap:wrap;gap:8px}.flow span{background:#25374d;padding:10px;border-radius:6px}small{color:#adc0d7}</style>
+<h1>Research → score → execute → measure</h1><p><strong>Infrastructure interruption: the laptop repeatedly slept during active requests. All failures remain recorded, but this is not a clean accuracy or latency comparison. See the host-sleep-events.txt evidence in the parent experiment report.</strong></p>
+<p>BBBC039 fluorescence microscopy: <strong>12 images × 3 runs × two arms</strong>. Split: official test. Every attempt runs independently from the original query and input. This is a local counting task derived from reference segmentation masks, not the published benchmark's original score.</p>
+<div class="flow"><span>Structured query</span>→<span>Web research</span>→<span>Jev candidate scores</span>→<span>Usage documentation</span>→<span>Astra plans</span>→<span>Jev plan scores</span>→<span>Codex shell + model inference</span>→<span>Artifact checks + visual review</span>→<span>Jev review / replan</span></div>
+<div class="box"><h2>All attempts stay in the denominator</h2><p>“Within 10%” is the primary outcome: missing answers and execution failures score zero. Conditional MAPE measures error only among answered tasks; compare it together with coverage. Provisional outputs are scored but are not presented as Jev-approved. Jev confidence is not calibrated accuracy.</p><table><thead><tr><th>Arm</th><th>Answered</th><th>Within 10%</th><th>Conditional MAPE</th><th>Mean runtime</th><th>Review status</th></tr></thead><tbody><tr><td>vanilla</td><td>36/36</td><td>32/36 (88.89%)</td><td>5.62%</td><td>46.92 s</td><td>{&#x27;not_applicable&#x27;: 36}</td></tr><tr><td>full</td><td>6/36</td><td>4/36 (11.11%)</td><td>7.52%</td><td>715.96 s</td><td>{&#x27;provisional_after_error&#x27;: 6, &#x27;not_reached&#x27;: 30}</td></tr></tbody></table></div>
+<p>Both arms receive the same question and contrast-mapped preview. The full harness also reads original 16-bit pixels and uses research, code and pretrained models. Linux CPU execution: this evaluates the complete capability package, not the isolated causal contribution of Jev or extra inference budget.</p>
+<details><summary>Protocol and uncertainty</summary><pre>{
+  &quot;selection&quot;: {
+    &quot;frozen_at&quot;: &quot;2026-09-22T19:09:44.717299+00:00&quot;,
+    &quot;source&quot;: &quot;https://bbbc.broadinstitute.org/BBBC039&quot;,
+    &quot;split&quot;: &quot;official test&quot;,
+    &quot;filenames&quot;: [
+      &quot;IXMtest_D20_s3_w19D371AF3-0189-48A3-AF3B-D108DE6A017F.png&quot;,
+      &quot;IXMtest_L06_s5_w1610AE208-D6E8-4DC4-AC19-D26284AA8556.png&quot;,
+      &quot;IXMtest_D08_s7_w1F476A544-A07C-4E9B-A6CB-BAEF4CD6F64E.png&quot;,
+      &quot;IXMtest_K03_s5_w1DC4CE558-042C-482E-8CAE-FCCB57AA9A55.png&quot;,
+      &quot;IXMtest_P19_s6_w10EBAD15B-2822-48B9-B9C8-4DF5D80AB940.png&quot;,
+      &quot;IXMtest_N12_s9_w1C98EC3CC-2F8E-4761-A21A-EBF14469AD40.png&quot;,
+      &quot;IXMtest_I03_s4_w1C724E24D-7AD5-4166-A810-DC75A825495D.png&quot;,
+      &quot;IXMtest_D06_s8_w1BE84C8EF-4CD0-4B56-8267-4E662F57AC25.png&quot;,
+      &quot;IXMtest_F14_s7_w1E67F2A8A-EEC1-4F01-A1E2-0ECFC639637F.png&quot;,
+      &quot;IXMtest_N08_s2_w159DEEDD5-2882-4F9E-9048-F5BD2B918651.png&quot;,
+      &quot;IXMtest_E07_s1_w1641C6847-142B-463F-8B08-5B3296615572.png&quot;,
+      &quot;IXMtest_K17_s5_w1BB3AD9D7-3A85-458C-AB1C-07A816C2C203.png&quot;
+    ],
+    &quot;excluded_previous_test_images&quot;: [
+      &quot;IXMtest_A09_s1_w1CE70AD49-290D-4312-82E6-CDC717F32637.png&quot;,
+      &quot;IXMtest_B02_s9_w124B5080D-EBE1-47D2-B147-C0F342039EDF.png&quot;,
+      &quot;IXMtest_B05_s5_w10296BEF4-0F48-4EC8-BC24-6C604871398B.png&quot;,
+      &quot;IXMtest_C07_s5_w12C9F2926-A017-4962-8660-72C9C20C86E4.png&quot;,
+      &quot;IXMtest_C14_s8_w1612E3D43-FA7E-4FFB-BE53-F34A3A0CAFCD.png&quot;,
+      &quot;IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61.png&quot;,
+      &quot;IXMtest_K01_s5_w1A3DE001A-72D6-4321-8B25-4300AB0207AC.png&quot;,
+      &quot;IXMtest_M12_s7_w193E9BA0F-274A-4EE8-A0F0-6A58471A333A.png&quot;,
+      &quot;IXMtest_N11_s4_w142A84EA3-47C3-4B49-B6CA-BBC6685BBE1E.png&quot;,
+      &quot;IXMtest_O01_s6_w11A23978B-BAAD-4287-B1F6-FFBCF45C5E2F.png&quot;,
+      &quot;IXMtest_P07_s8_w19D682C29-5685-4A33-8CAA-F0797DD7F021.png&quot;,
+      &quot;IXMtest_P21_s4_w19B7DC88B-10BB-4B51-9A10-9E30285688C1.png&quot;
+    ],
+    &quot;rule&quot;: &quot;SHA256(vision-research-execution-v3-20260922: + filename), first 12 unused; no label-based selection&quot;,
+    &quot;repetitions&quot;: 3,
+    &quot;arms&quot;: [
+      &quot;vanilla&quot;,
+      &quot;full&quot;
+    ],
+    &quot;development_prefix_replay&quot;: false,
+    &quot;policy&quot;: {
+      &quot;version&quot;: &quot;research-execution-0.1&quot;,
+      &quot;max_rounds&quot;: 2,
+      &quot;max_research_passes&quot;: 2,
+      &quot;max_provider_calls&quot;: 48,
+      &quot;max_seconds&quot;: 1500,
+      &quot;max_candidates&quot;: 12,
+      &quot;max_retained_models&quot;: 2,
+      &quot;minimum_support_candidate_score&quot;: 1.0,
+      &quot;max_document_pages_per_candidate&quot;: 3,
+      &quot;max_document_chars&quot;: 60000,
+      &quot;codex_timeout_seconds&quot;: 420,
+      &quot;review_support_threshold&quot;: 0.75,
+      &quot;max_no_progress_rounds&quot;: 1
+    },
+    &quot;source_snapshot&quot;: {
+      &quot;configs/research-execution.toml&quot;: &quot;225f5210077060571f6a59a1c300fbacb6f69b354f25167006e14d4791901701&quot;,
+      &quot;evals/atif.py&quot;: &quot;6c2c9400956605d8b389798be3409980c3890a48c775190b7a75f12486ae8ac6&quot;,
+      &quot;evals/import_bbbc039.py&quot;: &quot;b2fafa2e0261fb503bc8f4f319fa3d32d4d620930d14fa73b52a9cc1795baf52&quot;,
+      &quot;evals/research_execution/Dockerfile&quot;: &quot;85617b203e351f30bfbee73ea414cd33cde137449663458d3db379cc4fc89caa&quot;,
+      &quot;evals/research_execution/__init__.py&quot;: &quot;37f87c2b1a1ba2f1a50090c5b45f7cc068908bde26fe843363e1f7915efa044e&quot;,
+      &quot;evals/research_execution/harbor_agent.py&quot;: &quot;81ac64306fc93069a85f1a114e4bf1655be0a1358a7efc5704a9c6ceff87128d&quot;,
+      &quot;evals/research_execution/prepare.py&quot;: &quot;e89d1102e25c5912c0c57951c61cd5463108f781d6e43eb5e81de7e588d631c0&quot;,
+      &quot;evals/research_execution/report.py&quot;: &quot;b27aacc5ba13243064cbb0b053a00a2a84d3324ea9a0316d08f786a59c9fbb04&quot;,
+      &quot;evals/research_execution/run.py&quot;: &quot;b546b11fff65bb69813d19a59c3869929e790ace144838907c651413fa180d2d&quot;,
+      &quot;evals/research_execution/status.py&quot;: &quot;637a0115f7dfb56165cfbfe7f478f3c1f24b881a309b36090dd16417db7990f5&quot;,
+      &quot;evals/research_execution/toolchain.py&quot;: &quot;d58be27fad7169e9f1922d9cff366a479c0798bb7298f14719e6c221af1cbac9&quot;,
+      &quot;evals/research_execution/verifier.py&quot;: &quot;cc1023ef50b08ecd18fe50f49aa25224171d41c5d6464799b14874dee97fdaeb&quot;,
+      &quot;prompts/astra-research-execution.md&quot;: &quot;504aed5cecf7cd1f07b8e0eee443f76016753c77db9fa14cd37e07381f0d34e4&quot;,
+      &quot;prompts/jev_plan_conditions.json&quot;: &quot;1b5fcb94329209f2a695898943d16f0e847f2772ce5c0d1a51b47c67cbb04d4d&quot;,
+      &quot;prompts/jev_review_estimate.json&quot;: &quot;5401bc21f0bda48bc4fd06e18aa253c501655309341cb956596576138cf058c4&quot;,
+      &quot;src/vision_harness/__init__.py&quot;: &quot;370f4309cc208c94d5e25d67b785a72790bfde7bbf93e806e8535e631fd79111&quot;,
+      &quot;src/vision_harness/artifacts.py&quot;: &quot;98c19a2960a436eac74a81b3ad433421d822d3167d7d935cf812ba870d0d6109&quot;,
+      &quot;src/vision_harness/cli.py&quot;: &quot;1e00103e36c04437438460ce2691d0a0c81a6f67f2fc94d556cb9296fc418f51&quot;,
+      &quot;src/vision_harness/config.py&quot;: &quot;5505a7ce1a06cee18c4ac4ab3093b2bbf32896df158db9c59f099541e0ef24f2&quot;,
+      &quot;src/vision_harness/contracts.py&quot;: &quot;165c29cc88ea4a09e939c0f5875b2bce9ea8b2da3a479528e57078f430be4a0c&quot;,
+      &quot;src/vision_harness/demo.py&quot;: &quot;454e7ea5eba343b1c85959ee1311dd07ecc4588fedbcef47057f62e26f571d0d&quot;,
+      &quot;src/vision_harness/evidence_routing/__init__.py&quot;: &quot;a18ceecd193c487fcb68f7b6b282fc6b10e6ccbaa7f7bfa689e3bd438afdba13&quot;,
+      &quot;src/vision_harness/evidence_routing/contracts.py&quot;: &quot;231d1045d1ec01e61705f69f5c55f5e6ce25c75befa909ccaa6f85b314a770a8&quot;,
+      &quot;src/vision_harness/evidence_routing/measurements.py&quot;: &quot;4deaaf05edb6f9040917f1f7292c59f8221cbdd558f148bcf3030cf473f2c2d0&quot;,
+      &quot;src/vision_harness/evidence_routing/runtime.py&quot;: &quot;5a999f3dd29f03d011ad3690834e0e6bda018d031ed87e0b2b8a871f0c6748ca&quot;,
+      &quot;src/vision_harness/providers/__init__.py&quot;: &quot;1f7a6a0341f2d8349f7995cc32e91f2781688774c25a4bbeaa45a24760d9ee3f&quot;,
+      &quot;src/vision_harness/providers/astra.py&quot;: &quot;2a515ec41eeca577054b18970cf893d59b5e30e6c9c57240872bb93767183a50&quot;,
+      &quot;src/vision_harness/providers/evidence_budget.py&quot;: &quot;9ba8ba43cc7e8d57fe69d371b247bc657a7df0a8e621faca4a96931150249f1d&quot;,
+      &quot;src/vision_harness/providers/jev.py&quot;: &quot;eece71aaa7fd0e030db4b4235e0bb55702ec76622e150e7667d4b8278002840a&quot;,
+      &quot;src/vision_harness/research_execution/__init__.py&quot;: &quot;b07988ebb003761b8cf4c2fef77498a8872e3ae4ade75e30cc665ed971386b3a&quot;,
+      &quot;src/vision_harness/research_execution/cli.py&quot;: &quot;0fcf6c0c0ba14f74d04e64f7588074718e3c3edcc8b8cf7a05f412815ef407ac&quot;,
+      &quot;src/vision_harness/research_execution/contracts.py&quot;: &quot;12d424266fcf3082e550d6690fb736ff962163b862872af2a006670c23ffda81&quot;,
+      &quot;src/vision_harness/research_execution/discovery.py&quot;: &quot;e37f3edc8885302fa8dab1269bb7608136d38791c903eb3c7e09bf9b9a467a5c&quot;,
+      &quot;src/vision_harness/research_execution/documents.py&quot;: &quot;ebc04ce9926ff34ef2e5228a6d0b32985c6a042222234cc5a5a795d2198806b2&quot;,
+      &quot;src/vision_harness/research_execution/evidence.py&quot;: &quot;d00e1a1e5ebbc177697876418512352cc588b03183f84d841414da5971515f56&quot;,
+      &quot;src/vision_harness/research_execution/executor.py&quot;: &quot;66e0c2bafb0678149d65bd7c8171fa8d00204aef906d88e4fcd962aca51f7a7a&quot;,
+      &quot;src/vision_harness/research_execution/planning.py&quot;: &quot;543e8e62f687779260e10427c17c20abc37bdc8491809ba52adb2807b40c3cce&quot;,
+      &quot;src/vision_harness/research_execution/replay.py&quot;: &quot;491c766f2b3c37580dc55a9ab94654f827ff6f2074f9519d5ab24c22783a5a06&quot;,
+      &quot;src/vision_harness/research_execution/runtime.py&quot;: &quot;5b3fa52e9eb77f1c9cec7cb99d0aac395ab50e424cd71a72b05ce602c2fd18a5&quot;,
+      &quot;src/vision_harness/research_execution/scoring.py&quot;: &quot;6e3776d4fc4c140a4977c3f867dc9a7037a1cc37160853b672e97fde4737b05a&quot;,
+      &quot;src/vision_harness/review_loop.py&quot;: &quot;10b44779da5474ba30edddfae7f3341cdfc7b5ea47bd8d725f07b013fd1bccc5&quot;,
+      &quot;src/vision_harness/routing/__init__.py&quot;: &quot;5eefe410ab614d355c3bedfad7335bd9d2d294cba939450cfe68c8a9074b3dca&quot;,
+      &quot;src/vision_harness/routing/catalog.py&quot;: &quot;bb6405cb9855b3a275e9b993cc22c541a416de9e089fc5d9e5971c41a8ea6f33&quot;,
+      &quot;src/vision_harness/routing/cli.py&quot;: &quot;dffdba768a585bb25ffd86ef42abd53797810348309aec4c5f81b0aaa28d155f&quot;,
+      &quot;src/vision_harness/routing/contracts.py&quot;: &quot;4f4d4f8fde1fd58c17811e4329e64b326afde5e2ee33cd680d6d1b7f8dce656c&quot;,
+      &quot;src/vision_harness/routing/executor.py&quot;: &quot;dc736e7ae20a2dd2af8eb964a3c795f6768b16388ae1242b5a2d889553d249db&quot;,
+      &quot;src/vision_harness/routing/research.py&quot;: &quot;4c0d11c98898933c854afe34f3fd053035d28be21e99aeacac9d37634a7a1979&quot;,
+      &quot;src/vision_harness/routing/runtime.py&quot;: &quot;09dd0fe346440dafef1a6ae96ead457cd6468f720d3f379468cde623ab5f3d92&quot;,
+      &quot;src/vision_harness/routing/worker.py&quot;: &quot;9c51ddc9802eba9b14f0643acbe882ebeb928741e5afd07a3173a791458d3e84&quot;,
+      &quot;src/vision_harness/runtime.py&quot;: &quot;45480ac3c4587ec8afdd911cb70012450969e9f03d99ffe29a8bce6c738917fa&quot;,
+      &quot;src/vision_harness/selection.py&quot;: &quot;02629c2c6d1395ce3cb13eb568db65ba3f2847414c26f3807f852532c202b604&quot;,
+      &quot;src/vision_harness/tools/__init__.py&quot;: &quot;f8fcbca43531dc087f6eab8d24a931a277d448e5bfa995b8a4c86ee9faf8fd03&quot;,
+      &quot;src/vision_harness/tools/dispatch.py&quot;: &quot;a0266a1830b59abc2d9ecf3a1899d8dd7c143125548c0fc8936bcb8b99df26e6&quot;,
+      &quot;src/vision_harness/tools/opencv.py&quot;: &quot;427b6461eb100efa94580b62b6a456dd2e3bcdc1739de88d2157e51e5cef5d84&quot;,
+      &quot;src/vision_harness/tools/registry.py&quot;: &quot;c100ecafc28f4d2631bfa3bdd70b2819bdb5a53cdb29ddf779823782d97dcd8d&quot;,
+      &quot;src/vision_harness/tools/stardist.py&quot;: &quot;cf9107d24963d5fafd47f22ce3cb1f6d32a593ef98a577aa7ac476506f1acbe0&quot;,
+      &quot;src/vision_harness/tracing.py&quot;: &quot;c1583a61805e900c93de262b53abb57cd8bb53bd78459ad0a62338fa8a8e98b9&quot;
+    },
+    &quot;archives_sha256&quot;: {
+      &quot;images.zip&quot;: &quot;6f30a5d4fe38c928ded972704f085975f8dc0d65d9aa366df00e5a9d449fddd7&quot;,
+      &quot;masks.zip&quot;: &quot;f9e6043d8ca56344a4886f96a700d804d6ee982f31e2b2cd3194af2a053c2710&quot;,
+      &quot;metadata.zip&quot;: &quot;a2c1f900bed9ba92a99553efd4c2ae98598433691c7401d818653ab61110deb2&quot;
+    },
+    &quot;primary_metric&quot;: &quot;all-attempt proportion within 10% of annotation-derived count; failures score zero&quot;,
+    &quot;secondary_metrics&quot;: [
+      &quot;coverage&quot;,
+      &quot;conditional MAPE&quot;,
+      &quot;complete-cohort MAPE only if all answered&quot;,
+      &quot;instance F1 at IoU&gt;=0.5&quot;,
+      &quot;time&quot;,
+      &quot;tokens&quot;,
+      &quot;image-cluster paired intervals&quot;
+    ],
+    &quot;answer_policy&quot;: &quot;Return the selected observed mask&#x27;s count with approved/provisional review status; absent final verified artifact is failure&quot;,
+    &quot;input_policy&quot;: &quot;same question and 1/99.8 percentile preview for both arms; tool arm also gets original uint16 file&quot;,
+    &quot;retry_policy&quot;: &quot;one recorded attempt; schema-format repair and up to two internal scored execution rounds; no outcome retries&quot;,
+    &quot;limitations&quot;: [
+      &quot;public benchmark; pretrained exposure unknown&quot;,
+      &quot;counting derived from segmentation labels, not original benchmark metric&quot;,
+      &quot;12 images are a pilot, not a broad multimodal claim&quot;,
+      &quot;CPU-only deployment and bounded catalog search&quot;
+    ]
+  },
+  &quot;paired_success_difference&quot;: {
+    &quot;mean&quot;: -0.7777777777777778,
+    &quot;ci95&quot;: [
+      -0.9166666666666666,
+      -0.6111111111111112
+    ],
+    &quot;clusters&quot;: 12,
+    &quot;unit&quot;: &quot;image; repetitions averaged within image&quot;
+  }
+}</pre></details>
+<details><summary>Repeated counts per image and their variation</summary><p>Means and sample standard deviations use available counts. A missing count stays missing and contributes a failure to the primary score.</p><table><thead><tr><th>Image</th><th>Reference</th><th>Vanilla counts</th><th>Full-harness counts</th></tr></thead><tbody><tr><td>image-01</td><td>169</td><td>[162, 163, 165]<br><small>Mean 163.33; SD 1.53</small></td><td>[165, None, None]<br><small>Mean 165.00; SD —</small></td></tr><tr><td>image-02</td><td>198</td><td>[184, 180, 187]<br><small>Mean 183.67; SD 3.51</small></td><td>[187, None, None]<br><small>Mean 187.00; SD —</small></td></tr><tr><td>image-03</td><td>49</td><td>[41, 41, 41]<br><small>Mean 41.00; SD 0.00</small></td><td>[None, 42, 42]<br><small>Mean 42.00; SD 0.00</small></td></tr><tr><td>image-04</td><td>139</td><td>[136, 134, 135]<br><small>Mean 135.00; SD 1.00</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr><tr><td>image-05</td><td>89</td><td>[86, 85, 88]<br><small>Mean 86.33; SD 1.53</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr><tr><td>image-06</td><td>155</td><td>[147, 147, 147]<br><small>Mean 147.00; SD 0.00</small></td><td>[None, 144, None]<br><small>Mean 144.00; SD —</small></td></tr><tr><td>image-07</td><td>130</td><td>[130, 129, 132]<br><small>Mean 130.33; SD 1.53</small></td><td>[None, 128, None]<br><small>Mean 128.00; SD —</small></td></tr><tr><td>image-08</td><td>167</td><td>[160, 160, 160]<br><small>Mean 160.00; SD 0.00</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr><tr><td>image-09</td><td>118</td><td>[116, 114, 116]<br><small>Mean 115.33; SD 1.15</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr><tr><td>image-10</td><td>127</td><td>[115, 114, 116]<br><small>Mean 115.00; SD 1.00</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr><tr><td>image-11</td><td>170</td><td>[155, 154, 155]<br><small>Mean 154.67; SD 0.58</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr><tr><td>image-12</td><td>149</td><td>[144, 143, 143]<br><small>Mean 143.33; SD 0.58</small></td><td>[None, None, None]<br><small>Mean —; SD —</small></td></tr></tbody></table></details>
+<h2>Inspect each attempt</h2><label>Arm <select id="mode"><option value="all">Both</option><option>full</option><option>vanilla</option></select></label><button id="prev">Previous</button><span id="page"></span><button id="next">Next</button><main><article data-mode="vanilla"><h3>image-01 · vanilla · run 1</h3><p>Count <b>162</b> / reference 169; error 4.14%. Review: not_applicable. Time: 45.69 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-01__5MrJWMm/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__5MrJWMm/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__5MrJWMm/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__5MrJWMm/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-01 · vanilla · run 2</h3><p>Count <b>163</b> / reference 169; error 3.55%. Review: not_applicable. Time: 37.68 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-01__7GvRGx2/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__7GvRGx2/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__7GvRGx2/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__7GvRGx2/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-01 · vanilla · run 3</h3><p>Count <b>165</b> / reference 169; error 2.37%. Review: not_applicable. Time: 55.24 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-01__wGgywY9/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__wGgywY9/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__wGgywY9/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-01__wGgywY9/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-02 · vanilla · run 1</h3><p>Count <b>184</b> / reference 198; error 7.07%. Review: not_applicable. Time: 75.90 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-02__Fh4rmVc/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__Fh4rmVc/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__Fh4rmVc/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__Fh4rmVc/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-02 · vanilla · run 2</h3><p>Count <b>180</b> / reference 198; error 9.09%. Review: not_applicable. Time: 59.16 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-02__kqVi6rV/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__kqVi6rV/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__kqVi6rV/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__kqVi6rV/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-02 · vanilla · run 3</h3><p>Count <b>187</b> / reference 198; error 5.56%. Review: not_applicable. Time: 63.90 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-02__rfbrQco/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__rfbrQco/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__rfbrQco/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-02__rfbrQco/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-03 · vanilla · run 1</h3><p>Count <b>41</b> / reference 49; error 16.33%. Review: not_applicable. Time: 22.37 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-03__5YAqaoa/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__5YAqaoa/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__5YAqaoa/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__5YAqaoa/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-03 · vanilla · run 2</h3><p>Count <b>41</b> / reference 49; error 16.33%. Review: not_applicable. Time: 25.15 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-03__YpNKdPQ/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__YpNKdPQ/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__YpNKdPQ/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__YpNKdPQ/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-03 · vanilla · run 3</h3><p>Count <b>41</b> / reference 49; error 16.33%. Review: not_applicable. Time: 25.09 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-03__qZifXCR/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__qZifXCR/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__qZifXCR/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-03__qZifXCR/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-04 · vanilla · run 1</h3><p>Count <b>136</b> / reference 139; error 2.16%. Review: not_applicable. Time: 47.47 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-04__AkrNDP4/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__AkrNDP4/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__AkrNDP4/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__AkrNDP4/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-04 · vanilla · run 2</h3><p>Count <b>134</b> / reference 139; error 3.60%. Review: not_applicable. Time: 41.35 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-04__bpybZQT/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__bpybZQT/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__bpybZQT/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__bpybZQT/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-04 · vanilla · run 3</h3><p>Count <b>135</b> / reference 139; error 2.88%. Review: not_applicable. Time: 52.13 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-04__vWS8u8z/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__vWS8u8z/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__vWS8u8z/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-04__vWS8u8z/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-05 · vanilla · run 1</h3><p>Count <b>86</b> / reference 89; error 3.37%. Review: not_applicable. Time: 25.86 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-05__44pV4RK/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__44pV4RK/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__44pV4RK/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__44pV4RK/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-05 · vanilla · run 2</h3><p>Count <b>85</b> / reference 89; error 4.49%. Review: not_applicable. Time: 32.46 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-05__4mZbf4s/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__4mZbf4s/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__4mZbf4s/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__4mZbf4s/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-05 · vanilla · run 3</h3><p>Count <b>88</b> / reference 89; error 1.12%. Review: not_applicable. Time: 40.96 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-05__9VCPRdn/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__9VCPRdn/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__9VCPRdn/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-05__9VCPRdn/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-06 · vanilla · run 1</h3><p>Count <b>147</b> / reference 155; error 5.16%. Review: not_applicable. Time: 50.23 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-06__66nJ2gr/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__66nJ2gr/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__66nJ2gr/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__66nJ2gr/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-06 · vanilla · run 2</h3><p>Count <b>147</b> / reference 155; error 5.16%. Review: not_applicable. Time: 48.77 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-06__8jUQuDK/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__8jUQuDK/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__8jUQuDK/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__8jUQuDK/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-06 · vanilla · run 3</h3><p>Count <b>147</b> / reference 155; error 5.16%. Review: not_applicable. Time: 54.63 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-06__9hEeZDx/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__9hEeZDx/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__9hEeZDx/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-06__9hEeZDx/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-07 · vanilla · run 1</h3><p>Count <b>130</b> / reference 130; error 0.00%. Review: not_applicable. Time: 69.52 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-07__BCbNE57/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__BCbNE57/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__BCbNE57/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__BCbNE57/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-07 · vanilla · run 2</h3><p>Count <b>129</b> / reference 130; error 0.77%. Review: not_applicable. Time: 50.76 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-07__T84CmUk/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__T84CmUk/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__T84CmUk/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__T84CmUk/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-07 · vanilla · run 3</h3><p>Count <b>132</b> / reference 130; error 1.54%. Review: not_applicable. Time: 43.04 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-07__d22KUoz/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__d22KUoz/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__d22KUoz/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-07__d22KUoz/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-08 · vanilla · run 1</h3><p>Count <b>160</b> / reference 167; error 4.19%. Review: not_applicable. Time: 42.31 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-08__7nvP8Qx/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__7nvP8Qx/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__7nvP8Qx/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__7nvP8Qx/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-08 · vanilla · run 2</h3><p>Count <b>160</b> / reference 167; error 4.19%. Review: not_applicable. Time: 73.44 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-08__DLepDAv/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__DLepDAv/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__DLepDAv/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__DLepDAv/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-08 · vanilla · run 3</h3><p>Count <b>160</b> / reference 167; error 4.19%. Review: not_applicable. Time: 54.90 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-08__bTA7tg4/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__bTA7tg4/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__bTA7tg4/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-08__bTA7tg4/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-09 · vanilla · run 1</h3><p>Count <b>116</b> / reference 118; error 1.69%. Review: not_applicable. Time: 59.62 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-09__6jm7BFM/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__6jm7BFM/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__6jm7BFM/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__6jm7BFM/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-09 · vanilla · run 2</h3><p>Count <b>114</b> / reference 118; error 3.39%. Review: not_applicable. Time: 50.85 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-09__N274Jkv/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__N274Jkv/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__N274Jkv/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__N274Jkv/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-09 · vanilla · run 3</h3><p>Count <b>116</b> / reference 118; error 1.69%. Review: not_applicable. Time: 55.40 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-09__oEHcvAE/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__oEHcvAE/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__oEHcvAE/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-09__oEHcvAE/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-10 · vanilla · run 1</h3><p>Count <b>115</b> / reference 127; error 9.45%. Review: not_applicable. Time: 31.68 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-10__AofXBqL/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__AofXBqL/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__AofXBqL/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__AofXBqL/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-10 · vanilla · run 2</h3><p>Count <b>114</b> / reference 127; error 10.24%. Review: not_applicable. Time: 34.26 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-10__mzdnbaE/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__mzdnbaE/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__mzdnbaE/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__mzdnbaE/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-10 · vanilla · run 3</h3><p>Count <b>116</b> / reference 127; error 8.66%. Review: not_applicable. Time: 32.16 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-10__ocrQPQ5/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__ocrQPQ5/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__ocrQPQ5/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-10__ocrQPQ5/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-11 · vanilla · run 1</h3><p>Count <b>155</b> / reference 170; error 8.82%. Review: not_applicable. Time: 51.46 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-11__NVay2VJ/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__NVay2VJ/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__NVay2VJ/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__NVay2VJ/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-11 · vanilla · run 2</h3><p>Count <b>154</b> / reference 170; error 9.41%. Review: not_applicable. Time: 42.14 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-11__VxJNBP8/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__VxJNBP8/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__VxJNBP8/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__VxJNBP8/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-11 · vanilla · run 3</h3><p>Count <b>155</b> / reference 170; error 8.82%. Review: not_applicable. Time: 56.06 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-11__dQzQyrV/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__dQzQyrV/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__dQzQyrV/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-11__dQzQyrV/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-12 · vanilla · run 1</h3><p>Count <b>144</b> / reference 149; error 3.36%. Review: not_applicable. Time: 43.73 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-12__HbJ3b7f/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__HbJ3b7f/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__HbJ3b7f/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__HbJ3b7f/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-12 · vanilla · run 2</h3><p>Count <b>143</b> / reference 149; error 4.03%. Review: not_applicable. Time: 51.12 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-12__gi3pzuP/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__gi3pzuP/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__gi3pzuP/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__gi3pzuP/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="vanilla"><h3>image-12 · vanilla · run 3</h3><p>Count <b>143</b> / reference 149; error 4.03%. Review: not_applicable. Time: 42.50 s.</p><p><a href="../../jobs/research-execution-test-vanilla/image-12__wAr2vha/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__wAr2vha/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__wAr2vha/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-vanilla/image-12__wAr2vha/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [],
+  &quot;error&quot;: null
+}</pre></details></article><article data-mode="full"><h3>image-01 · full · run 1</h3><p>Count <b>165</b> / reference 169; error 2.37%. Review: provisional_after_error. Time: 1233.11 s.</p><p><a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-01__46ff28e/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;,
+    &quot;review&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 58665 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-01 · full · run 2</h3><p>Count <b>None</b> / reference 169; error —. Review: not_reached. Time: 300.59 s.</p><p><a href="../../jobs/research-execution-test-full/image-01__D6M4qyn/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-01__D6M4qyn/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-01__D6M4qyn/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-01__D6M4qyn/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-01 · full · run 3</h3><p>Count <b>None</b> / reference 169; error —. Review: not_reached. Time: 820.11 s.</p><p><a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-01__GcNuguE/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 49253 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-02 · full · run 1</h3><p>Count <b>187</b> / reference 198; error 5.56%. Review: provisional_after_error. Time: 1309.37 s.</p><p><a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-02__3Vk5VAd/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;,
+    &quot;review&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 63457 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-02 · full · run 2</h3><p>Count <b>None</b> / reference 198; error —. Review: not_reached. Time: 300.44 s.</p><p><a href="../../jobs/research-execution-test-full/image-02__YG5TzRb/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-02__YG5TzRb/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-02__YG5TzRb/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-02__YG5TzRb/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-02 · full · run 3</h3><p>Count <b>None</b> / reference 198; error —. Review: not_reached. Time: 473.01 s.</p><p><a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-02__rxLnbkq/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;
+  ],
+  &quot;error&quot;: &quot;Usage contract cites an unavailable source&quot;
+}</pre></details></article><article data-mode="full"><h3>image-03 · full · run 1</h3><p>Count <b>None</b> / reference 49; error —. Review: not_reached. Time: 528.52 s.</p><p><a href="../../jobs/research-execution-test-full/image-03__P9xXHQX/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-03__P9xXHQX/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-03__P9xXHQX/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-03__P9xXHQX/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-03__P9xXHQX/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-03 · full · run 2</h3><p>Count <b>42</b> / reference 49; error 14.29%. Review: provisional_after_error. Time: 1139.63 s.</p><p><a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-03__gdCEPzq/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;,
+    &quot;review&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 65210 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-03 · full · run 3</h3><p>Count <b>42</b> / reference 49; error 14.29%. Review: provisional_after_error. Time: 1455.22 s.</p><p><a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-03__yEzw7e8/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;,
+    &quot;review&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 60203 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-04 · full · run 1</h3><p>Count <b>None</b> / reference 139; error —. Review: not_reached. Time: 605.05 s.</p><p><a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-04__CuLgdKu/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-04 · full · run 2</h3><p>Count <b>None</b> / reference 139; error —. Review: not_reached. Time: 342.85 s.</p><p><a href="../../jobs/research-execution-test-full/image-04__gHFow6E/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-04__gHFow6E/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-04__gHFow6E/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-04__gHFow6E/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-04__gHFow6E/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;
+  ],
+  &quot;error&quot;: &quot;Duplicate candidate IDs&quot;
+}</pre></details></article><article data-mode="full"><h3>image-04 · full · run 3</h3><p>Count <b>None</b> / reference 139; error —. Review: not_reached. Time: 300.34 s.</p><p><a href="../../jobs/research-execution-test-full/image-04__wWCfuMn/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-04__wWCfuMn/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-04__wWCfuMn/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-04__wWCfuMn/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-05 · full · run 1</h3><p>Count <b>None</b> / reference 89; error —. Review: not_reached. Time: 766.60 s.</p><p><a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-05__MfT957q/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 48277 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-05 · full · run 2</h3><p>Count <b>None</b> / reference 89; error —. Review: not_reached. Time: 300.23 s.</p><p><a href="../../jobs/research-execution-test-full/image-05__W463EQB/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-05__W463EQB/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-05__W463EQB/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-05__W463EQB/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-05 · full · run 3</h3><p>Count <b>None</b> / reference 89; error —. Review: not_reached. Time: 871.41 s.</p><p><a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-05__Wf7kaYG/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-06 · full · run 1</h3><p>Count <b>None</b> / reference 155; error —. Review: not_reached. Time: 300.33 s.</p><p><a href="../../jobs/research-execution-test-full/image-06__NtW3vXs/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-06__NtW3vXs/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-06__NtW3vXs/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-06__NtW3vXs/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-06 · full · run 2</h3><p>Count <b>144</b> / reference 155; error 7.10%. Review: provisional_after_error. Time: 1061.75 s.</p><p><a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-06__SrLBNnw/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;,
+    &quot;review&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 63803 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-06 · full · run 3</h3><p>Count <b>None</b> / reference 155; error —. Review: not_reached. Time: 600.50 s.</p><p><a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-06__UwiKQD6/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 49493 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-07 · full · run 1</h3><p>Count <b>None</b> / reference 130; error —. Review: not_reached. Time: 300.55 s.</p><p><a href="../../jobs/research-execution-test-full/image-07__7s4THAs/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-07__7s4THAs/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-07__7s4THAs/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-07__7s4THAs/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-07 · full · run 2</h3><p>Count <b>128</b> / reference 130; error 1.54%. Review: provisional_after_error. Time: 1465.69 s.</p><p><a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-07__CJh8URG/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;,
+    &quot;review&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 64746 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-07 · full · run 3</h3><p>Count <b>None</b> / reference 130; error —. Review: not_reached. Time: 1323.51 s.</p><p><a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-07__kEbKpwj/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 48210 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-08 · full · run 1</h3><p>Count <b>None</b> / reference 167; error —. Review: not_reached. Time: 300.41 s.</p><p><a href="../../jobs/research-execution-test-full/image-08__5sd4iFP/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-08__5sd4iFP/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-08__5sd4iFP/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-08__5sd4iFP/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-08 · full · run 2</h3><p>Count <b>None</b> / reference 167; error —. Review: not_reached. Time: 1299.88 s.</p><p><a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-08__AB6b5df/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 49282 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-08 · full · run 3</h3><p>Count <b>None</b> / reference 167; error —. Review: not_reached. Time: 1246.09 s.</p><p><a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-08__QmXCzFw/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;
+  ],
+  &quot;error&quot;: &quot;No complete scored, executed and reviewed result&quot;
+}</pre></details></article><article data-mode="full"><h3>image-09 · full · run 1</h3><p>Count <b>None</b> / reference 118; error —. Review: not_reached. Time: 847.25 s.</p><p><a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-09__AqXa4Zo/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 50074 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-09 · full · run 2</h3><p>Count <b>None</b> / reference 118; error —. Review: not_reached. Time: 300.33 s.</p><p><a href="../../jobs/research-execution-test-full/image-09__adAf5iP/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-09__adAf5iP/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-09__adAf5iP/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-09__adAf5iP/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-09 · full · run 3</h3><p>Count <b>None</b> / reference 118; error —. Review: not_reached. Time: 473.72 s.</p><p><a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-09__jhj5gF8/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;
+  ],
+  &quot;error&quot;: &quot;Plan does not cover required task parts&quot;
+}</pre></details></article><article data-mode="full"><h3>image-10 · full · run 1</h3><p>Count <b>None</b> / reference 127; error —. Review: not_reached. Time: 466.93 s.</p><p><a href="../../jobs/research-execution-test-full/image-10__EL6dKUS/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-10__EL6dKUS/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-10__EL6dKUS/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-10__EL6dKUS/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-10__EL6dKUS/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-10 · full · run 2</h3><p>Count <b>None</b> / reference 127; error —. Review: not_reached. Time: 907.37 s.</p><p><a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-10__RXyRz8w/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 48538 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-10 · full · run 3</h3><p>Count <b>None</b> / reference 127; error —. Review: not_reached. Time: 810.08 s.</p><p><a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-10__maAoHpV/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 51589 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-11 · full · run 1</h3><p>Count <b>None</b> / reference 170; error —. Review: not_reached. Time: 885.48 s.</p><p><a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-11__7apazsE/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-11 · full · run 2</h3><p>Count <b>None</b> / reference 170; error —. Review: not_reached. Time: 531.53 s.</p><p><a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-11__GWpDyhi/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 48424 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-11 · full · run 3</h3><p>Count <b>None</b> / reference 170; error —. Review: not_reached. Time: 300.55 s.</p><p><a href="../../jobs/research-execution-test-full/image-11__j8NefER/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-11__j8NefER/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-11__j8NefER/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-11__j8NefER/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Request timed out.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-12 · full · run 1</h3><p>Count <b>None</b> / reference 149; error —. Review: not_reached. Time: 833.39 s.</p><p><a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-12__7rqX7Dx/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 48093 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-12 · full · run 2</h3><p>Count <b>None</b> / reference 149; error —. Review: not_reached. Time: 15.74 s.</p><p><a href="../../jobs/research-execution-test-full/image-12__brkAMFT/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-12__brkAMFT/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-12__brkAMFT/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-12__brkAMFT/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;
+  ],
+  &quot;error&quot;: &quot;Connection error.&quot;
+}</pre></details></article><article data-mode="full"><h3>image-12 · full · run 3</h3><p>Count <b>None</b> / reference 149; error —. Review: not_reached. Time: 756.84 s.</p><p><a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/trajectory.json">Harbor trajectory</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/events.jsonl">Event trace</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/answer.json">Answer</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/task.json">Structured query</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/research-01/catalog.json">Candidate catalog</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/research-01/candidate-scores.json">All candidate scores</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/research-01/documents/usage-contracts.json">Usage contracts</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/round-01/plans.json">Plans</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/round-01/execution/codex-events.jsonl">Shell execution</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/agent/run/round-01/execution/overlay.png">First overlay</a> · <a href="../../jobs/research-execution-test-full/image-12__shUjLMn/verifier/grading.json">Independent grading</a></p><details><summary>Stages and failure details</summary><pre>{
+  &quot;stages&quot;: [
+    &quot;intake&quot;,
+    &quot;research&quot;,
+    &quot;candidate_scoring&quot;,
+    &quot;documentation&quot;,
+    &quot;planning&quot;,
+    &quot;plan_scoring&quot;,
+    &quot;execution&quot;,
+    &quot;visual_inspection&quot;,
+    &quot;output_scoring&quot;
+  ],
+  &quot;error&quot;: &quot;Jev request remains 48613 bytes after component summarization; local budget is 48000. Question, answer, methods and quality flags were not truncated.&quot;
+}</pre></details></article></main>
+<script>let page=0;const cards=[...document.querySelectorAll('article')],mode=document.getElementById('mode');function draw(){const rows=cards.filter(x=>mode.value==='all'||x.dataset.mode===mode.value);page=Math.max(0,Math.min(page,Math.ceil(rows.length/6)-1));cards.forEach(x=>x.hidden=true);rows.slice(page*6,page*6+6).forEach(x=>x.hidden=false);document.getElementById('page').textContent=`Page ${page+1} / ${Math.max(1,Math.ceil(rows.length/6))}`;}mode.onchange=()=>{page=0;draw()};document.getElementById('prev').onclick=()=>{page--;draw()};document.getElementById('next').onclick=()=>{page++;draw()};draw();</script></html>
