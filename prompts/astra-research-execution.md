@@ -36,3 +36,32 @@ declared library imports; plan setup commands must install only the documented
 dependencies. Do not request access to secrets, host paths, Docker or the grader.
 Scientific changes after execution require a revised scored plan. Library/API
 failures are execution failures; distinguish them from Jev's evidence review.
+
+Execution is not an additional biological approval stage. Programs must write
+their measured labels/count/metadata even when qualitative uncertainty remains.
+Keep structural assertions (shape, integer IDs, coordinate mapping); do not make
+publishing a valid mask depend on a visual declaration of perfect segmentation.
+The controller's later visual inspection and Jev review handle those concerns.
+
+Use the supplied verified_local_api facts for installed-version compatibility.
+If choosing the cached StarDist 2D_versatile_fluo checkpoint, instantiate
+StarDist2D(config=None, name='stardist', basedir='/opt/checkpoints'). Do not call
+from_pretrained for that cache or derive provenance paths from model.basedir.
+StarDist 0.9.2 predict_instances explicitly accepts predict_kwargs. When the
+scored plan needs sparse boundary margin b=0, use sparse=True and
+predict_kwargs={'b': 0}; b is not a top-level predict_instances argument.
+These are invocation facts, not a requirement to choose StarDist or its defaults.
+
+When python_environments is supplied, set python_executable to one of its measured
+launchers. Package availability is specific to that interpreter; a library in the
+science environment may be absent in Torch. Declare missing packages as exact
+package==version pins in install_requirements; the executor generates installation
+into that interpreter's private package_target with measured runtime constraints.
+Use its explicit env/PYTHONPATH for setup checks. Checking an import does not
+install a missing package. The executor checks unconditional top-level imports
+with the same launcher before inference; a failed setup or import requires replan.
+
+In the GPU environment keep TensorFlow soft device placement enabled throughout
+the StarDist inference process. Its data pipeline includes CPU-only operations.
+Verify actual neural-network tensor placement on GPU instead of globally
+disabling soft placement or treating CPU preprocessing as a GPU failure.

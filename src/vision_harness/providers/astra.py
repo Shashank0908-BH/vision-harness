@@ -10,6 +10,7 @@ from pydantic import ValidationError
 from ..config import Settings, require_key
 from ..contracts import Answer, PlanSet
 from ..tracing import Trace
+from .transport import request as transport_request
 
 
 class Astra:
@@ -21,6 +22,10 @@ class Astra:
             max_retries=0,
         )
         self.instructions = Path(settings.paths.astra_prompt).read_text()
+        self.deadline = None
+
+    def request_transport(self, operation, metadata, send):
+        return transport_request(self.settings, self.trace, operation, metadata, send, self.deadline)
 
     def _request(self, operation: str, question: str, images: list, context: dict, schema):
         content = [
@@ -35,8 +40,7 @@ class Astra:
         output_limit = self.settings.models.max_output_tokens
         instructions = self.instructions
         for attempt in range(self.settings.models.format_retries + 1):
-            call_id = self.trace.call(
-                "astra",
+            raw, call_id, start = self.request_transport(
                 operation,
                 {
                     "model": self.settings.models.astra,
@@ -49,16 +53,16 @@ class Astra:
                     "max_output_tokens": output_limit,
                     "reasoning_effort": self.settings.models.reasoning_effort,
                 },
-            )
-            start = time.monotonic()
-            raw = self.client.responses.with_raw_response.parse(
-                model=self.settings.models.astra,
-                instructions=instructions,
-                input=[{"role": "user", "content": content}],
-                reasoning={"effort": self.settings.models.reasoning_effort},
-                max_output_tokens=output_limit,
-                text_format=schema,
-                store=False,
+                lambda timeout, instructions=instructions, output_limit=output_limit: self.client.responses.with_raw_response.parse(
+                    model=self.settings.models.astra,
+                    instructions=instructions,
+                    input=[{"role": "user", "content": content}],
+                    reasoning={"effort": self.settings.models.reasoning_effort},
+                    max_output_tokens=output_limit,
+                    text_format=schema,
+                    store=False,
+                    timeout=timeout,
+                ),
             )
             data = raw.http_response.json()
             # Save raw response/usage even when SDK schema parsing fails.

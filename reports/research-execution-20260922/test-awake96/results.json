@@ -1,0 +1,2637 @@
+{
+  "cohort_images": 12,
+  "repetitions": 3,
+  "selection": {
+    "frozen_at": "2026-09-23T04:37:07.821877+00:00",
+    "source": "https://bbbc.broadinstitute.org/BBBC039",
+    "split": "official test",
+    "filenames": [
+      "IXMtest_D20_s3_w19D371AF3-0189-48A3-AF3B-D108DE6A017F.png",
+      "IXMtest_L06_s5_w1610AE208-D6E8-4DC4-AC19-D26284AA8556.png",
+      "IXMtest_D08_s7_w1F476A544-A07C-4E9B-A6CB-BAEF4CD6F64E.png",
+      "IXMtest_K03_s5_w1DC4CE558-042C-482E-8CAE-FCCB57AA9A55.png",
+      "IXMtest_P19_s6_w10EBAD15B-2822-48B9-B9C8-4DF5D80AB940.png",
+      "IXMtest_N12_s9_w1C98EC3CC-2F8E-4761-A21A-EBF14469AD40.png",
+      "IXMtest_I03_s4_w1C724E24D-7AD5-4166-A810-DC75A825495D.png",
+      "IXMtest_D06_s8_w1BE84C8EF-4CD0-4B56-8267-4E662F57AC25.png",
+      "IXMtest_F14_s7_w1E67F2A8A-EEC1-4F01-A1E2-0ECFC639637F.png",
+      "IXMtest_N08_s2_w159DEEDD5-2882-4F9E-9048-F5BD2B918651.png",
+      "IXMtest_E07_s1_w1641C6847-142B-463F-8B08-5B3296615572.png",
+      "IXMtest_K17_s5_w1BB3AD9D7-3A85-458C-AB1C-07A816C2C203.png"
+    ],
+    "excluded_previous_test_images": [
+      "IXMtest_A09_s1_w1CE70AD49-290D-4312-82E6-CDC717F32637.png",
+      "IXMtest_B02_s9_w124B5080D-EBE1-47D2-B147-C0F342039EDF.png",
+      "IXMtest_B05_s5_w10296BEF4-0F48-4EC8-BC24-6C604871398B.png",
+      "IXMtest_C07_s5_w12C9F2926-A017-4962-8660-72C9C20C86E4.png",
+      "IXMtest_C14_s8_w1612E3D43-FA7E-4FFB-BE53-F34A3A0CAFCD.png",
+      "IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61.png",
+      "IXMtest_K01_s5_w1A3DE001A-72D6-4321-8B25-4300AB0207AC.png",
+      "IXMtest_M12_s7_w193E9BA0F-274A-4EE8-A0F0-6A58471A333A.png",
+      "IXMtest_N11_s4_w142A84EA3-47C3-4B49-B6CA-BBC6685BBE1E.png",
+      "IXMtest_O01_s6_w11A23978B-BAAD-4287-B1F6-FFBCF45C5E2F.png",
+      "IXMtest_P07_s8_w19D682C29-5685-4A33-8CAA-F0797DD7F021.png",
+      "IXMtest_P21_s4_w19B7DC88B-10BB-4B51-9A10-9E30285688C1.png"
+    ],
+    "rule": "SHA256(vision-research-execution-v3-20260922: + filename), first 12 unused; no label-based selection",
+    "repetitions": 3,
+    "arms": [
+      "vanilla",
+      "full"
+    ],
+    "development_prefix_replay": false,
+    "policy": {
+      "version": "research-execution-0.1",
+      "max_rounds": 2,
+      "max_research_passes": 2,
+      "max_provider_calls": 48,
+      "max_seconds": 1500,
+      "max_candidates": 12,
+      "max_retained_models": 2,
+      "minimum_support_candidate_score": 1.0,
+      "max_document_pages_per_candidate": 3,
+      "max_document_chars": 60000,
+      "codex_timeout_seconds": 420,
+      "review_support_threshold": 0.75,
+      "max_no_progress_rounds": 1
+    },
+    "source_snapshot": {
+      "configs/research-execution.toml": "7e3a609e5cdced40daec28cc7d5145edf4239059061f7b910135373be91c62bc",
+      "evals/atif.py": "6c2c9400956605d8b389798be3409980c3890a48c775190b7a75f12486ae8ac6",
+      "evals/import_bbbc039.py": "b2fafa2e0261fb503bc8f4f319fa3d32d4d620930d14fa73b52a9cc1795baf52",
+      "evals/research_execution/Dockerfile": "85617b203e351f30bfbee73ea414cd33cde137449663458d3db379cc4fc89caa",
+      "evals/research_execution/__init__.py": "37f87c2b1a1ba2f1a50090c5b45f7cc068908bde26fe843363e1f7915efa044e",
+      "evals/research_execution/harbor_agent.py": "81ac64306fc93069a85f1a114e4bf1655be0a1358a7efc5704a9c6ceff87128d",
+      "evals/research_execution/prepare.py": "e89d1102e25c5912c0c57951c61cd5463108f781d6e43eb5e81de7e588d631c0",
+      "evals/research_execution/report.py": "b27aacc5ba13243064cbb0b053a00a2a84d3324ea9a0316d08f786a59c9fbb04",
+      "evals/research_execution/run.py": "b546b11fff65bb69813d19a59c3869929e790ace144838907c651413fa180d2d",
+      "evals/research_execution/status.py": "637a0115f7dfb56165cfbfe7f478f3c1f24b881a309b36090dd16417db7990f5",
+      "evals/research_execution/toolchain.py": "d58be27fad7169e9f1922d9cff366a479c0798bb7298f14719e6c221af1cbac9",
+      "evals/research_execution/verifier.py": "cc1023ef50b08ecd18fe50f49aa25224171d41c5d6464799b14874dee97fdaeb",
+      "prompts/astra-research-execution.md": "504aed5cecf7cd1f07b8e0eee443f76016753c77db9fa14cd37e07381f0d34e4",
+      "prompts/jev_plan_conditions.json": "1b5fcb94329209f2a695898943d16f0e847f2772ce5c0d1a51b47c67cbb04d4d",
+      "prompts/jev_review_estimate.json": "5401bc21f0bda48bc4fd06e18aa253c501655309341cb956596576138cf058c4",
+      "src/vision_harness/__init__.py": "370f4309cc208c94d5e25d67b785a72790bfde7bbf93e806e8535e631fd79111",
+      "src/vision_harness/artifacts.py": "98c19a2960a436eac74a81b3ad433421d822d3167d7d935cf812ba870d0d6109",
+      "src/vision_harness/cli.py": "1e00103e36c04437438460ce2691d0a0c81a6f67f2fc94d556cb9296fc418f51",
+      "src/vision_harness/config.py": "5505a7ce1a06cee18c4ac4ab3093b2bbf32896df158db9c59f099541e0ef24f2",
+      "src/vision_harness/contracts.py": "165c29cc88ea4a09e939c0f5875b2bce9ea8b2da3a479528e57078f430be4a0c",
+      "src/vision_harness/demo.py": "454e7ea5eba343b1c85959ee1311dd07ecc4588fedbcef47057f62e26f571d0d",
+      "src/vision_harness/evidence_routing/__init__.py": "a18ceecd193c487fcb68f7b6b282fc6b10e6ccbaa7f7bfa689e3bd438afdba13",
+      "src/vision_harness/evidence_routing/contracts.py": "231d1045d1ec01e61705f69f5c55f5e6ce25c75befa909ccaa6f85b314a770a8",
+      "src/vision_harness/evidence_routing/measurements.py": "4deaaf05edb6f9040917f1f7292c59f8221cbdd558f148bcf3030cf473f2c2d0",
+      "src/vision_harness/evidence_routing/runtime.py": "5a999f3dd29f03d011ad3690834e0e6bda018d031ed87e0b2b8a871f0c6748ca",
+      "src/vision_harness/providers/__init__.py": "1f7a6a0341f2d8349f7995cc32e91f2781688774c25a4bbeaa45a24760d9ee3f",
+      "src/vision_harness/providers/astra.py": "2a515ec41eeca577054b18970cf893d59b5e30e6c9c57240872bb93767183a50",
+      "src/vision_harness/providers/evidence_budget.py": "9ba8ba43cc7e8d57fe69d371b247bc657a7df0a8e621faca4a96931150249f1d",
+      "src/vision_harness/providers/jev.py": "eece71aaa7fd0e030db4b4235e0bb55702ec76622e150e7667d4b8278002840a",
+      "src/vision_harness/research_execution/__init__.py": "b07988ebb003761b8cf4c2fef77498a8872e3ae4ade75e30cc665ed971386b3a",
+      "src/vision_harness/research_execution/cli.py": "0fcf6c0c0ba14f74d04e64f7588074718e3c3edcc8b8cf7a05f412815ef407ac",
+      "src/vision_harness/research_execution/contracts.py": "12d424266fcf3082e550d6690fb736ff962163b862872af2a006670c23ffda81",
+      "src/vision_harness/research_execution/discovery.py": "e37f3edc8885302fa8dab1269bb7608136d38791c903eb3c7e09bf9b9a467a5c",
+      "src/vision_harness/research_execution/documents.py": "ebc04ce9926ff34ef2e5228a6d0b32985c6a042222234cc5a5a795d2198806b2",
+      "src/vision_harness/research_execution/evidence.py": "d00e1a1e5ebbc177697876418512352cc588b03183f84d841414da5971515f56",
+      "src/vision_harness/research_execution/executor.py": "66e0c2bafb0678149d65bd7c8171fa8d00204aef906d88e4fcd962aca51f7a7a",
+      "src/vision_harness/research_execution/planning.py": "543e8e62f687779260e10427c17c20abc37bdc8491809ba52adb2807b40c3cce",
+      "src/vision_harness/research_execution/replay.py": "491c766f2b3c37580dc55a9ab94654f827ff6f2074f9519d5ab24c22783a5a06",
+      "src/vision_harness/research_execution/runtime.py": "5b3fa52e9eb77f1c9cec7cb99d0aac395ab50e424cd71a72b05ce602c2fd18a5",
+      "src/vision_harness/research_execution/scoring.py": "6e3776d4fc4c140a4977c3f867dc9a7037a1cc37160853b672e97fde4737b05a",
+      "src/vision_harness/review_loop.py": "10b44779da5474ba30edddfae7f3341cdfc7b5ea47bd8d725f07b013fd1bccc5",
+      "src/vision_harness/routing/__init__.py": "5eefe410ab614d355c3bedfad7335bd9d2d294cba939450cfe68c8a9074b3dca",
+      "src/vision_harness/routing/catalog.py": "bb6405cb9855b3a275e9b993cc22c541a416de9e089fc5d9e5971c41a8ea6f33",
+      "src/vision_harness/routing/cli.py": "dffdba768a585bb25ffd86ef42abd53797810348309aec4c5f81b0aaa28d155f",
+      "src/vision_harness/routing/contracts.py": "4f4d4f8fde1fd58c17811e4329e64b326afde5e2ee33cd680d6d1b7f8dce656c",
+      "src/vision_harness/routing/executor.py": "dc736e7ae20a2dd2af8eb964a3c795f6768b16388ae1242b5a2d889553d249db",
+      "src/vision_harness/routing/research.py": "4c0d11c98898933c854afe34f3fd053035d28be21e99aeacac9d37634a7a1979",
+      "src/vision_harness/routing/runtime.py": "09dd0fe346440dafef1a6ae96ead457cd6468f720d3f379468cde623ab5f3d92",
+      "src/vision_harness/routing/worker.py": "9c51ddc9802eba9b14f0643acbe882ebeb928741e5afd07a3173a791458d3e84",
+      "src/vision_harness/runtime.py": "45480ac3c4587ec8afdd911cb70012450969e9f03d99ffe29a8bce6c738917fa",
+      "src/vision_harness/selection.py": "02629c2c6d1395ce3cb13eb568db65ba3f2847414c26f3807f852532c202b604",
+      "src/vision_harness/tools/__init__.py": "f8fcbca43531dc087f6eab8d24a931a277d448e5bfa995b8a4c86ee9faf8fd03",
+      "src/vision_harness/tools/dispatch.py": "a0266a1830b59abc2d9ecf3a1899d8dd7c143125548c0fc8936bcb8b99df26e6",
+      "src/vision_harness/tools/opencv.py": "427b6461eb100efa94580b62b6a456dd2e3bcdc1739de88d2157e51e5cef5d84",
+      "src/vision_harness/tools/registry.py": "c100ecafc28f4d2631bfa3bdd70b2819bdb5a53cdb29ddf779823782d97dcd8d",
+      "src/vision_harness/tools/stardist.py": "cf9107d24963d5fafd47f22ce3cb1f6d32a593ef98a577aa7ac476506f1acbe0",
+      "src/vision_harness/tracing.py": "c1583a61805e900c93de262b53abb57cd8bb53bd78459ad0a62338fa8a8e98b9"
+    },
+    "archives_sha256": {
+      "images.zip": "6f30a5d4fe38c928ded972704f085975f8dc0d65d9aa366df00e5a9d449fddd7",
+      "masks.zip": "f9e6043d8ca56344a4886f96a700d804d6ee982f31e2b2cd3194af2a053c2710",
+      "metadata.zip": "a2c1f900bed9ba92a99553efd4c2ae98598433691c7401d818653ab61110deb2"
+    },
+    "primary_metric": "all-attempt proportion within 10% of annotation-derived count; failures score zero",
+    "secondary_metrics": [
+      "coverage",
+      "conditional MAPE",
+      "complete-cohort MAPE only if all answered",
+      "instance F1 at IoU>=0.5",
+      "time",
+      "tokens",
+      "image-cluster paired intervals"
+    ],
+    "answer_policy": "Return the selected observed mask's count with approved/provisional review status; absent final verified artifact is failure",
+    "input_policy": "same question and 1/99.8 percentile preview for both arms; tool arm also gets original uint16 file",
+    "retry_policy": "one recorded attempt; schema-format repair and up to two internal scored execution rounds; no outcome retries",
+    "limitations": [
+      "public benchmark; pretrained exposure unknown",
+      "counting derived from segmentation labels, not original benchmark metric",
+      "12 images are a pilot, not a broad multimodal claim",
+      "CPU-only deployment and bounded catalog search"
+    ],
+    "configuration_variant": "test-awake96",
+    "variant_of": "test-transport96",
+    "amendment_before_accuracy_inspection": true,
+    "changed_configuration": {},
+    "amendment_reason": "Complete new 72-attempt comparison after host sleep interrupted the original experiments. Same 96 KB tasks, programs, policy, inputs, references and models; both arms run afresh. All previous attempts retained. No accuracy-based selection.",
+    "full_arm_fresh_attempts": 36,
+    "concurrency": 4,
+    "concurrent_deployment_note": "Original four-worker experiment continues unchanged while this three-worker configuration variant runs; per-task CPU/memory limits are unchanged. Runtime is observational under this deployment load.",
+    "infrastructure_repeat": true,
+    "repeat_before_accuracy_inspection": true,
+    "new_baseline_calls": 36,
+    "baseline_job": "research-execution-test-awake96-vanilla",
+    "full_job": "research-execution-test-awake96-full",
+    "runtime_condition": "Awake host; audit OS sleep log at completion. Repeat validity is not guaranteed by caffeinate, which cannot prevent lid-close sleep."
+  },
+  "metrics": {
+    "vanilla": {
+      "attempts": 36,
+      "answered": 35,
+      "within_10_percent": 31,
+      "all_attempt_success_percent": 86.11111111111111,
+      "conditional_mape_percent": 5.7491529627534925,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 37.52092353313896,
+      "review_statuses": {
+        "not_applicable": 35,
+        "not_reached": 1
+      },
+      "total_tokens": {
+        "input_tokens": 22120,
+        "output_tokens": 56669
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.861111111111111,
+        "ci95": [
+          0.6666666666666666,
+          1.0
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": null
+    },
+    "full": {
+      "attempts": 36,
+      "answered": 17,
+      "within_10_percent": 17,
+      "all_attempt_success_percent": 47.22222222222222,
+      "conditional_mape_percent": 4.222471434382248,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 846.2042150221389,
+      "review_statuses": {
+        "provisional": 13,
+        "provisional_after_error": 4,
+        "not_reached": 19
+      },
+      "total_tokens": {
+        "input_tokens": 18701893,
+        "output_tokens": 1354241
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.47222222222222227,
+        "ci95": [
+          0.27777777777777773,
+          0.6666666666666666
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": 0.9590943554452048
+    }
+  },
+  "paired_success_difference": {
+    "mean": -0.3888888888888889,
+    "ci95": [
+      -0.6111111111111112,
+      -0.1937500000000101
+    ],
+    "clusters": 12,
+    "unit": "image; repetitions averaged within image"
+  },
+  "per_image": [
+    {
+      "id": "image-01",
+      "expected": 169,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            168,
+            164,
+            168
+          ],
+          "answered": 3,
+          "mean_count": 166.66666666666666,
+          "count_sd": 2.309401076758503,
+          "conditional_mean_percentage_error": 1.3806706114398422,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            165,
+            165,
+            165
+          ],
+          "answered": 3,
+          "mean_count": 165,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 2.366863905325444,
+          "within_10_percent": 3
+        }
+      }
+    },
+    {
+      "id": "image-02",
+      "expected": 198,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            185,
+            183,
+            null
+          ],
+          "answered": 2,
+          "mean_count": 184,
+          "count_sd": 1.4142135623730951,
+          "conditional_mean_percentage_error": 7.070707070707071,
+          "within_10_percent": 2
+        },
+        "full": {
+          "counts": [
+            183,
+            192,
+            null
+          ],
+          "answered": 2,
+          "mean_count": 187.5,
+          "count_sd": 6.363961030678928,
+          "conditional_mean_percentage_error": 5.303030303030303,
+          "within_10_percent": 2
+        }
+      }
+    },
+    {
+      "id": "image-03",
+      "expected": 49,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            41,
+            40,
+            40
+          ],
+          "answered": 3,
+          "mean_count": 40.333333333333336,
+          "count_sd": 0.5773502691896257,
+          "conditional_mean_percentage_error": 17.687074829931973,
+          "within_10_percent": 0
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-04",
+      "expected": 139,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            135,
+            136,
+            135
+          ],
+          "answered": 3,
+          "mean_count": 135.33333333333334,
+          "count_sd": 0.5773502691896257,
+          "conditional_mean_percentage_error": 2.6378896882494005,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            134,
+            null,
+            null
+          ],
+          "answered": 1,
+          "mean_count": 134,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 3.597122302158273,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-05",
+      "expected": 89,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            87,
+            86,
+            88
+          ],
+          "answered": 3,
+          "mean_count": 87,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 2.247191011235955,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            88
+          ],
+          "answered": 1,
+          "mean_count": 88,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 1.1235955056179776,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-06",
+      "expected": 155,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            146,
+            147,
+            145
+          ],
+          "answered": 3,
+          "mean_count": 146,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 5.806451612903226,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            144,
+            144,
+            144
+          ],
+          "answered": 3,
+          "mean_count": 144,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 7.096774193548387,
+          "within_10_percent": 3
+        }
+      }
+    },
+    {
+      "id": "image-07",
+      "expected": 130,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            128,
+            131,
+            129
+          ],
+          "answered": 3,
+          "mean_count": 129.33333333333334,
+          "count_sd": 1.5275252316519468,
+          "conditional_mean_percentage_error": 1.0256410256410258,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-08",
+      "expected": 167,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            160,
+            162,
+            156
+          ],
+          "answered": 3,
+          "mean_count": 159.33333333333334,
+          "count_sd": 3.0550504633038935,
+          "conditional_mean_percentage_error": 4.590818363273454,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            156
+          ],
+          "answered": 1,
+          "mean_count": 156,
+          "count_sd": null,
+          "conditional_mean_percentage_error": 6.58682634730539,
+          "within_10_percent": 1
+        }
+      }
+    },
+    {
+      "id": "image-09",
+      "expected": 118,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            111,
+            114,
+            114
+          ],
+          "answered": 3,
+          "mean_count": 113,
+          "count_sd": 1.7320508075688772,
+          "conditional_mean_percentage_error": 4.237288135593221,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            116,
+            114
+          ],
+          "answered": 2,
+          "mean_count": 115,
+          "count_sd": 1.4142135623730951,
+          "conditional_mean_percentage_error": 2.542372881355932,
+          "within_10_percent": 2
+        }
+      }
+    },
+    {
+      "id": "image-10",
+      "expected": 127,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            116,
+            114,
+            115
+          ],
+          "answered": 3,
+          "mean_count": 115,
+          "count_sd": 1.0,
+          "conditional_mean_percentage_error": 9.448818897637794,
+          "within_10_percent": 2
+        },
+        "full": {
+          "counts": [
+            null,
+            120,
+            120
+          ],
+          "answered": 2,
+          "mean_count": 120,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 5.511811023622047,
+          "within_10_percent": 2
+        }
+      }
+    },
+    {
+      "id": "image-11",
+      "expected": 170,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            155,
+            155,
+            155
+          ],
+          "answered": 3,
+          "mean_count": 155,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 8.823529411764707,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            null,
+            null,
+            null
+          ],
+          "answered": 0,
+          "mean_count": null,
+          "count_sd": null,
+          "conditional_mean_percentage_error": null,
+          "within_10_percent": 0
+        }
+      }
+    },
+    {
+      "id": "image-12",
+      "expected": 149,
+      "arms": {
+        "vanilla": {
+          "counts": [
+            144,
+            140,
+            143
+          ],
+          "answered": 3,
+          "mean_count": 142.33333333333334,
+          "count_sd": 2.0816659994661326,
+          "conditional_mean_percentage_error": 4.47427293064877,
+          "within_10_percent": 3
+        },
+        "full": {
+          "counts": [
+            145,
+            null,
+            145
+          ],
+          "answered": 2,
+          "mean_count": 145,
+          "count_sd": 0.0,
+          "conditional_mean_percentage_error": 2.684563758389262,
+          "within_10_percent": 2
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "mode": "vanilla",
+      "id": "image-01",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-01__UuCpmLG",
+      "expected": 169,
+      "count": 168,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 0.591715976331361,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 64.78503352900043,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2806
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-01",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-01__i7x5bfU",
+      "expected": 169,
+      "count": 164,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.9585798816568047,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 33.41853301499941,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1505
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-01",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-01__kWUJayb",
+      "expected": 169,
+      "count": 168,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 0.591715976331361,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 47.70625897900027,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1928
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-02",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-02__SdeoQ8B",
+      "expected": 198,
+      "count": 185,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 6.565656565656567,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 62.22188452800037,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2546
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-02",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-02__bqceond",
+      "expected": 198,
+      "count": 183,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.575757575757576,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 56.75618573400061,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2123
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-02",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-02__usXCPgQ",
+      "expected": 198,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout",
+      "elapsed_seconds": 10.75890617100049,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-03",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-03__928iZbU",
+      "expected": 49,
+      "count": 41,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 16.3265306122449,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 21.760665842999515,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 895
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-03",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-03__Aio5kKK",
+      "expected": 49,
+      "count": 40,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 18.367346938775512,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 18.833452341999873,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 647
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-03",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-03__QgJS9D3",
+      "expected": 49,
+      "count": 40,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 18.367346938775512,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 20.614183010000488,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 793
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-04",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-04__8e8eNXN",
+      "expected": 139,
+      "count": 135,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.877697841726619,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 52.963560899001095,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2378
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-04",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-04__q4GgP53",
+      "expected": 139,
+      "count": 136,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.158273381294964,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 57.87498919300015,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2636
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-04",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-04__wfrUsh5",
+      "expected": 139,
+      "count": 135,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.877697841726619,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 30.121090471999196,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1405
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-05",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-05__DjL8tA2",
+      "expected": 89,
+      "count": 87,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.247191011235955,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 24.38626426100018,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1053
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-05",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-05__XUbcZkW",
+      "expected": 89,
+      "count": 86,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.3707865168539324,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 30.383449304999885,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1161
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-05",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-05__muKFWsY",
+      "expected": 89,
+      "count": 88,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.1235955056179776,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 29.797090220999962,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1162
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-06",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-06__r5wrkkX",
+      "expected": 155,
+      "count": 146,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.806451612903226,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 36.14310914199996,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1561
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-06",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-06__sNUnZuF",
+      "expected": 155,
+      "count": 147,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.161290322580645,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 46.17319597900132,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2045
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-06",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-06__sp5tvx7",
+      "expected": 155,
+      "count": 145,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 6.451612903225806,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 34.33894214099928,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1453
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-07",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-07__GR6kqv3",
+      "expected": 130,
+      "count": 128,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.5384615384615385,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 44.42147352000029,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1832
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-07",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-07__WPKFkHg",
+      "expected": 130,
+      "count": 131,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 0.7692307692307693,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 31.772910972000318,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1255
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-07",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-07__hiqkrFh",
+      "expected": 130,
+      "count": 129,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 0.7692307692307693,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 40.053300059998946,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1605
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-08",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-08__KWdy6ce",
+      "expected": 167,
+      "count": 160,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.191616766467066,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 39.9620162680003,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1855
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-08",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-08__ijswQDy",
+      "expected": 167,
+      "count": 162,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.9940119760479043,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 48.54746364700077,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1885
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-08",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-08__wC2Uhx5",
+      "expected": 167,
+      "count": 156,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 6.58682634730539,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 29.035029013000894,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1347
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-09",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-09__F2FfRhD",
+      "expected": 118,
+      "count": 111,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.932203389830509,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 38.831487642000866,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1564
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-09",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-09__Mgg6TFA",
+      "expected": 118,
+      "count": 114,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.389830508474576,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 39.04734701800044,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1529
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-09",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-09__ruEdR8s",
+      "expected": 118,
+      "count": 114,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.389830508474576,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 46.58651577100136,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2019
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-10",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-10__X8FtkkD",
+      "expected": 127,
+      "count": 116,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.661417322834646,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 35.703738141999565,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1640
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-10",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-10__i8fhnxT",
+      "expected": 127,
+      "count": 114,
+      "answered": true,
+      "within_10_percent": false,
+      "percentage_error": 10.236220472440944,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 26.299434511998697,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1168
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-10",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-10__nhzmM2u",
+      "expected": 127,
+      "count": 115,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 9.448818897637794,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 26.11074955299955,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1024
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-11",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-11__3hTL9Yu",
+      "expected": 170,
+      "count": 155,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.823529411764707,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 38.95408597699861,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1847
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-11",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-11__V73sV4E",
+      "expected": 170,
+      "count": 155,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.823529411764707,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 41.57033568600127,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1714
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-11",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-11__fUq4Xi5",
+      "expected": 170,
+      "count": 155,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 8.823529411764707,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 48.93402064700058,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 2116
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-12",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-12__jLeWwuu",
+      "expected": 149,
+      "count": 144,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.3557046979865772,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 32.26874272199893,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1418
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-12",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-12__xjiQFCd",
+      "expected": 149,
+      "count": 140,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 6.0402684563758395,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 32.55344034799964,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1391
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "vanilla",
+      "id": "image-12",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-vanilla/image-12__yu7jid8",
+      "expected": 149,
+      "count": 143,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 4.026845637583892,
+      "review_status": "not_applicable",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 31.0643609309991,
+      "tokens": {
+        "input_tokens": 632,
+        "output_tokens": 1363
+      },
+      "segmentation": null,
+      "stages": []
+    },
+    {
+      "mode": "full",
+      "id": "image-01",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-01__9fp3mMp",
+      "expected": 169,
+      "count": 165,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.366863905325444,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1500.1528298480007,
+      "tokens": {
+        "input_tokens": 590633,
+        "output_tokens": 59594
+      },
+      "segmentation": {
+        "tp": 161,
+        "fn": 8,
+        "fp": 4,
+        "f1": 0.9640718562874252,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-01",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-01__WKqwzvN",
+      "expected": 169,
+      "count": 165,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.366863905325444,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 973.135689779001,
+      "tokens": {
+        "input_tokens": 602141,
+        "output_tokens": 50012
+      },
+      "segmentation": {
+        "tp": 161,
+        "fn": 8,
+        "fp": 4,
+        "f1": 0.9640718562874252,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-01",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-01__eSrAwAm",
+      "expected": 169,
+      "count": 165,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.366863905325444,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 803.1535346569999,
+      "tokens": {
+        "input_tokens": 701205,
+        "output_tokens": 38990
+      },
+      "segmentation": {
+        "tp": 161,
+        "fn": 8,
+        "fp": 4,
+        "f1": 0.9640718562874252,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-02",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-02__ASUrvmn",
+      "expected": 198,
+      "count": 183,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.575757575757576,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Trial controller-call or elapsed-time budget exhausted",
+      "elapsed_seconds": 1511.2295998959999,
+      "tokens": {
+        "input_tokens": 600580,
+        "output_tokens": 58351
+      },
+      "segmentation": {
+        "tp": 181,
+        "fn": 17,
+        "fp": 2,
+        "f1": 0.9501312335958005,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-02",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-02__dwLdZbs",
+      "expected": 198,
+      "count": 192,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.0303030303030303,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1115.1720018830001,
+      "tokens": {
+        "input_tokens": 902013,
+        "output_tokens": 55770
+      },
+      "segmentation": {
+        "tp": 188,
+        "fn": 10,
+        "fp": 4,
+        "f1": 0.9641025641025641,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-02",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-02__oHMyaAe",
+      "expected": 198,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 821.2858734170004,
+      "tokens": {
+        "input_tokens": 193208,
+        "output_tokens": 25652
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-03",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-03__ZwwKutp",
+      "expected": 49,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 817.853990914,
+      "tokens": {
+        "input_tokens": 660619,
+        "output_tokens": 37736
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-03",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-03__pJMYqGw",
+      "expected": 49,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Duplicate candidate IDs",
+      "elapsed_seconds": 141.72368593899955,
+      "tokens": {
+        "input_tokens": 60963,
+        "output_tokens": 6631
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-03",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-03__uknsS7Y",
+      "expected": 49,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 1352.2403206149993,
+      "tokens": {
+        "input_tokens": 1028387,
+        "output_tokens": 63378
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-04",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-04__2Zw4qRW",
+      "expected": 139,
+      "count": 134,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.597122302158273,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1175.1676811169982,
+      "tokens": {
+        "input_tokens": 728421,
+        "output_tokens": 61099
+      },
+      "segmentation": {
+        "tp": 131,
+        "fn": 8,
+        "fp": 3,
+        "f1": 0.9597069597069597,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-04",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-04__SiARKG5",
+      "expected": 139,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 859.2021277250005,
+      "tokens": {
+        "input_tokens": 741724,
+        "output_tokens": 41830
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-04",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-04__WxUFg3F",
+      "expected": 139,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.715760264,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-05",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-05__D758Lij",
+      "expected": 89,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 300.73937634700087,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-05",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-05__LBFs3K8",
+      "expected": 89,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Connection error.",
+      "elapsed_seconds": 408.679400686,
+      "tokens": {
+        "input_tokens": 198958,
+        "output_tokens": 17871
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-05",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-05__juYuRxt",
+      "expected": 89,
+      "count": 88,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.1235955056179776,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 762.8377228909994,
+      "tokens": {
+        "input_tokens": 518014,
+        "output_tokens": 39434
+      },
+      "segmentation": {
+        "tp": 85,
+        "fn": 4,
+        "fp": 3,
+        "f1": 0.96045197740113,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-06",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-06__8Xf2pE2",
+      "expected": 155,
+      "count": 144,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.096774193548387,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Connection error.",
+      "elapsed_seconds": 1068.7612943599997,
+      "tokens": {
+        "input_tokens": 569324,
+        "output_tokens": 47532
+      },
+      "segmentation": {
+        "tp": 141,
+        "fn": 14,
+        "fp": 3,
+        "f1": 0.9431438127090301,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-06",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-06__nWsnfkq",
+      "expected": 155,
+      "count": 144,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.096774193548387,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1026.7471475069997,
+      "tokens": {
+        "input_tokens": 687113,
+        "output_tokens": 50764
+      },
+      "segmentation": {
+        "tp": 141,
+        "fn": 14,
+        "fp": 3,
+        "f1": 0.9431438127090301,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-06",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-06__oFnmq6J",
+      "expected": 155,
+      "count": 144,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 7.096774193548387,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 905.7694277910014,
+      "tokens": {
+        "input_tokens": 536278,
+        "output_tokens": 47708
+      },
+      "segmentation": {
+        "tp": 141,
+        "fn": 14,
+        "fp": 3,
+        "f1": 0.9431438127090301,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-07",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-07__9tqKMAg",
+      "expected": 130,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Request timed out.",
+      "elapsed_seconds": 1261.5194797000004,
+      "tokens": {
+        "input_tokens": 519140,
+        "output_tokens": 46659
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-07",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-07__GKP9dZk",
+      "expected": 130,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Connection error.",
+      "elapsed_seconds": 358.7279126229987,
+      "tokens": {
+        "input_tokens": 209059,
+        "output_tokens": 15754
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-07",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-07__S3eLRY9",
+      "expected": 130,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 1198.3208033379997,
+      "tokens": {
+        "input_tokens": 705282,
+        "output_tokens": 60484
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-08",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-08__KsnQbKR",
+      "expected": 167,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 847.5120545980008,
+      "tokens": {
+        "input_tokens": 1087755,
+        "output_tokens": 43383
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-08",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-08__U4crwdD",
+      "expected": 167,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Duplicate candidate IDs",
+      "elapsed_seconds": 263.5200880370012,
+      "tokens": {
+        "input_tokens": 60108,
+        "output_tokens": 12193
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-08",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-08__q2aPbUf",
+      "expected": 167,
+      "count": 156,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 6.58682634730539,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1081.1380815339999,
+      "tokens": {
+        "input_tokens": 1204193,
+        "output_tokens": 51991
+      },
+      "segmentation": {
+        "tp": 155,
+        "fn": 12,
+        "fp": 1,
+        "f1": 0.9597523219814241,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-09",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-09__WxXxHhm",
+      "expected": 118,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Connection error.",
+      "elapsed_seconds": 271.40671208099957,
+      "tokens": {
+        "input_tokens": 89763,
+        "output_tokens": 11379
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-09",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-09__aeHW6AA",
+      "expected": 118,
+      "count": 116,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 1.694915254237288,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Request timed out.",
+      "elapsed_seconds": 1321.604781185999,
+      "tokens": {
+        "input_tokens": 617603,
+        "output_tokens": 51548
+      },
+      "segmentation": {
+        "tp": 114,
+        "fn": 4,
+        "fp": 2,
+        "f1": 0.9743589743589743,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-09",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-09__oMdiZnk",
+      "expected": 118,
+      "count": 114,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 3.389830508474576,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1022.7523753860005,
+      "tokens": {
+        "input_tokens": 801884,
+        "output_tokens": 50813
+      },
+      "segmentation": {
+        "tp": 113,
+        "fn": 5,
+        "fp": 1,
+        "f1": 0.9741379310344828,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-10",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-10__Hzq2ta5",
+      "expected": 127,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "No complete scored, executed and reviewed result",
+      "elapsed_seconds": 1076.5927171530002,
+      "tokens": {
+        "input_tokens": 791982,
+        "output_tokens": 52921
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-10",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-10__WMv3BjE",
+      "expected": 127,
+      "count": 120,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.511811023622047,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1500.1588854750007,
+      "tokens": {
+        "input_tokens": 775548,
+        "output_tokens": 61507
+      },
+      "segmentation": {
+        "tp": 117,
+        "fn": 10,
+        "fp": 3,
+        "f1": 0.9473684210526315,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-10",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-10__pUh8YZe",
+      "expected": 127,
+      "count": 120,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 5.511811023622047,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1385.2312306719996,
+      "tokens": {
+        "input_tokens": 1002182,
+        "output_tokens": 62778
+      },
+      "segmentation": {
+        "tp": 117,
+        "fn": 10,
+        "fp": 3,
+        "f1": 0.9473684210526315,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-11",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-11__5tbQyLT",
+      "expected": 170,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Duplicate candidate IDs",
+      "elapsed_seconds": 255.55956974200126,
+      "tokens": {
+        "input_tokens": 65502,
+        "output_tokens": 11570
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-11",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-11__m2K2MJQ",
+      "expected": 170,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Research incomplete: incomplete",
+      "elapsed_seconds": 167.68240207399867,
+      "tokens": {
+        "input_tokens": 54053,
+        "output_tokens": 7512
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-11",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-11__mH2TSbk",
+      "expected": 170,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Connection error.",
+      "elapsed_seconds": 15.854086547999032,
+      "tokens": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "segmentation": null,
+      "stages": [
+        "intake"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-12",
+      "repetition_label": 1,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-12__4z64x4v",
+      "expected": 149,
+      "count": 145,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.684563758389262,
+      "review_status": "provisional",
+      "status": "answered",
+      "error": null,
+      "elapsed_seconds": 1273.6258036220006,
+      "tokens": {
+        "input_tokens": 866267,
+        "output_tokens": 62195
+      },
+      "segmentation": {
+        "tp": 143,
+        "fn": 6,
+        "fp": 2,
+        "f1": 0.9727891156462585,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-12",
+      "repetition_label": 2,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-12__6ESy5bY",
+      "expected": 149,
+      "count": null,
+      "answered": false,
+      "within_10_percent": false,
+      "percentage_error": null,
+      "review_status": "not_reached",
+      "status": "error",
+      "error": "Candidate source/document URL was not present in search evidence",
+      "elapsed_seconds": 208.10458392799956,
+      "tokens": {
+        "input_tokens": 54782,
+        "output_tokens": 9998
+      },
+      "segmentation": null,
+      "stages": [
+        "intake",
+        "research"
+      ]
+    },
+    {
+      "mode": "full",
+      "id": "image-12",
+      "repetition_label": 3,
+      "repetition_label_note": "Arbitrary stable order of independent Harbor trials, not synchronized random seeds",
+      "trial": "jobs/research-execution-test-awake96-full/image-12__QiAJVL2",
+      "expected": 149,
+      "count": 145,
+      "answered": true,
+      "within_10_percent": true,
+      "percentage_error": 2.684563758389262,
+      "review_status": "provisional_after_error",
+      "status": "answered",
+      "error": "Request timed out.",
+      "elapsed_seconds": 1109.4727074639995,
+      "tokens": {
+        "input_tokens": 477209,
+        "output_tokens": 39204
+      },
+      "segmentation": {
+        "tp": 143,
+        "fn": 6,
+        "fp": 2,
+        "f1": 0.9727891156462585,
+        "iou_threshold": 0.5
+      },
+      "stages": [
+        "intake",
+        "research",
+        "candidate_scoring",
+        "documentation",
+        "planning",
+        "plan_scoring",
+        "execution",
+        "visual_inspection",
+        "output_scoring",
+        "review",
+        "planning"
+      ]
+    }
+  ]
+}

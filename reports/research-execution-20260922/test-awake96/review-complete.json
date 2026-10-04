@@ -1,0 +1,10 @@
+{
+  "finished_at": "2026-09-23T13:57:26.428149+05:30",
+  "host_log_available": true,
+  "host_sleep_observed": true,
+  "large_clock_gaps": 6,
+  "frozen_files_checked": 660,
+  "planned_trials": 72,
+  "condition": "Infrastructure caution: host sleep events=8, trials with wall/controller gaps over 60 seconds=6. Do not interpret this as a clean comparison until these interruptions are reviewed.",
+  "summary": "Full harness: 17/36 attempts within 10% of the reference (47.22%), with 17/36 counts returned. Vanilla Astra: 31/36 (86.11%), with 35/36 counts returned."
+}

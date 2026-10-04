@@ -180,7 +180,7 @@ def test_executor_rejects_changed_approved_program(tmp_path, monkeypatch):
         def communicate(self, *args, **kwargs):
             (folder / "approved.py").write_text("print(999)")
             (folder / "outcome.json").write_text(json.dumps({"status": "executed", "plan_id": "p",
-                "program_executed_unchanged": True, "labels_path": "labels.npz",
+                "program_executed_unchanged": True, "program_exit_code": 0, "labels_path": "labels.npz",
                 "metadata_path": "execution-metadata.json", "setup_actions": [],
                 "failure_details": [], "suggested_repair": None}))
             return "", ""
@@ -204,8 +204,8 @@ def test_generated_task_has_separate_verifier_and_no_references_in_image():
     assert not (root / "environment/app/evals").exists()
 
 
-@pytest.mark.parametrize("second_review_fails", [False, True])
-def test_low_review_replans_and_passes_feedback_back_to_selection(tmp_path, monkeypatch, second_review_fails):
+@pytest.mark.parametrize("review_failure_round", [0, 1, 2])
+def test_low_review_replans_and_passes_feedback_back_to_selection(tmp_path, monkeypatch, review_failure_round):
     from vision_harness.config import Settings
     from vision_harness.research_execution import runtime
     from vision_harness.research_execution.contracts import Inspection
@@ -245,8 +245,8 @@ def test_low_review_replans_and_passes_feedback_back_to_selection(tmp_path, monk
 
         def review(self, packet, output):
             self.round += 1
-            if second_review_fails and self.round == 2:
-                raise RuntimeError("Injected provider failure on second review")
+            if self.round == review_failure_round:
+                raise RuntimeError("Injected provider failure during review")
             return {"method": {"noul": 0.9}, "evidence": {"noul": 0.2 if self.round == 1 else 0.9}}
 
     def proposed(astra, task, candidates, usage, packet, images, folder):
@@ -276,11 +276,13 @@ def test_low_review_replans_and_passes_feedback_back_to_selection(tmp_path, monk
     monkeypatch.setattr(runtime, "propose", proposed)
     monkeypatch.setattr(runtime, "execute", execute)
     answer = runtime.run("Count nuclei", "full", Settings(), tmp_path / "run", preview=preview)
-    assert executed == ["p1", "p2"]
-    assert planned_packets[1]["feedback"][0]["review"]["evidence"]["noul"] == 0.2
-    assert scored_packets[1]["feedback"][0]["review"]["evidence"]["noul"] == 0.2
-    assert answer["count"] == (1 if second_review_fails else 2)
-    assert answer["review_status"] == ("provisional_after_error" if second_review_fails else "approved")
+    assert executed == (["p1"] if review_failure_round == 1 else ["p1", "p2"])
+    if review_failure_round != 1:
+        assert planned_packets[1]["feedback"][0]["review"]["evidence"]["noul"] == 0.2
+        assert scored_packets[1]["feedback"][0]["review"]["evidence"]["noul"] == 0.2
+    assert answer["count"] == (1 if review_failure_round else 2)
+    assert answer["review_status"] == {0: "approved", 1: "unreviewed_after_error", 2: "provisional_after_error"}[review_failure_round]
+    assert answer["review_completed"] is (review_failure_round != 1)
     with np.load(tmp_path / "run/labels.npz") as archive:
         assert np.count_nonzero(np.unique(archive["labels"]) > 0) == answer["count"]
 
@@ -307,7 +309,7 @@ def test_report_includes_missing_attempts_and_clusters_by_image(tmp_path, monkey
                 (folder / "verifier/grading.json").write_text(json.dumps({"expected": 10, "count": 10,
                     "answered": True, "within_10_percent": True, "percentage_error": 0}))
                 (folder / "agent/run/answer.json").write_text(json.dumps({"status": "answered",
-                    "review_status": "provisional", "elapsed_seconds": 1}))
+                    "review_status": "unreviewed_after_error" if (mode, image, repeat) == ("full", "image-01", 0) else "provisional", "elapsed_seconds": 1}))
     report.collect()
     result = json.loads((destination / "results.json").read_text())
     full = result["metrics"]["full"]
@@ -315,6 +317,96 @@ def test_report_includes_missing_attempts_and_clusters_by_image(tmp_path, monkey
     assert full["conditional_mape_percent"] == 0
     assert full["complete_cohort_mape_percent"] is None
     assert full["all_attempt_success_percent"] == pytest.approx(100*5/6)
+    assert full["review_completed_answered"] == full["review_complete_within_10_percent"] == 4
+    assert full["unreviewed_answered"] == 1
     assert result["paired_success_difference"]["clusters"] == 2
     assert result["paired_success_difference"]["mean"] == pytest.approx(-1/6)
     assert (destination / "index.html").exists()
+
+
+@pytest.mark.parametrize("bad_catalog", ["duplicate", "uncited"])
+def test_discovery_repairs_truncation_and_invalid_catalog_without_relaxing_sources(tmp_path, bad_catalog):
+    import time
+
+    from vision_harness.research_execution.discovery import discover
+    from vision_harness.tracing import Trace
+
+    trace = Trace(tmp_path)
+    responses, contexts = [], []
+    good = Catalog(candidates=[candidate("a", ["segment"]), candidate("b", ["decode", "count"], "library")],
+                   gaps=[], search_coverage="bounded")
+    bad = good.model_copy(deep=True)
+    if bad_catalog == "duplicate":
+        bad.candidates[1].candidate_id = "a"
+    else:
+        bad.candidates[1].documentation_urls = ["https://invented.example/doc"]
+
+    class FakeAstra:
+        def __init__(self):
+            from vision_harness.config import Settings
+
+            self.settings, self.trace = Settings(), trace
+            self.client = SimpleNamespace(responses=SimpleNamespace(create=self.create))
+
+        def create(self, **kwargs):
+            responses.append(kwargs)
+            status = "incomplete" if len(responses) == 1 else "completed"
+            return SimpleNamespace(status=status, output_text="Documented notes",
+                model_dump=lambda **kw: {"status": status,
+                    "incomplete_details": {"reason": "max_output_tokens"} if status == "incomplete" else None,
+                    "output": [{"type": "web_search_call", "action": {"sources": [{"url": "https://example.org/doc"}]}}]})
+
+        def request_transport(self, operation, metadata, send):
+            call = trace.call("astra", operation, metadata)
+            return send(30), call, time.monotonic()
+
+        def structured(self, operation, query, images, context, schema):
+            contexts.append(dict(context))
+            return bad if len(contexts) == 1 else good
+
+    catalog = discover(FakeAstra(), task(), {}, tmp_path / "research")
+    assert [r["max_output_tokens"] for r in responses] == [6500, 13000]
+    assert len(contexts) == 2 and "validation_error_to_repair" in contexts[1]
+    assert contexts[1]["consulted_urls"] == ["https://example.org/doc"]
+    assert catalog == good
+    assert (tmp_path / "research/proposed-catalog-1.json").exists()
+
+
+def test_execution_concerns_reach_artifact_inspection_but_bad_exit_and_geometry_fail(tmp_path):
+    from vision_harness.research_execution.contracts import ExecutionOutcome
+    from vision_harness.research_execution.executor import validate_handoff
+    from vision_harness.tracing import Trace
+
+    preview = tmp_path / "input.png"
+    cv2.imwrite(str(preview), np.zeros((8, 8), np.uint8))
+    labels = np.zeros((8, 8), np.int32)
+    labels[2:5, 2:5] = 1
+    np.savez_compressed(tmp_path / "labels.npz", labels=labels)
+    (tmp_path / "execution-metadata.json").write_text('{"model":"fixture"}')
+    outcome = ExecutionOutcome(status="needs_replan", plan_id="p", program_executed_unchanged=True,
+        program_exit_code=0, labels_path="labels.npz", metadata_path="execution-metadata.json",
+        setup_actions=[], failure_details=["Possible missed border nucleus"], suggested_repair="inspect border")
+    trace = Trace(tmp_path / "trace")
+    validate_handoff(outcome, tmp_path, trace)
+    measured = inspect_artifacts(tmp_path, outcome, [8, 8], preview)
+    assert measured["count"] == 1
+    assert measured["executor_report"]["concerns"] == outcome.failure_details
+    assert measured["executor_report"]["status"] == "needs_replan"
+    outcome.program_exit_code = 1
+    with pytest.raises(RuntimeError, match="needs replan"):
+        validate_handoff(outcome, tmp_path, trace)
+    with pytest.raises(ValueError, match="original image geometry"):
+        inspect_artifacts(tmp_path, outcome, [16, 16], preview)
+
+
+def test_installed_api_validation_catches_cached_loader_and_wrong_border_keyword():
+    import ast
+
+    from vision_harness.research_execution.planning import validate_installed_calls
+
+    environment = {"verified_local_api": {"stardist": {"version": "0.9.2"}}}
+    with pytest.raises(ValueError, match="local StarDist constructor"):
+        validate_installed_calls(ast.parse("from stardist.models import StarDist2D as S\nm = S.from_pretrained('2D_versatile_fluo')"), environment)
+    with pytest.raises(ValueError, match="predict_kwargs"):
+        validate_installed_calls(ast.parse("from stardist.models import StarDist2D\nm = StarDist2D(config=None, name='stardist', basedir='/opt/checkpoints')\nm.predict_instances(x, b=0)"), environment)
+    validate_installed_calls(ast.parse("from stardist.models import StarDist2D\nm = StarDist2D(config=None, name='stardist', basedir='/opt/checkpoints')\nm.predict_instances(x, sparse=True, predict_kwargs={'b':0})"), environment)

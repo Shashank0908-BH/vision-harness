@@ -1,0 +1,68 @@
+{
+  "metrics": {
+    "vanilla": {
+      "attempts": 36,
+      "answered": 35,
+      "within_10_percent": 31,
+      "all_attempt_success_percent": 86.11111111111111,
+      "conditional_mape_percent": 5.7491529627534925,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 37.52092353313896,
+      "review_statuses": {
+        "not_applicable": 35,
+        "not_reached": 1
+      },
+      "total_tokens": {
+        "input_tokens": 22120,
+        "output_tokens": 56669
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.861111111111111,
+        "ci95": [
+          0.6666666666666666,
+          1.0
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": null
+    },
+    "full": {
+      "attempts": 36,
+      "answered": 17,
+      "within_10_percent": 17,
+      "all_attempt_success_percent": 47.22222222222222,
+      "conditional_mape_percent": 4.222471434382248,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 846.2042150221389,
+      "review_statuses": {
+        "provisional": 13,
+        "provisional_after_error": 4,
+        "not_reached": 19
+      },
+      "total_tokens": {
+        "input_tokens": 18701893,
+        "output_tokens": 1354241
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.47222222222222227,
+        "ci95": [
+          0.27777777777777773,
+          0.6666666666666666
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": 0.9590943554452048
+    }
+  },
+  "paired_success_difference": {
+    "mean": -0.3888888888888889,
+    "ci95": [
+      -0.6111111111111112,
+      -0.1937500000000101
+    ],
+    "clusters": 12,
+    "unit": "image; repetitions averaged within image"
+  }
+}

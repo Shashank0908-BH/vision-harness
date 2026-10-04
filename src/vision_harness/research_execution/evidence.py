@@ -65,5 +65,10 @@ def inspect_artifacts(folder, outcome, original_shape, preview):
                 "fragmented_instance_ids": fragmented, "fragmentation_repaired": False,
                 "labels_sha256": hashlib.sha256(labels_path.read_bytes()).hexdigest(),
                 "execution_metadata": metadata, "program_unchanged": outcome.program_executed_unchanged}
+    measured["executor_report"] = {
+        "status": getattr(outcome, "status", "executed"),
+        "program_exit_code": getattr(outcome, "program_exit_code", None),
+        "concerns": getattr(outcome, "failure_details", []),
+        "suggested_repair": getattr(outcome, "suggested_repair", None)}
     write_json(folder / "measured.json", measured)
     return measured

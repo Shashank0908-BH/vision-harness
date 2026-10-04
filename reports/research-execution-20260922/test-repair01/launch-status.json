@@ -1,0 +1,67 @@
+{
+  "stage": "complete",
+  "updated_at": "2026-09-23T18:44:02.681241+00:00",
+  "metrics": {
+    "vanilla": {
+      "attempts": 36,
+      "answered": 35,
+      "within_10_percent": 31,
+      "all_attempt_success_percent": 86.11111111111111,
+      "conditional_mape_percent": 5.7491529627534925,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 37.52092353313896,
+      "review_statuses": {
+        "not_applicable": 35,
+        "not_reached": 1
+      },
+      "review_completed_answered": null,
+      "unreviewed_answered": null,
+      "review_complete_within_10_percent": null,
+      "total_tokens": {
+        "input_tokens": 22120,
+        "output_tokens": 56669
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.861111111111111,
+        "ci95": [
+          0.6666666666666666,
+          1.0
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": null
+    },
+    "full": {
+      "attempts": 36,
+      "answered": 7,
+      "within_10_percent": 7,
+      "all_attempt_success_percent": 19.444444444444443,
+      "conditional_mape_percent": 3.1385260944747,
+      "complete_cohort_mape_percent": null,
+      "mean_seconds": 251.653504396,
+      "review_statuses": {
+        "not_reached": 29,
+        "provisional": 7
+      },
+      "review_completed_answered": 7,
+      "unreviewed_answered": 0,
+      "review_complete_within_10_percent": 7,
+      "total_tokens": {
+        "input_tokens": 4463636,
+        "output_tokens": 422261
+      },
+      "success_image_cluster_interval": {
+        "mean": 0.19444444444444442,
+        "ci95": [
+          0.1111111111111111,
+          0.27777777777777785
+        ],
+        "clusters": 12,
+        "unit": "image; repetitions averaged within image"
+      },
+      "mean_instance_f1_answered_masks": 0.9614004896189563
+    }
+  },
+  "launcher_exit_code": 0
+}

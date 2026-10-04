@@ -88,6 +88,10 @@ class ExecutionPlan(Record):
     covered_requirement_ids: list[str]
     steps: list[PlanStep] = Field(min_length=3, max_length=10)
     setup_commands: list[str]
+    # Nullable default preserves archived plans. New measured GPU environments
+    # require an explicit selection before Jev scores the complete plan.
+    python_executable: str | None = None
+    install_requirements: list[str] = Field(default_factory=list)
     python_program: str
     preprocessing_rationale: str
     usage_source_ids: list[str]
@@ -103,6 +107,7 @@ class ExecutionOutcome(Record):
     status: Literal["executed", "needs_replan", "execution_error"]
     plan_id: str
     program_executed_unchanged: bool
+    program_exit_code: int | None
     labels_path: str | None
     metadata_path: str | None
     setup_actions: list[str]
@@ -133,7 +138,7 @@ class Scorable(Record):
 
 
 class Policy(Record):
-    version: str = "research-execution-0.1"
+    version: str = "research-execution-0.3"
     max_rounds: int = 2
     max_research_passes: int = 2
     max_provider_calls: int = 48

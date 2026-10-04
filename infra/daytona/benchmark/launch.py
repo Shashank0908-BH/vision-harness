@@ -5,6 +5,7 @@ import asyncio
 import hashlib
 import json
 import os
+import tomllib
 from pathlib import Path
 
 from dotenv import dotenv_values
@@ -36,6 +37,15 @@ async def main():
     parser.add_argument("--env-file", type=Path, required=True)
     parser.add_argument("--skip-canary", action="store_true")
     args = parser.parse_args()
+    policy_path = args.env_file.resolve().parent / "infra/daytona/config.toml"
+    if policy_path.exists():
+        workspace_policy = tomllib.loads(policy_path.read_text())
+        if not workspace_policy.get("allow_benchmark_worker_creation", True):
+            raise RuntimeError(
+                "The project is configured for one reusable workspace. This legacy launcher "
+                "creates new agent/verifier sandboxes per attempt and is disabled. "
+                "Preserve the existing cohort; use the workspace manager for continuous work."
+            )
     run = args.run.resolve()
     # Freeze checking precedes provider calls; parent-thread source can continue changing.
     for manifest, base in (("source-manifest.json", run / "frozen"), ("task-manifest.json", run)):

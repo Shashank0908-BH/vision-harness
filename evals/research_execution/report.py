@@ -70,6 +70,8 @@ def collect(split="test"):
                     "within_10_percent": grading.get("within_10_percent", False),
                     "percentage_error": grading.get("percentage_error"),
                     "review_status": answer.get("review_status", "missing"),
+                    "review_completed": answer.get("review_completed", answer.get("review_status") in
+                        {"approved", "provisional", "provisional_after_error"}),
                     "status": answer.get("status", "missing"),
                     "error": answer.get("error") or grading.get("error") or result.get("exception_info"),
                     "elapsed_seconds": answer.get("elapsed_seconds"), "tokens": usage,
@@ -85,6 +87,9 @@ def collect(split="test"):
             "complete_cohort_mape_percent": statistics.mean(errors) if len(errors) == len(rows) else None,
             "mean_seconds": statistics.mean(times) if times else None,
             "review_statuses": dict(Counter(r["review_status"] for r in rows)),
+            "review_completed_answered": sum(r["answered"] and r["review_completed"] for r in rows) if mode == "full" else None,
+            "unreviewed_answered": sum(r["answered"] and not r["review_completed"] for r in rows) if mode == "full" else None,
+            "review_complete_within_10_percent": sum(r["within_10_percent"] and r["review_completed"] for r in rows) if mode == "full" else None,
             "total_tokens": {k: sum(r["tokens"][k] for r in rows) for k in ("input_tokens", "output_tokens")},
             "success_image_cluster_interval": cluster_interval(image_success),
             "mean_instance_f1_answered_masks": statistics.mean(r["segmentation"]["f1"] for r in rows if r["segmentation"]) if any(r["segmentation"] for r in rows) else None}
@@ -163,8 +168,23 @@ def render(report, result):
     page = page.replace("__N__", str(result["cohort_images"])).replace("__R__", str(result["repetitions"]))
     page = page.replace("__SPLIT__", esc(result["selection"].get("split", "unspecified")))
     page = page.replace("__REPLAY__", "Development prefix replay: not an independent complete benchmark trial." if result["selection"].get("development_prefix_replay") else "Every attempt runs independently from the original query and input.")
+    if result["selection"].get("baseline_reuse"):
+        notice = ('<div class="box"><h2>Repair repeat with existing controls</h2>'
+                  '<p>Only the full-harness attempts are newly run. All original vanilla attempts, '
+                  'including failures, are reused. This cohort has already been inspected; these '
+                  'results measure a post-hoc engineering repair, not performance on unseen data.</p></div>')
+        page = page.replace('<div class="flow">', notice + '<div class="flow">', 1)
     page = page.replace("__SUMMARY__", summary_rows).replace("__CARDS__", "".join(cards)).replace("__IMAGES__", image_rows)
     page = page.replace("__PROTOCOL__", esc(json.dumps({"selection": result["selection"], "paired_success_difference": result["paired_success_difference"]}, indent=2)))
+    full = result["metrics"].get("full", {})
+    if "review_completed_answered" in full:
+        note = (f'Full-harness answers with completed Jev review: {full["review_completed_answered"]}/{full["attempts"]}. '
+                f'Within 10% AND review complete: {full["review_complete_within_10_percent"]}/{full["attempts"]}. '
+                f'Measured answers with incomplete review: {full["unreviewed_answered"]}. '
+                'Unreviewed fallbacks contribute to answer coverage and count accuracy, but never to completed-chain success or Jev approval.')
+        page = page.replace("<h2>Inspect each attempt</h2>", '<p class="box">'+esc(note)+'</p><h2>Inspect each attempt</h2>')
+    page = page.replace("</style>", ".scroll{overflow:auto;max-width:100%}@media(max-width:700px){body{padding:16px}article{overflow-wrap:anywhere}}</style>")
+    page = page.replace("<table>", '<div class="scroll"><table>').replace("</table>", "</table></div>")
     (report / "index.html").write_text(page)
 
 

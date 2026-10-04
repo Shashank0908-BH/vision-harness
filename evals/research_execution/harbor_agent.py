@@ -1,5 +1,6 @@
 """Harbor runs the exact CLI; task references exist only in a separate verifier."""
 
+import json
 import os
 import shlex
 
@@ -24,7 +25,7 @@ class ResearchExecutionAgent(BaseInstalledAgent):
         return "research-execution"
 
     def version(self):
-        return "0.1.0"
+        return "0.2.0"
 
     async def install(self, environment):
         await self.exec_as_agent(environment,
@@ -47,4 +48,5 @@ class ResearchExecutionAgent(BaseInstalledAgent):
             trajectory = export(folder, self.logs_dir / "trajectory.json")
             context.n_input_tokens = trajectory.final_metrics.total_prompt_tokens
             context.n_output_tokens = trajectory.final_metrics.total_completion_tokens
-            context.metadata = {"mode": self.mode, "protocol": "research-execution-0.1"}
+            manifest = json.loads((folder / "manifest.json").read_text())
+            context.metadata = {"mode": self.mode, "protocol": manifest["policy"]["version"]}

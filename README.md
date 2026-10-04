@@ -2,7 +2,13 @@
 
 A CLI-first research POC: GPT-6 Astra proposes and interprets vision operations, specialist adapters produce measurements, and Jev can score proposed methods and review the evidence behind an answer. StarDist handles fluorescence-nucleus segmentation; the original OpenCV tools remain available in separate configurations. Harbor runs isolated tasks and displays execution traces.
 
-The clarified **target architecture** is the [research-to-execution harness](docs/research-execution-harness.md): query-driven discovery of models and libraries → Jev scoring of every candidate → usage documentation → Astra workflow plans → Jev plan scoring → visible Codex execution → evidence review and bounded replanning. Its connected implementation, stage-query contracts, CLI commands and exact file responsibilities are in the [v3 review guide](docs/research-execution-v3.md). The replacement API key passed a live health check on 23 September 2026. Live development reached a measured, reviewed answer and verified recovery after a later planning failure. The original pilot and its [96 KB transport follow-up](reports/research-execution-20260922/transport-amendment.md) were interrupted by repeated laptop sleep; those attempts remain preserved. A complete [72-trial infrastructure repeat](reports/research-execution-20260922/test-awake96/selection.json) uses the identical 96 KB task bundles, 12 images, three repetitions, and fresh controls. Its [paginated report](reports/research-execution-20260922/test-awake96/index.html) and review summary are generated automatically after completion, with a host-sleep audit. Current project source matches that frozen 96 KB configuration. See the [development history](reports/research-execution-20260922/development-status.md). The v1 and v2 paths below are narrower experiments.
+**Current scope:** the connected research/execution harness supports **2D fluorescence microscopy nucleus counting**. The intended architecture is general-purpose, but general images, DICOM/fMRI, video and audio do not yet have domain adapters. The older OpenCV tools remain separate examples, not proof of general-purpose support.
+
+**For team development, start with [the team handoff](docs/team-handoff.md):** implementation boundaries, the current architecture diagram, file responsibilities, local setup and the proposed separation between a shared controller and domain adapters.
+
+The connected flow is query-driven model/library research → JEV candidate scoring → retrieved usage documentation → Astra executable plans → JEV plan scoring → isolated execution → evidence review and bounded replanning. See the [architecture specification](docs/research-execution-harness.md) and [v3 implementation guide](docs/research-execution-v3.md).
+
+The [completed GPU repeat](reports/research-execution-20260922/test-gpu-repair02/summary.md) returned 33/36 harness answers versus 35/36 vanilla answers. Both scored 31/36 within 10% of the true count; conditional mean count error was 4.63% versus 5.75%. All 33 harness answers remained provisional. This was a post-hoc repair comparison on 12 previously inspected images, not evidence of general multimodal superiority. The subsequent [operational fixes](docs/operational-repair-20260924.md) are in development source and passed targeted validation; they have not been evaluated in a new full cohort. Earlier frozen experiments and their reports remain preserved.
 
 The new **specialist routing layer** has a [complete file map and CLI guide](docs/model-routing.md): versioned StarDist/Cellpose-SAM procedures, source-backed model research, Jev scoring of every eligible candidate, frozen decisions, and inspectable instance-map evidence. Use `vision specialist --help`. Research proposals remain advisory until an adapter and checkpoint are validated.
 
@@ -46,10 +52,10 @@ The earlier [synthetic smoke test](reports/cohort-five-20260922/index.html) cont
 Run commands from the repository root. Python 3.12 and `uv` are used; dependencies are pinned in `uv.lock`.
 
 ```bash
-uv sync --extra eval
+uv sync --extra eval --extra research
 ```
 
-Put credentials in the local `.env` file (already created on this machine):
+Copy `.env.example` to `.env` on a new checkout, then fill in your credentials locally:
 
 ```dotenv
 OPENAI_API_KEY=your_openai_key
