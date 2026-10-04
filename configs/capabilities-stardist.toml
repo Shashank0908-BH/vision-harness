@@ -1,0 +1,11 @@
+[[tools]]
+name = "stardist"
+description = "Run the pinned 2D_versatile_fluo learned nucleus segmenter on a grayscale fluorescence image. Return unique instance count, mask, overlay, geometry summaries and native score summaries. segmentation_profile is required: default uses pretrained probability threshold 0.479071463157368; sensitive uses 0.35 and may detect more weak objects; conservative uses 0.60 and may omit weak objects. All use overlap threshold 0.3 and intensity normalization 1/99.8. Other arguments must be null. Prefer the default profile as a reference; alternatives measure sensitivity, not independent corroboration."
+requirements = ["Input is original single-channel fluorescence replicated as RGB, or a crop", "Nuclear stain provides the requested object proxy"]
+limitations = ["Predicted nuclei may merge, split or be missed", "Native scores are not calibrated probabilities of count correctness", "Different profiles share weights and correlated errors", "No ground-truth labels are available to the tool", "Returned primary image is a binary mask; do not feed it back as a fluorescence image", "Counts include all predicted border instances"]
+
+[[tools]]
+name = "crop"
+description = "Crop a pixel rectangle while retaining original coordinates. Use box=[x,y,width,height]; all other arguments must be null. Inspect a difficult region or segment it with StarDist."
+requirements = ["Rectangle lies within the source image"]
+limitations = ["Crop counts do not establish whole-image coverage", "Overlapping crop counts cannot be summed directly", "Cropping creates no new detail"]

@@ -1,0 +1,60 @@
+{
+  "astra_preferred_id": "stardist-default",
+  "jev_ranking": [
+    "stardist-default",
+    "stardist-sensitive",
+    "cellpose-sam",
+    "stardist-conservative"
+  ],
+  "selected_id": "stardist-default",
+  "assessments": [
+    {
+      "plan_id": "stardist-default",
+      "score": 1.4,
+      "confidence": 0.28,
+      "probabilities": {
+        "0": 0.16,
+        "1": 0.33,
+        "2": 0.45,
+        "3": 0.06
+      }
+    },
+    {
+      "plan_id": "stardist-sensitive",
+      "score": 1.35,
+      "confidence": 0.33,
+      "probabilities": {
+        "0": 0.12,
+        "1": 0.42,
+        "2": 0.45,
+        "3": 0.01
+      }
+    },
+    {
+      "plan_id": "stardist-conservative",
+      "score": 1.24,
+      "confidence": 0.46,
+      "probabilities": {
+        "0": 0.15,
+        "1": 0.47000000000000003,
+        "2": 0.38,
+        "3": 0.0
+      }
+    },
+    {
+      "plan_id": "cellpose-sam",
+      "score": 1.29,
+      "confidence": 0.62,
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.62,
+        "2": 0.33,
+        "3": 0.0
+      }
+    }
+  ],
+  "tie_rule": "descending Score, then ascending stable procedure ID",
+  "frozen_before_execution": true,
+  "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+  "image_sha256": "bbf52a4e8f7959a96e6e51baf5d18bd8c7cb55461cd84c3f6692cd851cd618a7"
+}

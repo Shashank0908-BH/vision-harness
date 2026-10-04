@@ -1,0 +1,87 @@
+{
+  "instance_maps_recomputed": 24,
+  "instance_geometry_records_checked": 2311,
+  "valid_harbor_trajectories": 12,
+  "completed_provider_calls": 36,
+  "all_scores_frozen_before_inference": true,
+  "comparison_withheld_from_answer": true,
+  "source_and_catalog_match_frozen_protocol": true,
+  "mean_input_to_final_answer_seconds": 55.582193333333336,
+  "mean_vanilla_elapsed_seconds": 35.72912227750445,
+  "mean_worker_seconds_including_startup_and_artifacts": {
+    "cellpose-sam": 6.61926111097758,
+    "stardist-conservative": 2.2416902845725417,
+    "stardist-default": 3.044502777668337,
+    "stardist-sensitive": 2.3649988334315517
+  },
+  "mean_native_inference_seconds": {
+    "cellpose-sam": 3.0942821038576462,
+    "stardist-conservative": 0.37241120139757794,
+    "stardist-default": 0.4137255623936653,
+    "stardist-sensitive": 0.4235743470489979
+  },
+  "review_support_values": [
+    0.66,
+    0.71,
+    0.64,
+    0.7,
+    0.69,
+    0.64
+  ],
+  "jev_scores_by_task": [
+    {
+      "id": "b3af822f7e1a",
+      "scores": {
+        "stardist-default": 1.66,
+        "stardist-sensitive": 1.42,
+        "stardist-conservative": 1.4,
+        "cellpose-sam": 1.36
+      }
+    },
+    {
+      "id": "fc4388dbac57",
+      "scores": {
+        "stardist-default": 1.56,
+        "stardist-sensitive": 1.38,
+        "stardist-conservative": 1.38,
+        "cellpose-sam": 1.4
+      }
+    },
+    {
+      "id": "f4b8ef595d67",
+      "scores": {
+        "stardist-default": 1.28,
+        "stardist-sensitive": 1.24,
+        "stardist-conservative": 1.17,
+        "cellpose-sam": 1.3
+      }
+    },
+    {
+      "id": "17a175b5e17d",
+      "scores": {
+        "stardist-default": 1.4,
+        "stardist-sensitive": 1.35,
+        "stardist-conservative": 1.24,
+        "cellpose-sam": 1.29
+      }
+    },
+    {
+      "id": "54ee1bf8ac02",
+      "scores": {
+        "stardist-default": 1.34,
+        "stardist-sensitive": 1.19,
+        "stardist-conservative": 1.14,
+        "cellpose-sam": 1.28
+      }
+    },
+    {
+      "id": "c938cd18d93d",
+      "scores": {
+        "stardist-default": 1.19,
+        "stardist-sensitive": 1.24,
+        "stardist-conservative": 1.13,
+        "cellpose-sam": 1.3
+      }
+    }
+  ]
+}

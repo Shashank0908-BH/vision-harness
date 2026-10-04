@@ -1,0 +1,7 @@
+tasks = "evals/tasks/generated/bbbc039-adaptive-20260922"
+jobs = "jobs/bbbc039-adaptive-20260922"
+modes = ["vanilla", "tools", "select", "full"]
+repetitions = 1
+concurrency = 2
+model = "gpt-6-astra"
+runtime_config = "configs/poc-adaptive.toml"

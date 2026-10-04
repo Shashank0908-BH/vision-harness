@@ -1,0 +1,7 @@
+{
+  "instructions": "Does the evidence support returning the candidate at the precision requested by the question? For an estimated nucleus count, a traceable pretrained nucleus segmentation can support an estimate when its intended modality/target matches supplied metadata, input measurements do not contradict applicability, coverage is complete, arithmetic is grounded and limitations are disclosed. This does not establish exact biological truth. Reject actual mismatches, unexplained adjustments, misleading certainty or unresolved material contradictions. Do not reject solely because every predicted nucleus lacks an independent manual annotation. Do not approve solely because a tool ran or a previous score was high. You receive structured evidence, not independently inspectable image pixels.",
+  "criteria": {
+    "true": "A grounded estimate within the requested scope is supported, with material uncertainty honestly stated and no known invalidating contradiction.",
+    "false": "The estimate has an actual unsupported condition, material contradiction, invalid scope/derivation, or claim of certainty exceeding the evidence."
+  }
+}

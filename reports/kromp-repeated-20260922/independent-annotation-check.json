@@ -1,0 +1,375 @@
+{
+  "decoder": "Pillow, distinct positive integer labels; independent of OpenCV scoring decoder",
+  "checks": [
+    {
+      "id": "3cbe1c1887f2",
+      "pillow_count": 38,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "ef70c4932509",
+      "pillow_count": 363,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        914,
+        1225
+      ]
+    },
+    {
+      "id": "699afb45f17b",
+      "pillow_count": 75,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "8e540d818a75",
+      "pillow_count": 585,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        914,
+        1225
+      ]
+    },
+    {
+      "id": "c24f81d1e47d",
+      "pillow_count": 183,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        914,
+        1225
+      ]
+    },
+    {
+      "id": "1b4de71c0b8b",
+      "pillow_count": 83,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        430,
+        550
+      ]
+    },
+    {
+      "id": "802e8f830f1b",
+      "pillow_count": 22,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "b3514b0dd6e4",
+      "pillow_count": 13,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "f8c05d6880ab",
+      "pillow_count": 59,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "5dbe5cc7c039",
+      "pillow_count": 124,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "033e228a36eb",
+      "pillow_count": 16,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "a3964de3ea29",
+      "pillow_count": 12,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "9a364d5359bd",
+      "pillow_count": 32,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "790bee4f6905",
+      "pillow_count": 31,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "7e47e9561cb7",
+      "pillow_count": 18,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "d548ac33a878",
+      "pillow_count": 23,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "4c7ab5e5db93",
+      "pillow_count": 41,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "ec9c29b8b6de",
+      "pillow_count": 22,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "86fbe553681c",
+      "pillow_count": 34,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "9e0f4d3f2565",
+      "pillow_count": 23,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "1ea18c8d4537",
+      "pillow_count": 833,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "4d9f365970a2",
+      "pillow_count": 68,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "ce9875d92d3e",
+      "pillow_count": 67,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "0dd3dce58330",
+      "pillow_count": 66,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "a4016f1ff979",
+      "pillow_count": 75,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "21c3236f351d",
+      "pillow_count": 66,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "3a50c1b3af56",
+      "pillow_count": 71,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1360
+      ]
+    },
+    {
+      "id": "1c6b0002e918",
+      "pillow_count": 24,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "453a2ffca0fe",
+      "pillow_count": 265,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "1452b1f236fb",
+      "pillow_count": 203,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1280
+      ]
+    },
+    {
+      "id": "5ce7aa249ca6",
+      "pillow_count": 55,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        763,
+        1014
+      ]
+    },
+    {
+      "id": "dd7c4e7a504b",
+      "pillow_count": 100,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "53263dd6b7b7",
+      "pillow_count": 20,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "5b649c3d042a",
+      "pillow_count": 969,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "ec236e59cb5c",
+      "pillow_count": 135,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "21a45e9f8b5a",
+      "pillow_count": 147,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": "0f8cd1692971",
+      "pillow_count": 125,
+      "matches_scoring_decoder": true,
+      "dtype": "uint16",
+      "shape": [
+        1024,
+        1024
+      ]
+    }
+  ]
+}

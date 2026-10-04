@@ -1,0 +1,11 @@
+{
+  "reason": "User requested Jev retry; adapter now bounds evidence payload and logs HTTP error bodies.",
+  "selection": "Original review-mode task with the confirmed Jev max_tokens_exceeded failure.",
+  "cohort_ids": [
+    "0bb54dcc4ca2"
+  ],
+  "mode": "review",
+  "attempts": 1,
+  "original_results_preserved": true,
+  "interpretation": "Separate recovery trial, not replacement benchmark result or unbiased full-cohort comparison."
+}

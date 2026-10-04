@@ -1,0 +1,59 @@
+[
+  {
+    "id": "3fd54ce136b4",
+    "split": "test",
+    "family": "count",
+    "image": "images/3fd54ce136b4.png",
+    "question": "How many red circles are in this image? Return the count as a number.",
+    "expected": 12,
+    "tolerance": 0,
+    "conditions": [],
+    "sha256": "c3076658f293a9e60c7351765ca90197acb5cc2ee0ca4054c7237258e11cfc67"
+  },
+  {
+    "id": "d9e194893428",
+    "split": "test",
+    "family": "color_count",
+    "image": "images/d9e194893428.png",
+    "question": "How many red circles are in this image? Return the count as a number.",
+    "expected": 4,
+    "tolerance": 0,
+    "conditions": [],
+    "sha256": "7ce37f3c9cb0010503fefa2788a47c0e6e3a4e2e8056e08f2aea156d7d97b5f2"
+  },
+  {
+    "id": "03fa1e2d3cc3",
+    "split": "test",
+    "family": "position",
+    "image": "images/03fa1e2d3cc3.png",
+    "question": "Is the red circle left or right of the blue circle? Return left or right.",
+    "expected": "right",
+    "tolerance": 0,
+    "conditions": [],
+    "sha256": "a9f9bcb4c1235efa05a20a3b2a45889a730a7eed260b4a4da7d043e0299d82d0"
+  },
+  {
+    "id": "bfdc6dd16d43",
+    "split": "test",
+    "family": "distance",
+    "image": "images/bfdc6dd16d43.png",
+    "question": "What is the Euclidean distance in pixels between the centers of the red and blue circles? Return a number.",
+    "expected": 273.80467490530543,
+    "tolerance": 2,
+    "conditions": [],
+    "sha256": "98c8ea12188d25ad72cc72dfa2f6f13ad1c839ba57cc9b2ca4274e5ee9412a04"
+  },
+  {
+    "id": "d572a7141bfc",
+    "split": "test",
+    "family": "touching_count",
+    "image": "images/d572a7141bfc.png",
+    "question": "How many red circles are in this image? Return the count as a number.",
+    "expected": 10,
+    "tolerance": 0,
+    "conditions": [
+      "Two circles touch at one pixel; other circles are separated"
+    ],
+    "sha256": "af259db4c9f354addbff74021426e8aacef797330d8581f94979ab16c02e8674"
+  }
+]

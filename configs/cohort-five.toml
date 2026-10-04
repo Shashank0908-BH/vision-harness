@@ -1,0 +1,7 @@
+# One held-out example per task family, selected in manifest order before running.
+tasks = "evals/tasks/generated/cohort-five-20260922-v2"
+jobs = "jobs/cohort-five-20260922-v2"
+modes = ["vanilla", "tools", "select", "review", "full"]
+repetitions = 1
+concurrency = 2
+model = "gpt-6-astra"

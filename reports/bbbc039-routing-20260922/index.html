@@ -1,0 +1,204 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Specialist routing · BBBC039 review</title>
+<style>:root{color-scheme:light;--ink:#192c36;--accent:#075e68}*{box-sizing:border-box}body{margin:0;background:#f5f7f6;color:var(--ink);font:16px/1.6 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:40px 22px}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.1;max-width:850px}h2{font-size:1.7rem}h3{line-height:1.3}a{color:var(--accent);text-underline-offset:3px}p,td,th,.filename{overflow-wrap:anywhere}.eyebrow{color:#4a6269;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.notice{padding:18px 22px;border-left:4px solid #b97816;background:#fff4dc;border-radius:4px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}article{background:white;border:1px solid #d6e0df;padding:18px;border-radius:12px;min-width:0}img{width:100%;height:auto;border-radius:6px;background:#0b1215}table{width:100%;border-collapse:collapse;background:white}th,td{text-align:left;padding:12px;border-bottom:1px solid #dce4e4}th{background:#e6eeee;word-break:normal;overflow-wrap:normal}.scroll{overflow:auto}nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:20px 0;position:sticky;top:0;background:#f5f7f6;z-index:1}button{border:1px solid #8da4a5;background:white;color:var(--ink);border-radius:7px;padding:10px 17px;font:inherit;cursor:pointer}button[aria-pressed=true]{background:var(--accent);color:white}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:18px;background:#edf1f0;border-radius:8px;font-size:13px}summary{cursor:pointer;padding:14px 0}footer{margin-top:50px;border-top:1px solid #ccd8d7;padding-top:20px}@media(max-width:700px){main{padding:25px 14px}.grid{grid-template-columns:1fr}th,td{padding:9px;font-size:14px}}[hidden]{display:none!important}</style>
+<main><p class="eyebrow">Vision harness · routing v1 · 22 September 2026</p><h1>Can a router choose the right specialist?</h1>
+<p>Six additional official BBBC039 test images. Two pretrained model families, four registered procedures, one frozen Astra preference and a Jev score for every eligible procedure.</p>
+<div class="notice"><b>This is a new review policy.</b> The final harness preserves grounded estimates with a separate <em>supported</em> or <em>caution</em> label. Historical full-harness runs required review approval to return a count. Their completion rates are not directly comparable.</div>
+<h2>What this run established</h2><p>The specialist capability is useful, but this routing policy did not beat vanilla Astra. Cellpose-SAM was the best fixed procedure at <b>4.23%</b> mean count error; vanilla scored <b>5.44%</b> and the final routed harness <b>5.71%</b>. All six routed results carry a caution flag. Jev selected a best-performing procedure on two of six images. These are exploratory results on this cohort, not universal model rankings.</p><h2>Measured results</h2><p>Lower count MAPE is better. A value is shown only when an arm returned all six numerical results. Matching a total count does not establish that every predicted nucleus is correctly segmented.</p>
+<div class="scroll"><table><thead><tr><th>Arm</th><th>Numeric results</th><th>Count MAPE</th><th>Exact</th></tr></thead><tbody><tr><td>stardist-default</td><td>6/6</td><td>7.22%</td><td>0</td></tr><tr><td>stardist-sensitive</td><td>6/6</td><td>5.43%</td><td>0</td></tr><tr><td>stardist-conservative</td><td>6/6</td><td>8.67%</td><td>0</td></tr><tr><td>cellpose-sam</td><td>6/6</td><td>4.23%</td><td>0</td></tr><tr><td>vanilla astra</td><td>6/6</td><td>5.44%</td><td>0</td></tr><tr><td>harness with review</td><td>6/6</td><td>5.71%</td><td>0</td></tr><tr><td>astra preferred measurement</td><td>6/6</td><td>7.22%</td><td>0</td></tr><tr><td>jev selected measurement</td><td>6/6</td><td>5.71%</td><td>0</td></tr></tbody></table></div>
+<p>Astra-preferred and Jev-selected measurement rows are routing diagnostics using the frozen choices. They are not additional answer-generation runs. All other procedure results were withheld from the chosen answer.</p>
+<p>{&quot;complete_tasks&quot;: 6, &quot;top_choice_matches_oracle_including_ties&quot;: 2, &quot;mean_regret_percentage_points&quot;: 1.6578933414602584}</p><p>Review statuses: {&quot;supported&quot;: 0, &quot;caution&quot;: 6, &quot;not_completed&quot;: 0, &quot;not_run&quot;: 0}.</p>
+<h2>Inspect the evidence</h2><p>Select an image to compare its original pixels, measured masks, routing scores and final answer. Overlays open at full resolution.</p><nav aria-label="Benchmark images"><span>Image</span><button data-page="1" aria-pressed="true">1</button><button data-page="2" aria-pressed="false">2</button><button data-page="3" aria-pressed="false">3</button><button data-page="4" aria-pressed="false">4</button><button data-page="5" aria-pressed="false">5</button><button data-page="6" aria-pressed="false">6</button><span id="page-status" aria-live="polite">1 / 6</span></nav><section class="task" id="task-1" >
+          <p class="eyebrow">Task 1 / 6 · b3af822f7e1a</p>
+          <h2>Reference count: 137</h2><p class="filename">IXMtest_C14_s8_w1612E3D43-FA7E-4FFB-BE53-F34A3A0CAFCD.png</p>
+          <div class="grid"><article><a href="artifacts/b3af822f7e1a/original.png"><img src="artifacts/b3af822f7e1a/original.png" alt="Original fluorescence microscopy image"></a></article>
+          <article><h3>Frozen decision</h3><p>Astra preference: <b>stardist-default</b><br>Jev selection: <b>stardist-default</b></p>
+          <div class="scroll"><table><thead><tr><th>Procedure</th><th>Score / 3</th><th>Jev confidence</th></tr></thead><tbody><tr><td>stardist-default</td><td>1.66</td><td>0.51</td></tr><tr><td>stardist-sensitive</td><td>1.42</td><td>0.47</td></tr><tr><td>stardist-conservative</td><td>1.40</td><td>0.50</td></tr><tr><td>cellpose-sam</td><td>1.36</td><td>0.52</td></tr></tbody></table></div>
+          <p>These judgments preceded inference and label access. Confidence is not count accuracy.</p>
+          <p><a href="artifacts/b3af822f7e1a/decision.json">Full frozen decision</a> · <a href="artifacts/b3af822f7e1a/proposal.json">Astra proposals</a></p></article></div>
+          <div class="notice"><b>Final harness:</b> answered, count 128.0; review <b>caution</b>, support 0.66.<br>
+          <b>Fresh vanilla:</b> answered, count 130.0.</div>
+          <p>The selected StarDist procedure estimates 128 nuclei across the entire image, including 20 border instances. This is a model-derived estimate, not verified biological truth.</p>
+          <p>Touching or overlapping nuclei may be merged or split incorrectly. No ground-truth verification or calibrated count confidence is available. Jev review did not meet the support threshold; this remains a provisional measurement.</p>
+          <details><summary>Final answer and separate review record</summary><pre>{
+  &quot;status&quot;: &quot;answered&quot;,
+  &quot;value&quot;: 128.0,
+  &quot;explanation&quot;: &quot;The selected StarDist procedure estimates 128 nuclei across the entire image, including 20 border instances. This is a model-derived estimate, not verified biological truth.&quot;,
+  &quot;evidence_ids&quot;: [
+    &quot;stardist-default&quot;
+  ],
+  &quot;limitations&quot;: [
+    &quot;Touching or overlapping nuclei may be merged or split incorrectly.&quot;,
+    &quot;No ground-truth verification or calibrated count confidence is available.&quot;,
+    &quot;Jev review did not meet the support threshold; this remains a provisional measurement.&quot;
+  ],
+  &quot;selected_id&quot;: &quot;stardist-default&quot;,
+  &quot;review_status&quot;: &quot;caution&quot;,
+  &quot;review_support&quot;: 0.66,
+  &quot;review_is_calibrated_accuracy&quot;: false,
+  &quot;decision_sha256&quot;: &quot;6dba78c46284a0c4a42036b10582efb47c63c2fc394b1814f7381860640b3d01&quot;
+}</pre></details>
+          <h3>Every fixed procedure, evaluated after the selected answer</h3><div class="grid"><article><h3>stardist-default · 128 instances</h3><p>Count error 6.57%</p><a href="artifacts/b3af822f7e1a/stardist-default/overlay.png"><img loading="lazy" src="artifacts/b3af822f7e1a/stardist-default/overlay.png" alt="stardist-default instance overlay"></a><p><a href="artifacts/b3af822f7e1a/stardist-default/evidence.json">Evidence</a> · <a href="artifacts/b3af822f7e1a/stardist-default/instances.json">Geometry</a> · <a href="artifacts/b3af822f7e1a/stardist-default/labels.npz">Instance map</a></p></article><article><h3>stardist-sensitive · 130 instances</h3><p>Count error 5.11%</p><a href="artifacts/b3af822f7e1a/stardist-sensitive/overlay.png"><img loading="lazy" src="artifacts/b3af822f7e1a/stardist-sensitive/overlay.png" alt="stardist-sensitive instance overlay"></a><p><a href="artifacts/b3af822f7e1a/stardist-sensitive/evidence.json">Evidence</a> · <a href="artifacts/b3af822f7e1a/stardist-sensitive/instances.json">Geometry</a> · <a href="artifacts/b3af822f7e1a/stardist-sensitive/labels.npz">Instance map</a></p></article><article><h3>stardist-conservative · 124 instances</h3><p>Count error 9.49%</p><a href="artifacts/b3af822f7e1a/stardist-conservative/overlay.png"><img loading="lazy" src="artifacts/b3af822f7e1a/stardist-conservative/overlay.png" alt="stardist-conservative instance overlay"></a><p><a href="artifacts/b3af822f7e1a/stardist-conservative/evidence.json">Evidence</a> · <a href="artifacts/b3af822f7e1a/stardist-conservative/instances.json">Geometry</a> · <a href="artifacts/b3af822f7e1a/stardist-conservative/labels.npz">Instance map</a></p></article><article><h3>cellpose-sam · 131 instances</h3><p>Count error 4.38%</p><a href="artifacts/b3af822f7e1a/cellpose-sam/overlay.png"><img loading="lazy" src="artifacts/b3af822f7e1a/cellpose-sam/overlay.png" alt="cellpose-sam instance overlay"></a><p><a href="artifacts/b3af822f7e1a/cellpose-sam/evidence.json">Evidence</a> · <a href="artifacts/b3af822f7e1a/cellpose-sam/instances.json">Geometry</a> · <a href="artifacts/b3af822f7e1a/cellpose-sam/labels.npz">Instance map</a></p></article></div>
+          <p><a href="../../runs/bbbc039-routing-20260922/b3af822f7e1a/routing/trajectory.json">Local routing Harbor trace</a> · <a href="../../runs/bbbc039-routing-20260922/b3af822f7e1a/vanilla/trajectory.json">Local vanilla Harbor trace</a></p>
+        </section><section class="task" id="task-2" hidden>
+          <p class="eyebrow">Task 2 / 6 · fc4388dbac57</p>
+          <h2>Reference count: 115</h2><p class="filename">IXMtest_B05_s5_w10296BEF4-0F48-4EC8-BC24-6C604871398B.png</p>
+          <div class="grid"><article><a href="artifacts/fc4388dbac57/original.png"><img src="artifacts/fc4388dbac57/original.png" alt="Original fluorescence microscopy image"></a></article>
+          <article><h3>Frozen decision</h3><p>Astra preference: <b>stardist-default</b><br>Jev selection: <b>stardist-default</b></p>
+          <div class="scroll"><table><thead><tr><th>Procedure</th><th>Score / 3</th><th>Jev confidence</th></tr></thead><tbody><tr><td>stardist-default</td><td>1.56</td><td>0.46</td></tr><tr><td>stardist-sensitive</td><td>1.38</td><td>0.55</td></tr><tr><td>stardist-conservative</td><td>1.38</td><td>0.53</td></tr><tr><td>cellpose-sam</td><td>1.40</td><td>0.52</td></tr></tbody></table></div>
+          <p>These judgments preceded inference and label access. Confidence is not count accuracy.</p>
+          <p><a href="artifacts/fc4388dbac57/decision.json">Full frozen decision</a> · <a href="artifacts/fc4388dbac57/proposal.json">Astra proposals</a></p></article></div>
+          <div class="notice"><b>Final harness:</b> answered, count 107.0; review <b>caution</b>, support 0.71.<br>
+          <b>Fresh vanilla:</b> answered, count 107.0.</div>
+          <p>The selected StarDist 2D procedure estimates 107 nuclei across the entire image, including 16 border instances. This is a model-derived estimate, not verified biological truth.</p>
+          <p>Segmentation may miss nuclei or split or merge instances, including partially visible border nuclei. No calibrated count confidence or ground-truth verification is available. Jev review did not meet the support threshold; this remains a provisional measurement.</p>
+          <details><summary>Final answer and separate review record</summary><pre>{
+  &quot;status&quot;: &quot;answered&quot;,
+  &quot;value&quot;: 107.0,
+  &quot;explanation&quot;: &quot;The selected StarDist 2D procedure estimates 107 nuclei across the entire image, including 16 border instances. This is a model-derived estimate, not verified biological truth.&quot;,
+  &quot;evidence_ids&quot;: [
+    &quot;stardist-default&quot;
+  ],
+  &quot;limitations&quot;: [
+    &quot;Segmentation may miss nuclei or split or merge instances, including partially visible border nuclei.&quot;,
+    &quot;No calibrated count confidence or ground-truth verification is available.&quot;,
+    &quot;Jev review did not meet the support threshold; this remains a provisional measurement.&quot;
+  ],
+  &quot;selected_id&quot;: &quot;stardist-default&quot;,
+  &quot;review_status&quot;: &quot;caution&quot;,
+  &quot;review_support&quot;: 0.71,
+  &quot;review_is_calibrated_accuracy&quot;: false,
+  &quot;decision_sha256&quot;: &quot;7ac18204401fdbac6a0f41c3c1bfcea24889aa19df8c747727d52edd401939a6&quot;
+}</pre></details>
+          <h3>Every fixed procedure, evaluated after the selected answer</h3><div class="grid"><article><h3>stardist-default · 107 instances</h3><p>Count error 6.96%</p><a href="artifacts/fc4388dbac57/stardist-default/overlay.png"><img loading="lazy" src="artifacts/fc4388dbac57/stardist-default/overlay.png" alt="stardist-default instance overlay"></a><p><a href="artifacts/fc4388dbac57/stardist-default/evidence.json">Evidence</a> · <a href="artifacts/fc4388dbac57/stardist-default/instances.json">Geometry</a> · <a href="artifacts/fc4388dbac57/stardist-default/labels.npz">Instance map</a></p></article><article><h3>stardist-sensitive · 109 instances</h3><p>Count error 5.22%</p><a href="artifacts/fc4388dbac57/stardist-sensitive/overlay.png"><img loading="lazy" src="artifacts/fc4388dbac57/stardist-sensitive/overlay.png" alt="stardist-sensitive instance overlay"></a><p><a href="artifacts/fc4388dbac57/stardist-sensitive/evidence.json">Evidence</a> · <a href="artifacts/fc4388dbac57/stardist-sensitive/instances.json">Geometry</a> · <a href="artifacts/fc4388dbac57/stardist-sensitive/labels.npz">Instance map</a></p></article><article><h3>stardist-conservative · 106 instances</h3><p>Count error 7.83%</p><a href="artifacts/fc4388dbac57/stardist-conservative/overlay.png"><img loading="lazy" src="artifacts/fc4388dbac57/stardist-conservative/overlay.png" alt="stardist-conservative instance overlay"></a><p><a href="artifacts/fc4388dbac57/stardist-conservative/evidence.json">Evidence</a> · <a href="artifacts/fc4388dbac57/stardist-conservative/instances.json">Geometry</a> · <a href="artifacts/fc4388dbac57/stardist-conservative/labels.npz">Instance map</a></p></article><article><h3>cellpose-sam · 110 instances</h3><p>Count error 4.35%</p><a href="artifacts/fc4388dbac57/cellpose-sam/overlay.png"><img loading="lazy" src="artifacts/fc4388dbac57/cellpose-sam/overlay.png" alt="cellpose-sam instance overlay"></a><p><a href="artifacts/fc4388dbac57/cellpose-sam/evidence.json">Evidence</a> · <a href="artifacts/fc4388dbac57/cellpose-sam/instances.json">Geometry</a> · <a href="artifacts/fc4388dbac57/cellpose-sam/labels.npz">Instance map</a></p></article></div>
+          <p><a href="../../runs/bbbc039-routing-20260922/fc4388dbac57/routing/trajectory.json">Local routing Harbor trace</a> · <a href="../../runs/bbbc039-routing-20260922/fc4388dbac57/vanilla/trajectory.json">Local vanilla Harbor trace</a></p>
+        </section><section class="task" id="task-3" hidden>
+          <p class="eyebrow">Task 3 / 6 · f4b8ef595d67</p>
+          <h2>Reference count: 50</h2><p class="filename">IXMtest_P07_s8_w19D682C29-5685-4A33-8CAA-F0797DD7F021.png</p>
+          <div class="grid"><article><a href="artifacts/f4b8ef595d67/original.png"><img src="artifacts/f4b8ef595d67/original.png" alt="Original fluorescence microscopy image"></a></article>
+          <article><h3>Frozen decision</h3><p>Astra preference: <b>stardist-default</b><br>Jev selection: <b>cellpose-sam</b></p>
+          <div class="scroll"><table><thead><tr><th>Procedure</th><th>Score / 3</th><th>Jev confidence</th></tr></thead><tbody><tr><td>stardist-default</td><td>1.28</td><td>0.63</td></tr><tr><td>stardist-sensitive</td><td>1.24</td><td>0.66</td></tr><tr><td>stardist-conservative</td><td>1.17</td><td>0.72</td></tr><tr><td>cellpose-sam</td><td>1.30</td><td>0.59</td></tr></tbody></table></div>
+          <p>These judgments preceded inference and label access. Confidence is not count accuracy.</p>
+          <p><a href="artifacts/f4b8ef595d67/decision.json">Full frozen decision</a> · <a href="artifacts/f4b8ef595d67/proposal.json">Astra proposals</a></p></article></div>
+          <div class="notice"><b>Final harness:</b> answered, count 48.0; review <b>caution</b>, support 0.64.<br>
+          <b>Fresh vanilla:</b> answered, count 44.0.</div>
+          <p>The selected Cellpose-SAM measurement estimates 48 nuclei across the entire image, including 7 border instances. This is a model-derived estimate, not verified biological truth.</p>
+          <p>Touching nuclei may be merged, and fragmented bright structures may be counted as separate instances. No calibrated count confidence or ground-truth verification is supplied. Jev review did not meet the support threshold; this remains a provisional measurement.</p>
+          <details><summary>Final answer and separate review record</summary><pre>{
+  &quot;status&quot;: &quot;answered&quot;,
+  &quot;value&quot;: 48.0,
+  &quot;explanation&quot;: &quot;The selected Cellpose-SAM measurement estimates 48 nuclei across the entire image, including 7 border instances. This is a model-derived estimate, not verified biological truth.&quot;,
+  &quot;evidence_ids&quot;: [
+    &quot;cellpose-sam&quot;
+  ],
+  &quot;limitations&quot;: [
+    &quot;Touching nuclei may be merged, and fragmented bright structures may be counted as separate instances.&quot;,
+    &quot;No calibrated count confidence or ground-truth verification is supplied.&quot;,
+    &quot;Jev review did not meet the support threshold; this remains a provisional measurement.&quot;
+  ],
+  &quot;selected_id&quot;: &quot;cellpose-sam&quot;,
+  &quot;review_status&quot;: &quot;caution&quot;,
+  &quot;review_support&quot;: 0.64,
+  &quot;review_is_calibrated_accuracy&quot;: false,
+  &quot;decision_sha256&quot;: &quot;40d647ccd015ecfba16b1a56197c16daaa9d7d7f922515e21dc3e0ffd6ef1ae4&quot;
+}</pre></details>
+          <h3>Every fixed procedure, evaluated after the selected answer</h3><div class="grid"><article><h3>stardist-default · 45 instances</h3><p>Count error 10.00%</p><a href="artifacts/f4b8ef595d67/stardist-default/overlay.png"><img loading="lazy" src="artifacts/f4b8ef595d67/stardist-default/overlay.png" alt="stardist-default instance overlay"></a><p><a href="artifacts/f4b8ef595d67/stardist-default/evidence.json">Evidence</a> · <a href="artifacts/f4b8ef595d67/stardist-default/instances.json">Geometry</a> · <a href="artifacts/f4b8ef595d67/stardist-default/labels.npz">Instance map</a></p></article><article><h3>stardist-sensitive · 45 instances</h3><p>Count error 10.00%</p><a href="artifacts/f4b8ef595d67/stardist-sensitive/overlay.png"><img loading="lazy" src="artifacts/f4b8ef595d67/stardist-sensitive/overlay.png" alt="stardist-sensitive instance overlay"></a><p><a href="artifacts/f4b8ef595d67/stardist-sensitive/evidence.json">Evidence</a> · <a href="artifacts/f4b8ef595d67/stardist-sensitive/instances.json">Geometry</a> · <a href="artifacts/f4b8ef595d67/stardist-sensitive/labels.npz">Instance map</a></p></article><article><h3>stardist-conservative · 45 instances</h3><p>Count error 10.00%</p><a href="artifacts/f4b8ef595d67/stardist-conservative/overlay.png"><img loading="lazy" src="artifacts/f4b8ef595d67/stardist-conservative/overlay.png" alt="stardist-conservative instance overlay"></a><p><a href="artifacts/f4b8ef595d67/stardist-conservative/evidence.json">Evidence</a> · <a href="artifacts/f4b8ef595d67/stardist-conservative/instances.json">Geometry</a> · <a href="artifacts/f4b8ef595d67/stardist-conservative/labels.npz">Instance map</a></p></article><article><h3>cellpose-sam · 48 instances</h3><p>Count error 4.00%</p><a href="artifacts/f4b8ef595d67/cellpose-sam/overlay.png"><img loading="lazy" src="artifacts/f4b8ef595d67/cellpose-sam/overlay.png" alt="cellpose-sam instance overlay"></a><p><a href="artifacts/f4b8ef595d67/cellpose-sam/evidence.json">Evidence</a> · <a href="artifacts/f4b8ef595d67/cellpose-sam/instances.json">Geometry</a> · <a href="artifacts/f4b8ef595d67/cellpose-sam/labels.npz">Instance map</a></p></article></div>
+          <p><a href="../../runs/bbbc039-routing-20260922/f4b8ef595d67/routing/trajectory.json">Local routing Harbor trace</a> · <a href="../../runs/bbbc039-routing-20260922/f4b8ef595d67/vanilla/trajectory.json">Local vanilla Harbor trace</a></p>
+        </section><section class="task" id="task-4" hidden>
+          <p class="eyebrow">Task 4 / 6 · 17a175b5e17d</p>
+          <h2>Reference count: 156</h2><p class="filename">IXMtest_C07_s5_w12C9F2926-A017-4962-8660-72C9C20C86E4.png</p>
+          <div class="grid"><article><a href="artifacts/17a175b5e17d/original.png"><img src="artifacts/17a175b5e17d/original.png" alt="Original fluorescence microscopy image"></a></article>
+          <article><h3>Frozen decision</h3><p>Astra preference: <b>stardist-default</b><br>Jev selection: <b>stardist-default</b></p>
+          <div class="scroll"><table><thead><tr><th>Procedure</th><th>Score / 3</th><th>Jev confidence</th></tr></thead><tbody><tr><td>stardist-default</td><td>1.40</td><td>0.28</td></tr><tr><td>stardist-sensitive</td><td>1.35</td><td>0.33</td></tr><tr><td>stardist-conservative</td><td>1.24</td><td>0.46</td></tr><tr><td>cellpose-sam</td><td>1.29</td><td>0.62</td></tr></tbody></table></div>
+          <p>These judgments preceded inference and label access. Confidence is not count accuracy.</p>
+          <p><a href="artifacts/17a175b5e17d/decision.json">Full frozen decision</a> · <a href="artifacts/17a175b5e17d/proposal.json">Astra proposals</a></p></article></div>
+          <div class="notice"><b>Final harness:</b> answered, count 144.0; review <b>caution</b>, support 0.7.<br>
+          <b>Fresh vanilla:</b> answered, count 150.0.</div>
+          <p>The selected StarDist 2D procedure estimates 144 nuclei across the entire image, including 21 border instances. This is a model-derived estimate, not verified biological truth.</p>
+          <p>Touching, overlapping, faint, or partially visible nuclei may be missed or incorrectly segmented. No calibrated count confidence or ground-truth validation is supplied. Jev review did not meet the support threshold; this remains a provisional measurement.</p>
+          <details><summary>Final answer and separate review record</summary><pre>{
+  &quot;status&quot;: &quot;answered&quot;,
+  &quot;value&quot;: 144.0,
+  &quot;explanation&quot;: &quot;The selected StarDist 2D procedure estimates 144 nuclei across the entire image, including 21 border instances. This is a model-derived estimate, not verified biological truth.&quot;,
+  &quot;evidence_ids&quot;: [
+    &quot;stardist-default&quot;
+  ],
+  &quot;limitations&quot;: [
+    &quot;Touching, overlapping, faint, or partially visible nuclei may be missed or incorrectly segmented.&quot;,
+    &quot;No calibrated count confidence or ground-truth validation is supplied.&quot;,
+    &quot;Jev review did not meet the support threshold; this remains a provisional measurement.&quot;
+  ],
+  &quot;selected_id&quot;: &quot;stardist-default&quot;,
+  &quot;review_status&quot;: &quot;caution&quot;,
+  &quot;review_support&quot;: 0.7,
+  &quot;review_is_calibrated_accuracy&quot;: false,
+  &quot;decision_sha256&quot;: &quot;6cbc901e8141cacaba6e60d2924e92cabfbe586160bed84cad623fbce2a977d0&quot;
+}</pre></details>
+          <h3>Every fixed procedure, evaluated after the selected answer</h3><div class="grid"><article><h3>stardist-default · 144 instances</h3><p>Count error 7.69%</p><a href="artifacts/17a175b5e17d/stardist-default/overlay.png"><img loading="lazy" src="artifacts/17a175b5e17d/stardist-default/overlay.png" alt="stardist-default instance overlay"></a><p><a href="artifacts/17a175b5e17d/stardist-default/evidence.json">Evidence</a> · <a href="artifacts/17a175b5e17d/stardist-default/instances.json">Geometry</a> · <a href="artifacts/17a175b5e17d/stardist-default/labels.npz">Instance map</a></p></article><article><h3>stardist-sensitive · 146 instances</h3><p>Count error 6.41%</p><a href="artifacts/17a175b5e17d/stardist-sensitive/overlay.png"><img loading="lazy" src="artifacts/17a175b5e17d/stardist-sensitive/overlay.png" alt="stardist-sensitive instance overlay"></a><p><a href="artifacts/17a175b5e17d/stardist-sensitive/evidence.json">Evidence</a> · <a href="artifacts/17a175b5e17d/stardist-sensitive/instances.json">Geometry</a> · <a href="artifacts/17a175b5e17d/stardist-sensitive/labels.npz">Instance map</a></p></article><article><h3>stardist-conservative · 141 instances</h3><p>Count error 9.62%</p><a href="artifacts/17a175b5e17d/stardist-conservative/overlay.png"><img loading="lazy" src="artifacts/17a175b5e17d/stardist-conservative/overlay.png" alt="stardist-conservative instance overlay"></a><p><a href="artifacts/17a175b5e17d/stardist-conservative/evidence.json">Evidence</a> · <a href="artifacts/17a175b5e17d/stardist-conservative/instances.json">Geometry</a> · <a href="artifacts/17a175b5e17d/stardist-conservative/labels.npz">Instance map</a></p></article><article><h3>cellpose-sam · 147 instances</h3><p>Count error 5.77%</p><a href="artifacts/17a175b5e17d/cellpose-sam/overlay.png"><img loading="lazy" src="artifacts/17a175b5e17d/cellpose-sam/overlay.png" alt="cellpose-sam instance overlay"></a><p><a href="artifacts/17a175b5e17d/cellpose-sam/evidence.json">Evidence</a> · <a href="artifacts/17a175b5e17d/cellpose-sam/instances.json">Geometry</a> · <a href="artifacts/17a175b5e17d/cellpose-sam/labels.npz">Instance map</a></p></article></div>
+          <p><a href="../../runs/bbbc039-routing-20260922/17a175b5e17d/routing/trajectory.json">Local routing Harbor trace</a> · <a href="../../runs/bbbc039-routing-20260922/17a175b5e17d/vanilla/trajectory.json">Local vanilla Harbor trace</a></p>
+        </section><section class="task" id="task-5" hidden>
+          <p class="eyebrow">Task 5 / 6 · 54ee1bf8ac02</p>
+          <h2>Reference count: 93</h2><p class="filename">IXMtest_N11_s4_w142A84EA3-47C3-4B49-B6CA-BBC6685BBE1E.png</p>
+          <div class="grid"><article><a href="artifacts/54ee1bf8ac02/original.png"><img src="artifacts/54ee1bf8ac02/original.png" alt="Original fluorescence microscopy image"></a></article>
+          <article><h3>Frozen decision</h3><p>Astra preference: <b>stardist-default</b><br>Jev selection: <b>stardist-default</b></p>
+          <div class="scroll"><table><thead><tr><th>Procedure</th><th>Score / 3</th><th>Jev confidence</th></tr></thead><tbody><tr><td>stardist-default</td><td>1.34</td><td>0.26</td></tr><tr><td>stardist-sensitive</td><td>1.19</td><td>0.67</td></tr><tr><td>stardist-conservative</td><td>1.14</td><td>0.65</td></tr><tr><td>cellpose-sam</td><td>1.28</td><td>0.59</td></tr></tbody></table></div>
+          <p>These judgments preceded inference and label access. Confidence is not count accuracy.</p>
+          <p><a href="artifacts/54ee1bf8ac02/decision.json">Full frozen decision</a> · <a href="artifacts/54ee1bf8ac02/proposal.json">Astra proposals</a></p></article></div>
+          <div class="notice"><b>Final harness:</b> answered, count 86.0; review <b>caution</b>, support 0.69.<br>
+          <b>Fresh vanilla:</b> answered, count 90.0.</div>
+          <p>The selected StarDist 2D procedure estimates 86 nuclei across the entire image, including 21 border instances. This is a model-derived estimate, not verified biological truth.</p>
+          <p>Touching or partially visible nuclei may be merged, split, or missed. No calibrated count confidence or ground-truth verification is available. Jev review did not meet the support threshold; this remains a provisional measurement.</p>
+          <details><summary>Final answer and separate review record</summary><pre>{
+  &quot;status&quot;: &quot;answered&quot;,
+  &quot;value&quot;: 86.0,
+  &quot;explanation&quot;: &quot;The selected StarDist 2D procedure estimates 86 nuclei across the entire image, including 21 border instances. This is a model-derived estimate, not verified biological truth.&quot;,
+  &quot;evidence_ids&quot;: [
+    &quot;stardist-default&quot;
+  ],
+  &quot;limitations&quot;: [
+    &quot;Touching or partially visible nuclei may be merged, split, or missed.&quot;,
+    &quot;No calibrated count confidence or ground-truth verification is available.&quot;,
+    &quot;Jev review did not meet the support threshold; this remains a provisional measurement.&quot;
+  ],
+  &quot;selected_id&quot;: &quot;stardist-default&quot;,
+  &quot;review_status&quot;: &quot;caution&quot;,
+  &quot;review_support&quot;: 0.69,
+  &quot;review_is_calibrated_accuracy&quot;: false,
+  &quot;decision_sha256&quot;: &quot;a456f1dadd0a159e5e08a71505ac2d0aac4c9fa76c95a7d898f42119b2529b0f&quot;
+}</pre></details>
+          <h3>Every fixed procedure, evaluated after the selected answer</h3><div class="grid"><article><h3>stardist-default · 86 instances</h3><p>Count error 7.53%</p><a href="artifacts/54ee1bf8ac02/stardist-default/overlay.png"><img loading="lazy" src="artifacts/54ee1bf8ac02/stardist-default/overlay.png" alt="stardist-default instance overlay"></a><p><a href="artifacts/54ee1bf8ac02/stardist-default/evidence.json">Evidence</a> · <a href="artifacts/54ee1bf8ac02/stardist-default/instances.json">Geometry</a> · <a href="artifacts/54ee1bf8ac02/stardist-default/labels.npz">Instance map</a></p></article><article><h3>stardist-sensitive · 89 instances</h3><p>Count error 4.30%</p><a href="artifacts/54ee1bf8ac02/stardist-sensitive/overlay.png"><img loading="lazy" src="artifacts/54ee1bf8ac02/stardist-sensitive/overlay.png" alt="stardist-sensitive instance overlay"></a><p><a href="artifacts/54ee1bf8ac02/stardist-sensitive/evidence.json">Evidence</a> · <a href="artifacts/54ee1bf8ac02/stardist-sensitive/instances.json">Geometry</a> · <a href="artifacts/54ee1bf8ac02/stardist-sensitive/labels.npz">Instance map</a></p></article><article><h3>stardist-conservative · 86 instances</h3><p>Count error 7.53%</p><a href="artifacts/54ee1bf8ac02/stardist-conservative/overlay.png"><img loading="lazy" src="artifacts/54ee1bf8ac02/stardist-conservative/overlay.png" alt="stardist-conservative instance overlay"></a><p><a href="artifacts/54ee1bf8ac02/stardist-conservative/evidence.json">Evidence</a> · <a href="artifacts/54ee1bf8ac02/stardist-conservative/instances.json">Geometry</a> · <a href="artifacts/54ee1bf8ac02/stardist-conservative/labels.npz">Instance map</a></p></article><article><h3>cellpose-sam · 88 instances</h3><p>Count error 5.38%</p><a href="artifacts/54ee1bf8ac02/cellpose-sam/overlay.png"><img loading="lazy" src="artifacts/54ee1bf8ac02/cellpose-sam/overlay.png" alt="cellpose-sam instance overlay"></a><p><a href="artifacts/54ee1bf8ac02/cellpose-sam/evidence.json">Evidence</a> · <a href="artifacts/54ee1bf8ac02/cellpose-sam/instances.json">Geometry</a> · <a href="artifacts/54ee1bf8ac02/cellpose-sam/labels.npz">Instance map</a></p></article></div>
+          <p><a href="../../runs/bbbc039-routing-20260922/54ee1bf8ac02/routing/trajectory.json">Local routing Harbor trace</a> · <a href="../../runs/bbbc039-routing-20260922/54ee1bf8ac02/vanilla/trajectory.json">Local vanilla Harbor trace</a></p>
+        </section><section class="task" id="task-6" hidden>
+          <p class="eyebrow">Task 6 / 6 · c938cd18d93d</p>
+          <h2>Reference count: 66</h2><p class="filename">IXMtest_B02_s9_w124B5080D-EBE1-47D2-B147-C0F342039EDF.png</p>
+          <div class="grid"><article><a href="artifacts/c938cd18d93d/original.png"><img src="artifacts/c938cd18d93d/original.png" alt="Original fluorescence microscopy image"></a></article>
+          <article><h3>Frozen decision</h3><p>Astra preference: <b>stardist-default</b><br>Jev selection: <b>cellpose-sam</b></p>
+          <div class="scroll"><table><thead><tr><th>Procedure</th><th>Score / 3</th><th>Jev confidence</th></tr></thead><tbody><tr><td>stardist-default</td><td>1.19</td><td>0.57</td></tr><tr><td>stardist-sensitive</td><td>1.24</td><td>0.54</td></tr><tr><td>stardist-conservative</td><td>1.13</td><td>0.53</td></tr><tr><td>cellpose-sam</td><td>1.30</td><td>0.59</td></tr></tbody></table></div>
+          <p>These judgments preceded inference and label access. Confidence is not count accuracy.</p>
+          <p><a href="artifacts/c938cd18d93d/decision.json">Full frozen decision</a> · <a href="artifacts/c938cd18d93d/proposal.json">Astra proposals</a></p></article></div>
+          <div class="notice"><b>Final harness:</b> answered, count 67.0; review <b>caution</b>, support 0.64.<br>
+          <b>Fresh vanilla:</b> answered, count 65.0.</div>
+          <p>The selected Cellpose-SAM procedure estimates 67 nuclei across the entire image, including 13 border instances. This is a model-derived estimate, not verified biological truth.</p>
+          <p>Touching nuclei, faint regions, and partially visible border nuclei may be merged, missed, or segmented incorrectly. No calibrated count confidence or ground-truth verification is available. Jev review did not meet the support threshold; this remains a provisional measurement.</p>
+          <details><summary>Final answer and separate review record</summary><pre>{
+  &quot;status&quot;: &quot;answered&quot;,
+  &quot;value&quot;: 67.0,
+  &quot;explanation&quot;: &quot;The selected Cellpose-SAM procedure estimates 67 nuclei across the entire image, including 13 border instances. This is a model-derived estimate, not verified biological truth.&quot;,
+  &quot;evidence_ids&quot;: [
+    &quot;cellpose-sam&quot;
+  ],
+  &quot;limitations&quot;: [
+    &quot;Touching nuclei, faint regions, and partially visible border nuclei may be merged, missed, or segmented incorrectly.&quot;,
+    &quot;No calibrated count confidence or ground-truth verification is available.&quot;,
+    &quot;Jev review did not meet the support threshold; this remains a provisional measurement.&quot;
+  ],
+  &quot;selected_id&quot;: &quot;cellpose-sam&quot;,
+  &quot;review_status&quot;: &quot;caution&quot;,
+  &quot;review_support&quot;: 0.64,
+  &quot;review_is_calibrated_accuracy&quot;: false,
+  &quot;decision_sha256&quot;: &quot;e2144ff338727809b429a504b3bf54ec2cbab1d8521aaa59e500e8e9ddd210bc&quot;
+}</pre></details>
+          <h3>Every fixed procedure, evaluated after the selected answer</h3><div class="grid"><article><h3>stardist-default · 63 instances</h3><p>Count error 4.55%</p><a href="artifacts/c938cd18d93d/stardist-default/overlay.png"><img loading="lazy" src="artifacts/c938cd18d93d/stardist-default/overlay.png" alt="stardist-default instance overlay"></a><p><a href="artifacts/c938cd18d93d/stardist-default/evidence.json">Evidence</a> · <a href="artifacts/c938cd18d93d/stardist-default/instances.json">Geometry</a> · <a href="artifacts/c938cd18d93d/stardist-default/labels.npz">Instance map</a></p></article><article><h3>stardist-sensitive · 65 instances</h3><p>Count error 1.52%</p><a href="artifacts/c938cd18d93d/stardist-sensitive/overlay.png"><img loading="lazy" src="artifacts/c938cd18d93d/stardist-sensitive/overlay.png" alt="stardist-sensitive instance overlay"></a><p><a href="artifacts/c938cd18d93d/stardist-sensitive/evidence.json">Evidence</a> · <a href="artifacts/c938cd18d93d/stardist-sensitive/instances.json">Geometry</a> · <a href="artifacts/c938cd18d93d/stardist-sensitive/labels.npz">Instance map</a></p></article><article><h3>stardist-conservative · 61 instances</h3><p>Count error 7.58%</p><a href="artifacts/c938cd18d93d/stardist-conservative/overlay.png"><img loading="lazy" src="artifacts/c938cd18d93d/stardist-conservative/overlay.png" alt="stardist-conservative instance overlay"></a><p><a href="artifacts/c938cd18d93d/stardist-conservative/evidence.json">Evidence</a> · <a href="artifacts/c938cd18d93d/stardist-conservative/instances.json">Geometry</a> · <a href="artifacts/c938cd18d93d/stardist-conservative/labels.npz">Instance map</a></p></article><article><h3>cellpose-sam · 67 instances</h3><p>Count error 1.52%</p><a href="artifacts/c938cd18d93d/cellpose-sam/overlay.png"><img loading="lazy" src="artifacts/c938cd18d93d/cellpose-sam/overlay.png" alt="cellpose-sam instance overlay"></a><p><a href="artifacts/c938cd18d93d/cellpose-sam/evidence.json">Evidence</a> · <a href="artifacts/c938cd18d93d/cellpose-sam/instances.json">Geometry</a> · <a href="artifacts/c938cd18d93d/cellpose-sam/labels.npz">Instance map</a></p></article></div>
+          <p><a href="../../runs/bbbc039-routing-20260922/c938cd18d93d/routing/trajectory.json">Local routing Harbor trace</a> · <a href="../../runs/bbbc039-routing-20260922/c938cd18d93d/vanilla/trajectory.json">Local vanilla Harbor trace</a></p>
+        </section>
+<footer><h2>Scope and reproduction</h2><p>These are real benchmark images, with reference counts decoded from published annotations only after inference. The previous cohort was excluded. Public pretrained-data exposure is unknown; this is a small exploratory test, not independent validation of a universal router. Derived count MAPE is not the published BBBC039 segmentation metric.</p><p>The specialists ran in separate native environments on the Mac; Astra and Jev used hosted APIs. Harbor ATIF traces were exported and validated. This was not a Harbor container evaluation. Jev received structured evidence, not image pixels.</p><p><a href="selection.json">Frozen protocol</a> · <a href="results.json">All numerical results</a> · <a href="final-score.md">Score table</a> · <a href="../../docs/model-routing.md">File map, commands and architecture</a> · <a href="https://bbbc.broadinstitute.org/BBBC039">Official dataset</a></p></footer></main>
+<script>document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.page;document.querySelectorAll('.task').forEach(s=>s.hidden=s.id!=='task-'+n);document.querySelectorAll('[data-page]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.getElementById('page-status').textContent=n+' / '+document.querySelectorAll('.task').length;}));</script></html>

@@ -1,0 +1,149 @@
+{
+  "name": "BBBC001v1: StarDist full-chain test with fresh vanilla and Astra+StarDist ablation",
+  "frozen_at": "2026-09-22T07:15:35.120023+00:00",
+  "source_page": "https://bbbc.broadinstitute.org/BBBC001",
+  "downloads": [
+    {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC001/BBBC001_v1_images_tif.zip",
+      "sha256": "d6d4ad4743dc8dfdec23d6c769cbbfe495563221e37353f272617838bfddcd48",
+      "bytes": 854168
+    },
+    {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC001/BBBC001_v1_counts.txt",
+      "sha256": "b24671230222f889b63ac287599bfa4a8b009e458a465bfd13cf82ef966b12af",
+      "bytes": 303
+    }
+  ],
+  "dataset_directory": "evals/datasets/generated/bbbc001-20260922",
+  "source_commit": "cd6e005a65f2889e97aeeb88d74397ffb74bce1c",
+  "working_tree": "Inference changes committed before live evaluation",
+  "modes": [
+    "vanilla",
+    "tools",
+    "full"
+  ],
+  "repetitions": 1,
+  "selection": "All six published images, in annotation-file order; no exclusions.",
+  "split_note": "BBBC001 has no official train/test split. 'test' is a local Harbor routing label only.",
+  "task": "Published cell-counting task; identical neutral instruction for every image and mode.",
+  "primary_metric": "Mean over all six images of 100 * abs(prediction - mean(two human counts)) / mean(two human counts); lower is better.",
+  "missing_policy": "No official full-dataset score if any prediction is missing, negative, nonfinite or an error. Show coverage and answered-subset error separately; do not rank partial scores against complete scores.",
+  "preprocessing": "Same losslessly replicated grayscale PNG for all modes. StarDist normalizes intensities at percentiles 1/99.8 inside its tool; default/sensitive/conservative threshold profiles are fixed in code. Crops are traceable. No benchmark-specific segmentation tuning.",
+  "leakage": "Only PNG and question enter the agent environment; counts, original filenames, source URLs and dataset metadata stay in verifier/report. Prior model exposure to this public dataset cannot be ruled out.",
+  "limitations": [
+    "Six previously inspected development images, not a held-out sample.",
+    "Prior pretraining exposure to public microscopy images cannot be ruled out.",
+    "Human counts disagree; their mean is the scoring reference.",
+    "One attempt per mode; stochastic baseline variation remains.",
+    "Full chain retains Jev selection and all five review requirements at 0.75 with bounded replanning; abstentions do not earn a full-dataset score.",
+    "Jev sees structured evidence summaries, not image pixels. Astra receives originals and selected overlays/crops.",
+    "Threshold profiles use the same model and do not constitute independent corroboration.",
+    "Count labels alone cannot establish mask precision/recall.",
+    "Standalone baseline is a deterministic default-tool control, reproduced inside the specialist container; new harness modes use independent Astra plans.",
+    "First and last candidate counts will be scored separately from accepted final answers; no best-of-N selection."
+  ],
+  "license": "CC BY-NC-SA 3.0; images and ground truth by David Root and Anne Carpenter.",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "attribution": "BBBC001v1, Moffat et al. (Cell, 2006), Broad Bioimage Benchmark Collection; Ljosa et al. (Nature Methods, 2012).",
+  "runtime_hashes": {
+    "src/vision_harness/__init__.py": "370f4309cc208c94d5e25d67b785a72790bfde7bbf93e806e8535e631fd79111",
+    "src/vision_harness/artifacts.py": "98c19a2960a436eac74a81b3ad433421d822d3167d7d935cf812ba870d0d6109",
+    "src/vision_harness/cli.py": "56b9b97821e451907d3814afa20060095d1960bf731d550efa2dcdd650bcd200",
+    "src/vision_harness/config.py": "5505a7ce1a06cee18c4ac4ab3093b2bbf32896df158db9c59f099541e0ef24f2",
+    "src/vision_harness/contracts.py": "165c29cc88ea4a09e939c0f5875b2bce9ea8b2da3a479528e57078f430be4a0c",
+    "src/vision_harness/demo.py": "454e7ea5eba343b1c85959ee1311dd07ecc4588fedbcef47057f62e26f571d0d",
+    "src/vision_harness/providers/__init__.py": "1f7a6a0341f2d8349f7995cc32e91f2781688774c25a4bbeaa45a24760d9ee3f",
+    "src/vision_harness/providers/astra.py": "122ce01787651a854a550f0e637bdcd9d18560a5ccdae55e1d5872298fb76936",
+    "src/vision_harness/providers/evidence_budget.py": "9ba8ba43cc7e8d57fe69d371b247bc657a7df0a8e621faca4a96931150249f1d",
+    "src/vision_harness/providers/jev.py": "dad43ca33e89a313bb30e2b89a9ec093a4c9bd3920810e5328c7ca2f1dcc112c",
+    "src/vision_harness/review_loop.py": "10b44779da5474ba30edddfae7f3341cdfc7b5ea47bd8d725f07b013fd1bccc5",
+    "src/vision_harness/runtime.py": "45480ac3c4587ec8afdd911cb70012450969e9f03d99ffe29a8bce6c738917fa",
+    "src/vision_harness/selection.py": "02629c2c6d1395ce3cb13eb568db65ba3f2847414c26f3807f852532c202b604",
+    "src/vision_harness/tools/__init__.py": "f8fcbca43531dc087f6eab8d24a931a277d448e5bfa995b8a4c86ee9faf8fd03",
+    "src/vision_harness/tools/dispatch.py": "a0266a1830b59abc2d9ecf3a1899d8dd7c143125548c0fc8936bcb8b99df26e6",
+    "src/vision_harness/tools/opencv.py": "427b6461eb100efa94580b62b6a456dd2e3bcdc1739de88d2157e51e5cef5d84",
+    "src/vision_harness/tools/registry.py": "c100ecafc28f4d2631bfa3bdd70b2819bdb5a53cdb29ddf779823782d97dcd8d",
+    "src/vision_harness/tools/stardist.py": "cf9107d24963d5fafd47f22ce3cb1f6d32a593ef98a577aa7ac476506f1acbe0",
+    "src/vision_harness/tracing.py": "c1583a61805e900c93de262b53abb57cd8bb53bd78459ad0a62338fa8a8e98b9",
+    "configs/bbbc001-full-repaired.toml": "f231a0b7224c23a92aa603cb286ce8086b457cd1426dcf2be9b315fcdc326173",
+    "configs/bbbc001-jev-retry.toml": "47b3e5e38cd61d47fd7e5c16a409b1fb5a4d021390242a89991c70d4f2ed84ec",
+    "configs/bbbc001-loop.toml": "005a9d403c20aff53b2824f15b48d59c3130c972871a27598e3edad58970ba58",
+    "configs/bbbc001-no-review.toml": "b28ff80f88ccb6b97b6e808dd10302bbff199a48e840798c3290f6c88006b907",
+    "configs/bbbc001-recovery-v2.toml": "75aac4c5a4d97b24136de68b4583e08148befe92121f3a7621314249201b696e",
+    "configs/bbbc001-stardist.toml": "7d966e996bf4600aad4b3941187ad3457e43c0c4ef9beb99387ec4ef4135b4f9",
+    "configs/bbbc001.toml": "4c20efb52542ed236cf21358cc5233f8b52df1ddf708872adbcb32c4d2ff0203",
+    "configs/capabilities-stardist.toml": "bdf401d443dccd999d6b9108334cedfd32818877d07c122e66b669b7c1afc9d7",
+    "configs/capabilities.toml": "3d1939b093ebf603e931d1637d9cc8e169a91f1f85a56d741449e55240262522",
+    "configs/cohort-five.toml": "85327d57880f03469bc6f52659eab14dfe635f0c7d00bbd30755eec4ac7aaacc",
+    "configs/evaluation.toml": "408487d6f4d9dc12f092d7c46d3b38109dab89c707fbe461c610fe141935c442",
+    "configs/poc-loop.toml": "058b06b50b89ded5465ea4c06d0a80c08bde943d4be5101194e318a74d6ed33d",
+    "configs/poc-stardist.toml": "355383a088e8db3ed304c7ab90096dae0b25eb1d294fe38238321e221132fa8c",
+    "configs/poc.toml": "352265514ad02e7e43db26e3feacf60be30f214b119ce4c93b1dfaca05bf4d71",
+    "prompts/astra-stardist.md": "c2c46207a2b76d7f621eb21ac7f2c0d909157f8006401569e4e17c0e43087a21",
+    "prompts/astra.md": "83286e19a8feb930b2c635da02b3d9a440dbc15eda858fe9faa14ce577056835",
+    "prompts/jev_plan_score.json": "c3559f5b7c7e56c5a7e24db7b1d3888e0933886b9680f03f5cb0ce4df9f27c46",
+    "prompts/jev_review.json": "01ff63df9322481d863f9964ec1a43aaa3a8af06055ed9fbe53d74c57fb19e12",
+    "prompts/jev_review_checks.json": "f8882aa2487cad93fdb316509eb56472983961d543ebec4c3184a6f15943f4d6"
+  },
+  "user_scope": "Replace OpenCV segmentation with StarDist and evaluate the entire selection/review/replanning chain; include fresh vanilla/tools controls and standalone default baseline.",
+  "prior_exposure": "All six images were inspected in previous experiments. This is another complete-cohort retest, not fresh held-out evaluation.",
+  "runtime_config": "configs/poc-stardist.toml",
+  "effective_settings": {
+    "models": {
+      "astra": "gpt-6-astra",
+      "jev": "jev-1.13.0",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 4096,
+      "format_retries": 1,
+      "timeout_seconds": 120.0
+    },
+    "limits": {
+      "max_rounds": 4,
+      "max_steps_per_plan": 3,
+      "max_candidates": 3,
+      "max_pixels": 16000000,
+      "max_input_bytes": 20000000,
+      "jev_max_request_bytes": 48000
+    },
+    "selection": {
+      "minimum_score": 1.5,
+      "minimum_confidence": 0.5,
+      "tie_margin": 0.25,
+      "max_competing_plans": 2
+    },
+    "review": {
+      "minimum_support_probability": 0.75
+    },
+    "loop": {
+      "enabled": true,
+      "max_provider_calls": 24,
+      "max_seconds": 600.0,
+      "max_no_progress_rounds": 1,
+      "checks_path": "prompts/jev_review_checks.json"
+    },
+    "paths": {
+      "runs": "runs",
+      "capabilities": "configs/capabilities-stardist.toml",
+      "astra_prompt": "prompts/astra-stardist.md",
+      "plan_rubric": "prompts/jev_plan_score.json",
+      "review_rubric": "prompts/jev_review.json"
+    }
+  },
+  "mode_labels": {
+    "vanilla": "Vanilla Astra",
+    "tools": "Astra + StarDist",
+    "full": "Full harness: Astra + StarDist + Jev selection/review loop"
+  },
+  "stack_label": "ASTRA \u00b7 STARDIST \u00b7 JEV \u00b7 HARBOR",
+  "specialist_dependency_sha256": "2148e2e0e3fefe74f143a9c33e8d200aaf6e74097faf158142f1b22d3de39831",
+  "checkpoint_hashes": {
+    "models/stardist/config.json": "836da16282c3e0db1ba2e58f377e977419887ace8c737ebde16a094d58d50f74",
+    "models/stardist/thresholds.json": "5cd6aac6e923f8659b63a9e297485920d45a59dad35371ddb8b6ae4be398d805",
+    "models/stardist/weights_best.h5": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349"
+  },
+  "standalone_baseline": {
+    "count_error_percentage": 6.666163528439407,
+    "source": "../bbbc001-specialists-20260922/index.html",
+    "container_reproduced_all_six_counts": true
+  }
+}

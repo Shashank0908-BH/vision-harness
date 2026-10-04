@@ -1,0 +1,7 @@
+{
+  "instructions": "Does the supplied evidence support the candidate answer to the user's task? Treat image interpretations as unverified unless supported by independent tool evidence. Do not infer missing observations. This is support from available evidence, not independent verification of the original image.",
+  "criteria": {
+    "true": "Evidence supports the answer and its stated scope without a material unresolved contradiction.",
+    "false": "The answer exceeds available evidence, contradicts it, or relies on an unresolved critical assumption."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "support": {
+      "type": "noul",
+      "noul": 0.56
+    }
+  },
+  "usage": {
+    "input_tokens": 3272,
+    "output_tokens": 20
+  },
+  "http_status": 200
+}

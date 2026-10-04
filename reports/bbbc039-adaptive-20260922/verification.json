@@ -1,0 +1,275 @@
+{
+  "primary_trials": 24,
+  "all_live": true,
+  "modes_isolated": true,
+  "frozen_sources_checkpoints_inputs_match": true,
+  "keys_found": false,
+  "counts": {
+    "annotation_counts_reproduced": 6,
+    "fixed_sensitive_diagnostic_counts_verified": 6,
+    "verified_instance_maps": 59,
+    "verified_instance_geometry": 5133,
+    "validated_trajectories": 24,
+    "matched_verifier_rewards": 24,
+    "provider_calls_started": 99,
+    "provider_responses_recorded": 99,
+    "jev_plan_assessment": 22,
+    "live_default_maps_identical_to_control": 24,
+    "jev_answer_review": 13,
+    "accepted_full_answers_pass_all_conditions": 2
+  },
+  "trials": [
+    {
+      "mode": "full",
+      "task_id": "cc90a9b0622b",
+      "status": "abstained",
+      "reviews": 3,
+      "jev_calls": 7,
+      "maps": 6,
+      "feedback_consumers": [
+        "astra",
+        "jev"
+      ],
+      "events_sha256": "b48e34be75a1b0e0f9f01464643cf3801727a401572886fe62f63c2bf6ae8475"
+    },
+    {
+      "mode": "full",
+      "task_id": "d98fd3e7d694",
+      "status": "abstained",
+      "reviews": 3,
+      "jev_calls": 7,
+      "maps": 6,
+      "feedback_consumers": [
+        "astra",
+        "jev"
+      ],
+      "events_sha256": "afeec4f4bbdffa1b061fb48f775cce23500eb01fa57cb9cc7af6391872adae8d"
+    },
+    {
+      "mode": "full",
+      "task_id": "1fb7e5d45040",
+      "status": "answered",
+      "reviews": 1,
+      "jev_calls": 2,
+      "maps": 2,
+      "feedback_consumers": [],
+      "events_sha256": "4cc4974b5ddb66ee77cb249d1e9693aaab049a870cd986c3805cbd424f4e0e55"
+    },
+    {
+      "mode": "full",
+      "task_id": "27521e608662",
+      "status": "error",
+      "reviews": 3,
+      "jev_calls": 6,
+      "maps": 6,
+      "feedback_consumers": [
+        "astra",
+        "jev"
+      ],
+      "events_sha256": "82a39504c61ea5cebe0fa0e4b9ee3cb49532adb60259eb667c427ff351bf1860"
+    },
+    {
+      "mode": "full",
+      "task_id": "e3e16e92c36d",
+      "status": "answered",
+      "reviews": 1,
+      "jev_calls": 2,
+      "maps": 2,
+      "feedback_consumers": [],
+      "events_sha256": "5be6194f56328d31c4a67212a07882b8a26ae97e83c7d06c5e8b32cb9a119dea"
+    },
+    {
+      "mode": "full",
+      "task_id": "34430d5b81b9",
+      "status": "abstained",
+      "reviews": 2,
+      "jev_calls": 5,
+      "maps": 7,
+      "feedback_consumers": [
+        "astra",
+        "jev"
+      ],
+      "events_sha256": "94eff2fa898aad23c02dfdbf6b98db4a15c4eb6035c81a364af7f8a7eb1ecc80"
+    },
+    {
+      "mode": "select",
+      "task_id": "e3e16e92c36d",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 1,
+      "maps": 3,
+      "feedback_consumers": [],
+      "events_sha256": "2ef6e68da6f538bd8cdd1e1e52195ffafdd58c251dd750302b4c2c06ba18432a"
+    },
+    {
+      "mode": "select",
+      "task_id": "34430d5b81b9",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 1,
+      "maps": 3,
+      "feedback_consumers": [],
+      "events_sha256": "5e8783868991187b3a396fa47a47a93b6ec84201356a085e4c4d9180985a52e8"
+    },
+    {
+      "mode": "select",
+      "task_id": "1fb7e5d45040",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 1,
+      "maps": 3,
+      "feedback_consumers": [],
+      "events_sha256": "30f1690a43b4c89cc90f2ed78a68ff0a767b350f05244715cc4c36272eba2498"
+    },
+    {
+      "mode": "select",
+      "task_id": "cc90a9b0622b",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 1,
+      "maps": 3,
+      "feedback_consumers": [],
+      "events_sha256": "d7a339aa0dd40be33b88cf829b5f84526dfbab5838dbbbd2c7253d4b7ec8f98f"
+    },
+    {
+      "mode": "select",
+      "task_id": "27521e608662",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 1,
+      "maps": 3,
+      "feedback_consumers": [],
+      "events_sha256": "77f0082d11ed502fc85c00bce31b0868f98783fdae9a20f2dfbbe30847827a7f"
+    },
+    {
+      "mode": "select",
+      "task_id": "d98fd3e7d694",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 1,
+      "maps": 3,
+      "feedback_consumers": [],
+      "events_sha256": "d0d3b75f52e2cc60162d0b0df29f458ec72d9c2410393735813bac25ce87e188"
+    },
+    {
+      "mode": "tools",
+      "task_id": "1fb7e5d45040",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 1,
+      "feedback_consumers": [],
+      "events_sha256": "ca1ad03d8381c91f1076026b1e1f3a5e82938ec20aed986655dbb4517c9f261b"
+    },
+    {
+      "mode": "tools",
+      "task_id": "d98fd3e7d694",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 1,
+      "feedback_consumers": [],
+      "events_sha256": "cede6afe7576abcc17beb704c26419349281eb2d7a01060877de037dab2e64f5"
+    },
+    {
+      "mode": "tools",
+      "task_id": "34430d5b81b9",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 1,
+      "feedback_consumers": [],
+      "events_sha256": "288925a7fa407db695b84d351e50a844aff86b829cce6fe89b5796b6049fe1b3"
+    },
+    {
+      "mode": "tools",
+      "task_id": "e3e16e92c36d",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 1,
+      "feedback_consumers": [],
+      "events_sha256": "b7153c805f877fcfa3c3d62269ee6dcd11ba4a7a986d8d1ecb59aaf6272f8c73"
+    },
+    {
+      "mode": "tools",
+      "task_id": "cc90a9b0622b",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 1,
+      "feedback_consumers": [],
+      "events_sha256": "d1a4d4279bf7faa9ce0f0926391337d04ecb20483cbae6adcae9b630218181d1"
+    },
+    {
+      "mode": "tools",
+      "task_id": "27521e608662",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 1,
+      "feedback_consumers": [],
+      "events_sha256": "74d7546908b09f2ca051c77b350e50036c12f5fde84590ecd3ebda043ae3fc3f"
+    },
+    {
+      "mode": "vanilla",
+      "task_id": "27521e608662",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 0,
+      "feedback_consumers": [],
+      "events_sha256": "f976dd40b9bbb91962a8175d7eed327c9082896c6d9e9f01c8f2459d4d1b6a58"
+    },
+    {
+      "mode": "vanilla",
+      "task_id": "cc90a9b0622b",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 0,
+      "feedback_consumers": [],
+      "events_sha256": "3f43349b03c3aae95177b2297867a7e801b2ba0aaca53513e53f4dc62275cdd1"
+    },
+    {
+      "mode": "vanilla",
+      "task_id": "d98fd3e7d694",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 0,
+      "feedback_consumers": [],
+      "events_sha256": "183aacf65d4c49e429adb2fd2e6769e98ac2a575b224020952406fc228e0930e"
+    },
+    {
+      "mode": "vanilla",
+      "task_id": "e3e16e92c36d",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 0,
+      "feedback_consumers": [],
+      "events_sha256": "137cd0240b01eab72a95a61428417382b567a9d9a300f46950ee20901d324287"
+    },
+    {
+      "mode": "vanilla",
+      "task_id": "34430d5b81b9",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 0,
+      "feedback_consumers": [],
+      "events_sha256": "fad9e89bd9f1987efe43793f8f10b04e59e8cef45cf4c1087e06ff558a36963c"
+    },
+    {
+      "mode": "vanilla",
+      "task_id": "1fb7e5d45040",
+      "status": "answered",
+      "reviews": 0,
+      "jev_calls": 0,
+      "maps": 0,
+      "feedback_consumers": [],
+      "events_sha256": "6aaf1d7b3d768a7dd6c4fc2ddb6156353eb9bf4de1f85bc02f499e1e83878838"
+    }
+  ]
+}

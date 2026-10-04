@@ -1,0 +1,12 @@
+{
+  "packages": {
+    "stardist": "0.9.2",
+    "tensorflow": "2.21.0"
+  },
+  "device": "cpu",
+  "initialization_seconds": 1.6077251667156816,
+  "inference_seconds": 0.4644742077216506,
+  "image_sha256": "19b182ace29d260eaec19cc7961c8b7f3b1c20215602885f5a294877c14a4e52",
+  "labels_sha256": "6e16a1697f687b8f0d69e1fa023f5696fcf84035815911cf2837cf563de5f631",
+  "native_scores_sha256": "b4f250ef1569631d05f4afb6c2f61ade91511f93184ec2bddf47a94f9ddac5d6"
+}

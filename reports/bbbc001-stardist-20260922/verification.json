@@ -1,0 +1,176 @@
+{
+  "primary_trials": 18,
+  "separate_recovery_trials": 1,
+  "same_original_images": true,
+  "frozen_runtime_and_checkpoint_hashes_match": true,
+  "recovery_only_changes_timeout": true,
+  "modes_isolated": true,
+  "keys_found_in_reports_or_logs": false,
+  "counts": {
+    "validated_trajectories": 19,
+    "matched_verifier_rewards": 19,
+    "provider_calls_started": 62,
+    "provider_responses_recorded": 61,
+    "astra_calls": 44,
+    "jev_calls": 18,
+    "jev_plan_assessment": 12,
+    "verified_instance_maps": 41,
+    "verified_instance_geometry": 14339,
+    "jev_answer_review": 6,
+    "full_trials_with_feedback_to_planner_and_selector": 6
+  },
+  "trials": [
+    {
+      "task_id": "0bb54dcc4ca2",
+      "mode": "full",
+      "recovery": false,
+      "status": "abstained",
+      "instance_maps": 3,
+      "events_sha256": "c2e546a20be2dbfb6d0b20e60de82662febf4476e128c180aff89dac7328f600"
+    },
+    {
+      "task_id": "126aeb4762e7",
+      "mode": "full",
+      "recovery": false,
+      "status": "abstained",
+      "instance_maps": 4,
+      "events_sha256": "be0156914650cb3425ace7451311113ae519896b20aaa3ff5270f34187a471c7"
+    },
+    {
+      "task_id": "2b3b6cf9e3af",
+      "mode": "full",
+      "recovery": false,
+      "status": "abstained",
+      "instance_maps": 3,
+      "events_sha256": "66cb47001476ecf5f899fd19648f4f90e2abfe03c6b7a32cefe63733a9eb50e7"
+    },
+    {
+      "task_id": "51680b6440c6",
+      "mode": "full",
+      "recovery": false,
+      "status": "abstained",
+      "instance_maps": 5,
+      "events_sha256": "2d93c40cffc2d4ae9d660d213dd9384b70a9517f321612da59a789990b27d5df"
+    },
+    {
+      "task_id": "72e37a64aca1",
+      "mode": "full",
+      "recovery": false,
+      "status": "abstained",
+      "instance_maps": 4,
+      "events_sha256": "b0003640e280711aaabfdfefcaaa3a2f9f7fc60219e347e8c001bb0a4d4feab8"
+    },
+    {
+      "task_id": "f78a1dcba6ae",
+      "mode": "full",
+      "recovery": false,
+      "status": "abstained",
+      "instance_maps": 4,
+      "events_sha256": "0e5254d02ba768b7968ee9bc11a44952ae977c0b376e69300ce759208123e9b3"
+    },
+    {
+      "task_id": "0bb54dcc4ca2",
+      "mode": "tools",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 3,
+      "events_sha256": "eae5d2204e1f467f6827d197ba23b004c1855d8149cfe328427faf7b3f4dcba1"
+    },
+    {
+      "task_id": "126aeb4762e7",
+      "mode": "tools",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 3,
+      "events_sha256": "d72cdab18b5a92723f93f6d9c2fe56f606b6e429eddc061db44d098df23a7f92"
+    },
+    {
+      "task_id": "2b3b6cf9e3af",
+      "mode": "tools",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 3,
+      "events_sha256": "eb991459d1ba58c40f32886e85928952bb01d2ade62d8c1f287a4d3e1ed2fec2"
+    },
+    {
+      "task_id": "51680b6440c6",
+      "mode": "tools",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 3,
+      "events_sha256": "4ef8ef57f9b6f814c6f896b0deb9c60340b452ab956998734fec53701fb30b51"
+    },
+    {
+      "task_id": "72e37a64aca1",
+      "mode": "tools",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 3,
+      "events_sha256": "90d2a81faf1255b80734eff276aa3e9c453e069fe5ec542135870540009c6606"
+    },
+    {
+      "task_id": "f78a1dcba6ae",
+      "mode": "tools",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 3,
+      "events_sha256": "b0972e7ac2c2dd07c32460aed3a0edfe876aa02c7f904e6e973a7114be834636"
+    },
+    {
+      "task_id": "0bb54dcc4ca2",
+      "mode": "vanilla",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 0,
+      "events_sha256": "272598f1483f35c9ae080f6cbce8a7f199379d2b1ca1d1c2cc7ee577abe9312e"
+    },
+    {
+      "task_id": "126aeb4762e7",
+      "mode": "vanilla",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 0,
+      "events_sha256": "8f88c158f255660235576e29fb6ba4f7d0aba2cb27c257af03d34ffc23f379eb"
+    },
+    {
+      "task_id": "2b3b6cf9e3af",
+      "mode": "vanilla",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 0,
+      "events_sha256": "7c22cccb57eede55e4fbbe8f749c8be820b89eaa22934f7cc9b380907957b569"
+    },
+    {
+      "task_id": "51680b6440c6",
+      "mode": "vanilla",
+      "recovery": false,
+      "status": "error",
+      "instance_maps": 0,
+      "events_sha256": "0539d54e80b8ba78f2e4ef01d8ff28afd5ccaf85744c50366e39ee71f53450be"
+    },
+    {
+      "task_id": "72e37a64aca1",
+      "mode": "vanilla",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 0,
+      "events_sha256": "4a5b01d2231a191f6d287f2e81055cd7e711e128060299e6acc18f660e125303"
+    },
+    {
+      "task_id": "f78a1dcba6ae",
+      "mode": "vanilla",
+      "recovery": false,
+      "status": "answered",
+      "instance_maps": 0,
+      "events_sha256": "1d5620d809033a5e21135c4cde739ffe81da35850de8ae20172295e29474f076"
+    },
+    {
+      "task_id": "51680b6440c6",
+      "mode": "vanilla",
+      "recovery": true,
+      "status": "answered",
+      "instance_maps": 0,
+      "events_sha256": "e7ceeecdda34ab25e9a3c58ffea69abc7a40f8104f3bef70618b9376801b72f5"
+    }
+  ]
+}

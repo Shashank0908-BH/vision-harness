@@ -1,0 +1,8 @@
+# User-requested recovery run of the task whose Jev request exceeded its context budget.
+# This is a separate, failure-selected retry; never pool it into the original benchmark.
+tasks = "evals/tasks/generated/bbbc001-jev-retry-20260922"
+jobs = "jobs/bbbc001-jev-retry-20260922"
+modes = ["review"]
+repetitions = 1
+concurrency = 1
+model = "gpt-6-astra"

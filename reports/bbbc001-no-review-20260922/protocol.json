@@ -1,0 +1,124 @@
+{
+  "name": "BBBC001v1: vanilla versus tools and Jev selection, answer review disabled",
+  "frozen_at": "2026-09-22T06:04:39.099885+00:00",
+  "source_page": "https://bbbc.broadinstitute.org/BBBC001",
+  "downloads": [
+    {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC001/BBBC001_v1_images_tif.zip",
+      "sha256": "d6d4ad4743dc8dfdec23d6c769cbbfe495563221e37353f272617838bfddcd48",
+      "bytes": 854168
+    },
+    {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC001/BBBC001_v1_counts.txt",
+      "sha256": "b24671230222f889b63ac287599bfa4a8b009e458a465bfd13cf82ef966b12af",
+      "bytes": 303
+    }
+  ],
+  "dataset_directory": "evals/datasets/generated/bbbc001-20260922",
+  "source_commit": "95d3184d2e33a1612b55ec9dbf0a8fe440f0e3a9",
+  "working_tree": "Clean committed inference runtime; experiment config committed before live calls.",
+  "modes": [
+    "vanilla",
+    "tools",
+    "select"
+  ],
+  "repetitions": 1,
+  "selection": "All six published images, in annotation-file order; no exclusions.",
+  "split_note": "BBBC001 has no official train/test split. 'test' is a local Harbor routing label only.",
+  "task": "Published cell-counting task; identical neutral instruction for every image and mode.",
+  "primary_metric": "Mean over all six images of 100 * abs(prediction - mean(two human counts)) / mean(two human counts); lower is better.",
+  "missing_policy": "No official full-dataset score if any prediction is missing, negative, nonfinite or an error. Show coverage and answered-subset error separately; do not rank partial scores against complete scores.",
+  "preprocessing": "Lossless 8-bit grayscale TIFF to RGB PNG by channel replication. No resize, contrast adjustment, denoising, annotation overlays or synthetic pixels.",
+  "leakage": "Only PNG and question enter the agent environment; counts, original filenames, source URLs and dataset metadata stay in verifier/report. Prior model exposure to this public dataset cannot be ruled out.",
+  "limitations": [
+    "Only six images from one experiment, not broad multimodal evidence.",
+    "Published human counts disagree; their mean is the reference, not an exact biological truth.",
+    "Current OpenCV tools are color/white-background tools, not microscopy segmentation models.",
+    "One attempt per image/mode. Execution-to-execution variability prevents a stable overall ranking from one small cohort.",
+    "Different plans, image inputs and inference budgets mean this compares whole systems rather than isolating a causal contribution from Jev.",
+    "No inference changes during this run. All outcomes are retained; failed attempts are not replaced.",
+    "This is a retest of previously inspected images. Earlier experiments are not pooled or substituted for current results.",
+    "Incomplete modes receive coverage and a labeled subset error, not a fabricated full-benchmark error."
+  ],
+  "license": "CC BY-NC-SA 3.0; images and ground truth by David Root and Anne Carpenter.",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "attribution": "BBBC001v1, Moffat et al. (Cell, 2006), Broad Bioimage Benchmark Collection; Ljosa et al. (Nature Methods, 2012).",
+  "runtime_hashes": {
+    "src/vision_harness/__init__.py": "370f4309cc208c94d5e25d67b785a72790bfde7bbf93e806e8535e631fd79111",
+    "src/vision_harness/artifacts.py": "98c19a2960a436eac74a81b3ad433421d822d3167d7d935cf812ba870d0d6109",
+    "src/vision_harness/cli.py": "80af58fb7d7d48146e59bc33ee09875406f02213cb4915d1c2dbdef6ad79bca3",
+    "src/vision_harness/config.py": "5505a7ce1a06cee18c4ac4ab3093b2bbf32896df158db9c59f099541e0ef24f2",
+    "src/vision_harness/contracts.py": "7f3a3d6d36e160062977c3cbf491adb681101c1b46f33d6b5203fc99f3028fb7",
+    "src/vision_harness/demo.py": "454e7ea5eba343b1c85959ee1311dd07ecc4588fedbcef47057f62e26f571d0d",
+    "src/vision_harness/providers/__init__.py": "1f7a6a0341f2d8349f7995cc32e91f2781688774c25a4bbeaa45a24760d9ee3f",
+    "src/vision_harness/providers/astra.py": "122ce01787651a854a550f0e637bdcd9d18560a5ccdae55e1d5872298fb76936",
+    "src/vision_harness/providers/evidence_budget.py": "9ba8ba43cc7e8d57fe69d371b247bc657a7df0a8e621faca4a96931150249f1d",
+    "src/vision_harness/providers/jev.py": "dad43ca33e89a313bb30e2b89a9ec093a4c9bd3920810e5328c7ca2f1dcc112c",
+    "src/vision_harness/review_loop.py": "10b44779da5474ba30edddfae7f3341cdfc7b5ea47bd8d725f07b013fd1bccc5",
+    "src/vision_harness/runtime.py": "de2e4f3cbc7dd96705a633f69e6b781b58cac8f877547b447ccb8f324fc12be8",
+    "src/vision_harness/selection.py": "02629c2c6d1395ce3cb13eb568db65ba3f2847414c26f3807f852532c202b604",
+    "src/vision_harness/tools/__init__.py": "f8fcbca43531dc087f6eab8d24a931a277d448e5bfa995b8a4c86ee9faf8fd03",
+    "src/vision_harness/tools/opencv.py": "427b6461eb100efa94580b62b6a456dd2e3bcdc1739de88d2157e51e5cef5d84",
+    "src/vision_harness/tools/registry.py": "78a69e37389faae24d2abb87de77d0ffa7cba4b480622ee68c2edea4bb83ab02",
+    "src/vision_harness/tracing.py": "c1583a61805e900c93de262b53abb57cd8bb53bd78459ad0a62338fa8a8e98b9",
+    "configs/bbbc001-full-repaired.toml": "f231a0b7224c23a92aa603cb286ce8086b457cd1426dcf2be9b315fcdc326173",
+    "configs/bbbc001-jev-retry.toml": "47b3e5e38cd61d47fd7e5c16a409b1fb5a4d021390242a89991c70d4f2ed84ec",
+    "configs/bbbc001-loop.toml": "005a9d403c20aff53b2824f15b48d59c3130c972871a27598e3edad58970ba58",
+    "configs/bbbc001-no-review.toml": "b28ff80f88ccb6b97b6e808dd10302bbff199a48e840798c3290f6c88006b907",
+    "configs/bbbc001-recovery-v2.toml": "75aac4c5a4d97b24136de68b4583e08148befe92121f3a7621314249201b696e",
+    "configs/bbbc001.toml": "4c20efb52542ed236cf21358cc5233f8b52df1ddf708872adbcb32c4d2ff0203",
+    "configs/capabilities.toml": "3d1939b093ebf603e931d1637d9cc8e169a91f1f85a56d741449e55240262522",
+    "configs/cohort-five.toml": "85327d57880f03469bc6f52659eab14dfe635f0c7d00bbd30755eec4ac7aaacc",
+    "configs/evaluation.toml": "408487d6f4d9dc12f092d7c46d3b38109dab89c707fbe461c610fe141935c442",
+    "configs/poc-loop.toml": "058b06b50b89ded5465ea4c06d0a80c08bde943d4be5101194e318a74d6ed33d",
+    "configs/poc.toml": "352265514ad02e7e43db26e3feacf60be30f214b119ce4c93b1dfaca05bf4d71",
+    "prompts/astra.md": "83286e19a8feb930b2c635da02b3d9a440dbc15eda858fe9faa14ce577056835",
+    "prompts/jev_plan_score.json": "c3559f5b7c7e56c5a7e24db7b1d3888e0933886b9680f03f5cb0ce4df9f27c46",
+    "prompts/jev_review.json": "01ff63df9322481d863f9964ec1a43aaa3a8af06055ed9fbe53d74c57fb19e12",
+    "prompts/jev_review_checks.json": "f8882aa2487cad93fdb316509eb56472983961d543ebec4c3184a6f15943f4d6"
+  },
+  "user_scope": "Run Astra + OpenCV and Astra + OpenCV + Jev selection. Include a fresh vanilla baseline. No Jev answer review and no structured loop.",
+  "prior_exposure": "All six images were inspected in previous experiments. This is another complete-cohort retest, not fresh held-out evaluation.",
+  "runtime_config": "configs/poc.toml",
+  "effective_settings": {
+    "models": {
+      "astra": "gpt-6-astra",
+      "jev": "jev-1.13.0",
+      "reasoning_effort": "medium",
+      "max_output_tokens": 4096,
+      "format_retries": 1,
+      "timeout_seconds": 120.0
+    },
+    "limits": {
+      "max_rounds": 2,
+      "max_steps_per_plan": 3,
+      "max_candidates": 3,
+      "max_pixels": 16000000,
+      "max_input_bytes": 20000000,
+      "jev_max_request_bytes": 24000
+    },
+    "selection": {
+      "minimum_score": 1.5,
+      "minimum_confidence": 0.5,
+      "tie_margin": 0.25,
+      "max_competing_plans": 2
+    },
+    "review": {
+      "minimum_support_probability": 0.75
+    },
+    "loop": {
+      "enabled": false,
+      "max_provider_calls": 24,
+      "max_seconds": 600,
+      "max_no_progress_rounds": 1,
+      "checks_path": "prompts/jev_review_checks.json"
+    },
+    "paths": {
+      "runs": "runs",
+      "capabilities": "configs/capabilities.toml",
+      "astra_prompt": "prompts/astra.md",
+      "plan_rubric": "prompts/jev_plan_score.json",
+      "review_rubric": "prompts/jev_review.json"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "complete_predictions": 12,
+  "failed_startups_before_inference": 1,
+  "successful_stardist_recovery_exit_code": 0,
+  "mask_counts_and_geometry_recomputed": true,
+  "original_hashes_verified": true,
+  "checkpoint_hashes_verified": true,
+  "worker_snapshots_verified": true,
+  "native_not_harbor": true,
+  "no_new_astra_or_jev_calls": true,
+  "paired_comparison": {
+    "cellpose": {
+      "better_than_historical_vanilla": 3,
+      "worse": 3
+    },
+    "stardist": {
+      "better_than_historical_vanilla": 5,
+      "worse": 1
+    }
+  },
+  "trials": [
+    {
+      "model": "cellpose",
+      "id": "72e37a64aca1",
+      "instances": 387,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 8.707865168539326
+    },
+    {
+      "model": "cellpose",
+      "id": "f78a1dcba6ae",
+      "instances": 376,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 10.914454277286136
+    },
+    {
+      "model": "cellpose",
+      "id": "51680b6440c6",
+      "instances": 497,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 17.912218268090154
+    },
+    {
+      "model": "cellpose",
+      "id": "0bb54dcc4ca2",
+      "instances": 373,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 12.85930408472012
+    },
+    {
+      "model": "cellpose",
+      "id": "126aeb4762e7",
+      "instances": 572,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 22.878625134264233
+    },
+    {
+      "model": "cellpose",
+      "id": "2b3b6cf9e3af",
+      "instances": 277,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 11.244979919678714
+    },
+    {
+      "model": "stardist",
+      "id": "72e37a64aca1",
+      "instances": 375,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 5.337078651685394
+    },
+    {
+      "model": "stardist",
+      "id": "f78a1dcba6ae",
+      "instances": 354,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 4.424778761061947
+    },
+    {
+      "model": "stardist",
+      "id": "51680b6440c6",
+      "instances": 456,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 8.185053380782918
+    },
+    {
+      "model": "stardist",
+      "id": "0bb54dcc4ca2",
+      "instances": 349,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 5.597579425113464
+    },
+    {
+      "model": "stardist",
+      "id": "126aeb4762e7",
+      "instances": 529,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 13.64124597207304
+    },
+    {
+      "model": "stardist",
+      "id": "2b3b6cf9e3af",
+      "instances": 256,
+      "mask_and_geometry_verified": true,
+      "percentage_error": 2.8112449799196786
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "version": "microscopy-1.0.0",
+  "procedures": [
+    {
+      "plan_id": "stardist-default",
+      "model": "StarDist 2D",
+      "checkpoint": "2D_versatile_fluo",
+      "adapter": "stardist",
+      "python": ".venv-stardist/bin/python",
+      "packages": {
+        "stardist": "0.9.2",
+        "tensorflow": "2.21.0"
+      },
+      "files": [
+        {
+          "path": "models/stardist/weights_best.h5",
+          "sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349"
+        },
+        {
+          "path": "models/stardist/config.json",
+          "sha256": "836da16282c3e0db1ba2e58f377e977419887ace8c737ebde16a094d58d50f74"
+        },
+        {
+          "path": "models/stardist/thresholds.json",
+          "sha256": "5cd6aac6e923f8659b63a9e297485920d45a59dad35371ddb8b6ae4be398d805"
+        }
+      ],
+      "task": "count_nuclei",
+      "modality": "fluorescence",
+      "input_conditions": [
+        "2D single-channel fluorescence nuclei",
+        "RGB channels must be identical",
+        "Entire image, including border instances"
+      ],
+      "parameters": {
+        "prob_thresh": 0.479071463157368,
+        "nms_thresh": 0.3,
+        "normalize_percentiles": [
+          1,
+          99.8
+        ],
+        "threads": 2
+      },
+      "sources": [
+        "https://github.com/stardist/stardist"
+      ],
+      "limitations": [
+        "Star-convex shape assumption",
+        "Object probabilities are not count-accuracy probabilities",
+        "No guarantee on unfamiliar stains, magnifications, or pixel sizes"
+      ]
+    },
+    {
+      "plan_id": "stardist-sensitive",
+      "model": "StarDist 2D",
+      "checkpoint": "2D_versatile_fluo",
+      "adapter": "stardist",
+      "python": ".venv-stardist/bin/python",
+      "packages": {
+        "stardist": "0.9.2",
+        "tensorflow": "2.21.0"
+      },
+      "files": [
+        {
+          "path": "models/stardist/weights_best.h5",
+          "sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349"
+        },
+        {
+          "path": "models/stardist/config.json",
+          "sha256": "836da16282c3e0db1ba2e58f377e977419887ace8c737ebde16a094d58d50f74"
+        },
+        {
+          "path": "models/stardist/thresholds.json",
+          "sha256": "5cd6aac6e923f8659b63a9e297485920d45a59dad35371ddb8b6ae4be398d805"
+        }
+      ],
+      "task": "count_nuclei",
+      "modality": "fluorescence",
+      "input_conditions": [
+        "2D single-channel fluorescence nuclei",
+        "RGB channels must be identical",
+        "Entire image, including border instances"
+      ],
+      "parameters": {
+        "prob_thresh": 0.35,
+        "nms_thresh": 0.3,
+        "normalize_percentiles": [
+          1,
+          99.8
+        ],
+        "threads": 2
+      },
+      "sources": [
+        "https://github.com/stardist/stardist"
+      ],
+      "limitations": [
+        "Star-convex shape assumption",
+        "Object probabilities are not count-accuracy probabilities",
+        "No guarantee on unfamiliar stains, magnifications, or pixel sizes"
+      ]
+    },
+    {
+      "plan_id": "stardist-conservative",
+      "model": "StarDist 2D",
+      "checkpoint": "2D_versatile_fluo",
+      "adapter": "stardist",
+      "python": ".venv-stardist/bin/python",
+      "packages": {
+        "stardist": "0.9.2",
+        "tensorflow": "2.21.0"
+      },
+      "files": [
+        {
+          "path": "models/stardist/weights_best.h5",
+          "sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349"
+        },
+        {
+          "path": "models/stardist/config.json",
+          "sha256": "836da16282c3e0db1ba2e58f377e977419887ace8c737ebde16a094d58d50f74"
+        },
+        {
+          "path": "models/stardist/thresholds.json",
+          "sha256": "5cd6aac6e923f8659b63a9e297485920d45a59dad35371ddb8b6ae4be398d805"
+        }
+      ],
+      "task": "count_nuclei",
+      "modality": "fluorescence",
+      "input_conditions": [
+        "2D single-channel fluorescence nuclei",
+        "RGB channels must be identical",
+        "Entire image, including border instances"
+      ],
+      "parameters": {
+        "prob_thresh": 0.6,
+        "nms_thresh": 0.3,
+        "normalize_percentiles": [
+          1,
+          99.8
+        ],
+        "threads": 2
+      },
+      "sources": [
+        "https://github.com/stardist/stardist"
+      ],
+      "limitations": [
+        "Star-convex shape assumption",
+        "Object probabilities are not count-accuracy probabilities",
+        "No guarantee on unfamiliar stains, magnifications, or pixel sizes"
+      ]
+    },
+    {
+      "plan_id": "cellpose-sam",
+      "model": "Cellpose-SAM",
+      "checkpoint": "cpsam_v2",
+      "adapter": "cellpose",
+      "python": ".venv-cellpose/bin/python",
+      "packages": {
+        "cellpose": "4.2.1.1",
+        "torch": "2.14.0"
+      },
+      "files": [
+        {
+          "path": ".model-cache/cellpose/cpsam_v2",
+          "sha256": "0f1cc3f7ecdd8a037a57c6c48d9d8921391be4cbce3fa9f13c3e3a2e1253c667"
+        }
+      ],
+      "task": "count_nuclei",
+      "modality": "fluorescence",
+      "input_conditions": [
+        "Validated here only on 2D grayscale fluorescence nuclei",
+        "Entire image, including border instances",
+        "Apple MPS device required by this registered procedure"
+      ],
+      "parameters": {
+        "flow_threshold": 0.4,
+        "cellprob_threshold": 0,
+        "min_size": 15,
+        "batch_size": 1,
+        "device": "mps"
+      },
+      "sources": [
+        "https://cellpose.readthedocs.io/en/latest/models.html"
+      ],
+      "limitations": [
+        "Generalist segmentation can merge touching nuclei or segment other structures",
+        "Model output does not by itself prove biological identity",
+        "This local adapter is not validated for DICOM, volumes, or other modalities"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "task": "count_nuclei",
+  "modality": "fluorescence",
+  "target": "2D total count of Hoechst-stained U2OS nuclei, including visible border nuclei.",
+  "rationale": "The user declares fluorescence microscopy of Hoechst-stained U2OS nuclei and requests a 2D nucleus count. The image shows bright nucleus-like regions against a dark background, consistent with the declared modality. The input probe reports a 696\u00d7520 replicated-grayscale image with usable intensity range; grayscale statistics alone do not establish fluorescence modality.",
+  "limitations": [
+    "Touching or overlapping nuclei may be difficult to distinguish.",
+    "Partially visible border nuclei must be included.",
+    "No model-derived measurement or count evidence is supplied at this interpretation stage."
+  ]
+}

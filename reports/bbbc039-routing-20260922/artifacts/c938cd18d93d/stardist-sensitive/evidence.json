@@ -1,0 +1,44 @@
+{
+  "evidence_id": "stardist-sensitive",
+  "procedure_id": "stardist-sensitive",
+  "count": 65,
+  "count_rule": "number of unique positive instance IDs, including border instances",
+  "coverage": "entire original image",
+  "coordinates": {
+    "units": "pixels",
+    "origin": "top-left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "width": 696,
+    "height": 520,
+    "original_offset": [
+      0,
+      0
+    ]
+  },
+  "foreground_fraction": 0.12839854111405835,
+  "border_instances": 12,
+  "largest_instance_fraction": 0.0035643236074270556,
+  "median_area_pixels": 776.0,
+  "overlay_id": "stardist-sensitive-overlay",
+  "artifacts_directory": "runs/bbbc039-routing-20260922/c938cd18d93d/routing/specialists/stardist-sensitive",
+  "elapsed_seconds": 2.231987333856523,
+  "worker": {
+    "packages": {
+      "stardist": "0.9.2",
+      "tensorflow": "2.21.0"
+    },
+    "device": "cpu",
+    "initialization_seconds": 1.380930833518505,
+    "inference_seconds": 0.3851341251283884,
+    "image_sha256": "6d627bd8f528a70949f54d1172c666452842c6f1a143fd0e2561046aeea2d746",
+    "labels_sha256": "3dcb3e8c1d5ca0de761b4cef7543974984b6984432750f002d4a90c5c021da67",
+    "native_scores_sha256": "a792ddea0666bd0463876b9f4874d8b04694c845b79e4b7d59cef747e633b2b2"
+  },
+  "calibrated_count_confidence": null,
+  "limitations": [
+    "Star-convex shape assumption",
+    "Object probabilities are not count-accuracy probabilities",
+    "No guarantee on unfamiliar stains, magnifications, or pixel sizes"
+  ]
+}

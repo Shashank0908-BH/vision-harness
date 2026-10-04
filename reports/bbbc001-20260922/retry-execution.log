@@ -1,0 +1,47 @@
+  1/1 Abstained: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:02:41 0:00:00Completed live-review-20260922-042813-730672; results in jobs/bbbc001-jev-retry-20260922/live-review-20260922-042813-730672
+Traceback (most recent call last):
+  File "/Users/shashanksingh/Documents/Vision/.venv/bin/vision", line 10, in <module>
+    sys.exit(app())
+             ^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/main.py", line 1154, in __call__
+    raise e
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/main.py", line 1137, in __call__
+    return get_command(self)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/_click/core.py", line 801, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/core.py", line 1197, in main
+    return _main(
+           ^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/core.py", line 187, in _main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/core.py", line 1119, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/_click/core.py", line 740, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/_click/core.py", line 483, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/.venv/lib/python3.12/site-packages/typer/main.py", line 1524, in wrapper
+    return callback(**use_params)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/src/vision_harness/cli.py", line 243, in evaluate
+    launch(config, offline)
+  File "/Users/shashanksingh/Documents/Vision/evals/run.py", line 59, in launch
+    asyncio.run(execute())
+  File "/Users/shashanksingh/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/shashanksingh/Documents/Vision/evals/run.py", line 55, in execute
+    raise RuntimeError(
+RuntimeError: All modes attempted; errored trials by mode: [('review', 1)]. Inspect job results.

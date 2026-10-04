@@ -1,0 +1,12 @@
+{
+  "packages": {
+    "cellpose": "4.2.1.1",
+    "torch": "2.14.0"
+  },
+  "device": "mps",
+  "initialization_seconds": 2.1498765842989087,
+  "inference_seconds": 3.1015890408307314,
+  "image_sha256": "6d627bd8f528a70949f54d1172c666452842c6f1a143fd0e2561046aeea2d746",
+  "labels_sha256": "cc624287eb696b898af05fcf19d018424a438fd75653f77c6f4368f8c4898902",
+  "native_scores_sha256": "60af364dfcde088f7642a23e8be4e29d4774349d38dcb5a9e614907bee223d61"
+}

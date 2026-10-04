@@ -1,0 +1,35 @@
+{
+  "decoder": "Pillow + skimage.measure.label, equal red-channel values, 8-connectivity, zero background",
+  "checks": [
+    {
+      "id": "b3af822f7e1a",
+      "skimage_count": 137,
+      "matches_opencv_decoder": true
+    },
+    {
+      "id": "fc4388dbac57",
+      "skimage_count": 115,
+      "matches_opencv_decoder": true
+    },
+    {
+      "id": "f4b8ef595d67",
+      "skimage_count": 50,
+      "matches_opencv_decoder": true
+    },
+    {
+      "id": "17a175b5e17d",
+      "skimage_count": 156,
+      "matches_opencv_decoder": true
+    },
+    {
+      "id": "54ee1bf8ac02",
+      "skimage_count": 93,
+      "matches_opencv_decoder": true
+    },
+    {
+      "id": "c938cd18d93d",
+      "skimage_count": 66,
+      "matches_opencv_decoder": true
+    }
+  ]
+}

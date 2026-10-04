@@ -1,0 +1,19 @@
+{
+  "frozen_at": "2026-09-22T08:36:37.858940+00:00",
+  "source_page": "https://bbbc.broadinstitute.org/BBBC039",
+  "split": "official test.txt",
+  "population": 50,
+  "selection": "First six filenames by SHA256 of vision-adaptive-stardist-v1: + filename, before downloading image/annotation archives",
+  "filenames": [
+    "IXMtest_P21_s4_w19B7DC88B-10BB-4B51-9A10-9E30285688C1.png",
+    "IXMtest_O01_s6_w11A23978B-BAAD-4287-B1F6-FFBCF45C5E2F.png",
+    "IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61.png",
+    "IXMtest_M12_s7_w193E9BA0F-274A-4EE8-A0F0-6A58471A333A.png",
+    "IXMtest_K01_s5_w1A3DE001A-72D6-4321-8B25-4300AB0207AC.png",
+    "IXMtest_A09_s1_w1CE70AD49-290D-4312-82E6-CDC717F32637.png"
+  ],
+  "metadata_sha256": "a2c1f900bed9ba92a99553efd4c2ae98598433691c7401d818653ab61110deb2",
+  "preprocessing": "Fixed per-image percentiles 1/99.8, clipped and rounded to 8-bit, no spatial resize; all modes including standalone see the identical converted image",
+  "annotation_decoder": "Connected components of equal values in RGB red channel, 8-connectivity, zero background, as official decoding example",
+  "primary_metric": "Local derived count MAPE against annotation-derived nucleus counts; not the published BBBC039 segmentation benchmark metric"
+}

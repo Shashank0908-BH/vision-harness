@@ -1,0 +1,668 @@
+[
+  {
+    "id": "3cbe1c1887f2",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Ganglioneuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "GNB-II: ganglioneuroblastoma tissue sections with a low signal-to-noise ratio",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "27",
+      "Mean FG signal": "97,1",
+      "Signal/Noise": "3,6",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "ef70c4932509",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Ganglioneuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "GNB-I: ganglioneuroblastoma tissue sections",
+      "Magnification": "20x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "2,5",
+      "Mean FG signal": "81,8",
+      "Signal/Noise": "32,3",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "699afb45f17b",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Ganglioneuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "GNB-II: ganglioneuroblastoma tissue sections with a low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "26,1",
+      "Mean FG signal": "88,7",
+      "Signal/Noise": "3,4",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "8e540d818a75",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Ganglioneuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "GNB-I: ganglioneuroblastoma tissue sections",
+      "Magnification": "20x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "7,6",
+      "Mean FG signal": "65,7",
+      "Signal/Noise": "8,7",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "c24f81d1e47d",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Ganglioneuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "GNB-I: ganglioneuroblastoma tissue sections",
+      "Magnification": "20x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "1,9",
+      "Mean FG signal": "66",
+      "Signal/Noise": "34,5",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "1b4de71c0b8b",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Ganglioneuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "GNB-II: ganglioneuroblastoma tissue sections with a low signal-to-noise ratio",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Isis",
+      "Mean BG signal": "2,6",
+      "Mean FG signal": "62,4",
+      "Signal/Noise": "24,4",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "802e8f830f1b",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "Tumor touch imprint",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-IV: neuroblastoma tumor touch imprints",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "9,1",
+      "Mean FG signal": "98,8",
+      "Signal/Noise": "10,8",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "b3514b0dd6e4",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "Tumor touch imprint",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-IV: neuroblastoma tumor touch imprints",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "15,1",
+      "Mean FG signal": "59,1",
+      "Signal/Noise": "3,9",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "f8c05d6880ab",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "Tumor touch imprint",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-IV: neuroblastoma tumor touch imprints",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "10,8",
+      "Mean FG signal": "83,3",
+      "Signal/Noise": "7,7",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "5dbe5cc7c039",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "BM cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-I: neuroblastoma bone marrow cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "20,5",
+      "Mean FG signal": "92,5",
+      "Signal/Noise": "4,5",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "033e228a36eb",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "BM cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-I: neuroblastoma bone marrow cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "5",
+      "Mean FG signal": "105,9",
+      "Signal/Noise": "21",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "a3964de3ea29",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "BM cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-I: neuroblastoma bone marrow cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "4,9",
+      "Mean FG signal": "96,5",
+      "Signal/Noise": "19,8",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "9a364d5359bd",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-I: normal cells cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "37,5",
+      "Mean FG signal": "141",
+      "Signal/Noise": "3,8",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "790bee4f6905",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-I: normal cells cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "37,2",
+      "Mean FG signal": "123,3",
+      "Signal/Noise": "3,3",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "7e47e9561cb7",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline grown",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-III: normal cells grown on slide",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "23,3",
+      "Mean FG signal": "104,1",
+      "Signal/Noise": "4,5",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "d548ac33a878",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-I: normal cells cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "15",
+      "Mean FG signal": "121,2",
+      "Signal/Noise": "8,1",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "4c7ab5e5db93",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-I: normal cells cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "54",
+      "Mean FG signal": "147,5",
+      "Signal/Noise": "2,7",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "ec9c29b8b6de",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-I: normal cells cytospin preparations",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "19,5",
+      "Mean FG signal": "120,2",
+      "Signal/Noise": "6,2",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "86fbe553681c",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline grown",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-III: normal cells grown on slide",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "34,2",
+      "Mean FG signal": "118,6",
+      "Signal/Noise": "3,5",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "9e0f4d3f2565",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline grown",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-III: normal cells grown on slide",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "35,9",
+      "Mean FG signal": "113,2",
+      "Signal/Noise": "3,2",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "1ea18c8d4537",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "10x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "31,8",
+      "Mean FG signal": "116,8",
+      "Signal/Noise": "3,7",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "4d9f365970a2",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "38,7",
+      "Mean FG signal": "132",
+      "Signal/Noise": "3,4",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "ce9875d92d3e",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "30,4",
+      "Mean FG signal": "127,6",
+      "Signal/Noise": "4,2",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "0dd3dce58330",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "29,4",
+      "Mean FG signal": "114",
+      "Signal/Noise": "3,9",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "a4016f1ff979",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "20,7",
+      "Mean FG signal": "70,3",
+      "Signal/Noise": "3,4",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "21c3236f351d",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "19,7",
+      "Mean FG signal": "75",
+      "Signal/Noise": "3,8",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "3a50c1b3af56",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "normal (HaCaT)",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NC-II: normal cells cytospin preparations with low signal-to-noise ratio",
+      "Magnification": "40x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "19,4",
+      "Mean FG signal": "68,7",
+      "Signal/Noise": "3,5",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "1c6b0002e918",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-II: neuroblastoma cell line preparations imaged with different magnifications",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "5",
+      "Mean FG signal": "63,7",
+      "Signal/Noise": "12,7",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "453a2ffca0fe",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-II: neuroblastoma cell line preparations imaged with different magnifications",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Metafer",
+      "Mean BG signal": "8,6",
+      "Mean FG signal": "81,2",
+      "Signal/Noise": "9,4",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "1452b1f236fb",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "TS: other tissue sections (neuroblastoma, Wilms)",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Isis",
+      "Mean BG signal": "9,5",
+      "Mean FG signal": "87,8",
+      "Signal/Noise": "9,3",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "5ce7aa249ca6",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Wilms",
+      "Preparation": "tissue section",
+      "Train-/Testset split": "test",
+      "Testset class": "TS: other tissue sections (neuroblastoma, Wilms)",
+      "Magnification": "63x",
+      "Modality": "FM",
+      "Device": "Zeiss Axioplan II",
+      "Software": "Isis",
+      "Mean BG signal": "15,9",
+      "Mean FG signal": "45,2",
+      "Signal/Noise": "2,8",
+      "S/N Class": "<4"
+    }
+  },
+  {
+    "id": "dd7c4e7a504b",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-III: neuroblastoma cell line preparations imaged with LSM modalities",
+      "Magnification": "20x",
+      "Modality": "LSM",
+      "Device": "Zeiss LSM 780",
+      "Software": "Zeiss",
+      "Mean BG signal": "3",
+      "Mean FG signal": "74,9",
+      "Signal/Noise": "25,4",
+      "S/N Class": ">=4,<40"
+    }
+  },
+  {
+    "id": "53263dd6b7b7",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-III: neuroblastoma cell line preparations imaged with LSM modalities",
+      "Magnification": "63x",
+      "Modality": "LSM",
+      "Device": "Zeiss LSM 780",
+      "Software": "Zeiss",
+      "Mean BG signal": "0,1",
+      "Mean FG signal": "60,4",
+      "Signal/Noise": "640,8",
+      "S/N Class": ">=40"
+    }
+  },
+  {
+    "id": "5b649c3d042a",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-III: neuroblastoma cell line preparations imaged with LSM modalities",
+      "Magnification": "20x",
+      "Modality": "LSM",
+      "Device": "Leica SP8X",
+      "Software": "Leica",
+      "Mean BG signal": "0,3",
+      "Mean FG signal": "88,9",
+      "Signal/Noise": "260,4",
+      "S/N Class": ">=40"
+    }
+  },
+  {
+    "id": "ec236e59cb5c",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-III: neuroblastoma cell line preparations imaged with LSM modalities",
+      "Magnification": "63x",
+      "Modality": "LSM",
+      "Device": "Leica SP8X",
+      "Software": "Leica",
+      "Mean BG signal": "1,1",
+      "Mean FG signal": "92,7",
+      "Signal/Noise": "84",
+      "S/N Class": ">=40"
+    }
+  },
+  {
+    "id": "21a45e9f8b5a",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-III: neuroblastoma cell line preparations imaged with LSM modalities",
+      "Magnification": "63x",
+      "Modality": "LSM",
+      "Device": "Leica SP8X",
+      "Software": "Leica",
+      "Mean BG signal": "0",
+      "Mean FG signal": "92,9",
+      "Signal/Noise": "2277,6",
+      "S/N Class": ">=40"
+    }
+  },
+  {
+    "id": "0f8cd1692971",
+    "metadata": {
+      "file description": "Raw nuclear images in TIFF format",
+      "Diagnosis": "Neuroblastoma",
+      "Preparation": "cellline cytospin",
+      "Train-/Testset split": "test",
+      "Testset class": "NB-III: neuroblastoma cell line preparations imaged with LSM modalities",
+      "Magnification": "63x",
+      "Modality": "LSM",
+      "Device": "Leica SP8X",
+      "Software": "Leica",
+      "Mean BG signal": "0",
+      "Mean FG signal": "100,9",
+      "Signal/Noise": "6797,3",
+      "S/N Class": ">=40"
+    }
+  }
+]

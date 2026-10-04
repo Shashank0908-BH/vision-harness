@@ -1,0 +1,17 @@
+{
+  "paired_trials": 12,
+  "all_live": true,
+  "same_original_images": true,
+  "frozen_runtime_unchanged": true,
+  "keys_found_in_reports_or_logs": false,
+  "candidate_scores_independently_verified": true,
+  "local_tests_passed": 39,
+  "validated_trajectories": 12,
+  "matched_harbor_rewards": 12,
+  "provider_calls_started": 58,
+  "provider_responses_recorded": 55,
+  "structured_reviews": 8,
+  "later_selection_calls_with_review_history": 6,
+  "reused_tool_operations": 6,
+  "format_retries": 7
+}

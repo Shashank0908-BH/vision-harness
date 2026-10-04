@@ -1,0 +1,14 @@
+{
+  "paired_trials": 30,
+  "validated_trajectories": 30,
+  "same_original_images": true,
+  "all_live": true,
+  "frozen_runtime_verified_in_all_original_task_bundles": true,
+  "keys_found_in_reports_or_logs": false,
+  "unrecorded_original_usage_calls": 3,
+  "local_checks_passed": 31,
+  "validated_recovery_trajectories": 2,
+  "final_recovery_status": "abstained",
+  "final_recovery_infrastructure_error": false,
+  "direct_jev_retry_http_status": 200
+}

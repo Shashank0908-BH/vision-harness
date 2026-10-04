@@ -1,0 +1,27 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "pagination": "all six pages work",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "pagination": "all six pages work",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "pagination": "all six pages work",
+      "horizontal_overflow": false
+    },
+    {
+      "width": 320,
+      "pagination": "all six pages work",
+      "horizontal_overflow": false
+    }
+  ],
+  "all_images_loaded": 30,
+  "local_links_checked": 130,
+  "javascript_errors": []
+}

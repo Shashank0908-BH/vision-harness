@@ -1,0 +1,36 @@
+{
+  "width_checks": [
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "images": 18,
+      "loaded": 18,
+      "details": 24
+    },
+    {
+      "width": 768,
+      "scroll": 768,
+      "images": 18,
+      "loaded": 18,
+      "details": 24
+    },
+    {
+      "width": 390,
+      "scroll": 390,
+      "images": 18,
+      "loaded": 18,
+      "details": 24
+    },
+    {
+      "width": 320,
+      "scroll": 320,
+      "images": 18,
+      "loaded": 18,
+      "details": 24
+    }
+  ],
+  "local_links_checked": 86,
+  "broken_links": [],
+  "page_errors": [],
+  "disclosures_checked": true
+}

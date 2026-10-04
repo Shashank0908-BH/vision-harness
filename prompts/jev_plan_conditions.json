@@ -1,0 +1,9 @@
+{
+  "instructions": "Assess whether this proposed use of the supplied tools is appropriate under the available conditions. Check modality and target from explicitly supplied task metadata, measurable input requirements, parameter rationale, and spatial scope. The task may request an estimate rather than an independently validated biological count. Separate an actual contradiction from ordinary model uncertainty. Do not prefer any named profile, count magnitude or previous score. A harmless diagnostic plan can investigate an unresolved condition; it must not assume its answer. Astra's image observations remain unverified, and you cannot inspect pixels through artifact paths. Judge the concrete steps and the evidence they can produce, not rhetorical confidence.",
+  "criteria": [
+    "Steps cannot answer the question or test a relevant condition.",
+    "The intended use assumes conditions contradicted by supplied metadata or measurements, or has invalid coverage/arithmetic.",
+    "A relevant exploratory measurement is feasible, but applicability or a parameter tradeoff remains unresolved and must be assessed before relying on it.",
+    "Supplied metadata and measurements support this tool use and its scope; parameter choices are justified or the plan directly tests their relevant uncertainty."
+  ]
+}

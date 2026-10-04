@@ -1,0 +1,12 @@
+{
+  "image": "examples/shapes.png",
+  "arguments": {
+    "color": "red",
+    "min_area": 10,
+    "saturation_min": 80,
+    "value_min": 40,
+    "marker_fraction": null,
+    "box": null,
+    "points": null
+  }
+}

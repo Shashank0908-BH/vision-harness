@@ -1,0 +1,112 @@
+{
+  "vanilla": {
+    "conditional_run_mapes": [
+      9.883883234794387,
+      9.288667039889212,
+      9.876141783540723
+    ],
+    "mean": 9.68289735274144,
+    "sample_sd": 0.3414354070619401,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "astra_tools_paired": {
+    "conditional_run_mapes": [
+      24.497866281603436,
+      19.203741170636597,
+      18.625321683389455
+    ],
+    "mean": 20.77564304520983,
+    "sample_sd": 3.2364875470126844,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "jev_selection_stage": {
+    "conditional_run_mapes": [
+      16.324549311388672,
+      16.970568343804047,
+      17.399167470091363
+    ],
+    "mean": 16.898095041761362,
+    "sample_sd": 0.5409624121740052,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "full_harness": {
+    "conditional_run_mapes": [
+      16.324549311388672,
+      16.970568343804047,
+      17.399167470091363
+    ],
+    "mean": 16.898095041761362,
+    "sample_sd": 0.5409624121740052,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "strict_support_diagnostic": {
+    "conditional_run_mapes": [
+      10.363636363636363,
+      14.272727272727273,
+      null
+    ],
+    "mean": null,
+    "sample_sd": null,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "stardist-default": {
+    "conditional_run_mapes": [
+      25.802441737279683,
+      25.802441737279683,
+      25.802441737279683
+    ],
+    "mean": 25.802441737279683,
+    "sample_sd": 0.0,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "stardist-sensitive": {
+    "conditional_run_mapes": [
+      32.584930018321465,
+      32.584930018321465,
+      32.584930018321465
+    ],
+    "mean": 32.584930018321465,
+    "sample_sd": 0.0,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "stardist-conservative": {
+    "conditional_run_mapes": [
+      17.453485744965008,
+      17.453485744965008,
+      17.453485744965008
+    ],
+    "mean": 17.453485744965008,
+    "sample_sd": 0.0,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "cellpose-sam": {
+    "conditional_run_mapes": [
+      13.407337695416702,
+      13.407337695416702,
+      13.407337695416702
+    ],
+    "mean": 13.407337695416702,
+    "sample_sd": 0.0,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "astra_preferred_measurement": {
+    "conditional_run_mapes": [
+      30.354551874256064,
+      32.1677885920504,
+      30.333789724005282
+    ],
+    "mean": 30.95204339677058,
+    "sample_sd": 1.0529174001816244,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  },
+  "jev_selected_measurement": {
+    "conditional_run_mapes": [
+      24.182041386164045,
+      25.60961343251108,
+      23.517876691158108
+    ],
+    "mean": 24.436510503277745,
+    "sample_sd": 1.0688342001708944,
+    "scope": "each repetition uses returned counts only; coverage may differ"
+  }
+}

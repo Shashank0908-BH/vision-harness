@@ -1,0 +1,54 @@
+{
+  "frozen_at": "2026-09-22T09:35:42.348037+00:00",
+  "source": "https://bbbc.broadinstitute.org/BBBC039",
+  "filenames": [
+    "IXMtest_C14_s8_w1612E3D43-FA7E-4FFB-BE53-F34A3A0CAFCD.png",
+    "IXMtest_B05_s5_w10296BEF4-0F48-4EC8-BC24-6C604871398B.png",
+    "IXMtest_P07_s8_w19D682C29-5685-4A33-8CAA-F0797DD7F021.png",
+    "IXMtest_C07_s5_w12C9F2926-A017-4962-8660-72C9C20C86E4.png",
+    "IXMtest_N11_s4_w142A84EA3-47C3-4B49-B6CA-BBC6685BBE1E.png",
+    "IXMtest_B02_s9_w124B5080D-EBE1-47D2-B147-C0F342039EDF.png"
+  ],
+  "excluded_previous_cohort": [
+    "IXMtest_P21_s4_w19B7DC88B-10BB-4B51-9A10-9E30285688C1.png",
+    "IXMtest_O01_s6_w11A23978B-BAAD-4287-B1F6-FFBCF45C5E2F.png",
+    "IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61.png",
+    "IXMtest_M12_s7_w193E9BA0F-274A-4EE8-A0F0-6A58471A333A.png",
+    "IXMtest_K01_s5_w1A3DE001A-72D6-4321-8B25-4300AB0207AC.png",
+    "IXMtest_A09_s1_w1CE70AD49-290D-4312-82E6-CDC717F32637.png"
+  ],
+  "rule": "first six remaining official test filenames sorted by SHA256(vision-specialist-routing-v1: + filename)",
+  "source_archives_sha256": {
+    "images.zip": "6f30a5d4fe38c928ded972704f085975f8dc0d65d9aa366df00e5a9d449fddd7",
+    "masks.zip": "f9e6043d8ca56344a4886f96a700d804d6ee982f31e2b2cd3194af2a053c2710",
+    "metadata.zip": "a2c1f900bed9ba92a99553efd4c2ae98598433691c7401d818653ab61110deb2"
+  },
+  "catalog_sha256": "48d5280751c0a62a24596f687e941d195d44fa49b697501bcfb5294e6a827dab",
+  "source_sha256": "1da9139b9e4dcc233aeb2c075f325e2e9e2f2bd0421b69b05a0a852634c503db",
+  "config_sha256": {
+    "configs/routing.toml": "bc5c0ff233c27c9456984eb845ecbf2a047034d3c7f66e2596842761dcddbf5d",
+    "configs/poc-adaptive.toml": "7bfa5eb9e39f67f3fa9c4a5c2258cd4bdb6906b50fea79086acfa04fad4ec7ab"
+  },
+  "prompt_sha256": {
+    "prompts/astra-routing.md": "65cf7c8e9b3a4854e8c0236829d9918c45032dc396ea31e3d8b4d81f598ab45c",
+    "prompts/astra-adaptive.md": "885c737c5365d27975042b6543936ddf433e1c00016a261a2b0fccef7507147f",
+    "prompts/jev_plan_conditions.json": "1b5fcb94329209f2a695898943d16f0e847f2772ce5c0d1a51b47c67cbb04d4d",
+    "prompts/jev_review_estimate.json": "5401bc21f0bda48bc4fd06e18aa253c501655309341cb956596576138cf058c4"
+  },
+  "procedure_ids": [
+    "stardist-default",
+    "stardist-sensitive",
+    "stardist-conservative",
+    "cellpose-sam"
+  ],
+  "metrics": [
+    "count MAPE across all six only if complete",
+    "exact counts",
+    "coverage",
+    "review caution rate",
+    "routing regret against best fixed candidate per image"
+  ],
+  "policy": "one route and one fresh vanilla call sequence per task; SDK schema retries only; no outcome retries; all fixed candidates after chosen answer; labels read only in score phase",
+  "preprocessing": "same fixed 1/99.8 percentile conversion to 8-bit replicated grayscale, no resizing",
+  "caveat": "public test split, pretrained exposure unknown; developer has previous cohort results; not a preregistered independent replication"
+}

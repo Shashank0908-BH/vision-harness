@@ -1,0 +1,45 @@
+{
+  "root": "/Users/shashanksingh/Documents/Vision",
+  "procedure": {
+    "plan_id": "cellpose-sam",
+    "model": "Cellpose-SAM",
+    "checkpoint": "cpsam_v2",
+    "adapter": "cellpose",
+    "python": ".venv-cellpose/bin/python",
+    "packages": {
+      "cellpose": "4.2.1.1",
+      "torch": "2.14.0"
+    },
+    "files": [
+      {
+        "path": ".model-cache/cellpose/cpsam_v2",
+        "sha256": "0f1cc3f7ecdd8a037a57c6c48d9d8921391be4cbce3fa9f13c3e3a2e1253c667"
+      }
+    ],
+    "task": "count_nuclei",
+    "modality": "fluorescence",
+    "input_conditions": [
+      "Validated here only on 2D grayscale fluorescence nuclei",
+      "Entire image, including border instances",
+      "Apple MPS device required by this registered procedure"
+    ],
+    "parameters": {
+      "flow_threshold": 0.4,
+      "cellprob_threshold": 0,
+      "min_size": 15,
+      "batch_size": 1,
+      "device": "mps"
+    },
+    "sources": [
+      "https://cellpose.readthedocs.io/en/latest/models.html"
+    ],
+    "limitations": [
+      "Generalist segmentation can merge touching nuclei or segment other structures",
+      "Model output does not by itself prove biological identity",
+      "This local adapter is not validated for DICOM, volumes, or other modalities"
+    ]
+  },
+  "image": "/Users/shashanksingh/Documents/Vision/runs/bbbc039-routing-20260922/17a175b5e17d/routing/artifacts/original.png",
+  "image_sha256": "bbf52a4e8f7959a96e6e51baf5d18bd8c7cb55461cd84c3f6692cd851cd618a7",
+  "output": "/Users/shashanksingh/Documents/Vision/runs/bbbc039-routing-20260922/17a175b5e17d/routing/specialists/cellpose-sam"
+}

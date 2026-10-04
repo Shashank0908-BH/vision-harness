@@ -1,0 +1,110 @@
+[
+  {
+    "id": "72e37a64aca1",
+    "family": "microscopy_cell_count",
+    "split": "test",
+    "title": "BBBC001 field 1",
+    "image": "images/72e37a64aca1.png",
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.",
+    "expected": 356.0,
+    "tolerance": 0,
+    "metric": "bbbc001_percentage_error",
+    "human_counts": [
+      350,
+      362
+    ],
+    "source_filename": "AS_09125_050118150001_A03f00d0.tif",
+    "source_tiff_sha256": "f71cd6ae30ba4f162671a420055dd71eec6be8cd011475fae930930cccbcf578",
+    "sha256": "8fbefa7ca3f6774326778d56f3436621c57048f7713743f98d3a9abf941240b5"
+  },
+  {
+    "id": "f78a1dcba6ae",
+    "family": "microscopy_cell_count",
+    "split": "test",
+    "title": "BBBC001 field 2",
+    "image": "images/f78a1dcba6ae.png",
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.",
+    "expected": 339.0,
+    "tolerance": 0,
+    "metric": "bbbc001_percentage_error",
+    "human_counts": [
+      336,
+      342
+    ],
+    "source_filename": "AS_09125_050118150001_A03f01d0.tif",
+    "source_tiff_sha256": "f4201216eaf409affd97b54d8868da38d127f8f7d50dba3164902df6b9ad028f",
+    "sha256": "310b2858d0cfdbe682f6035d033232367536893fb7c77de1a08863a68a07a158"
+  },
+  {
+    "id": "51680b6440c6",
+    "family": "microscopy_cell_count",
+    "split": "test",
+    "title": "BBBC001 field 3",
+    "image": "images/51680b6440c6.png",
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.",
+    "expected": 421.5,
+    "tolerance": 0,
+    "metric": "bbbc001_percentage_error",
+    "human_counts": [
+      396,
+      447
+    ],
+    "source_filename": "AS_09125_050118150001_A03f02d0.tif",
+    "source_tiff_sha256": "486ab75b9dbdfd25a8bc532d0a86c37b6d541ffc0946237c4516e500aafdaf61",
+    "sha256": "49c23bd67603fde5154c756d923547ce5d906d24baa0a95e4c5bec11f885f6ea"
+  },
+  {
+    "id": "0bb54dcc4ca2",
+    "family": "microscopy_cell_count",
+    "split": "test",
+    "title": "BBBC001 field 4",
+    "image": "images/0bb54dcc4ca2.png",
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.",
+    "expected": 330.5,
+    "tolerance": 0,
+    "metric": "bbbc001_percentage_error",
+    "human_counts": [
+      320,
+      341
+    ],
+    "source_filename": "AS_09125_050118150001_A03f03d0.tif",
+    "source_tiff_sha256": "34541a532e5a89d1cefba57ef2764a73a6bb80d3905f785a0f1305b6e9156799",
+    "sha256": "ecc628e0f2aa480bc0004ba9f4fe65d41f0fc8381db3a03ac7fc70d9efedc336"
+  },
+  {
+    "id": "126aeb4762e7",
+    "family": "microscopy_cell_count",
+    "split": "test",
+    "title": "BBBC001 field 5",
+    "image": "images/126aeb4762e7.png",
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.",
+    "expected": 465.5,
+    "tolerance": 0,
+    "metric": "bbbc001_percentage_error",
+    "human_counts": [
+      398,
+      533
+    ],
+    "source_filename": "AS_09125_050118150001_A03f04d0.tif",
+    "source_tiff_sha256": "40f8a1e2520f1547bfbd6df52f393c7c087c0b514b2dc54df81df74a131192af",
+    "sha256": "d4c1524f0492a5db37465adf6a69434ed58b36e19e5508cb1678e3336a35e98e"
+  },
+  {
+    "id": "2b3b6cf9e3af",
+    "family": "microscopy_cell_count",
+    "split": "test",
+    "title": "BBBC001 field 6",
+    "image": "images/2b3b6cf9e3af.png",
+    "question": "Count the cells in this fluorescence microscopy image of Hoechst-stained nuclei. Return your estimated total cell count as a number.",
+    "expected": 249.0,
+    "tolerance": 0,
+    "metric": "bbbc001_percentage_error",
+    "human_counts": [
+      241,
+      257
+    ],
+    "source_filename": "AS_09125_050118150001_A03f05d0.tif",
+    "source_tiff_sha256": "9d4ee2b2e2fb10d04be69d0469df712721fc866bc78874138e5ba0ff8e77b9fd",
+    "sha256": "321ae34fe7b2605dff65dd2fd5e3e0f8df7c701841439c5373a9dc38c99177dc"
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "policy": {
+    "recorded_at": "2026-09-22T08:59:16.983431+00:00",
+    "status": "Post-hoc diagnostic, not a preregistered arm or independent inference run",
+    "question": "Can one fixed sensitive profile explain the apparent gain of adaptive selection?",
+    "rule": "Use the sensitive profile on the original image for every selected task, from already saved select-arm evidence. No per-image best-of-N selection and no new model calls.",
+    "motivation": "All six selection trials already executed the sensitive profile; the adaptive arm selected it on three images."
+  },
+  "coverage": 6,
+  "total": 6,
+  "mean_percentage_error": 7.939043055453441,
+  "rows": [
+    {
+      "task_id": "e3e16e92c36d",
+      "count": 183,
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 14,
+        "percentage_error": 7.106598984771574
+      },
+      "source_events": "../../jobs/bbbc039-adaptive-20260922/live-select-20260922-084440-317382/e3e16e92c36d__c2R7wqk/agent/run/events.jsonl",
+      "events_sha256": "2ef6e68da6f538bd8cdd1e1e52195ffafdd58c251dd750302b4c2c06ba18432a",
+      "evidence_id": "r1-test_weak_nucleus_omissions-sensitive_test"
+    },
+    {
+      "task_id": "34430d5b81b9",
+      "count": 104,
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 15,
+        "percentage_error": 12.605042016806722
+      },
+      "source_events": "../../jobs/bbbc039-adaptive-20260922/live-select-20260922-084440-317382/34430d5b81b9__ngv9eLc/agent/run/events.jsonl",
+      "events_sha256": "5e8783868991187b3a396fa47a47a93b6ec84201356a085e4c4d9180985a52e8",
+      "evidence_id": "r1-test_weak_nucleus_misses-sensitive_full"
+    },
+    {
+      "task_id": "1fb7e5d45040",
+      "count": 80,
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 2,
+        "percentage_error": 2.4390243902439024
+      },
+      "source_events": "../../jobs/bbbc039-adaptive-20260922/live-select-20260922-084440-317382/1fb7e5d45040__9T9ugoF/agent/run/events.jsonl",
+      "events_sha256": "30f1690a43b4c89cc90f2ed78a68ff0a767b350f05244715cc4c36272eba2498",
+      "evidence_id": "r1-test_weak_nucleus_omissions-sensitive_test"
+    },
+    {
+      "task_id": "cc90a9b0622b",
+      "count": 53,
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 9,
+        "percentage_error": 14.516129032258064
+      },
+      "source_events": "../../jobs/bbbc039-adaptive-20260922/live-select-20260922-084440-317382/cc90a9b0622b__Rdva4Js/agent/run/events.jsonl",
+      "events_sha256": "d7a339aa0dd40be33b88cf829b5f84526dfbab5838dbbbd2c7253d4b7ec8f98f",
+      "evidence_id": "r1-test_weak_nucleus_omissions-sensitive_comparison"
+    },
+    {
+      "task_id": "27521e608662",
+      "count": 152,
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 4,
+        "percentage_error": 2.5641025641025643
+      },
+      "source_events": "../../jobs/bbbc039-adaptive-20260922/live-select-20260922-084440-317382/27521e608662__pyGTGiL/agent/run/events.jsonl",
+      "events_sha256": "77f0082d11ed502fc85c00bce31b0868f98783fdae9a20f2dfbbe30847827a7f",
+      "evidence_id": "r1-test_weak_nucleus_omissions-sensitive_full"
+    },
+    {
+      "task_id": "d98fd3e7d694",
+      "count": 109,
+      "metrics": {
+        "accuracy": 0.0,
+        "answered": 1.0,
+        "abstained": 0.0,
+        "error": 0.0,
+        "valid_prediction": 1.0,
+        "absolute_count_error": 10,
+        "percentage_error": 8.403361344537815
+      },
+      "source_events": "../../jobs/bbbc039-adaptive-20260922/live-select-20260922-084440-317382/d98fd3e7d694__GR4bBac/agent/run/events.jsonl",
+      "events_sha256": "d0d3b75f52e2cc60162d0b0df29f458ec72d9c2410393735813bac25ce87e188",
+      "evidence_id": "r1-test_weak_object_omissions-sensitive_full"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+[
+  {
+    "id": "3cbe1c1887f2",
+    "source_filename": "Ganglioneuroblastoma_10.tif",
+    "count": 38,
+    "annotation_sha256": "ea13b60e5ef590785923e8a3288ee679b4b182ebad9ef6cfcac45e65b19bab42"
+  },
+  {
+    "id": "ef70c4932509",
+    "source_filename": "Ganglioneuroblastoma_4.tif",
+    "count": 363,
+    "annotation_sha256": "2d18d11e2319765cb7b5b25fe178c291f03b77b6c8f7cfc9066bf11bbb79124a"
+  },
+  {
+    "id": "699afb45f17b",
+    "source_filename": "Ganglioneuroblastoma_6.tif",
+    "count": 75,
+    "annotation_sha256": "76f6fe4df8877fee7cf2c8d5753b97d088cb09f783fcd2c8b39c24dccd90001d"
+  },
+  {
+    "id": "8e540d818a75",
+    "source_filename": "Ganglioneuroblastoma_7.tif",
+    "count": 585,
+    "annotation_sha256": "2182092accbfa2e1143d9c31a33b33d770788739d70d755f6403b7e807385902"
+  },
+  {
+    "id": "c24f81d1e47d",
+    "source_filename": "Ganglioneuroblastoma_8.tif",
+    "count": 183,
+    "annotation_sha256": "5aa0c1462a484065ff0f39d56c94a38c3f74a15e76cad3946a988fbd1d13a7d7"
+  },
+  {
+    "id": "1b4de71c0b8b",
+    "source_filename": "Ganglioneuroblastoma_9.tif",
+    "count": 83,
+    "annotation_sha256": "f705eced8bb31015261f986bee1bd3d655fb768aa5aaec4dd3067965791cd225"
+  },
+  {
+    "id": "802e8f830f1b",
+    "source_filename": "Neuroblastoma_12.tif",
+    "count": 22,
+    "annotation_sha256": "1fe66adb244ad93591be4942d97bde52b69ce70a45a729d8762a90f4ebf6b8f3"
+  },
+  {
+    "id": "b3514b0dd6e4",
+    "source_filename": "Neuroblastoma_13.tif",
+    "count": 13,
+    "annotation_sha256": "6a4a25b810eb5453af7ead099296238b3587e5eabbc9484ee9de937a660b5e66"
+  },
+  {
+    "id": "f8c05d6880ab",
+    "source_filename": "Neuroblastoma_14.tif",
+    "count": 59,
+    "annotation_sha256": "3fef227d7713624518d087691762f32c9ce3a8fa1bee4b5329c1a2e63c22969a"
+  },
+  {
+    "id": "5dbe5cc7c039",
+    "source_filename": "Neuroblastoma_15.tif",
+    "count": 124,
+    "annotation_sha256": "2d22f93d6b3fcc7801a542356cb1cade24e9e2870d28fc6e65f075a9137082cd"
+  },
+  {
+    "id": "033e228a36eb",
+    "source_filename": "Neuroblastoma_16.tif",
+    "count": 16,
+    "annotation_sha256": "4b2ed140bb5ba45aaa6a21141135f16808d2602a33d7ba520c2a619044bc0fb7"
+  },
+  {
+    "id": "a3964de3ea29",
+    "source_filename": "Neuroblastoma_17.tif",
+    "count": 12,
+    "annotation_sha256": "6086b128f02e86744b20a9c513e42e382ea366d54da773270d552f5280b53d8e"
+  },
+  {
+    "id": "9a364d5359bd",
+    "source_filename": "normal_26.tif",
+    "count": 32,
+    "annotation_sha256": "ffec376e0824d192c01755ee639c3749aa49b121e9cb07c06b718585ff2d700f"
+  },
+  {
+    "id": "790bee4f6905",
+    "source_filename": "normal_27.tif",
+    "count": 31,
+    "annotation_sha256": "f8437964ff18c4c5b8c8b35dd99aa22b656c41d5b3cc8b0fe787e0574d2febcd"
+  },
+  {
+    "id": "7e47e9561cb7",
+    "source_filename": "normal_28.tif",
+    "count": 18,
+    "annotation_sha256": "978cfdf4312ffb024aa2aa17c4f2d9bbed1e8e4e7acdc4339acf671d0356485c"
+  },
+  {
+    "id": "d548ac33a878",
+    "source_filename": "normal_29.tif",
+    "count": 23,
+    "annotation_sha256": "f892d90d55c6ef213d35da5f42dc4c0099f2652148bb9b16d0ce2bc0ed0e9684"
+  },
+  {
+    "id": "4c7ab5e5db93",
+    "source_filename": "normal_30.tif",
+    "count": 41,
+    "annotation_sha256": "54e58b812c527b4b03275fc4a3b04554627cca5855e17a6a6b375ff41b36e181"
+  },
+  {
+    "id": "ec9c29b8b6de",
+    "source_filename": "normal_31.tif",
+    "count": 22,
+    "annotation_sha256": "88a023f92ff707f7803ce8b0b0f11f94882876a64ffb8fa443968d96c67767fd"
+  },
+  {
+    "id": "86fbe553681c",
+    "source_filename": "normal_32.tif",
+    "count": 34,
+    "annotation_sha256": "708803d76c3de3a9ecb3daf87c13b6fc02ea63b276d547568fd7ec3bb68851fa"
+  },
+  {
+    "id": "9e0f4d3f2565",
+    "source_filename": "normal_33.tif",
+    "count": 23,
+    "annotation_sha256": "329d85c387c92e28aafbd7034edca737c68d72c0e88af804aac29794ad3875a2"
+  },
+  {
+    "id": "1ea18c8d4537",
+    "source_filename": "normal_34.tif",
+    "count": 833,
+    "annotation_sha256": "4e6fbe4141810edb4f3063a5902c7ed240a0e9f5150204fc26397fef0a276475"
+  },
+  {
+    "id": "4d9f365970a2",
+    "source_filename": "normal_35.tif",
+    "count": 68,
+    "annotation_sha256": "56e98c796af5703b221a1021aa3f647e7ad64da257629f04ee1a272edacc05e4"
+  },
+  {
+    "id": "ce9875d92d3e",
+    "source_filename": "normal_36.tif",
+    "count": 67,
+    "annotation_sha256": "2154dd810a4e66f191504ad9820e895d9cb5602ed483f9f22db1ab100001d238"
+  },
+  {
+    "id": "0dd3dce58330",
+    "source_filename": "normal_37.tif",
+    "count": 66,
+    "annotation_sha256": "bfa632e8c5f9f2639e1df2649b8a25cf99c4a070d78f9ec0b2b17dc245525138"
+  },
+  {
+    "id": "a4016f1ff979",
+    "source_filename": "normal_38.tif",
+    "count": 75,
+    "annotation_sha256": "a598b8c21501b56a81188d25ed766e14d7b109b39a25d9d5115907fefee415cb"
+  },
+  {
+    "id": "21c3236f351d",
+    "source_filename": "normal_39.tif",
+    "count": 66,
+    "annotation_sha256": "e084c4ad158431347b3eb3e31bc84f2b75b2c33c6e2a3be95aad27fda940acd3"
+  },
+  {
+    "id": "3a50c1b3af56",
+    "source_filename": "normal_40.tif",
+    "count": 71,
+    "annotation_sha256": "bdc28bc9f81d969bca02e08679d71269394072571ec9ddfbf9fb1bb81dcb3868"
+  },
+  {
+    "id": "1c6b0002e918",
+    "source_filename": "otherspecimen_0.tif",
+    "count": 24,
+    "annotation_sha256": "315724f7f8a591e4dac9a2f03e3d38e0b9d1eb62f0f7f8d7f5c2ca00e712466b"
+  },
+  {
+    "id": "453a2ffca0fe",
+    "source_filename": "otherspecimen_1.tif",
+    "count": 265,
+    "annotation_sha256": "d72d7430e36e8bbfd2697a30341864360923348de8130cc8c93f6f729f865ddc"
+  },
+  {
+    "id": "1452b1f236fb",
+    "source_filename": "otherspecimen_2.tif",
+    "count": 203,
+    "annotation_sha256": "17d54fd48b42a924f73cac9acccc031a928e06e47d5b78c5b085656483e1f247"
+  },
+  {
+    "id": "5ce7aa249ca6",
+    "source_filename": "otherspecimen_3.tif",
+    "count": 55,
+    "annotation_sha256": "d2ebc80c4f689195c27cacdd08df8adb0684f0f54aa549c719341c75686ad43c"
+  },
+  {
+    "id": "dd7c4e7a504b",
+    "source_filename": "otherspecimen_4.tif",
+    "count": 100,
+    "annotation_sha256": "ff128093357508846f8952bae1860ad1be4ab908f36e126bd6940bc716660499"
+  },
+  {
+    "id": "53263dd6b7b7",
+    "source_filename": "otherspecimen_5.tif",
+    "count": 20,
+    "annotation_sha256": "d7a04eb8233c41cea6bb5abca605cd540bfb899b6374d814f402a5790f713b73"
+  },
+  {
+    "id": "5b649c3d042a",
+    "source_filename": "otherspecimen_6.tif",
+    "count": 969,
+    "annotation_sha256": "18fcc0cea19e35caeb6258d895bc18f06bb32ab4edd2fb94719268676333ea90"
+  },
+  {
+    "id": "ec236e59cb5c",
+    "source_filename": "otherspecimen_7.tif",
+    "count": 135,
+    "annotation_sha256": "c06294c4a3cd9a9c93097b8ab5b11664cb45d3bb54a5c4f9c0b0f45c97995d09"
+  },
+  {
+    "id": "21a45e9f8b5a",
+    "source_filename": "otherspecimen_8.tif",
+    "count": 147,
+    "annotation_sha256": "f4856a88e1f90af9989bc12c8a73874a9b1d56149aeb9eef05553faeef7e2eaa"
+  },
+  {
+    "id": "0f8cd1692971",
+    "source_filename": "otherspecimen_9.tif",
+    "count": 125,
+    "annotation_sha256": "7d7fad852af9c2d3b4446b2dc1900165908e1043c816ba1f0b04bed0b2df293c"
+  }
+]

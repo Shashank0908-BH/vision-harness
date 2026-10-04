@@ -1,0 +1,7 @@
+# Start with the three generated development tasks, then build the held-out split.
+tasks = "evals/tasks/generated/current"
+jobs = "jobs"
+modes = ["vanilla", "tools", "select", "review", "full"]
+repetitions = 1
+concurrency = 1
+model = "gpt-6-astra"

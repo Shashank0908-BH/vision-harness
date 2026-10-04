@@ -1,0 +1,55 @@
+{
+  "root": "/Users/shashanksingh/Documents/Vision",
+  "procedure": {
+    "plan_id": "stardist-sensitive",
+    "model": "StarDist 2D",
+    "checkpoint": "2D_versatile_fluo",
+    "adapter": "stardist",
+    "python": ".venv-stardist/bin/python",
+    "packages": {
+      "stardist": "0.9.2",
+      "tensorflow": "2.21.0"
+    },
+    "files": [
+      {
+        "path": "models/stardist/weights_best.h5",
+        "sha256": "42202bd269c8106782316f1a2c75afb3f5ffa65e525c2e155ee0ced3a95da349"
+      },
+      {
+        "path": "models/stardist/config.json",
+        "sha256": "836da16282c3e0db1ba2e58f377e977419887ace8c737ebde16a094d58d50f74"
+      },
+      {
+        "path": "models/stardist/thresholds.json",
+        "sha256": "5cd6aac6e923f8659b63a9e297485920d45a59dad35371ddb8b6ae4be398d805"
+      }
+    ],
+    "task": "count_nuclei",
+    "modality": "fluorescence",
+    "input_conditions": [
+      "2D single-channel fluorescence nuclei",
+      "RGB channels must be identical",
+      "Entire image, including border instances"
+    ],
+    "parameters": {
+      "prob_thresh": 0.35,
+      "nms_thresh": 0.3,
+      "normalize_percentiles": [
+        1,
+        99.8
+      ],
+      "threads": 2
+    },
+    "sources": [
+      "https://github.com/stardist/stardist"
+    ],
+    "limitations": [
+      "Star-convex shape assumption",
+      "Object probabilities are not count-accuracy probabilities",
+      "No guarantee on unfamiliar stains, magnifications, or pixel sizes"
+    ]
+  },
+  "image": "/Users/shashanksingh/Documents/Vision/runs/bbbc039-routing-20260922/54ee1bf8ac02/routing/artifacts/original.png",
+  "image_sha256": "24d7ef240934039f961963e7f06b5cd0d0a0bc450aaac7ce68410c1fceb60909",
+  "output": "/Users/shashanksingh/Documents/Vision/runs/bbbc039-routing-20260922/54ee1bf8ac02/routing/specialists/stardist-sensitive"
+}

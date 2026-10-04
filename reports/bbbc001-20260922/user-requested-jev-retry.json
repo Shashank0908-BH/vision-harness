@@ -1,0 +1,10 @@
+{
+  "purpose": "User-requested unchanged Jev retry; separate from benchmark scoring.",
+  "source_request": "jobs/bbbc001-20260922/live-review-20260922-040058-514003/0bb54dcc4ca2__vLojDaK/agent/run/calls/call-0030.request.json",
+  "status_code": 400,
+  "response": {
+    "detail": {
+      "error_type": "max_tokens_exceeded"
+    }
+  }
+}
