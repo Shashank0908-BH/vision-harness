@@ -5,6 +5,15 @@ For the connected full workflow, start with the
 The [architecture specification](research-execution-harness.md) preserves the original
 design and broader targets. The tables below describe the earlier runtimes.
 
+The current repair adds `providers/transport.py` for bounded, recorded transient
+request retries; `research_execution` now retains valid counts with explicit
+review status when later stages fail. `evals/research_execution/prepare_repair.py`
+freezes a complete repeat of the existing cohort and reuses every original
+vanilla control. It does not select only failed trials. See the
+[repair protocol](research-execution-repair.md) for the changed behavior.
+For Daytona, [PERSISTENCE.md](../infra/daytona/PERSISTENCE.md) explains each storage
+and lifecycle setting; `infra/daytona/doctor.py` checks access without provisioning.
+
 Read the files in this order: `contracts.py`, `runtime.py`, `selection.py`, `tools/opencv.py`, then the two providers. The interfaces and flow should be understandable before reading packaging or Harbor integration.
 
 ## Application
@@ -112,3 +121,13 @@ The separate specialist-routing path is documented in
 [model-routing.md](model-routing.md): versioned StarDist/Cellpose-SAM procedures,
 source-backed research proposals, Jev scoring of every eligible procedure, isolated
 workers, and a later label-based comparison. The historical runtime above is unchanged.
+
+The reusable GPU benchmark adapter is documented in
+[infra/daytona/reuse/README.md](../infra/daytona/reuse/README.md), with a file-by-file
+map and CLI commands. Its Harbor coordinator runs inside the existing Daytona
+workspace, isolates each attempt's files and processes, and checkpoints completed
+traces to the mounted volume. It does not change the frozen local CPU repair run.
+
+The [24 September operational repair](operational-repair-20260924.md) documents
+strict documentation repair, interpreter-specific dependencies and import
+preflight, GPU-placement guards, regression evidence and queued workspace replay.

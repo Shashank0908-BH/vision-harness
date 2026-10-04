@@ -11,6 +11,8 @@ from ..config import require_key
 from ..tracing import redact, write_json
 from .contracts import ExecutionOutcome
 from .planning import program_hash
+from .preflight import commands as execution_commands
+from .preflight import validate_report
 
 
 def execute(plan, packet, folder, settings, trace, timeout):
@@ -22,13 +24,29 @@ def execute(plan, packet, folder, settings, trace, timeout):
     frozen_hash = program_hash(plan.python_program)
     write_json(folder / "approved-plan.json", plan.model_dump())
     write_json(folder / "outcome-schema.json", ExecutionOutcome.model_json_schema())
+    commands = execution_commands(plan, packet.get("environment") or {}, folder)
+    if commands:
+        # This stdlib-only helper can run in either isolated scientific venv.
+        (folder / "import-preflight.py").write_text(Path(__file__).with_name("preflight.py").read_text())
+        write_json(folder / "execution-commands.json", commands)
     prompt = {
         "stage": "execute_approved_plan", "stage_packet": packet,
         "approved_plan": plan.model_dump(), "program_sha256": frozen_hash,
+        "execution_commands": commands,
         "instructions": [
-            "Execute the provided setup commands and then python approved.py in this work directory.",
+            "First run execution_commands.install if present, then approved setup commands in order. "
+            "Stop on the first nonzero exit and return needs_replan; "
+            "do not run the scientific program after a failed setup or invent an unapproved package installation.",
+            "When execution_commands is supplied, run its exact preflight command after setup. "
+            "Only if it exits 0, run its exact program command. Both use the selected interpreter and package path. "
+            "Do not edit the preflight helper or its report. Without execution_commands, use the plan's declared Python launcher.",
             "The Python program is frozen. Do not edit it, change scientific parameters or substitute methods.",
             "Read stderr and report needs_replan if the program fails. Propose a specific repair for controller scoring.",
+            "Report the actual Python program exit code separately from Codex's own exit code.",
+            "Your job is execution and artifact production, not biological acceptance. Do not perform a second visual approval gate.",
+            "When the unchanged program exits 0 and writes labels.npz plus execution-metadata.json, return executed. "
+            "Qualitative doubts about missed, split or border nuclei are nonblocking concerns in failure_details; "
+            "the controller will independently inspect the mask and pass the evidence to Jev. Never discard the outputs.",
             "Do not search for images, benchmark answers, labels, counts or source dataset identities.",
             "Do not access credentials, /proc, other processes, host paths, Docker or any verifier.",
             "Do not print environment variables. Do not make unrelated files or commands.",
@@ -87,6 +105,22 @@ def execute(plan, packet, folder, settings, trace, timeout):
                                                   "semantic_enforcement": "prompt plus artifact checks; not a formal sandbox policy"})
     if not unchanged or outcome.plan_id != plan.plan_id:
         raise ValueError("Execution changed the approved program or returned another plan ID")
-    if outcome.status != "executed" or not outcome.program_executed_unchanged:
-        raise RuntimeError("Execution needs replan: " + outcome.model_dump_json())
+    if commands and outcome.program_exit_code == 0:
+        validate_report(folder / "import-preflight.json", plan)
+    validate_handoff(outcome, folder, trace)
     return outcome
+
+
+def validate_handoff(outcome, folder, trace):
+    artifacts = all((folder / name).is_file() and not (folder / name).is_symlink()
+                    for name in ("labels.npz", "execution-metadata.json"))
+    if (not outcome.program_executed_unchanged or outcome.program_exit_code != 0
+            or not artifacts or outcome.status == "execution_error"):
+        raise RuntimeError("Execution needs replan: " + outcome.model_dump_json())
+    if outcome.status == "needs_replan":
+        # Do not rewrite the executor's concern as approval. The next controller
+        # step validates geometry/IDs/metadata, then sends these concerns to Jev.
+        trace.emit("execution_concerns_forwarded", {
+            "plan_id": outcome.plan_id, "concerns": outcome.failure_details,
+            "suggested_repair": outcome.suggested_repair,
+            "independent_artifact_validation_pending": True})

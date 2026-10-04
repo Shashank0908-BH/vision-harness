@@ -1,0 +1,32 @@
+{
+  "01-core-benchmarks": {
+    "pytest": {
+      "exit_code": 0,
+      "summary": "65 passed in 0.79s"
+    },
+    "lint": {
+      "exit_code": 0,
+      "summary": "All checks passed!"
+    }
+  },
+  "02-research-audits": {
+    "pytest": {
+      "exit_code": 0,
+      "summary": "107 passed, 1 skipped in 0.88s"
+    },
+    "lint": {
+      "exit_code": 0,
+      "summary": "All checks passed!"
+    }
+  },
+  "03-operations-validation": {
+    "pytest": {
+      "exit_code": 0,
+      "summary": "130 passed, 1 skipped in 0.90s"
+    },
+    "lint": {
+      "exit_code": 0,
+      "summary": "All checks passed!"
+    }
+  }
+}

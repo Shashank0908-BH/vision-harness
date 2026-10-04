@@ -1,5 +1,12 @@
 # Full BBBC039 comparison on Daytona
 
+> Current status (2026-09-23): the old cloud coordinator was retired after API-key
+> rotation. The user now requires one reusable GPU workspace. New per-attempt
+> worker creation is disabled in `infra/daytona/config.toml`; this old experiment
+> is incomplete and must not be resumed unchanged. Completed trials and a verified
+> backup of the remaining worker are preserved. See [the workspace policy](../PERSISTENCE.md).
+
+
 This experiment compares **vanilla Astra**, **fixed pretrained StarDist**, and
 **the complete research → JEV candidate scoring → documentation → planning →
 JEV plan scoring → execution → inspection → JEV review/replanning harness**.

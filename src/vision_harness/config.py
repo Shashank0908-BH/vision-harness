@@ -17,6 +17,7 @@ class Models(Record):
     reasoning_effort: Literal["low", "medium", "high", "xhigh", "max"] = "medium"
     max_output_tokens: int = Field(default=4096, ge=256, le=32000)
     format_retries: int = Field(default=1, ge=0, le=1)
+    transport_retries: int = Field(default=0, ge=0, le=2)
     timeout_seconds: float = Field(default=120, gt=0)
 
 

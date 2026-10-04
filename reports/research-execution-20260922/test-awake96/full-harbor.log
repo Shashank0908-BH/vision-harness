@@ -1,0 +1,28 @@
+  36/36 Answered: 0.472 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2:21:41 0:00:00
+
+test-awake96 • research-execution
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Trials ┃ Exceptions ┃ Answered ┃ Within_10_Percent ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│     36 │          0 │    0.472 │             0.472 │
+└────────┴────────────┴──────────┴───────────────────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │    17 │
+│ 0.0    │    19 │
+│ 1.0    │    17 │
+│ 0.0    │    19 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 3h 28m 54s
+Results written to 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-test-awake96-full/
+result.json
+Inspect results by running `harbor view 
+/Users/shashanksingh/Documents/Vision/jobs`
+Share results by running `harbor upload 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-test-awake96-full`
+

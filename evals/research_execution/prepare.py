@@ -76,13 +76,13 @@ def prepare(split, development_prefix=None):
                  "rule": f"SHA256({SEED} + filename), first 12 unused; no label-based selection",
                  "repetitions": 3 if split == "test" else 1, "arms": ["vanilla", "full"],
                  "development_prefix_replay": bool(development_prefix),
-                 "policy": Policy().model_dump(), "source_snapshot": source_snapshot(),
+                 "policy": Policy().model_dump(), "source_snapshot": source_snapshot(), "enforce_source_snapshot": True,
                  "archives_sha256": {n: sha((SOURCE / n).read_bytes()) for n in ("images.zip", "masks.zip", "metadata.zip")},
                  "primary_metric": "all-attempt proportion within 10% of annotation-derived count; failures score zero",
                  "secondary_metrics": ["coverage", "conditional MAPE", "complete-cohort MAPE only if all answered", "instance F1 at IoU>=0.5", "time", "tokens", "image-cluster paired intervals"],
-                 "answer_policy": "Return the selected observed mask's count with approved/provisional review status; absent final verified artifact is failure",
+                 "answer_policy": "Return a validated mask's count with truthful review status. If downstream review fails, retain an explicitly unreviewed fallback, reported separately from full-chain completion. Absent validated artifact is failure.",
                  "input_policy": "same question and 1/99.8 percentile preview for both arms; tool arm also gets original uint16 file",
-                 "retry_policy": "one recorded attempt; schema-format repair and up to two internal scored execution rounds; no outcome retries",
+                 "retry_policy": "One recorded trial; one configured transient API retry per request, one catalog semantic repair, one research token-limit retry and up to two scored execution rounds within unchanged total budgets. No whole-trial outcome retries.",
                  "limitations": ["public benchmark; pretrained exposure unknown", "counting derived from segmentation labels, not original benchmark metric", "12 images are a pilot, not a broad multimodal claim", "CPU-only deployment and bounded catalog search"]}
     write_json(report / "selection.json", selection)  # before opening any reference masks
     image_build = json.loads((ROOT / "evals/datasets/generated/research-execution-toolchain/build.json").read_text())

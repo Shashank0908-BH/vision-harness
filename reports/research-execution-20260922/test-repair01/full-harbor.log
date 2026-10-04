@@ -1,0 +1,29 @@
+  36/36 Answered: 0.194 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:39:22 0:00:00
+
+test-repair01 • research-execution
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Trials ┃ Exceptions ┃ Answered ┃ Within_10_Percent ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│     36 │          0 │    0.194 │             0.194 │
+└────────┴────────────┴──────────┴───────────────────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     7 │
+│ 0.0    │    29 │
+│ 1.0    │     7 │
+│ 0.0    │    29 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 39m 23s
+Results written to 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-test-repair01-full
+/result.json
+Inspect results by running `harbor view 
+/Users/shashanksingh/Documents/Vision/jobs`
+Share results by running `harbor upload 
+/Users/shashanksingh/Documents/Vision/jobs/research-execution-test-repair01-full
+`
+

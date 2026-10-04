@@ -1,5 +1,5 @@
-name = "vision-lab-gpu-20260923"
-snapshot = "vision-lab-gpu-runtime-20260923"
+name = "vision-workspace"
+snapshot = "vision-workspace-runtime"
 base_image = "python:3.12.13-slim"
 volume = "vision-lab-artifacts-20260923"
 cpu = 8
@@ -7,9 +7,17 @@ memory_gib = 32
 disk_gib = 80
 gpu_type = "RTX-4090"
 gpu_count = 1
-auto_stop_minutes = 120
+auto_stop_minutes = 0
+auto_delete_minutes = 0
+auto_archive_days = 7
+ephemeral = true
+max_project_sandboxes = 1
+max_named_snapshots = 1
+allow_benchmark_worker_creation = false
 sdk_version = "0.216.0"
 
-# GPU workers are ephemeral. /persist survives worker deletion.
-# Disable idle shutdown explicitly for a supervised long job, then restore it.
-# No benchmark starts when this sandbox is created.
+# One reusable GPU workspace. Provision reuses its name and checks the owner label.
+# Kept running continuously by explicit user preference. GPU stop deletes the box.
+# /persist is independently durable storage. No automatic snapshot per job.
+# No wall-clock TTL. Save outputs to /persist; dependencies use one named snapshot.
+# The old per-attempt cloud benchmark remains held under this one-workspace policy.

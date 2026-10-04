@@ -47,25 +47,45 @@ def discover(astra, task, packet, folder):
         ),
         "input": json.dumps(packet),
     }
-    call_id = astra.trace.call("astra", "candidate_research", request)
-    started = time.monotonic()
-    response = astra.client.responses.create(**request)
-    data = response.model_dump(mode="json")
-    astra.trace.response(call_id, data, time.monotonic()-started)
-    if response.status != "completed":
-        raise ValueError(f"Research incomplete: {response.status}")
+    for attempt in range(2):
+        response, call_id, started = astra.request_transport(
+            "candidate_research", request,
+            lambda timeout: astra.client.responses.create(**request, timeout=timeout))
+        data = response.model_dump(mode="json")
+        astra.trace.response(call_id, data, time.monotonic()-started)
+        if response.status == "completed":
+            break
+        reason = (data.get("incomplete_details") or {}).get("reason")
+        if attempt or response.status != "incomplete" or reason != "max_output_tokens":
+            raise ValueError(f"Research incomplete: {response.status}; reason={reason}")
+        request["max_output_tokens"] = 13000
+        astra.trace.emit("research_completion_retry", {
+            "failed_call_id": call_id, "reason": reason, "max_output_tokens": 13000})
     urls = consulted_urls(data)
     if not urls:
         raise ValueError("Research returned no consulted sources")
     write_json(folder / "sources.json", urls)
     (folder / "research-notes.md").write_text(response.output_text + "\n")
-    catalog = astra.structured(
-        "Extract the query-specific catalog; use only exact consulted URLs for sources and docs. "
-        "Order documentation_urls by executable usage priority within the supplied per-candidate page budget: "
-        "checkpoint loading, input preprocessing, then inference/output contracts.",
-        task.query, [], {"task": task.model_dump(), "research": response.output_text,
-                        "consulted_urls": urls, "stage_packet": packet}, Catalog,
-    )
-    validate_catalog(catalog, task, urls)
-    write_json(folder / "catalog.json", catalog.model_dump())
-    return catalog
+    context = {"task": task.model_dump(), "research": response.output_text,
+               "consulted_urls": urls, "stage_packet": packet}
+    for attempt in range(2):
+        catalog = astra.structured(
+            "Extract the query-specific catalog. Every candidate ID must be unique. "
+            "Use only exact consulted URLs for sources and docs; never invent a URL. "
+            "Repair any supplied validation error without adding unsupported claims. "
+            "Order documentation_urls by executable usage priority within the supplied per-candidate page budget: "
+            "checkpoint loading, input preprocessing, then inference/output contracts.",
+            task.query, [], context, Catalog,
+        )
+        write_json(folder / f"proposed-catalog-{attempt+1}.json", catalog.model_dump())
+        try:
+            validate_catalog(catalog, task, urls)
+        except ValueError as error:
+            if attempt:
+                raise
+            astra.trace.emit("catalog_contract_repair", {"error": str(error), "attempt": attempt+1})
+            context.update(invalid_previous_proposal=catalog.model_dump(), validation_error_to_repair=str(error))
+        else:
+            write_json(folder / "catalog.json", catalog.model_dump())
+            return catalog
+    raise AssertionError("Unreachable catalog repair state")

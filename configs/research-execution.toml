@@ -4,6 +4,7 @@ jev = "jev-1.13.0"
 reasoning_effort = "medium"
 max_output_tokens = 10000
 format_retries = 1
+transport_retries = 1
 timeout_seconds = 300
 
 [limits]

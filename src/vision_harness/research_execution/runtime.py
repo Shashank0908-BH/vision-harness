@@ -29,12 +29,26 @@ def inventory():
             versions[name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:
             versions[name] = None
+    cache = Path("/opt/checkpoints/stardist")
+    cached_stardist = versions.get("stardist") == "0.9.2" and all(
+        (cache / name).is_file() for name in ("config.json", "thresholds.json", "weights_best.h5"))
     return {"os": platform.system(), "machine": platform.machine(), "python": platform.python_version(),
             "accelerator": "CPU only; no GPU or macOS MPS inside this Docker task",
             "resources": "2 CPU cores, 6 GiB RAM per trial", "packages": versions,
             "checkpoint_cache": "/opt/checkpoints/stardist (2D_versatile_fluo checkpoint files)",
             "installation": "pip --user permitted, internet for author docs and public weights; limited by round timeout",
-            "preinstalled_is_not_a_ranking_signal": True}
+            "preinstalled_is_not_a_ranking_signal": True,
+            "verified_local_api": {"stardist": {
+                "version": "0.9.2", "checkpoint": "2D_versatile_fluo",
+                "loader": "StarDist2D(config=None, name='stardist', basedir='/opt/checkpoints')",
+                "prediction": "predict_instances has an explicit predict_kwargs parameter, not a VAR_KEYWORD parameter. "
+                    "If the scored plan needs sparse border margin b=0, use sparse=True, predict_kwargs={'b': 0}; "
+                    "never pass b as a top-level predict_instances argument.",
+                "provenance": "Hash the actual /opt/checkpoints/stardist files. Do not use from_pretrained "
+                    "for this cached checkpoint; it can download weights and set model.basedir=None.",
+                "evidence": "Installed 0.9.2 signature/source inspection and offline validation-image inference; "
+                    "an API compatibility fact, not evidence of task accuracy or a mandatory model choice."
+            }} if cached_stardist else {}}
 
 
 def run(query, mode, settings, directory, raw=Path("/data/input.tif"), preview=Path("/data/input.png"), policy=None, development_prefix=None):
@@ -65,7 +79,7 @@ def run(query, mode, settings, directory, raw=Path("/data/input.tif"), preview=P
                 "config": settings.model_dump(), "policy": policy.model_dump(), "elapsed_seconds": 0,
                 "call_budget_semantics": "controller API calls plus Codex sessions; Codex internal turns logged separately"}
     write_json(directory / "manifest.json", manifest)
-    observations, feedback, chosen = [], [], None
+    observations, feedback, chosen, latest_measured = [], [], None, None
     answer = {"status": "error", "count": None, "review_status": "not_reached"}
     task, environment, facts = None, None, None
 
@@ -84,6 +98,7 @@ def run(query, mode, settings, directory, raw=Path("/data/input.tif"), preview=P
 
     try:
         astra = Astra(settings, trace)
+        astra.deadline = started + policy.max_seconds
         images = [image_content(preview)]
         if mode == "vanilla":
             # Same query and preview; no research, tool results, model docs or Jev state.
@@ -171,6 +186,8 @@ def run(query, mode, settings, directory, raw=Path("/data/input.tif"), preview=P
                     packet("execution", "Execute the frozen approved plan and return actual outputs or a specific failure.", "ExecutionOutcome"),
                     execution_dir, settings, trace, min(policy.codex_timeout_seconds, remaining))
                 measured = inspect_artifacts(execution_dir, outcome, facts["shape"], preview)
+                latest_measured = {**measured, "artifact_directory": str(execution_dir)}
+                write_json(directory / "checkpoint-measured.json", latest_measured)
             except Exception as error:
                 failure = {"plan_id": plan.plan_id, "stage": "execution", "error_type": type(error).__name__,
                            "error": str(error), "recommended_action": "replan"}
@@ -201,7 +218,7 @@ def run(query, mode, settings, directory, raw=Path("/data/input.tif"), preview=P
             chosen = proposed_choice
             approved = all(a["noul"] >= policy.review_support_threshold for a in review.values())
             answer = {"status": "answered", "count": chosen["count"], "selected_plan_id": chosen["plan_id"],
-                      "review_status": "approved" if approved else "provisional", "review": review,
+                      "review_status": "approved" if approved else "provisional", "review_completed": True, "review": review,
                       "explanation": "Count extracted independently from the selected observed instance map.",
                       "limitations": chosen["inspection"]["suspected_failures"] + chosen["inspection"]["unresolved_requirements"]}
             write_json(directory / "checkpoint-answer.json", answer)
@@ -227,6 +244,15 @@ def run(query, mode, settings, directory, raw=Path("/data/input.tif"), preview=P
             answer["review_status"] = "provisional_after_error"
             if chosen:
                 shutil.copy2(Path(chosen["artifact_directory"]) / "labels.npz", directory / "labels.npz")
+        elif latest_measured:
+            # Retain measured evidence if a downstream API/budget fails, without
+            # pretending that output scoring or Jev review completed.
+            answer.update(status="answered", count=latest_measured["count"],
+                selected_plan_id=latest_measured["plan_id"], review_status="unreviewed_after_error",
+                review_completed=False,
+                explanation="Count independently measured from a validated mask; downstream review did not complete.",
+                limitations=["Jev review incomplete", "Scientific accuracy has not been certified"])
+            shutil.copy2(Path(latest_measured["artifact_directory"]) / "labels.npz", directory / "labels.npz")
         return answer
     finally:
         answer.update(mode=mode, elapsed_seconds=time.monotonic()-started, controller_calls=calls)

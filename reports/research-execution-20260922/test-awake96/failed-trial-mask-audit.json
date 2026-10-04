@@ -1,0 +1,139 @@
+{
+  "purpose": "Post-hoc grading of preserved intermediate masks from failed trials. No new inference, no primary-score changes. Latest available mask selected per trial before reading its reference, not best-scoring mask.",
+  "failed_trials": 19,
+  "final_jev_review_reached": 0,
+  "failed_trials_with_saved_masks": 6,
+  "saved_masks": 10,
+  "latest_available_within_10_percent": 6,
+  "latest_available_mape_percent": 3.8748810651353818,
+  "all_masks": [
+    {
+      "trial": "image-03__uknsS7Y",
+      "image": "image-03",
+      "round": "round-01",
+      "mask": "jobs/research-execution-test-awake96-full/image-03__uknsS7Y/agent/run/round-01/execution/labels.npz",
+      "count": 41,
+      "reference": 49,
+      "percentage_error": 16.3265306122449,
+      "within_10_percent": false,
+      "instance_f1": 0.8888888888888888,
+      "latest_available_mask": false
+    },
+    {
+      "trial": "image-03__uknsS7Y",
+      "image": "image-03",
+      "round": "round-02",
+      "mask": "jobs/research-execution-test-awake96-full/image-03__uknsS7Y/agent/run/round-02/execution/labels.npz",
+      "count": 47,
+      "reference": 49,
+      "percentage_error": 4.081632653061225,
+      "within_10_percent": true,
+      "instance_f1": 0.9166666666666666,
+      "latest_available_mask": true
+    },
+    {
+      "trial": "image-04__SiARKG5",
+      "image": "image-04",
+      "round": "round-01",
+      "mask": "jobs/research-execution-test-awake96-full/image-04__SiARKG5/agent/run/round-01/execution/labels.npz",
+      "count": 130,
+      "reference": 139,
+      "percentage_error": 6.474820143884892,
+      "within_10_percent": true,
+      "instance_f1": 0.9591078066914498,
+      "latest_available_mask": true
+    },
+    {
+      "trial": "image-07__9tqKMAg",
+      "image": "image-07",
+      "round": "round-01",
+      "mask": "jobs/research-execution-test-awake96-full/image-07__9tqKMAg/agent/run/round-01/execution/labels.npz",
+      "count": 128,
+      "reference": 130,
+      "percentage_error": 1.5384615384615385,
+      "within_10_percent": true,
+      "instance_f1": 0.9689922480620154,
+      "latest_available_mask": true
+    },
+    {
+      "trial": "image-07__S3eLRY9",
+      "image": "image-07",
+      "round": "round-01",
+      "mask": "jobs/research-execution-test-awake96-full/image-07__S3eLRY9/agent/run/round-01/execution/labels.npz",
+      "count": 125,
+      "reference": 130,
+      "percentage_error": 3.8461538461538463,
+      "within_10_percent": true,
+      "instance_f1": 0.9568627450980393,
+      "latest_available_mask": false
+    },
+    {
+      "trial": "image-07__S3eLRY9",
+      "image": "image-07",
+      "round": "round-02",
+      "mask": "jobs/research-execution-test-awake96-full/image-07__S3eLRY9/agent/run/round-02/execution/labels.npz",
+      "count": 135,
+      "reference": 130,
+      "percentage_error": 3.8461538461538463,
+      "within_10_percent": true,
+      "instance_f1": 0.9433962264150944,
+      "latest_available_mask": true
+    },
+    {
+      "trial": "image-08__KsnQbKR",
+      "image": "image-08",
+      "round": "round-01",
+      "mask": "jobs/research-execution-test-awake96-full/image-08__KsnQbKR/agent/run/round-01/execution/labels.npz",
+      "count": 152,
+      "reference": 167,
+      "percentage_error": 8.982035928143713,
+      "within_10_percent": true,
+      "instance_f1": 0.9529780564263323,
+      "latest_available_mask": false
+    },
+    {
+      "trial": "image-08__KsnQbKR",
+      "image": "image-08",
+      "round": "round-02",
+      "mask": "jobs/research-execution-test-awake96-full/image-08__KsnQbKR/agent/run/round-02/execution/labels.npz",
+      "count": 164,
+      "reference": 167,
+      "percentage_error": 1.7964071856287425,
+      "within_10_percent": true,
+      "instance_f1": 0.9425981873111783,
+      "latest_available_mask": true
+    },
+    {
+      "trial": "image-10__Hzq2ta5",
+      "image": "image-10",
+      "round": "round-01",
+      "mask": "jobs/research-execution-test-awake96-full/image-10__Hzq2ta5/agent/run/round-01/execution/labels.npz",
+      "count": 120,
+      "reference": 127,
+      "percentage_error": 5.511811023622047,
+      "within_10_percent": true,
+      "instance_f1": 0.9473684210526315,
+      "latest_available_mask": false
+    },
+    {
+      "trial": "image-10__Hzq2ta5",
+      "image": "image-10",
+      "round": "round-02",
+      "mask": "jobs/research-execution-test-awake96-full/image-10__Hzq2ta5/agent/run/round-02/execution/labels.npz",
+      "count": 120,
+      "reference": 127,
+      "percentage_error": 5.511811023622047,
+      "within_10_percent": true,
+      "instance_f1": 0.9473684210526315,
+      "latest_available_mask": true
+    }
+  ],
+  "terminal_errors": {
+    "Request timed out.": 4,
+    "No complete scored, executed and reviewed result": 6,
+    "Duplicate candidate IDs": 3,
+    "Connection error.": 4,
+    "Research incomplete: incomplete": 1,
+    "Candidate source/document URL was not present in search evidence": 1
+  }
+}

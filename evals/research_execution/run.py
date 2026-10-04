@@ -15,10 +15,18 @@ def main():
     args = parser.parse_args()
     report = REPORT if args.split == "test" else REPORT / args.split
     selection = json.loads((report / "selection.json").read_text())
-    if args.split == "test" and source_snapshot() != selection["source_snapshot"]:
+    if (args.split == "test" or selection.get("enforce_source_snapshot")) and source_snapshot() != selection["source_snapshot"]:
         raise ValueError("Source changed since test freeze; do not silently run a different implementation")
     toolchain = json.loads((report / "toolchain.json").read_text())
-    actual = subprocess.check_output(["docker", "image", "inspect", toolchain["image"], "--format", "{{.Id}}"], text=True).strip()
+    # Docker Desktop can run/list a local tag while its tag-inspect lookup fails.
+    # Verify the tag mapping and the immutable image independently.
+    mapped = subprocess.check_output([
+        "docker", "image", "ls", "--no-trunc", "--filter",
+        f"reference={toolchain['image']}", "--format", "{{.ID}}",
+    ], text=True).splitlines()
+    if set(mapped) != {toolchain["digest"]}:
+        raise ValueError("Base image tag changed since freeze")
+    actual = subprocess.check_output(["docker", "image", "inspect", toolchain["digest"], "--format", "{{.Id}}"], text=True).strip()
     if actual != toolchain["digest"]:
         raise ValueError("Base image changed since freeze")
     for mode in args.arms:
